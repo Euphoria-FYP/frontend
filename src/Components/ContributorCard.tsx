@@ -1,11 +1,11 @@
 import React from "react";
 import carouselImg1 from "../assets/images/carousel-1.jpeg";
 
-// interface CardProps {
+// interface ContributorCardProps {
 //   name: string;
 //  }
  
- const Card = () => {
+ const ContributorCard = () => {
 
   return (
     <>
@@ -28,4 +28,4 @@ import carouselImg1 from "../assets/images/carousel-1.jpeg";
   );
  };
 
-export default Card;
+export default ContributorCard;
