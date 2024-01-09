@@ -7,13 +7,13 @@ const NftBanner = () => {
         <h1 className=" text-white text-[32px] text-center leading-[40px] tracking-widest">
           Create, Sell and Collect NFT <br /> Digital Assests
         </h1>
-        <p className=" text-white text-center">
+        <p className=" text-white text-center w-[70%]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem sequi in
           molestiae praesentium voluptatum exercitationem fuga tempore
           voluptates repellendus est, expedita ullam excepturi quaerat eum
         </p>
 
-        <button> Create NFT </button>
+        {/* <button> Create NFT </button> */}
       </div>
     </section>
   );

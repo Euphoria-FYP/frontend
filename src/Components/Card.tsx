@@ -1,24 +1,30 @@
 import React from "react";
+import carouselImg1 from "../assets/images/carousel-1.jpeg";
 
-interface CardProps {
-  id: number;
-  name: string;
- }
+// interface CardProps {
+//   name: string;
+//  }
  
- const Card: React.FC<CardProps> = ({ id, name }) => {
+ const Card = () => {
 
   return (
-     <div className="bg-white rounded-lg shadow-md overflow-hidden max-w-xs sm:max-w-sm">
-       <img
-         className="h-48 w-full object-cover"
-         src="https://via.placeholder.com/150"
-         alt="Profile"
-       />
-       <div className="p-4">
-         <p className="text-xl font-semibold">{name}</p>
-         <p className="text-green-600">+00.0000</p>
-       </div>
-     </div>
+    <>
+    <div className=" flex gap-7 items-center rounded-md text-white border-2 border-violet-800 w-[30%] px-4 py-2">
+      <div>
+        <img src={carouselImg1} alt="" height={50} width={50} />
+      </div>
+
+      <div>
+        <h2>Ahsan Omerjee</h2>
+        <p>0.88 ETH</p>
+      </div>
+
+      <div>
+        <p>...</p>
+      </div>
+
+    </div>
+    </>
   );
  };
 
