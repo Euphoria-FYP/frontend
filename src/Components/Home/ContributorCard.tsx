@@ -1,5 +1,5 @@
 import React from "react";
-import carouselImg1 from "../assets/images/carousel-1.jpeg";
+import carouselImg1 from "../../assets/images/carousel-1.jpeg";
 
 // interface ContributorCardProps {
 //   name: string;

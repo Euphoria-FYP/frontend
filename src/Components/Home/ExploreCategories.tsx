@@ -1,6 +1,6 @@
 import React from "react";
-import CategoriesCard from "../../Components/CategoriesCard";
-import StyledButton from "../../Components/Shared/StyledButton";
+import CategoriesCard from "./CategoriesCard";
+import StyledButton from "../Shared/StyledButton";
 
 const ExploreCategories = () => {
   
