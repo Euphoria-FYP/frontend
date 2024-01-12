@@ -3,10 +3,11 @@ import React from "react";
 
 const NftBanner = () => {
   return (
-    <section className=" bg-[url('./assets/images/NFT_Banner.jpeg')] bg-cover bg-center text-white w-4/5 flex  gap-7 mx-auto mb-6 px-20 py-12 rounded-xl">
-      <div className=" flex flex-col justify-center items-center gap-7">
-        <h1 className=" text-white text-[32px] text-center leading-[40px] tracking-widest font-bold">
-          Create, Sell and Collect NFT <br /> Digital Assests
+    <section className=" bg-[url('./assets/images/ConnectWalletBackground.jpg')] bg-cover bg-center text-white w-[66%] flex justify-center items-center gap-7 mx-auto mb-6 px-20 pt-14 rounded-xl">
+
+      <div className=" flex flex-col justify-center items-center gap-7 mx-auto">
+        <h1 className=" text-white text-[35px] text-center leading-[45px] tracking-widest font-bold">
+          Create, Sell and Collect <br /> NFT Digital Assests
         </h1>
         <p className=" text-white text-center w-[70%]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem sequi in

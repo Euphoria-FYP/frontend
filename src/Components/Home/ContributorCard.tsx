@@ -1,5 +1,6 @@
 import React from "react";
-import carouselImg1 from "../../assets/images/carousel-1.jpeg";
+import contrubutor from "../../assets/images/contrubutor.png";
+import { BsThreeDots } from "react-icons/bs";
 
 // interface ContributorCardProps {
 //   name: string;
@@ -9,18 +10,19 @@ import carouselImg1 from "../../assets/images/carousel-1.jpeg";
 
   return (
     <>
-    <div className=" flex gap-7 items-center rounded-md text-white border-2 border-violet-800 w-[30%] px-4 py-2">
-      <div>
-        <img src={carouselImg1} alt="" height={50} width={50} />
-      </div>
+    <div className=" flex gap-10 justify-center items-center rounded-md text-white border-2 border-violet-800 p-2">
 
+      <div className="flex justify-center items-center gap-1">
+        <img src={contrubutor} alt="" height={50} width={50} />
       <div>
         <h2>Ahsan Omerjee</h2>
         <p>0.88 ETH</p>
       </div>
+      </div>
 
-      <div>
-        <p>...</p>
+
+      <div className=" cursor-pointer">
+      <BsThreeDots fontSize={20} />
       </div>
 
     </div>
