@@ -3,7 +3,7 @@ import ContributorCard from "./ContributorCard";
 
 const Contributor = () => {
   return (
-    <section className="flex flex-col justify-center items-center mx-auto">
+    <section className="flex flex-col justify-center items-center my-10 mx-auto">
       <div className="flex flex-col justify-center items-center gap-3">
         <h2 className="uppercase  font-semibold text-xl text-[#B900FF]">
           NFT Creators
