@@ -22,7 +22,7 @@ const ExploreCategories = () => {
         <CategoriesCard />
       </div>
 
-      <StyledButton heading="All Categories"/>
+      <StyledButton heading="All Categories" width={180}/>
 
     </section>
   );
