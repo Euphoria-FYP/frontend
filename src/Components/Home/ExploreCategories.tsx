@@ -5,12 +5,12 @@ import StyledButton from "../Shared/StyledButton";
 const ExploreCategories = () => {
   
   return (
-    <section className="flex flex-col justify-center items-center  mx-auto">
+    <section className="flex flex-col justify-center items-center mx-auto my-5">
       <div className="flex flex-col justify-center items-center gap-3">
         <h2 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">
           Discover Art Work
         </h2>
-        <h1 className=" text-white font-semibold text-3xl md:text-4xl tracking-wider">
+        <h1 className=" text-white font-semibold text-3xl md:text-5xl tracking-wider CodeNewRomanFont">
           Explore Categories
         </h1>
       </div>
