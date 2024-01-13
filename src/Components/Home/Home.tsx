@@ -5,6 +5,7 @@ import NftBanner from "./NftBanner";
 // import Card from "./ContributorCard";
 import Contributor from "./Contributor";
 import MarketPlace from "./MarketPlace";
+import FAQ from "./FAQ";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <ExploreCategories />
       <Contributor />
       <NftBanner />
+      <FAQ/>
     </>
   );
 };
