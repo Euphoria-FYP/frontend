@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Carousel />
-      {/* <MarketPlace /> */}
+      <MarketPlace />
       <ExploreCategories />
       <Contributor />
       <NftBanner />

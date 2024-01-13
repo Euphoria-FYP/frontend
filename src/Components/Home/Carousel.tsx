@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import carouselImg1 from "../../assets/images/carousel_1.png";
-import carouselImg2 from "../../assets/images/carousel-2.jpeg";
+import carouselImg2 from "../../assets/images/carousel_2.png";
 import ephHeading from "../../assets/images/Ephoria-heading.png";
 import StyledButton from "../Shared/StyledButton";
 
@@ -45,13 +45,17 @@ const Carousel = () => {
           <img
             src={carouselImg1}
             alt="carousel1"
-            className="w-20 h-20 border-2 rounded-[50%] cursor-pointer"
+            className={` w-[72px] h-[70px] p-[10px] border-[2.5px] rounded-[50%] cursor-pointer ${
+              carousel.id === carouselData[0].id && "circle"
+            } `}
             onClick={() => setCarousel(carouselData[0])}
           />
           <img
-            src={carouselImg1}
+            src={carouselImg2}
             alt="carousel2"
-            className="w-20 h-20 border-2 rounded-[50%] cursor-pointer"
+            className={` w-[72px] h-[70px] p-[10px] border-[2.5px] rounded-[50%] cursor-pointer ${
+              carousel.id === carouselData[1].id && "circle"
+            } `}
             onClick={() => setCarousel(carouselData[1])}
           />
         </div>
@@ -82,15 +86,15 @@ const Carousel = () => {
                   </span>
                 </div>
                 <div className=" flex flex-col">
-                  <p className=" text-3xl CodeNewRomanFont">15K+</p>
+                  <p className=" text-3xl CodeNewRomanFont">20K+</p>
                   <span className="text-[#cfcfcf] text-sm tracking-widest">
-                    Auctions
+                    Artworks
                   </span>
                 </div>
                 <div className=" flex flex-col">
-                  <p className=" text-3xl CodeNewRomanFont">15K+</p>
+                  <p className=" text-3xl CodeNewRomanFont">4K+</p>
                   <span className="text-[#cfcfcf] text-sm tracking-widest">
-                    Auctions
+                    Creators
                   </span>
                 </div>
               </div>

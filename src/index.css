@@ -24,3 +24,36 @@ body {
 .CodeNewRomanFont {
   font-family: "CodeNewRoman", sans-serif;
 }
+
+.scrollbarHide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbarHide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.circle {
+  border-color: #518eff; /* Initial color */
+  animation: colorChange 6s linear infinite; /* Change 5s to your desired duration */
+}
+
+@keyframes colorChange {
+  0% {
+    border-color: #518eff;
+  }
+  25% {
+    border-color: #b725ff;
+  }
+  50% {
+    border-color: #518eff;
+  }
+  75% {
+    border-color: #518eff;
+  }
+  100% {
+    border-color: #b725ff;
+  }
+}
