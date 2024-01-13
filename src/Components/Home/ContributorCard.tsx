@@ -2,11 +2,12 @@ import React from "react";
 import contrubutor from "../../assets/images/contrubutor.png";
 import { BsThreeDots } from "react-icons/bs";
 
-// interface ContributorCardProps {
-//   name: string;
-//  }
- 
- const ContributorCard = () => {
+interface CardProps {
+  name: string;
+  ethAmount: string;
+}
+
+ const ContributorCard: React.FC <CardProps> = ({name, ethAmount }) => {
 
   return (
     <>
@@ -15,8 +16,8 @@ import { BsThreeDots } from "react-icons/bs";
       <div className="flex justify-center items-center gap-1">
         <img src={contrubutor} alt="" height={50} width={50} />
       <div>
-        <h2>Ahsan Omerjee</h2>
-        <p>0.88 ETH</p>
+        <h2>{name}</h2>
+        <p>{ethAmount}</p>
       </div>
       </div>
 
