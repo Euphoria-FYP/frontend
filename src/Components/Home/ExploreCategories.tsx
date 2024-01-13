@@ -5,7 +5,7 @@ import StyledButton from "../Shared/StyledButton";
 const ExploreCategories = () => {
   
   return (
-    <section className="flex flex-col justify-center items-center mx-auto my-5">
+    <section className="flex flex-col justify-center items-center mx-auto mt-16 mb-12">
       <div className="flex flex-col justify-center items-center gap-3">
         <h2 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">
           Discover Art Work

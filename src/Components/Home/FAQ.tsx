@@ -20,7 +20,7 @@ const FAQ = () => {
   };
   return (
     <>
-      <div className=" text-white mx-auto max-w-7xl px-6 sm:py-32 md:py-24 lg:px-8 lg:py-32">
+      <div className=" text-white mx-auto max-w-7xl px-6 sm:py-8 lg:px-8">
         {/* FAQ */}
         <div className="flex flex-col justify-center items-center mx-auto max-w-4xl divide-y divide-gray-900/10">
           <div className=" flex max-w-[768px] flex-col items-center justify-center gap-5">

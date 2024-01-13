@@ -18,7 +18,7 @@ const carouselData = [
     id: 2,
     title: "NFT Market Place",
     heading:
-      "Discover The Hottest <span style='color:#B900FF;'>NFTs</span> Of The Season",
+      "Unlock the <span style='color:#B900FF;'>Glamour</span>, <span style='color:#B900FF;'>Connect</span> with Digital Realm!",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam similique, ratione nisi dolores, quod optio officia eius a doloribus ea iste labore, accusantium dignissimos.zf",
     img: carouselImg2,
@@ -64,7 +64,7 @@ const Carousel = () => {
           {/* <h1 className=" text-[32px] font-bold">{carousel.title}</h1> */}
           <img src={ephHeading} alt="Heading" className=" w-56" />
           <h3
-            className=" text-[50px] font-semibold leading-[48px] CodeNewRomanFont"
+            className={` text-[48px] w-[90%] font-semibold leading-[50px] CodeNewRomanFont`}
             dangerouslySetInnerHTML={{ __html: carousel.heading }}
           >
             {/* {carousel.heading} */}

@@ -1,7 +1,12 @@
 import React from "react";
 import ContributorCard from "./ContributorCard";
 
-const cards = [
+interface CardProps {
+  name: string;
+  ethAmount: string;
+}
+
+const cards: CardProps[] = [
   { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
   { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
   { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },

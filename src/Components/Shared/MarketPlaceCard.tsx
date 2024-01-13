@@ -4,7 +4,7 @@ import profileImg from "../../assets/images/profileImg.jpeg";
 
 const MarketPlaceCard = () => {
   return (
-    <div className=" flex flex-col gap-4 px-3 py-5 text-white w-[270px] bg-[#1f2045] border-2 border-[#2e2459] rounded-lg">
+    <div className="card main-card flex flex-col gap-4 px-3 py-5 text-white w-[270px] bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer">
       <div className=" flex justify-between items-center">
         <div className=" flex gap-2">
           <img

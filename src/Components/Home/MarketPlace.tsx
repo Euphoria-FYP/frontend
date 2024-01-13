@@ -90,7 +90,10 @@ const MarketPlace = () => {
           />
         </div>
         {/* CARDS */}
-        <div className=" flex justify-evenly">
+        <div className=" flex flex-wrap justify-center gap-16">
+          <MarketPlaceCard />
+          <MarketPlaceCard />
+          <MarketPlaceCard />
           <MarketPlaceCard />
           <MarketPlaceCard />
           <MarketPlaceCard />

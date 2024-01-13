@@ -15,10 +15,13 @@
 }
 
 body {
+  font-family: "Poppins", sans-serif;
+}
+
+.layout {
   background-image: url("./assets/images/BgHome–2.png");
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Poppins", sans-serif;
 }
 
 .CodeNewRomanFont {
@@ -56,4 +59,38 @@ body {
   100% {
     border-color: #b725ff;
   }
+}
+
+/* .main-card {
+  position: relative;
+  transition: transform 0.5s;
+}
+
+.main-card:hover {
+  transform: rotate(5deg) perspective(100px) translateY(30px); 
+} */
+
+.card {
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(226, 37, 122, 0.4) 0%,
+    rgba(86, 59, 218, 0.4) 100%
+  );
+  border-radius: 8px;
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+.card:hover:before {
+  transform: rotate(5deg) translateY(5%);
 }

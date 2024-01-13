@@ -1,10 +1,13 @@
-import React from 'react'
-import Home from '../../Components/Home/Home'
+import React from "react";
+import Home from "../../Components/Home/Home";
+import Layout from "../../Components/Shared/Layout";
 
 const index = () => {
   return (
-    <Home/>
-  )
-}
+    <Layout>
+      <Home />
+    </Layout>
+  );
+};
 
-export default index
+export default index;
