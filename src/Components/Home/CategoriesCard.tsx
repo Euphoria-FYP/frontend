@@ -12,7 +12,7 @@ const CategoriesCard: React.FC<CategoriesCardProps> = ({
   return (
     <>
       <div
-        className={`relative bg-slate-600 py-24 px-[82px] w-[200px] flex flex-col justify-center items-center mb-10 rounded-2xl`}
+        className={`relative bg-slate-600 py-24 px-[82px] w-[260px] h-[250px] md:w-[200px] md:h-[220px] flex flex-col justify-center items-center mb-7 md:mb-10 rounded-2xl`}
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.419), rgba(65, 61, 61, 0.97)), url(${cardimage})`,
           backgroundSize: "cover",
