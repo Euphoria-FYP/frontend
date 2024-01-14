@@ -18,11 +18,11 @@ const MarketPlace = () => {
         <h2 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">
           NFT MARKETPLACE
         </h2>
-        <h1 className=" text-white font-semibold text-5xl md:text-5xl tracking-wider CodeNewRomanFont">
+        <h1 className=" text-white text-center font-semibold text-4xl md:text-5xl tracking-wider CodeNewRomanFont">
           Super Hot Drops
         </h1>
       </div>
-      <div className="w-[85%]">
+      <div className=" w-[95%] md:w-[85%]">
         {/* CATEGORY BUTTONS */}
         <div className=" flex items-center my-10">
           <IoIosArrowBack
@@ -85,7 +85,7 @@ const MarketPlace = () => {
             </button>
           </div>
           <IoIosArrowForward
-            className=" w-[6%] text-2xl text-white cursor-pointer"
+            className=" w-[6%] ml-2 md:ml-0 text-2xl text-white cursor-pointer"
             onClick={() => scroll(132)}
           />
         </div>
