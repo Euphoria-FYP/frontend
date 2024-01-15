@@ -1,8 +1,5 @@
 import { useRef } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { FaRegHeart } from "react-icons/fa";
-import cardImg from "../../assets/images/bg.png";
-import profileImg from "../../assets/images/profileImg.jpeg";
 import MarketPlaceCard from "../Shared/MarketPlaceCard";
 
 const MarketPlace = () => {
