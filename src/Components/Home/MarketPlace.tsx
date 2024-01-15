@@ -12,6 +12,95 @@ const MarketPlace = () => {
       scrollRef.current.scrollLeft += scrollOffset;
     }
   };
+
+  type NFT = {
+    name: string;
+    userName: string;
+    currentBid: number;
+    inDollars: number;
+  };
+
+  type MarketPlaceItem = {
+    category: string;
+    marketplace: string;
+    nft: NFT[];
+  };
+
+  const marketPlaceData: MarketPlaceItem[] = [
+    {
+      category: "sports",
+      marketplace: "cricket",
+      nft: [
+        {
+          name: "Daniyal Saleem",
+          userName: "dani36",
+          currentBid: 0.854,
+          inDollars: 1400.50,
+        },
+      ],
+    },
+    {
+      category: "sports",
+      marketplace: "badminton",
+      nft: [
+        {
+          name: "Dr. John",
+          userName: "john26",
+          currentBid: 0.389,
+          inDollars: 1400.30,
+        },
+      ],
+    },
+    {
+      category: "game",
+      marketplace: "snipping",
+      nft: [
+        {
+          name: "Obaid Ur Rehman",
+          userName: "obbi45",
+          currentBid: 0.985,
+          inDollars: 1900.23,
+        },
+      ],
+    },
+    {
+      category: "music",
+      marketplace: "pop",
+      nft: [
+        {
+          name: "Ahsan Omerjee",
+          userName: "ahsan2002",
+          currentBid: 0.584,
+          inDollars: 1900.20,
+        },
+      ],
+    },
+    {
+      category: "music",
+      marketplace: "concerts",
+      nft: [
+        {
+          name: "Bob Johnson",
+          userName: "bob_j",
+          currentBid: 0.789,
+          inDollars: 3100.85,
+        },
+      ],
+    },
+    {
+      category: "sports",
+      marketplace: "football",
+      nft: [
+        {
+          name: "Michael Johnson",
+          userName: "mike_j",
+          currentBid: 0.589,
+          inDollars: 2200.97,
+        },
+      ],
+    },
+  ];
+
   return (
     <section className="flex flex-col justify-center items-center  mx-auto">
       <div className="flex flex-col justify-center items-center gap-3">
@@ -33,56 +122,15 @@ const MarketPlace = () => {
             className=" w-full pl-1 flex gap-2 overflow-x-auto whitespace-nowrap scrollbarHide"
             ref={scrollRef}
           >
-            <button
-              className={`bg-[#7000ff] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] min-w-32 rounded-md cursor-pointer`}
-            >
-              Tranding Art
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Art
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Sport
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Music
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Music
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Music
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Music
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Music
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Sport
-            </button>
-            <button
-              className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-            >
-              Sport
-            </button>
+            {marketPlaceData.map((item) => {
+              return (
+                <button
+                  className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
+                >
+                  {item.marketplace}
+                </button>
+              );
+            })}
           </div>
           <IoIosArrowForward
             className=" w-[6%] ml-2 md:ml-0 text-2xl text-white cursor-pointer"
@@ -91,12 +139,20 @@ const MarketPlace = () => {
         </div>
         {/* CARDS */}
         <div className=" flex flex-wrap justify-center gap-16">
-          <MarketPlaceCard />
-          <MarketPlaceCard />
-          <MarketPlaceCard />
-          <MarketPlaceCard />
-          <MarketPlaceCard />
-          <MarketPlaceCard />
+        {marketPlaceData.map((card, index) => (
+          
+          card.nft.map((nft)=>{
+            return(
+              <MarketPlaceCard
+              key={index}
+              name={nft.name}
+              userName={nft.userName}
+              currentBid={nft.currentBid}
+              inDollars={nft.inDollars}
+            />
+            )
+          })
+        ))}
         </div>
       </div>
     </section>

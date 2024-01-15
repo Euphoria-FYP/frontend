@@ -2,7 +2,14 @@ import { FaRegHeart } from "react-icons/fa";
 import cardImg from "../../assets/images/bg.png";
 import profileImg from "../../assets/images/profileImg.jpeg";
 
-const MarketPlaceCard = () => {
+type MarketCardProps = {
+  name: string;
+  userName: string;
+  currentBid: number;
+  inDollars: number;
+}
+
+const MarketPlaceCard: React.FC <MarketCardProps> = ({name,userName,currentBid, inDollars })=> {
   return (
     <div className="card main-card flex flex-col gap-4 px-3 py-5 text-white w-[270px] bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer">
       <div className=" flex justify-between items-center">
@@ -13,8 +20,8 @@ const MarketPlaceCard = () => {
             className=" w-11 h-11 rounded-[50%] object-cover"
           />
           <div className=" flex flex-col justify-center">
-            <h3 className=" text-sm">Daniyal Saleem</h3>
-            <p className=" text-[#cfcfcf] text-xs">daniy36</p>
+            <h3 className=" text-sm">{name}</h3>
+            <p className=" text-[#cfcfcf] text-xs">{userName}</p>
           </div>
         </div>
         <FaRegHeart />
@@ -43,13 +50,13 @@ const MarketPlaceCard = () => {
       <div className=" flex justify-between w-full">
         <div className=" w-3/6 border-r border-[#cfcfcf]">
           <p className=" text-[#cfcfcf] text-xs">Current Bid</p>
-          <h3 className=" text-[15px]">0.0458BTC</h3>
-          <p className=" text-[#cfcfcf] text-xs">$1084.48</p>
+          <h3 className=" text-[15px]">{currentBid}{""}ETH</h3>
+          <p className=" text-[#cfcfcf] text-xs">${""}{inDollars}</p>
         </div>
         <div className=" w-3/6 pl-6">
           <p className=" text-[#cfcfcf] text-xs">Current Bid</p>
-          <h3 className=" text-[15px]">0.0458BTC</h3>
-          <p className=" text-[#cfcfcf] text-xs">$1084.48</p>
+          <h3 className=" text-[15px]">{currentBid}{""}ETH</h3>
+          <p className=" text-[#cfcfcf] text-xs">${""}{inDollars}</p>
         </div>
       </div>
     </div>
