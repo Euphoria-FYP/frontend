@@ -45,12 +45,12 @@ const MarketPlace = () => {
           inDollars={1800.9}
         />
       </div>
-      <div className=" flex flex-col w-[25%] py-[10px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow ">
-        <div className=" flex items-end gap-4 border-b-2 my-3 py-3 border-[#141414]">
+      <div className=" flex flex-col w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace">
+        <div className="lfr-direction flex items-end gap-4 border-b-2 pb-3 border-[#141414]">
           <h2 className=" text-lg font-medium">Filters</h2>
           <button className=" font-medium">Clear all</button>
         </div>
-        <div className=" flex flex-col gap-3 mt-5">
+        <div className="lfr-direction flex flex-col gap-3 mt-3">
           <h2 className=" text-lg font-medium">Collections</h2>
           <div className="relative flex gap-2 w-full">
             <input
@@ -61,7 +61,7 @@ const MarketPlace = () => {
             <BiSearchAlt className=" absolute right-[14px] top-[14px] text-white text-2xl" />
           </div>
         </div>
-        <div className=" flex flex-col gap-3 mt-3">
+        <div className="lfr-direction flex flex-col gap-3 mt-3">
           <h2 className=" text-lg font-medium">Status</h2>
           <div className=" flex gap-2 w-full">
             <button className=" rounded-lg bg-[#141414] text-sm font-medium py-2 px-4 w-[50%]">
@@ -72,7 +72,7 @@ const MarketPlace = () => {
             </button>
           </div>
         </div>
-        <div className=" flex flex-col gap-3 mt-3">
+        <div className="lfr-direction flex flex-col gap-3 mt-3">
           <h2 className=" text-lg font-medium">Price</h2>
           <div className=" flex gap-2 w-full">
             <input
@@ -87,10 +87,30 @@ const MarketPlace = () => {
             />
           </div>
         </div>
+        <div className="lfr-direction flex flex-col gap-3 mt-3">
+          <h2 className=" text-lg font-medium">MarktePlace Tags</h2>
+          <div className=" flex flex-wrap gap-2 w-full">
+            <button className=" rounded-lg bg-[#141414] text-sm py-2 px-4 ">
+              Sports
+            </button>
+            <button className=" rounded-lg bg-[#141414] text-sm py-2 px-4 ">
+              Music
+            </button>
+            <button className=" rounded-lg bg-[#141414] text-sm py-2 px-4 ">
+              Art
+            </button>
+            <button className=" rounded-lg bg-[#141414] text-sm py-2 px-4 ">
+              Game
+            </button>
+            <button className=" rounded-lg bg-[#141414] text-sm py-2 px-4 ">
+              Painting
+            </button>
+          </div>
+        </div>
         {/* TOP Ctegory */}
-        <div className=" flex flex-col gap-3 mt-3">
+        <div className="lfr-direction flex flex-col gap-3 mt-3">
           <h2 className=" text-lg font-medium">Top Contributers</h2>
-          <div className=" h-[170px] flex flex-col gap-2 overflow-y-auto  scrollbarHide">
+          <div className=" h-[180px] flex flex-col gap-2 overflow-y-auto  scrollbarHide">
             {cards.map((card, index) => (
               <MarketContrubutor
                 key={index}
