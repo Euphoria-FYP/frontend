@@ -1,11 +1,17 @@
 import React, { ReactNode } from "react";
 import Sidebar from "../Sidebar";
 
-const index = ({ children }: { children: ReactNode }) => {
+const index = ({
+  children,
+  bgImgClass,
+}: {
+  children: ReactNode;
+  bgImgClass: string;
+}) => {
   return (
-    <main className="layout -z-10">
+    <main className={`${bgImgClass}`}>
       <Sidebar />
-      <div>{children}</div>
+      <div className=" ml-[65px]">{children}</div>
     </main>
   );
 };

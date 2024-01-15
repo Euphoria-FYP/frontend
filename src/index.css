@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @font-face {
   font-family: "CodeNewRoman";
   src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf")
@@ -18,14 +17,26 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.layout {
+.homeBgImg {
   background-image: url("./assets/images/BgHome–2.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
+.marketPlaceBgImg {
+  background-image: url("./assets/images/Home–2b.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.marketPlaceBoxShadow{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
 .CodeNewRomanFont {
   font-family: "CodeNewRoman", sans-serif;
+}
+.BarlowFont {
+  font-family: "Barlow", sans-serif;
 }
 
 .scrollbarHide::-webkit-scrollbar {
@@ -47,28 +58,22 @@ body {
   0% {
     border-color: #518eff;
   }
-  25% {
+  20% {
     border-color: #b725ff;
   }
-  50% {
+  40% {
     border-color: #518eff;
   }
-  75% {
+  60% {
+    border-color: #b725ff;
+  }
+  80% {
     border-color: #518eff;
   }
   100% {
     border-color: #b725ff;
   }
 }
-
-/* .main-card {
-  position: relative;
-  transition: transform 0.5s;
-}
-
-.main-card:hover {
-  transform: rotate(5deg) perspective(100px) translateY(30px); 
-} */
 
 .card {
   position: relative;

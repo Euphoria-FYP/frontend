@@ -4,7 +4,7 @@ import Layout from "../../Components/Shared/Layout";
 
 const index = () => {
   return (
-    <Layout>
+    <Layout bgImgClass={"homeBgImg"}>
       <Home />
     </Layout>
   );
