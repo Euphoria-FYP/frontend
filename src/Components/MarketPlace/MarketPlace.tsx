@@ -1,8 +1,8 @@
-import ContributorCard from "../Home/ContributorCard";
 import MarketPlaceCard from "../Shared/MarketPlaceCard";
 import Collection from "./Collection";
 import { BiSearchAlt } from "react-icons/bi";
 import { cards } from "../Home/Contributor";
+import MarketContrubutor from "./MarketContrubutor";
 
 const MarketPlace = () => {
   return (
@@ -90,9 +90,9 @@ const MarketPlace = () => {
         {/* TOP Ctegory */}
         <div className=" flex flex-col gap-3 mt-3">
           <h2 className=" text-lg font-medium">Top Contributers</h2>
-          <div className=" h-[150px] overflow-y-auto  scrollbarHide">
+          <div className=" h-[170px] flex flex-col gap-2 overflow-y-auto  scrollbarHide">
             {cards.map((card, index) => (
-              <ContributorCard
+              <MarketContrubutor
                 key={index}
                 name={card.name}
                 ethAmount={card.ethAmount}
