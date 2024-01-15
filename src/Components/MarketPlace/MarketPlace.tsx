@@ -45,7 +45,7 @@ const MarketPlace = () => {
           inDollars={1800.9}
         />
       </div>
-      <div className="  w-[25%] py-[32px] px-[44px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow ">
+      <div className=" flex flex-col w-[25%] py-[10px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow ">
         <div className=" flex items-end gap-4 border-b-2 my-3 py-3 border-[#141414]">
           <h2 className=" text-lg font-medium">Filters</h2>
           <button className=" font-medium">Clear all</button>
@@ -90,7 +90,7 @@ const MarketPlace = () => {
         {/* TOP Ctegory */}
         <div className=" flex flex-col gap-3 mt-3">
           <h2 className=" text-lg font-medium">Top Contributers</h2>
-          <div className=" h-full overflow-y-auto whitespace-nowrap scrollbarHide">
+          <div className=" h-[150px] overflow-y-auto  scrollbarHide">
             {cards.map((card, index) => (
               <ContributorCard
                 key={index}
