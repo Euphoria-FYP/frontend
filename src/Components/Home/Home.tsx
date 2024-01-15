@@ -6,6 +6,7 @@ import NftBanner from "./NftBanner";
 import Contributor from "./Contributor";
 import MarketPlace from "./MarketPlace";
 import FAQ from "./FAQ";
+import Footer from "../Shared/Footer/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Contributor />
       <NftBanner />
       <FAQ/>
+      <Footer/>
     </>
   );
 };

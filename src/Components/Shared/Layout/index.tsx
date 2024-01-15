@@ -1,9 +1,10 @@
 import React, { ReactNode } from "react";
 import Sidebar from "../Sidebar";
+import Footer from "../Footer/Footer";
 
 const index = ({ children }: { children: ReactNode }) => {
   return (
-    <main className="layout -z-10">
+    <main className="layout flex">
       <Sidebar />
       <div>{children}</div>
     </main>
