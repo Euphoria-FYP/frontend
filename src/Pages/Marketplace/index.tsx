@@ -1,9 +1,12 @@
-import React from 'react'
+import MarketPlace from "../../Components/MarketPlace/MarketPlace";
+import Layout from "../../Components/Shared/Layout";
 
 const index = () => {
   return (
-    <div>MarketPlace</div>
-  )
-}
+    <Layout bgImgClass={"marketPlaceBgImg"}>
+      <MarketPlace />
+    </Layout>
+  );
+};
 
-export default index
+export default index;

@@ -6,7 +6,7 @@ interface CardProps {
   ethAmount: string;
 }
 
-const cards: CardProps[] = [
+export const cards: CardProps[] = [
   { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
   { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
   { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },

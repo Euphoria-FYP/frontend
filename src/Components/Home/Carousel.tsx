@@ -28,14 +28,14 @@ const carouselData = [
 const Carousel = () => {
   const [carousel, setCarousel] = useState(carouselData[0]);
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     const currentIndex = carouselData.findIndex((item) => item === carousel);
-  //     const nextIndex = (currentIndex + 1) % carouselData.length;
-  //     setCarousel(carouselData[nextIndex]);
-  //   }, 6000);
-  //   return () => clearInterval(intervalId);
-  // }, [carousel, carouselData]);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const currentIndex = carouselData.findIndex((item) => item === carousel);
+      const nextIndex = (currentIndex + 1) % carouselData.length;
+      setCarousel(carouselData[nextIndex]);
+    }, 6000);
+    return () => clearInterval(intervalId);
+  }, [carousel, carouselData]);
 
   return (
     <>
