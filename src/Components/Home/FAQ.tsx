@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+import { IoIosArrowUp,IoIosArrowDown } from "react-icons/io";
 
 const FAQ = () => {
   const [openIndexes, setOpenIndexes] = useState<boolean[]>([
@@ -13,7 +13,7 @@ const FAQ = () => {
     let newOpenIndexes: boolean[] = [];
 
     newOpenIndexes = openIndexes.map((item, i) => {
-      return i === index ? !openIndexes[i] : item;
+      return i === index ? !openIndexes[i] : false;
     });
 
     setOpenIndexes(newOpenIndexes);
@@ -42,37 +42,9 @@ const FAQ = () => {
                 </span>
                 <span className="ml-6 flex h-7 items-center">
                   {openIndexes[0] ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M18 12H6"
-                      ></path>
-                    </svg>
+                    <IoIosArrowUp className=" text-xl" />
                   ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 6v12m6-6H6"
-                      ></path>
-                    </svg>
+                    <IoIosArrowDown className=" text-xl" />
                   )}
                 </span>
               </button>
@@ -95,37 +67,9 @@ const FAQ = () => {
                 </span>
                 <span className="ml-6 flex h-7 items-center">
                   {openIndexes[1] ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M18 12H6"
-                      ></path>
-                    </svg>
+                    <IoIosArrowUp className=" text-xl" />
                   ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 6v12m6-6H6"
-                      ></path>
-                    </svg>
+                    <IoIosArrowDown className=" text-xl" />
                   )}
                 </span>
               </button>
@@ -150,37 +94,9 @@ const FAQ = () => {
                 </span>
                 <span className="ml-6 flex h-7 items-center">
                   {openIndexes[2] ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M18 12H6"
-                      ></path>
-                    </svg>
+                    <IoIosArrowUp  className=" text-xl"/>
                   ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 6v12m6-6H6"
-                      ></path>
-                    </svg>
+                    <IoIosArrowDown className=" text-xl" />
                   )}
                 </span>
               </button>
@@ -205,37 +121,9 @@ const FAQ = () => {
                 </span>
                 <span className="ml-6 flex h-7 items-center">
                   {openIndexes[3] ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M18 12H6"
-                      ></path>
-                    </svg>
+                    <IoIosArrowUp className=" text-xl" />
                   ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      className="h-6 w-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 6v12m6-6H6"
-                      ></path>
-                    </svg>
+                    <IoIosArrowDown className=" text-xl" />
                   )}
                 </span>
               </button>
