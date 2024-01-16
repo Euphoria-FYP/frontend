@@ -6,7 +6,7 @@ const index = ({ children }: { children: ReactNode }) => {
   return (
     <main className="layout flex">
       <Sidebar />
-      <div>{children}</div>
+      <div className="ml-[65px]">{children}</div>
     </main>
   );
 };
