@@ -25,13 +25,18 @@ const MarketPlace = () => {
 
   const handleDropDownClick = (index: number) => {
     let newOpenDropDown: boolean[] = [];
-
     newOpenDropDown = openDropDown.map((item, i) => {
       return i === index ? !openDropDown[i] : false;
     });
-
     setOpenDropDown(newOpenDropDown);
   };
+
+  const uniqueMarketplaceNames: string[] = [
+    ...marketPlaceData.flatMap((item) =>
+      item.nft.map((nft) => nft.marketplace)
+    ),
+  ];
+  console.log(uniqueMarketplaceNames);
 
   return (
     <>
@@ -42,39 +47,52 @@ const MarketPlace = () => {
           <div className=" flex gap-8 text-[#cfcfcf]">
             <div className="relative flex flex-col gap-2 w-[270px] ">
               <button
-                className=" text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
+                className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
                 onClick={() => handleDropDownClick(0)}
               >
-                Categories
+                <span>Categories</span>
+                {openDropDown[0] ? (
+                  <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
+                ) : (
+                  <IoIosArrowDown className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
+                )}
               </button>
-              {openDropDown[0] ? (
-                <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg" />
-              ) : (
-                <IoIosArrowDown className=" absolute right-[14px] top-[15px] text-lg" />
-              )}
               <div
                 className={`${
                   openDropDown[0] ? "block" : "hidden"
-                }  top-14 rounded-lg z-50 absolute w-[270px] h-[300px] bg-[#1e1e23] `}
-              ></div>
+                }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown`}
+              >
+                {uniqueMarketplaceNames.map((item) => (
+                  <p className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer">
+                    {item}
+                  </p>
+                ))}
+              </div>
             </div>
             <div className="relative flex gap-2 w-[270px]">
               <button
-                className=" text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
+                className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
                 onClick={() => handleDropDownClick(1)}
               >
-                Sort by
+                <span>Sort by</span>
+                {openDropDown[1] ? (
+                  <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
+                ) : (
+                  <IoIosArrowDown className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
+                )}
               </button>
-              {openDropDown[1] ? (
-                <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg" />
-              ) : (
-                <IoIosArrowDown className=" absolute right-[14px] top-[15px] text-lg" />
-              )}
               <div
                 className={`${
                   openDropDown[1] ? "block" : "hidden"
-                }  top-14 rounded-lg z-50 absolute w-[270px] h-[150px] bg-[#1e1e23] `}
-              ></div>
+                }  top-14 rounded-lg z-50 absolute w-[270px] py-[6px] bg-[#1e1e23] `}
+              >
+                <p className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer">
+                  Price: low to high
+                </p>
+                <p className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer">
+                  Price: high to low
+                </p>
+              </div>
             </div>
           </div>
           {/* NFTCARDS */}
@@ -112,9 +130,9 @@ const MarketPlace = () => {
               <input
                 type="text"
                 placeholder="Search"
-                className="  rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
+                className="  rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full placeholder-[#cfcfcf]"
               />
-              <BiSearchAlt className=" absolute right-[14px] top-[14px] text-white text-2xl" />
+              <BiSearchAlt className=" absolute right-[14px] top-[14px] text-2xl" />
             </div>
           </div>
           <div className="lfr-direction flex flex-col gap-4 mt-3">
@@ -134,12 +152,12 @@ const MarketPlace = () => {
               <input
                 type="text"
                 placeholder="Min"
-                className=" rounded-lg text-center bg-[#1e1e23] text-sm font-medium py-2 px-4 w-[50%] focus:outline-none"
+                className=" rounded-lg text-center bg-[#1e1e23] text-sm font-medium py-2 px-4 w-[50%] focus:outline-none placeholder-[#cfcfcf]"
               />
               <input
                 type="text"
                 placeholder="Max"
-                className=" rounded-lg text-center bg-[#1e1e23] text-sm font-medium py-2 px-4 w-[50%] focus:outline-none"
+                className=" rounded-lg text-center bg-[#1e1e23] text-sm font-medium py-2 px-4 w-[50%] focus:outline-none placeholder-[#cfcfcf]"
               />
             </div>
           </div>

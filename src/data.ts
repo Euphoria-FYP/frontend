@@ -54,7 +54,7 @@ export const marketPlaceData: MarketPlaceItem[] = [
     category: "Art",
     nft: [
       {
-        marketplace: "drawing",
+        marketplace: "Drawing",
         name: "Huzaifa",
         userName: "huzzi90",
         currentBid: 0.415,
@@ -67,14 +67,14 @@ export const marketPlaceData: MarketPlaceItem[] = [
     category: "Music",
     nft: [
       {
-        marketplace: "pop",
+        marketplace: "Pop Singer",
         name: "Ahsan Omerjee",
         userName: "ahsan2002",
         currentBid: 0.584,
         inDollars: 1900.2,
       },
       {
-        marketplace: "concerts",
+        marketplace: "Concerts",
         name: "Bob Johnson",
         userName: "bob_j",
         currentBid: 0.789,
