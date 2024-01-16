@@ -17,7 +17,7 @@ const Home = () => {
       <Contributor />
       <NftBanner />
       <FAQ/>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 };

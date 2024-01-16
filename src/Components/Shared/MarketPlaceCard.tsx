@@ -11,7 +11,7 @@ type MarketCardProps = {
 
 const MarketPlaceCard: React.FC <MarketCardProps> = ({name,userName,currentBid, inDollars })=> {
   return (
-    <div className="card main-card flex flex-col gap-4 px-3 py-5 text-white w-[270px] bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer">
+    <div className="card main-card flex flex-col gap-4 px-3 py-5 text-white w-[270px] bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer h-[390px]">
       <div className=" flex justify-between items-center">
         <div className=" flex gap-2">
           <img
