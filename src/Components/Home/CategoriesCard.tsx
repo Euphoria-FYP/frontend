@@ -1,9 +1,5 @@
 import React from "react";
-
-export interface CategoriesCardProps {
-  title: string;
-  cardimage: string;
-}
+import { CategoriesCardProps } from "@/types";
 
 const CategoriesCard: React.FC<CategoriesCardProps> = ({
   title,

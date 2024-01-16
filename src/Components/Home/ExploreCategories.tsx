@@ -1,20 +1,8 @@
 import React from "react";
-import CategoriesCard from "./CategoriesCard";
 import StyledButton from "../Shared/StyledButton";
-import { CategoriesCardProps } from "./CategoriesCard";
+import CategoriesCard from "./CategoriesCard";
+import { Categories } from "../../data";
 
-import Art from '../../assets/images/art.jpg'
-import Game from '../../assets/images/game.jpg'
-import Music from '../../assets/images/music.jpg'
-import Sports from '../../assets/images/sports.jpg'
-
-
-const Categories: CategoriesCardProps[] = [
-  { title: "Art", cardimage: Art },
-  { title: "Game", cardimage: Game },
-  { title: "Music", cardimage: Music },
-  { title: "Sports", cardimage: Sports},
-];
 
 const ExploreCategories = () => {
   return (

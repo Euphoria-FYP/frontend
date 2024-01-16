@@ -1,22 +1,6 @@
 import React from "react";
 import ContributorCard from "./ContributorCard";
-
-interface CardProps {
-  name: string;
-  ethAmount: string;
-}
-
-export const cards: CardProps[] = [
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-];
+import { cards } from "../../data";
 
 const Contributor = () => {
   return (
