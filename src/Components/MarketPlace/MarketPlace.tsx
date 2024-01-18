@@ -168,7 +168,7 @@ const MarketPlace = () => {
                 return (
                   <button
                     className={` rounded-lg ${
-                      category === item.tag ? `bg-[#7000ff]` : `bg-[#141414]`
+                      category === item.tag ? `bg-[#7000ff]` : `bg-[#1e1e23]`
                     } text-sm py-2 px-4 `}
                     onClick={() => tagsFilter(item.tag)}
                   >

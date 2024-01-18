@@ -39,9 +39,9 @@ const Carousel = () => {
 
   return (
     <>
-      <section className="relative text-white h-screen w-full md:w-4/5 flex md:flex-row flex-col justify-center md:justify-between items-center md:gap-6 mx-auto md:px-0 px-5">
+      <section className="relative text-white md:h-screen w-full md:w-4/5 flex md:flex-row flex-col justify-center md:justify-between items-center md:gap-6 mx-auto md:px-0 px-5 pt-24 md:pt-0 pb-16 md:pb-0">
         {/* BUTTON SECTION */}
-        <div className="   absolute flex gap-3 md:top-6 top-4 md:right-2 right-4">
+        <div className="   absolute flex gap-3 md:top-6 top-3 md:right-2 right-4">
           <img
             src={carouselImg1}
             alt="carousel1"
@@ -60,28 +60,26 @@ const Carousel = () => {
           />
         </div>
         {/* LEFT SIDE */}
-        <div className=" w-full md:w-[55%] flex flex-col md:gap-6 gap-4">
+        <div className=" w-full md:w-[55%] flex flex-col md:gap-6 gap-1">
           {/* <h1 className=" text-[32px] font-bold">{carousel.title}</h1> */}
-          <img src={ephHeading} alt="Heading" className=" w-56" />
+          <img src={ephHeading} alt="Heading" className=" md:w-56 w-36" />
           <h3
-            className={` text-[38px] md:text-[48px] w-full md:w-[90%] font-semibold leading-[50px] CodeNewRomanFont`}
+            className={`mt-4 md:mt-0 text-[42px]  md:text-[48px] w-full md:w-[90%] font-semibold md:leading-[50px] leading-[48px] CodeNewRomanFont`}
             dangerouslySetInnerHTML={{ __html: carousel.heading }}
-          >
-            {/* {carousel.heading} */}
-          </h3>
-          <p className="  w-full md:w-[80%] text-sm text-[#cfcfcf]">
+          ></h3>
+          <p className=" w-full md:w-[80%] md:text-sm text-[13px] text-[#cfcfcf]">
             {carousel.description}
           </p>
-          <div className=" mx-auto my-5 w-60 md:hidden flex justify-center items-center">
-          <img src={carousel.img} alt="carouselImg" className="  " />
-        </div>
+          <div className="mt-4 md:mt-0 mx-auto my-5 w-60 md:hidden flex justify-center items-center">
+            <img src={carousel.img} alt="carouselImg" className="  " />
+          </div>
           {carousel.id === 1 && (
             <>
-              <div className=" flex gap-8">
+              <div className="mt-4 md:mt-0 flex gap-8 w-full">
                 <StyledButton heading="Sell" width={130} />
                 <StyledButton heading="Create" width={130} />
               </div>
-              <div className=" flex gap-8">
+              <div className="mt-4 md:mt-0 flex gap-8">
                 <div className=" flex flex-col">
                   <p className=" text-3xl CodeNewRomanFont">15K+</p>
                   <span className="text-[#cfcfcf] text-sm tracking-widest">
@@ -104,13 +102,13 @@ const Carousel = () => {
             </>
           )}
           {carousel.id === 2 && (
-            <div className=" flex gap-8">
+            <div className="mt-4 md:mt-0 flex gap-8 md:justify-start justify-center">
               <StyledButton heading="Connect Wallet" width={180} />
             </div>
           )}
         </div>
         {/* RIGHT SIDE */}
-        <div className=" w-[40%] mt-20 hidden md:flex justify-center justify-end items-center">
+        <div className=" w-[40%] mt-20 hidden md:flex justify-end items-center">
           <img src={carousel.img} alt="carouselImg" className="  " />
         </div>
       </section>
