@@ -173,9 +173,11 @@ const MarketPlace = () => {
             </div>
           </div>
           {/* NFTCARDS */}
-          <div className={`  flex flex-wrap justify-start ${
-            isSidebarOpen ? "gap-8" : " gap-6"
-          } pb-12 overflow-y-auto whitespace-nowrap scrollbarHide `}>
+          <div
+            className={`  flex flex-wrap justify-start ${
+              isSidebarOpen ? "gap-8" : " gap-6"
+            } pb-12 overflow-y-auto whitespace-nowrap scrollbarHide `}
+          >
             {type === "tags" ? (
               filterData ? (
                 filterData.map((card: any, index: number) =>
