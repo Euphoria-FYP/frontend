@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "../src/Pages/Home";
 import MarketPlace from "../src/Pages/Marketplace";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import SingleNft from "./Components/SingleNFT/SingleNft";
 
 function App() {
   const router = createBrowserRouter([
@@ -12,6 +13,10 @@ function App() {
     {
       path: '/marketplace',
       element: <MarketPlace />
+    },
+    {
+      path: '/singlenft',
+      element: <SingleNft />
     },
   ])
   return (
