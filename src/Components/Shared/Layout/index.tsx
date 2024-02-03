@@ -12,7 +12,7 @@ const index = ({
   return (
     <main className={`${bgImgClass}`}>
       <Sidebar />
-      <div className="md:ml-[65px]">{children}</div>
+      <div className="md:ml-[70px]">{children}</div>
     </main>
   );
 };
