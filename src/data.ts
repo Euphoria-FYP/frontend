@@ -17,8 +17,22 @@ export const marketPlaceData: MarketPlaceItem[] = [
         marketplace: "cricket",
         name: "Daniyal Saleem",
         userName: "dani36",
+        currentBid: 0.899,
+        inDollars: 3400.5,
+      },
+      {
+        marketplace: "cricket",
+        name: "Daniyal Saleem",
+        userName: "dani36",
         currentBid: 0.854,
         inDollars: 1400.5,
+      },
+      {
+        marketplace: "cricket",
+        name: "Inzamam malik",
+        userName: "inzzi36",
+        currentBid: 0.321,
+        inDollars: 2100.5,
       },
       {
         marketplace: "badminton",

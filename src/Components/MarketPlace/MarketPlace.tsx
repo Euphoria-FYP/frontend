@@ -3,25 +3,70 @@ import Collection from "./Collection";
 import { BiSearchAlt } from "react-icons/bi";
 import { cards } from "../../data";
 import MarketContrubutor from "./MarketContrubutor";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { marketPlaceData, tags } from "../../data";
-import { MarketPlaceItem } from "@/types";
+import { MarketPlaceItem, NFT } from "@/types";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
 const MarketPlace = () => {
-  const [filterData, setFilterData] =
-    useState<MarketPlaceItem[]>(marketPlaceData);
+  const [filterData, setFilterData] = useState<MarketPlaceItem[] | NFT[]>(
+    marketPlaceData
+  );
+  const [type, setType] = useState<string>("tags");
+  const [tag, setTag] = useState<string>("");
   const [category, setCategory] = useState<string>("");
-
-  const tagsFilter = (tag: string) => {
-    const filteredItems: MarketPlaceItem[] = marketPlaceData.filter(
-      (item) => item.category === tag
-    );
-    setFilterData(filteredItems);
-    setCategory(tag);
-  };
-
   const [openDropDown, setOpenDropDown] = useState<boolean[]>([false, false]);
+
+  const tagsFilter = (tag: string, filtertype: string) => {
+    if (filtertype === "tags") {
+      console.log("testing", tag, type);
+      const filteredItems: MarketPlaceItem[] = marketPlaceData.filter(
+        (item) => item.category === tag
+      );
+      setFilterData(filteredItems);
+      setTag(tag);
+    } else if (filtertype === "category") {
+      const subcategory = tag.toLowerCase();
+      const categoryfilter: NFT[] = marketPlaceData.flatMap((item) =>
+        item.nft.filter((nftItem) => nftItem.marketplace === subcategory)
+      );
+      setFilterData(categoryfilter);
+      setCategory(tag);
+      setOpenDropDown([!openDropDown[0], ...openDropDown.slice(1)]);
+    } else if (filtertype === "sort") {
+      if (type === "tags") {
+        if (tag === "ltoh") {
+          console.log("ltohtag", tag);
+          const sortfilter: NFT[] = filterData
+            .flatMap((item: any) => item.nft)
+            .sort((a, b) => a.inDollars - b.inDollars);
+          setFilterData(sortfilter);
+        } else if (tag === "htol") {
+          console.log("htoltag", tag);
+          const sortfilter: NFT[] = filterData
+            .flatMap((item: any) => item.nft)
+            .sort((a, b) => b.inDollars - a.inDollars);
+          setFilterData(sortfilter);
+        }
+      } else if (type === "category") {
+        if (tag === "ltoh") {
+          console.log(tag);
+          const sortfilter = filterData.sort(
+            (a: any, b: any) => a.inDollars - b.inDollars
+          );
+          setFilterData(sortfilter);
+        } else if (tag === "htol") {
+          console.log("hhhh", tag);
+          const sortfilter = filterData.sort(
+            (a: any, b: any) => b.inDollars - a.inDollars
+          );
+          setFilterData(sortfilter);
+        }
+      }
+      console.log("checking");
+      setOpenDropDown([!openDropDown[1], ...openDropDown.slice(0)]);
+    }
+  };
 
   const handleDropDownClick = (index: number) => {
     let newOpenDropDown: boolean[] = [];
@@ -31,12 +76,14 @@ const MarketPlace = () => {
     setOpenDropDown(newOpenDropDown);
   };
 
-  const uniqueMarketplaceNames: string[] = [
-    ...marketPlaceData.flatMap((item) =>
-      item.nft.map((nft) => nft.marketplace)
-    ),
-  ];
+  const uniqueMarketplaceNames: string[] = marketPlaceData
+    .flatMap((item) => item.nft.map((nft) => nft.marketplace))
+    .filter((value, index, self) => self.indexOf(value) === index);
   console.log(uniqueMarketplaceNames);
+
+  useEffect(() => {
+    console.log("hello", filterData);
+  }, [filterData]);
 
   return (
     <>
@@ -50,7 +97,7 @@ const MarketPlace = () => {
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
                 onClick={() => handleDropDownClick(0)}
               >
-                <span>Categories</span>
+                <span>{category ? category : "Categories"}</span>
                 {openDropDown[0] ? (
                   <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
                 ) : (
@@ -63,7 +110,13 @@ const MarketPlace = () => {
                 }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown`}
               >
                 {uniqueMarketplaceNames.map((item) => (
-                  <p className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer">
+                  <p
+                    className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
+                    onClick={() => {
+                      tagsFilter(item, "category");
+                      setType("category");
+                    }}
+                  >
                     {item}
                   </p>
                 ))}
@@ -86,10 +139,22 @@ const MarketPlace = () => {
                   openDropDown[1] ? "block" : "hidden"
                 }  top-14 rounded-lg z-50 absolute w-[270px] py-[6px] bg-[#1e1e23] `}
               >
-                <p className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer">
+                <p
+                  className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
+                  onClick={() => {
+                    tagsFilter("ltoh", "sort");
+                    setType("sort");
+                  }}
+                >
                   Price: low to high
                 </p>
-                <p className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer">
+                <p
+                  className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
+                  onClick={() => {
+                    tagsFilter("htol", "sort");
+                    setType("sort");
+                  }}
+                >
                   Price: high to low
                 </p>
               </div>
@@ -97,20 +162,44 @@ const MarketPlace = () => {
           </div>
           {/* NFTCARDS */}
           <div className="  flex flex-wrap justify-start gap-8 pb-12 overflow-y-auto whitespace-nowrap scrollbarHide ">
-            {filterData.length > 0 ? (
-              filterData.map((card, index) =>
-                card.nft.map((nft) => {
-                  return (
-                    <MarketPlaceCard
-                      key={index}
-                      name={nft.name}
-                      userName={nft.userName}
-                      currentBid={nft.currentBid}
-                      inDollars={nft.inDollars}
-                    />
-                  );
-                })
+            {type === "tags" ? (
+              filterData ? (
+                filterData.map((card: any, index: number) =>
+                  card.nft.map((nft: any) => {
+                    console.log(nft);
+                    console.log(tag);
+                    console.log(type);
+                    return (
+                      <MarketPlaceCard
+                        key={index}
+                        name={nft.name}
+                        userName={nft.userName}
+                        currentBid={nft.currentBid}
+                        inDollars={nft.inDollars}
+                      />
+                    );
+                  })
+                )
+              ) : (
+                <div className="flex justify-center items-center mx-auto text-white">
+                  <h1>No Data Found</h1>
+                </div>
               )
+            ) : (type === "category" || type === "sort") &&
+              filterData.length > 0 ? (
+              filterData &&
+              filterData.map((nft: any, index: any) => {
+                console.log(nft);
+                return (
+                  <MarketPlaceCard
+                    key={index}
+                    name={nft.name}
+                    userName={nft.userName}
+                    currentBid={nft.currentBid}
+                    inDollars={nft.inDollars}
+                  />
+                );
+              })
             ) : (
               <div className="flex justify-center items-center mx-auto text-white">
                 <h1>No Data Found</h1>
@@ -168,9 +257,13 @@ const MarketPlace = () => {
                 return (
                   <button
                     className={` rounded-lg ${
-                      category === item.tag ? `bg-[#7000ff]` : `bg-[#141414]`
+                      tag === item.tag ? `bg-[#7000ff]` : `bg-[#141414]`
                     } text-sm py-2 px-4 `}
-                    onClick={() => tagsFilter(item.tag)}
+                    onClick={() => {
+                      tagsFilter(item.tag, "tags");
+                      setType("tags");
+                      setCategory("");
+                    }}
                   >
                     {item.tag}
                   </button>

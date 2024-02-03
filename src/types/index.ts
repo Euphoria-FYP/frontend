@@ -1,4 +1,4 @@
-type NFT = {
+export type NFT = {
   marketplace: string;
   name: string;
   userName: string;
