@@ -9,7 +9,7 @@ const Contributor = () => {
         <h2 className="uppercase  font-semibold text-xl text-[#B900FF]">
           NFT Creators
         </h2>
-        <h1 className=" text-white font-semibold text-4xl md:text-5xl tracking-wider CodeNewRomanFont">
+        <h1 className=" text-white font-semibold text-3xl md:text-5xl tracking-wider CodeNewRomanFont">
           Top Contributors
         </h1>
       </div>

@@ -17,7 +17,7 @@ const MarketPlace = () => {
         <h2 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">
           NFT MARKETPLACE
         </h2>
-        <h1 className=" text-white text-center font-semibold text-4xl md:text-5xl tracking-wider CodeNewRomanFont">
+        <h1 className=" text-white text-center font-semibold text-3xl md:text-5xl tracking-wider CodeNewRomanFont">
           Super Hot Drops
         </h1>
       </div>
@@ -50,7 +50,7 @@ const MarketPlace = () => {
           />
         </div>
         {/* CARDS */}
-        <div className=" flex flex-wrap justify-center gap-16">
+        <div className=" mx-auto flex md:flex-wrap md:justify-center justify-center gap-4 md:gap-16 md:w-[90%] w-[88%] overflow-x-auto whitespace-nowrap scrollbarHide">
           {marketPlaceData.map((card, index) =>
             card.nft.map((nft) => {
               return (
