@@ -20,11 +20,11 @@ const MarketPlace = () => {
   const [type, setType] = useState<string>("tags");
   const [tag, setTag] = useState<string>("");
   const [category, setCategory] = useState<string>("");
+  const [sort, setSort] = useState<string>("");
   const [openDropDown, setOpenDropDown] = useState<boolean[]>([false, false]);
 
   const tagsFilter = (tag: string, filtertype: string) => {
     if (filtertype === "tags") {
-      console.log("testing", tag, type);
       const filteredItems: MarketPlaceItem[] = marketPlaceData.filter(
         (item) => item.category === tag
       );
@@ -41,34 +41,29 @@ const MarketPlace = () => {
     } else if (filtertype === "sort") {
       if (type === "tags") {
         if (tag === "ltoh") {
-          console.log("ltohtag", tag);
           const sortfilter: NFT[] = filterData
             .flatMap((item: any) => item.nft)
             .sort((a, b) => a.inDollars - b.inDollars);
           setFilterData(sortfilter);
         } else if (tag === "htol") {
-          console.log("htoltag", tag);
           const sortfilter: NFT[] = filterData
             .flatMap((item: any) => item.nft)
             .sort((a, b) => b.inDollars - a.inDollars);
           setFilterData(sortfilter);
         }
-      } else if (type === "category") {
+      } else if (type === "category" || type === "sort") {
         if (tag === "ltoh") {
-          console.log(tag);
           const sortfilter = filterData.sort(
             (a: any, b: any) => a.inDollars - b.inDollars
           );
           setFilterData(sortfilter);
         } else if (tag === "htol") {
-          console.log("hhhh", tag);
           const sortfilter = filterData.sort(
             (a: any, b: any) => b.inDollars - a.inDollars
           );
           setFilterData(sortfilter);
         }
       }
-      console.log("checking");
       setOpenDropDown([!openDropDown[1], ...openDropDown.slice(0)]);
     }
   };
@@ -84,11 +79,11 @@ const MarketPlace = () => {
   const uniqueMarketplaceNames: string[] = marketPlaceData
     .flatMap((item) => item.nft.map((nft) => nft.marketplace))
     .filter((value, index, self) => self.indexOf(value) === index);
-  console.log(uniqueMarketplaceNames);
 
-  useEffect(() => {
-    console.log("hello", filterData);
-  }, [filterData]);
+  // useEffect(() => {
+  //   console.log("hello", filterData);
+  // }, [filterData]);
+
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
 
   return (
@@ -139,7 +134,7 @@ const MarketPlace = () => {
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
                 onClick={() => handleDropDownClick(1)}
               >
-                <span>Sort by</span>
+                <span>{sort ? sort : "Sort by"}</span>
                 {openDropDown[1] ? (
                   <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
                 ) : (
@@ -155,6 +150,7 @@ const MarketPlace = () => {
                   className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
                   onClick={() => {
                     tagsFilter("ltoh", "sort");
+                    setSort("Price: low to high");
                     setType("sort");
                   }}
                 >
@@ -164,6 +160,7 @@ const MarketPlace = () => {
                   className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
                   onClick={() => {
                     tagsFilter("htol", "sort");
+                    setSort("Price: high to low");
                     setType("sort");
                   }}
                 >
@@ -182,9 +179,6 @@ const MarketPlace = () => {
               filterData ? (
                 filterData.map((card: any, index: number) =>
                   card.nft.map((nft: any) => {
-                    console.log(nft);
-                    console.log(tag);
-                    console.log(type);
                     return (
                       <MarketPlaceCard
                         key={index}
@@ -286,12 +280,13 @@ const MarketPlace = () => {
                   return (
                     <button
                       className={` rounded-lg ${
-                        category === item.tag ? `bg-[#7000ff]` : `bg-[#1e1e23]`
+                        tag === item.tag ? `bg-[#7000ff]` : `bg-[#1e1e23]`
                       } text-sm py-2 px-4 `}
                       onClick={() => {
                         tagsFilter(item.tag, "tags");
                         setType("tags");
                         setCategory("");
+                        setSort("");
                       }}
                     >
                       {item.tag}
