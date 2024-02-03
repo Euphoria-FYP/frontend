@@ -6,12 +6,9 @@
 
 @font-face {
   font-family: "CodeNewRoman";
-  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf")
-      format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf")
-      format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf")
-      format("truetype");
+  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf") format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf") format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf") format("truetype");
 }
 
 body {
@@ -31,7 +28,11 @@ body {
 }
 
 .marketPlaceBoxShadow {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background: rgba(31, 32, 69, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
 .CodeNewRomanFont {
@@ -134,11 +135,9 @@ body {
   left: 0;
   width: 260px;
   /* height: 100%; */
-  background: linear-gradient(
-    90deg,
-    rgba(226, 37, 122, 0.4) 0%,
-    rgba(86, 59, 218, 0.4) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(226, 37, 122, 0.4) 0%,
+      rgba(86, 59, 218, 0.4) 100%);
   border-radius: 8px;
   transition: transform 0.3s;
   z-index: -1;
