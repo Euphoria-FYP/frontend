@@ -1,64 +1,154 @@
+import { FiHeart } from "react-icons/fi";
+import { BsThreeDots } from "react-icons/bs";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { useState } from "react";
+import DetailTab from "./DetailTab";
+import BidTab from "./BidTab";
+
+interface TabButtonType {
+  id: number;
+  title: string;
+}
+
+const tabButtons = [
+  {
+    id: 1,
+    title: "Bids",
+  },
+  {
+    id: 2,
+    title: "Details",
+  },
+  {
+    id: 3,
+    title: "History",
+  },
+];
+
 const SingleNft = () => {
+  const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[1]);
   return (
     <>
       {/* main */}
-      <section className=" flex justify-center gap-8 h-screen text-white mx-auto pt-12">
+      <section className=" w-[75%] h-full flex justify-center gap-12 text-white mx-auto py-10">
         {/* first div (left side) */}
-        <div className=" border-[12px] border-slate-900 bg-slate-900 rounded-lg h-fit">
-          <img
-            src="	https://rainbowit.net/html/nuron/assets/images/portfolio/lg/portfolio-02.jpg"
-            alt=""
-            width={400}
-            height={400}
-            className=" rounded-lg"
-          />
+        <div className=" w-[48%] flex flex-col">
+          {/* IMAGE DIV */}
+          <div
+            className=" w-full border-[16px] border-slate-900 bg-slate-900 rounded-lg h-fit
+          transition-all duration-300 ease-in-out transform-gpu hover:scale-105 hover:border-[12px] hover:border-[#00a3ff]"
+          >
+            <img
+              src="	https://rainbowit.net/html/nuron/assets/images/portfolio/lg/portfolio-02.jpg"
+              alt=""
+              className=" w-full h-[380px] rounded-lg"
+            />
+          </div>
+          {/* WINNIG BID  */}
+          <div className=" w-full flex flex-col gap-[6px] border border-[#ffffff14] bg-[#24243557] rounded-[8px] py-3 px-4 group mt-4">
+            <h3 className=" text-[17px] font-medium capitalize">Winnig Bid</h3>
+            <div className=" flex justify-between items-center">
+              <div className=" flex items-center gap-3">
+                <img
+                  className=" rounded-[50%] border-[3px] border-[#ffffff14] transition-all duration-200 ease-in-out transform-gpu group-hover:border-none group-hover:scale-105"
+                  src="https://rainbowit.net/html/nuron/assets/images/client/client-1.png"
+                  alt=""
+                  width={55}
+                  height={55}
+                />
+                <div className=" flex flex-col items-start gap-[1px]">
+                  <h6 className="text-base font-medium text-[#00a3ff] capitalize transition-all duration-200 ease-in-out transform-gpu ">
+                    Allen Waltker{" "}
+                    <span
+                      className="  text-sm font-light text-[#cfcfcf]"
+                      style={{ textTransform: "none" }}
+                    >
+                      {" "}
+                      <span className=" mx-1">-</span> Placed a Bid
+                    </span>
+                  </h6>
+                  <span className=" text-sm text-[#cfcfcf]"> 1 hour ago</span>
+                </div>
+              </div>
+              <div className=" flex flex-col items-end">
+                <span className=" text-lg font-medium tracking-wide text-[#cfcfcf]">
+                  9.83 ETH
+                </span>
+                <span className=" text-sm font-medium text-[#00a3ff]">
+                  =$128.36
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-
         {/* second div (right side) */}
-        <div className=" flex flex-col gap-5">
-          <div>
-            <h4 className="text-[30px] font-bold">The Amazing Game</h4>
+        <div className=" w-[55%] flex flex-col gap-4">
+          {/* NFT NAME AND ICONS */}
+          <div className=" flex justify-between items-center">
+            <h4 className=" text-[34px] font-bold">The Amazing Game</h4>
+            <div className=" flex gap-[10px]">
+              <div
+                className=" flex justify-center items-center gap-1 rounded-md py-[8px] px-[12px] cursor-pointer bg-[#212e48] text-white
+              transition-all duration-300 transform-gpu group hover:bg-[#00a3ff]"
+              >
+                <FiHeart className="  text-[#cfcfcf] group-hover:text-white" />
+                <span className=" text-sm">33</span>
+              </div>
+              <div className=" flex justify-center items-center gap-1 rounded-md py-[8px] px-[12px] cursor-pointer bg-[#212e48] transition-all duration-300 transform-gpu group hover:bg-[#00a3ff]">
+                <BsThreeDots className=" text-xl text-[#cfcfcf] group-hover:text-white" />
+              </div>
+            </div>
           </div>
-
-          <div className="flex gap-10">
+          {/* COLLECTION , PLACE BITS BUTTON  */}
+          <div className="flex items-center justify-between gap-10">
             {/* category */}
-            <div>
-              <span className=" text-base font-light text-[#cfcfcf]">Catagory</span>
-
-              <div className=" flex justify-center items-center gap-4 mt-2">
+            <div className=" flex flex-col gap-[6px] group">
+              <span className=" flex items-center text-base text-[#cfcfcf]">
+                MarketPlace <MdKeyboardArrowRight className=" text-xl" />{" "}
+                Collection
+              </span>
+              <div className=" flex justify-center items-center gap-4">
                 <img
-                  className=" rounded-[50%]"
+                  className=" rounded-[50%] border-[3px] border-[#ffffff14] transition-all duration-200 ease-in-out transform-gpu group-hover:border-none group-hover:scale-105"
                   src="https://rainbowit.net/html/nuron/assets/images/client/client-1.png"
                   alt=""
                   width={50}
                   height={50}
                 />
-                <h6 className="text-lg font-medium">Brodband</h6>
+                <h6 className="text-xl font-medium transition-all duration-200 ease-in-out transform-gpu group-hover:text-[#00a3ff]">
+                  Sports, Football
+                </h6>
               </div>
             </div>
-
-            {/* collection */}
-
-            <div>
-              <span className=" text-base font-light text-[#cfcfcf]">Collection</span>
-
-              <div className=" flex justify-center items-center gap-4 mt-2">
-                <img
-                  className=" rounded-[50%]"
-                  src="https://rainbowit.net/html/nuron/assets/images/client/client-1.png"
-                  alt=""
-                  width={50}
-                  height={50}
-                />
-                <h6 className=" text-lg font-medium">Brodband</h6>
-              </div>
-            </div>
+            {/* place bit btn */}
+            <button
+              className=" bg-[#212e48] text-white text-center font-medium w-[40%] h-fit py-2 px-4 rounded-[10px] tracking-[0.5px]
+          hover:bg-[#00a3ff] hover:text-[#fff] transition-all duration-300 ease-in-out transform-gpu hover:scale-105"
+            >
+              Place a Bid
+            </button>
           </div>
-
-          <div className=" bg-slate-700 flex justify-between w-[80%] p-4 rounded-md">
-            <span>Current Bid</span>
-            <span className=" font-semibold">603.86 ETH</span>
+          {/* TABS */}
+          <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#24243557] p-2 mt-4">
+            {tabButtons.map((item) => (
+              <button
+                key={item.id}
+                className={` flex-1 h-12  rounded-[5px] 
+                transition-all duration-300 transform-gpu  ${
+                  currentTab.id === item.id
+                    ? "bg-[#212e48]"
+                    : " hover:border-white border border-dashed border-[#ffffff14]"
+                }`}
+                onClick={() => setCurrentTab(tabButtons[item.id - 1])}
+              >
+                {item.title}
+              </button>
+            ))}
           </div>
+          {/* DETAILS */}
+          {currentTab.id === 1 && <BidTab />}
+          {currentTab.id === 2 && <DetailTab />}
+          {currentTab.id === 3 && <h1>History</h1>}
         </div>
       </section>
     </>
