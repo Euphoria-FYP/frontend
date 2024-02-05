@@ -12,6 +12,7 @@ import {
   IoIosArrowForward,
   IoIosArrowBack,
 } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 const MarketPlace = () => {
   const [filterData, setFilterData] = useState<MarketPlaceItem[] | NFT[]>(
@@ -182,6 +183,8 @@ const MarketPlace = () => {
                     return (
                       <MarketPlaceCard
                         key={index}
+                        id={nft.id}
+                        marketplace={nft.marketplace}
                         name={nft.name}
                         userName={nft.userName}
                         currentBid={nft.currentBid}
@@ -203,6 +206,8 @@ const MarketPlace = () => {
                 return (
                   <MarketPlaceCard
                     key={index}
+                    id={nft.id}
+                    marketplace={nft.marketplace}
                     name={nft.name}
                     userName={nft.userName}
                     currentBid={nft.currentBid}

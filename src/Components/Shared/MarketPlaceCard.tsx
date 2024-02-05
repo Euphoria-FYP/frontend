@@ -1,16 +1,20 @@
 import { FaRegHeart } from "react-icons/fa";
 import cardImg from "../../assets/images/bg.png";
 import profileImg from "../../assets/images/profileImg.jpeg";
+import { NavLink } from "react-router-dom";
 
 type MarketCardProps = {
+  id:number,
+  marketplace:string,
   name: string;
   userName: string;
   currentBid: number;
   inDollars: number;
 }
 
-const MarketPlaceCard: React.FC <MarketCardProps> = ({name,userName,currentBid, inDollars })=> {
+const MarketPlaceCard: React.FC <MarketCardProps> = ({id,marketplace,name,userName,currentBid, inDollars })=> {
   return (
+    <NavLink to={`/nft/${marketplace}/${id}`}>
     <div className="card main-card flex flex-col gap-4 px-3 py-5 text-white md:w-[270px] md:min-w-min min-w-full bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer md:h-[390px] h-[420px]">
       <div className=" flex justify-between items-center">
         <div className=" flex gap-2">
@@ -60,6 +64,7 @@ const MarketPlaceCard: React.FC <MarketCardProps> = ({name,userName,currentBid, 
         </div>
       </div>
     </div>
+    </NavLink>
   );
 };
 

@@ -1,9 +1,12 @@
 import { FiHeart } from "react-icons/fi";
 import { BsThreeDots } from "react-icons/bs";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { useState } from "react";
 import DetailTab from "./DetailTab";
 import BidTab from "./BidTab";
+import { useParams } from "react-router-dom";
+import { marketPlaceData } from "../../data";
+import { useState, useEffect } from "react";
+import { NFT } from "../../types/index";
 
 interface TabButtonType {
   id: number;
@@ -27,6 +30,27 @@ const tabButtons = [
 
 const SingleNft = () => {
   const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[1]);
+  const [singleNFTdata, setSingleNFTdata] = useState<NFT[]>();
+  const { id, category } = useParams();
+
+  const getSingleNFT = (id: any) => {
+    const filteredNFTs = marketPlaceData
+      .flatMap((category) => category.nft)
+      .filter((nft) => nft.marketplace === category);
+
+    console.log(filteredNFTs);
+
+    const finalFilteredNFTs = filteredNFTs.filter(
+      (nft: any) => nft.id === parseInt(id, 10)
+    );
+    console.log(finalFilteredNFTs);
+    setSingleNFTdata(finalFilteredNFTs);
+  };
+
+  useEffect(() => {
+    getSingleNFT(id);
+  }, []);
+
   return (
     <>
       {/* main */}
@@ -82,7 +106,7 @@ const SingleNft = () => {
           </div>
         </div>
         {/* second div (right side) */}
-        <div className=" w-[55%] flex flex-col gap-4">
+        <div className=" w-[63%] flex flex-col gap-4">
           {/* NFT NAME AND ICONS */}
           <div className=" flex justify-between items-center">
             <h4 className=" text-[34px] font-bold">The Amazing Game</h4>
@@ -128,6 +152,25 @@ const SingleNft = () => {
               Place a Bid
             </button>
           </div>
+
+          <div className="flex gap-5 mt-2">
+            {/* first */}
+            <div className=" flex gap-16 bg-[#212e48] py-4 px-[12px] rounded-md text-sm font-medium">
+              <span>Current Bid</span>
+              <span className=" text-right text-base font-semibold">
+                603.86 ETH
+              </span>
+            </div>
+
+            {/* first */}
+            <div className=" flex gap-16 bg-[#212e48] py-4 px-[12px] rounded-md text-sm font-medium">
+              <span>Count Down</span>
+              <span className=" text-right text-base font-semibold">
+                00:00:00:00
+              </span>
+            </div>
+          </div>
+
           {/* TABS */}
           <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#24243557] p-2 mt-4">
             {tabButtons.map((item) => (
@@ -147,7 +190,11 @@ const SingleNft = () => {
           </div>
           {/* DETAILS */}
           {currentTab.id === 1 && <BidTab />}
-          {currentTab.id === 2 && <DetailTab />}
+          {currentTab.id === 2 &&
+            singleNFTdata &&
+            singleNFTdata.map((obj, index) => (
+              <DetailTab details={obj.details} />
+            ))}
           {currentTab.id === 3 && <h1>History</h1>}
         </div>
       </section>

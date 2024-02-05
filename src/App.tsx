@@ -15,7 +15,7 @@ function App() {
       element: <MarketPlace />
     },
     {
-      path: '/singlenft',
+      path: '/nft/:category/:id',
       element: <SingleNft />
     },
   ])

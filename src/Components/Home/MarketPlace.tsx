@@ -56,6 +56,8 @@ const MarketPlace = () => {
               return (
                 <MarketPlaceCard
                   key={index}
+                  id={nft.id}
+                  marketplace={nft.marketplace}
                   name={nft.name}
                   userName={nft.userName}
                   currentBid={nft.currentBid}
