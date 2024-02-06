@@ -9,6 +9,8 @@ const index = ({
   children: ReactNode;
   bgImgClass: string;
 }) => {
+  localStorage.setItem("bgImg", "marketPlaceBgImg");
+
   return (
     <main className={`${bgImgClass}`}>
       <Sidebar />
