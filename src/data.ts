@@ -227,18 +227,23 @@ export const cards: ContributorCardProps[] = [
 
 export const tags: tagsData[] = [
   {
+    class: "bgTabImgSports",
     tag: "Sports",
   },
   {
+    class: "null",
     tag: "Music",
   },
   {
+    class: "null",
     tag: "Art",
   },
   {
+    class: "null",
     tag: "Game",
   },
   {
+    class: "null",
     tag: "Painting",
   },
 ];

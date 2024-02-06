@@ -83,8 +83,8 @@ const MarketPlace = ({ setBgImg }: any) => {
 
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
 
-  const handleBgImg = () => {
-    setBgImg("bgTabImgSports");
+  const handleBgImg = (item: any) => {
+    setBgImg(item.class);
   };
 
   return (
@@ -293,7 +293,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                         setType("tags");
                         setCategory("");
                         setSort("");
-                        handleBgImg();
+                        handleBgImg(item);
                       }}
                     >
                       {item.tag}

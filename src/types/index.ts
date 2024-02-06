@@ -33,5 +33,6 @@ export type ContributorCardProps = {
 };
 
 export type tagsData = {
+  class: string;
   tag: string;
 };
