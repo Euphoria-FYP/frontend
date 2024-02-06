@@ -7,13 +7,13 @@ const MarketPlacePage = () => {
   useEffect(() => {
     const img = localStorage.getItem("bgImg");
     console.log(img);
-    setBgImg(img as any);
-  }, []);
+    // setBgImg(img as any);
+  });
 
   // const bgImg = localStorage.getItem("bgImg");
 
   return (
-    <Layout bgImgClass={bgImg as any}>
+    <Layout bgImgClass={localStorage.getItem("bgImg") as any}>
       <MarketPlace />
     </Layout>
   );
