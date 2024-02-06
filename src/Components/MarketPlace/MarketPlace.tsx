@@ -94,12 +94,16 @@ const MarketPlace = ({ setBgImg }: any) => {
         <div
           className={` ${
             isSidebarOpen ? "w-[75%]" : "w-[100%]"
-          } flex flex-col justify-start gap-8 pt-12 ${
-            isSidebarOpen ? "px-12" : " px-10"
+          } flex flex-col justify-center gap-8 pt-12 ${
+            isSidebarOpen ? "px-12" : " px-8"
           }  `}
         >
           {/* DROPDOWNS */}
-          <div className=" flex gap-8 text-[#cfcfcf]">
+          <div
+            className={` flex text-[#cfcfcf] ${
+              isSidebarOpen ? "pl-0 gap-8" : "gap-6 pl-2"
+            }`}
+          >
             <div className="relative flex flex-col gap-2 w-[270px] ">
               <button
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
@@ -172,7 +176,7 @@ const MarketPlace = ({ setBgImg }: any) => {
           </div>
           {/* NFTCARDS */}
           <div
-            className={`  flex flex-wrap justify-start ${
+            className={`  flex flex-wrap justify-center ${
               isSidebarOpen ? "gap-8" : " gap-6"
             } pb-12 overflow-y-auto whitespace-nowrap scrollbarHide `}
           >
