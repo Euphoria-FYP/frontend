@@ -14,7 +14,7 @@ import {
 } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
-const MarketPlace = () => {
+const MarketPlace = ({ setBgImg }: any) => {
   const [filterData, setFilterData] = useState<MarketPlaceItem[] | NFT[]>(
     marketPlaceData
   );
@@ -84,7 +84,7 @@ const MarketPlace = () => {
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
 
   const handleBgImg = () => {
-    localStorage.setItem("bgImg", "bgTabImgSports");
+    setBgImg("bgTabImgSports");
   };
 
   return (
@@ -281,10 +281,10 @@ const MarketPlace = () => {
             <div className="lfr-direction flex flex-col gap-4 mt-3">
               <h2 className=" text-lg font-medium">MarktePlace Tags</h2>
               <div className=" flex flex-wrap gap-2 w-full">
-                {tags.map((item,i) => {
+                {tags.map((item, i) => {
                   return (
                     <button
-                    key={i}
+                      key={i}
                       className={` rounded-lg ${
                         tag === item.tag ? `bg-[#7000ff]` : `bg-[#1e1e23]`
                       } text-sm py-2 px-4 `}
