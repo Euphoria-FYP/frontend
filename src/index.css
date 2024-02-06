@@ -6,9 +6,12 @@
 
 @font-face {
   font-family: "CodeNewRoman";
-  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf") format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf") format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf") format("truetype");
+  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf")
+      format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf")
+      format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf")
+      format("truetype");
 }
 
 body {
@@ -135,9 +138,11 @@ body {
   left: 0;
   width: 260px;
   /* height: 100%; */
-  background: linear-gradient(90deg,
-      rgba(226, 37, 122, 0.4) 0%,
-      rgba(86, 59, 218, 0.4) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(226, 37, 122, 0.4) 0%,
+    rgba(86, 59, 218, 0.4) 100%
+  );
   border-radius: 8px;
   transition: transform 0.3s;
   z-index: -1;
@@ -145,4 +150,20 @@ body {
 
 .card:hover:before {
   transform: rotate(5deg) translateY(5%);
+}
+
+/* ------------- MARKET PLACE PAGE ----------------------- */
+
+.bgTabImgSports {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.419),
+      rgba(65, 61, 61, 0.97)
+    ),
+    url("./assets/images/sports.png");
+  background-size: cover;
+  /* background: rgba(255, 255, 255, 0.15); */
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
 }

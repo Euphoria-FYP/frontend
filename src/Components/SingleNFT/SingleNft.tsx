@@ -54,9 +54,9 @@ const SingleNft = () => {
   return (
     <>
       {/* main */}
-      <section className=" w-[75%] h-full flex justify-center gap-12 text-white mx-auto py-10">
+      <section className=" w-[80%] h-full flex justify-center gap-12 text-white mx-auto py-10">
         {/* first div (left side) */}
-        <div className=" w-[48%] flex flex-col">
+        <div className=" w-[45%] flex flex-col">
           {/* IMAGE DIV */}
           <div
             className=" w-full border-[16px] border-slate-900 bg-slate-900 rounded-lg h-fit
@@ -106,7 +106,7 @@ const SingleNft = () => {
           </div>
         </div>
         {/* second div (right side) */}
-        <div className=" w-[63%] flex flex-col gap-4">
+        <div className=" w-[55%] flex flex-col gap-4">
           {/* NFT NAME AND ICONS */}
           <div className=" flex justify-between items-center">
             <h4 className=" text-[34px] font-bold">The Amazing Game</h4>
@@ -153,9 +153,9 @@ const SingleNft = () => {
             </button>
           </div>
 
-          <div className="flex gap-5 mt-2">
+          <div className="flex gap-4 mt-2">
             {/* first */}
-            <div className=" flex gap-16 bg-[#212e48] py-4 px-[12px] rounded-md text-sm font-medium">
+            <div className=" flex-1 flex justify-between bg-[#212e48] py-4 px-[12px] rounded-md text-sm font-medium">
               <span>Current Bid</span>
               <span className=" text-right text-base font-semibold">
                 603.86 ETH
@@ -163,7 +163,7 @@ const SingleNft = () => {
             </div>
 
             {/* first */}
-            <div className=" flex gap-16 bg-[#212e48] py-4 px-[12px] rounded-md text-sm font-medium">
+            <div className=" flex-1  flex justify-between bg-[#212e48] py-4 px-[12px] rounded-md text-sm font-medium">
               <span>Count Down</span>
               <span className=" text-right text-base font-semibold">
                 00:00:00:00
@@ -172,7 +172,7 @@ const SingleNft = () => {
           </div>
 
           {/* TABS */}
-          <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#24243557] p-2 mt-4">
+          <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#24243557] p-2 ">
             {tabButtons.map((item) => (
               <button
                 key={item.id}
