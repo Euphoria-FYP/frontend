@@ -11,6 +11,10 @@ const MarketPlace = () => {
     }
   };
 
+  const uniqueMarketplaceNames: string[] = marketPlaceData
+    .flatMap((item) => item.nft.map((nft) => nft.marketplace))
+    .filter((value, index, self) => self.indexOf(value) === index);
+
   return (
     <section className="flex flex-col justify-center items-center  mx-auto">
       <div className="flex flex-col justify-center items-center gap-3">
@@ -32,17 +36,13 @@ const MarketPlace = () => {
             className=" w-full pl-1 flex gap-2 overflow-x-auto whitespace-nowrap scrollbarHide"
             ref={scrollRef}
           >
-            {marketPlaceData.map((item, index) =>
-              item.nft.map((nft) => {
-                return (
-                  <button
-                    className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
-                  >
-                    {nft.marketplace}
-                  </button>
-                );
-              })
-            )}
+            {uniqueMarketplaceNames.map((item) => (
+              <button
+                className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
+              >
+                {item}
+              </button>
+            ))}
           </div>
           <IoIosArrowForward
             className=" w-[6%] ml-2 md:ml-0 text-2xl text-white cursor-pointer"
