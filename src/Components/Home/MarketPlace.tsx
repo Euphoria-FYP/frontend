@@ -38,7 +38,7 @@ const MarketPlace = () => {
           >
             {uniqueMarketplaceNames.map((item) => (
               <button
-                className={`bg-[#19191b] my-auto flex justify-center text-[15px] text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
+                className={`bg-[#19191b] my-auto flex justify-center text-[15px] capitalize text-white tracking-wider font-normal py-[10px] px-4 min-w-32 rounded-md cursor-pointer`}
               >
                 {item}
               </button>
@@ -50,7 +50,7 @@ const MarketPlace = () => {
           />
         </div>
         {/* CARDS */}
-        <div className=" mx-auto flex md:flex-wrap md:justify-center justify-center gap-4 md:gap-16 md:w-[90%] w-[88%] overflow-x-auto whitespace-nowrap scrollbarHide">
+        <div className=" mx-auto flex md:flex-wrap md:justify-start justify-center gap-4 md:gap-16 md:w-[90%] w-[88%] overflow-x-auto whitespace-nowrap scrollbarHide">
           {marketPlaceData.map((card, index) =>
             card.nft.map((nft) => {
               return (
