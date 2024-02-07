@@ -2,6 +2,7 @@ import React from "react";
 import DetailTabPropertyCard from "./DetailTabPropertyCard";
 
 const DetailTab = ({ details }: any) => {
+  console.log(details);
   return (
     <div className=" flex flex-col gap-5 mt-4">
       {/* OWNER */}
@@ -15,13 +16,18 @@ const DetailTab = ({ details }: any) => {
             width={50}
             height={50}
           />
-          {details.map((item: any) => {
+          {/* {details?.map((item: any) => {
             return (
               <h6 className="text-xl font-medium transition-all duration-200 ease-in-out transform-gpu group-hover:text-[#00a3ff]">
                 {item.name}
               </h6>
             );
-          })}
+          })} */}
+          {
+            <h6 className="text-xl font-medium transition-all duration-200 ease-in-out transform-gpu group-hover:text-[#00a3ff]">
+              {details.name}
+            </h6>
+          }
         </div>
       </div>
       {/* PROPERTY */}

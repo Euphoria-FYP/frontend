@@ -15,12 +15,14 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* HomePage Background */
 .homeBgImg {
   background-image: url("./assets/images/BgHome–2-wecompress.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+/* MarketplacePage Background */
 .marketPlaceBgImg {
   background-image: url("./assets/images/Home–2b.png");
   background-size: cover;
@@ -93,9 +95,11 @@ body {
   background-color: none;
 }
 
+/* carousel circle animation */
 .circle {
   border-color: #518eff;
-  animation: colorChange 6s linear infinite;
+  animation: colorChange 8s linear infinite;
+  -webkit-animation: colorChange 8s linear infinite;
 }
 
 @keyframes colorChange {
@@ -147,15 +151,33 @@ body {
   transform: rotate(5deg) translateY(5%);
 }
 
-/* ------------- MARKET PLACE PAGE ----------------------- */
+/* ------------- MARKET PLACE PAGE BACKGROUNDS ----------------------- */
 
 .bgTabImgSports {
   background-image: linear-gradient(rgba(0, 0, 0, 0.419),
       rgba(65, 61, 61, 0.97)),
-    url("./assets/images/spo.png");
+    url("./assets/images/sportsbg.jpg");
   background-size: cover;
-  /* background: rgba(255, 255, 255, 0.15); */
-  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
+}
+
+.bgTabImgMusic {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.419),
+      rgba(65, 61, 61, 0.97)),
+    url("./assets/images/musicbg.png");
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
+}
+
+.bgTabImgGame {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.419),
+      rgba(65, 61, 61, 0.97)),
+    url("./assets/images/gamebg.png");
+  background-size: cover;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   background-repeat: no-repeat;

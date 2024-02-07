@@ -29,7 +29,7 @@ const FAQ = () => {
             </p>
           </div>
           {/* ACCORDIANCE */}
-          <div className="w-full mt-10 space-y-6 divide-y divide-gray-900/10 ">
+          <div className="w-full mt-10 space-y-6 divide-y divide-gray-900/10">
             <div className=" p-5 bg-[#000B26] rounded-xl">
               <button
                 className="flex w-full items-start justify-between text-left "

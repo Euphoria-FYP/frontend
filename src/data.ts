@@ -61,11 +61,11 @@ export const marketPlaceData: MarketPlaceItem[] = [
         details: [
           {
             contractAddress: "0XD564...7B38",
-            name: "Brodband",
-            tokenId: 3740,
+            name: "The Stunning Game",
+            tokenId: 3540,
             tokenStandard: "ERC-721",
             chain: "Ethereum",
-            lastUpdated: "1 Month Ago",
+            lastUpdated: "2 Month Ago",
             creatorEarnings: "5%",
           },
         ],
@@ -80,34 +80,34 @@ export const marketPlaceData: MarketPlaceItem[] = [
         details: [
           {
             contractAddress: "0XD564...7B38",
-            name: "Brodband",
-            tokenId: 3740,
+            name: "The Amazing Art",
+            tokenId: 3712,
             tokenStandard: "ERC-721",
             chain: "Ethereum",
-            lastUpdated: "1 Month Ago",
+            lastUpdated: "2 Days Ago",
             creatorEarnings: "5%",
           },
         ],
       },
-      {
-        id: 5,
-        marketplace: "football",
-        name: "Michael Johnson",
-        userName: "mike_j",
-        currentBid: 0.589,
-        inDollars: 2200.97,
-        details: [
-          {
-            contractAddress: "0XD564...7B38",
-            name: "Brodband",
-            tokenId: 3740,
-            tokenStandard: "ERC-721",
-            chain: "Ethereum",
-            lastUpdated: "1 Month Ago",
-            creatorEarnings: "5%",
-          },
-        ],
-      },
+      // {
+      //   id: 5,
+      //   marketplace: "football",
+      //   name: "Michael Johnson",
+      //   userName: "mike_j",
+      //   currentBid: 0.589,
+      //   inDollars: 2200.97,
+      //   details: [
+      //     {
+      //       contractAddress: "0XD564...7B38",
+      //       name: "Brodband",
+      //       tokenId: 3740,
+      //       tokenStandard: "ERC-721",
+      //       chain: "Ethereum",
+      //       lastUpdated: "1 Month Ago",
+      //       creatorEarnings: "5%",
+      //     },
+      //   ],
+      // },
     ],
   },
 
@@ -231,7 +231,7 @@ export const tags: tagsData[] = [
     tag: "Sports",
   },
   {
-    class: "null",
+    class: "bgTabImgMusic",
     tag: "Music",
   },
   {
@@ -239,7 +239,7 @@ export const tags: tagsData[] = [
     tag: "Art",
   },
   {
-    class: "null",
+    class: "bgTabImgGame",
     tag: "Game",
   },
   {

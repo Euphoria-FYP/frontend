@@ -89,7 +89,7 @@ const MarketPlace = ({ setBgImg }: any) => {
 
   return (
     <>
-      <div className=" flex h-screen ">
+      <div className=" flex h-screen">
         {/* LEFT SIDE */}
         <div
           className={` ${
@@ -119,11 +119,11 @@ const MarketPlace = ({ setBgImg }: any) => {
               <div
                 className={`${
                   openDropDown[0] ? "block" : "hidden"
-                }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown`}
+                }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
               >
                 {uniqueMarketplaceNames.map((item) => (
                   <p
-                    className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
+                    className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer "
                     onClick={() => {
                       tagsFilter(item, "category");
                       setType("category");
@@ -176,9 +176,9 @@ const MarketPlace = ({ setBgImg }: any) => {
           </div>
           {/* NFTCARDS */}
           <div
-            className={`  flex flex-wrap justify-center ${
+            className={`  flex flex-wrap justify-start ${
               isSidebarOpen ? "gap-8" : " gap-6"
-            } pb-12 overflow-y-auto whitespace-nowrap scrollbarHide `}
+            } pb-12 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
           >
             {type === "tags" ? (
               filterData ? (
@@ -229,7 +229,7 @@ const MarketPlace = ({ setBgImg }: any) => {
         {/* RIGHT SIDE */}
         {isSidebarOpen && (
           <div
-            className={` flex flex-col gap-2 w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace`}
+            className={` flex flex-col gap-2 w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace transition-all`}
           >
             <div className="lfr-direction flex justify-between items-center  border-b-2 pb-3 border-[#1e1e23]">
               <div className="flex items-center gap-5">
@@ -322,7 +322,7 @@ const MarketPlace = ({ setBgImg }: any) => {
           </div>
         )}
         {!isSidebarOpen && (
-          <div className=" flex flex-col gap-2 w-[65px] py-[28px] px-[20px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow">
+          <div className=" flex flex-col gap-2 w-[65px] py-[28px] px-[20px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow transition-all">
             <div
               className=" bg-violet-800 rounded py-[2px] pr-[3px] pl-[2px] cursor-pointer"
               onClick={() => setIsSideBarOpen((prev) => !prev)}

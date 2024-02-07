@@ -109,7 +109,16 @@ const SingleNft = () => {
         <div className=" w-[55%] flex flex-col gap-4">
           {/* NFT NAME AND ICONS */}
           <div className=" flex justify-between items-center">
-            <h4 className=" text-[34px] font-bold">The Amazing Game</h4>
+            {singleNFTdata?.map((item, index) => (
+              <div key={index}>
+                {item.details.map((name, i) => (
+                  <h4 key={i} className="text-[34px] font-bold">
+                    {name.name}
+                  </h4>
+                ))}
+              </div>
+            ))}
+
             <div className=" flex gap-[10px]">
               <div
                 className=" flex justify-center items-center gap-1 rounded-md py-[8px] px-[12px] cursor-pointer bg-[#212e48] text-white
@@ -193,7 +202,7 @@ const SingleNft = () => {
           {currentTab.id === 2 &&
             singleNFTdata &&
             singleNFTdata.map((obj, index) => (
-              <DetailTab details={obj.details} />
+              <DetailTab details={obj} />
             ))}
           {currentTab.id === 3 && <h1>History</h1>}
         </div>
