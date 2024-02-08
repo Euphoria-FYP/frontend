@@ -94,7 +94,7 @@ const MarketPlace = ({ setBgImg }: any) => {
         <div
           className={` ${
             isSidebarOpen ? "w-[75%]" : "w-[100%]"
-          } flex flex-col justify-center gap-8 pt-12 ${
+          } flex flex-col justify-start gap-8 pt-12 ${
             isSidebarOpen ? "px-12" : " px-8"
           }  `}
         >

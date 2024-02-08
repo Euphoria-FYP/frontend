@@ -3,6 +3,8 @@ import carouselImg1 from "../../assets/images/carousel_1.png";
 import carouselImg2 from "../../assets/images/carousel_2.png";
 import ephHeading from "../../assets/images/Ephoria-heading.png";
 import StyledButton from "../Shared/StyledButton";
+import Lottie from "react-lottie";
+import animationData from "../../lottie/Animation-1.json";
 
 const carouselData = [
   {
@@ -27,6 +29,15 @@ const carouselData = [
 
 const Carousel = () => {
   const [carousel, setCarousel] = useState(carouselData[0]);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -109,7 +120,8 @@ const Carousel = () => {
         </div>
         {/* RIGHT SIDE */}
         <div className=" w-[40%] mt-20 hidden md:flex justify-end items-center">
-          <img src={carousel.img} alt="carouselImg" className="  " />
+          {/* <img src={carousel.img} alt="carouselImg" className="  " /> */}
+          <Lottie options={defaultOptions} />
         </div>
       </section>
     </>

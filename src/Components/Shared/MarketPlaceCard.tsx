@@ -22,7 +22,8 @@ const MarketPlaceCard: React.FC<MarketCardProps> = ({
 }) => {
   return (
     <NavLink to={`/nft/${marketplace}/${id}`}>
-      <div className="card main-card flex flex-col gap-4 px-3 py-5 text-white md:w-[270px] md:min-w-min min-w-full bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer md:h-[390px] h-[420px]">
+      <div className="card main-card flex flex-col gap-4 px-3 py-5 text-white md:w-[270px] md:min-w-min min-w-full bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer md:h-[390px] h-[420px]
+      group transition-all duration-300 ease-in-out">
         <div className=" flex justify-between items-center">
           <div className=" flex gap-2">
             <img
@@ -39,21 +40,21 @@ const MarketPlaceCard: React.FC<MarketCardProps> = ({
         </div>
         <div className=" relative md:h-52 h-60 mb-2">
           <img src={cardImg} alt="img " className=" rounded-lg h-full" />
-          <div className=" absolute bottom-2 w-full flex justify-center gap-2">
+          <div className=" absolute bottom-2 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center gap-2">
             <div className=" w-11">
-              <p className=" bg-[#707070] px-1 py-1 rounded text-center">17</p>
+              <p className=" bg-[#707070] marketplaceCardTimerbg px-1 py-1 rounded text-center">17</p>
               <p className="text-[#cfcfcf] w-full text-center">DAY</p>
             </div>
             <div className=" w-11">
-              <p className=" bg-[#707070] px-1 py-1 rounded text-center">17</p>
+              <p className=" bg-[#707070] marketplaceCardTimerbg px-1 py-1 rounded text-center">17</p>
               <p className="text-[#cfcfcf] w-full text-center">HR'S</p>
             </div>
             <div className=" w-11">
-              <p className=" bg-[#707070] px-1 py-1 rounded text-center">17</p>
+              <p className=" bg-[#707070] marketplaceCardTimerbg px-1 py-1 rounded text-center">17</p>
               <p className="text-[#cfcfcf] w-full text-center">MIN'S</p>
             </div>
             <div className=" w-11">
-              <p className=" bg-[#707070] px-1 py-1 rounded text-center">17</p>
+              <p className=" bg-[#707070] marketplaceCardTimerbg px-1 py-1 rounded text-center">17</p>
               <p className="text-[#cfcfcf] w-full text-center">SEC</p>
             </div>
           </div>

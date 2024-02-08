@@ -6,9 +6,12 @@
 
 @font-face {
   font-family: "CodeNewRoman";
-  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf") format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf") format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf") format("truetype");
+  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf")
+      format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf")
+      format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf")
+      format("truetype");
 }
 
 body {
@@ -128,6 +131,37 @@ body {
   }
 }
 
+/* ------------- MARKET PLACE PAGE BACKGROUNDS ----------------------- */
+
+.bgTabImgSports {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.29), rgba(65, 61, 61, 0.77)),
+    url("./assets/images/sportsbg.jpg");
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
+}
+
+.bgTabImgMusic {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.29), rgba(65, 61, 61, 0.77)),
+    url("./assets/images/musicbg.png");
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
+}
+
+.bgTabImgGame {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.29), rgba(65, 61, 61, 0.77)),
+    url("./assets/images/gamebg.png");
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
+}
+
+/* ------------- MARKET PLACE COMPONENT ----------------------- */
+
 .card {
   position: relative;
 }
@@ -139,9 +173,11 @@ body {
   left: 0;
   width: 260px;
   /* height: 100%; */
-  background: linear-gradient(90deg,
-      rgba(226, 37, 122, 0.4) 0%,
-      rgba(86, 59, 218, 0.4) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(226, 37, 122, 0.4) 0%,
+    rgba(86, 59, 218, 0.4) 100%
+  );
   border-radius: 8px;
   transition: transform 0.3s;
   z-index: -1;
@@ -151,34 +187,11 @@ body {
   transform: rotate(5deg) translateY(5%);
 }
 
-/* ------------- MARKET PLACE PAGE BACKGROUNDS ----------------------- */
-
-.bgTabImgSports {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.29),
-      rgba(65, 61, 61, 0.77)),
-    url("./assets/images/sportsbg.jpg");
-  background-size: cover;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-repeat: no-repeat;
-}
-
-.bgTabImgMusic {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.29),
-      rgba(65, 61, 61, 0.77)),
-    url("./assets/images/musicbg.png");
-  background-size: cover;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-repeat: no-repeat;
-}
-
-.bgTabImgGame {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.29),
-      rgba(65, 61, 61, 0.77)),
-    url("./assets/images/gamebg.png");
-  background-size: cover;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-repeat: no-repeat;
+.marketplaceCardTimerbg {
+  background: rgba( 255, 255, 255, 0.2 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 3px );
+-webkit-backdrop-filter: blur( 3px );
+border-radius: 6px;
+/* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }
