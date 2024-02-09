@@ -36,3 +36,10 @@ export type tagsData = {
   class: string;
   tag: string;
 };
+
+export type stepsData = {
+  img: string;
+  step: string;
+  title: string;
+  description: string;
+};

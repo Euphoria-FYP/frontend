@@ -3,11 +3,16 @@ import {
   CategoriesCardProps,
   ContributorCardProps,
   tagsData,
+  stepsData,
 } from "./types";
 import Art from "./assets/images/art.jpg";
 import Game from "./assets/images/game.jpg";
 import Music from "./assets/images/music.jpg";
 import Sports from "./assets/images/sports.jpg";
+import Step1 from "./assets/images/step1.png";
+import Step2 from "./assets/images/step2.png";
+import Step3 from "./assets/images/step3.png";
+import Step4 from "./assets/images/step4.png";
 
 export const marketPlaceData: MarketPlaceItem[] = [
   {
@@ -214,15 +219,15 @@ export const Categories: CategoriesCardProps[] = [
 ];
 
 export const cards: ContributorCardProps[] = [
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
+  { name: "John Moris", ethAmount: "0.86" },
+  { name: "John Moris", ethAmount: "0.26" },
+  { name: "John Moris", ethAmount: "0.89" },
+  { name: "John Moris", ethAmount: "0.76" },
+  { name: "John Moris", ethAmount: "0.86" },
+  { name: "John Moris", ethAmount: "0.26" },
+  { name: "John Moris", ethAmount: "0.86" },
+  { name: "John Moris", ethAmount: "0.86" },
+  { name: "John Moris", ethAmount: "0.36" },
 ];
 
 export const tags: tagsData[] = [
@@ -245,5 +250,36 @@ export const tags: tagsData[] = [
   {
     class: "null",
     tag: "Painting",
+  },
+];
+
+export const Steps: stepsData[] = [
+  {
+    img: Step1,
+    step: "01",
+    title: "Set up your wallet",
+    description: `Powerful features and inclusions, which makes Nuron standout,
+    easily customizable and scalable.`,
+  },
+  {
+    img: Step2,
+    step: "02",
+    title: "Create your collection",
+    description: `A great collection of beautiful website templates for your need.
+    Choose the best suitable template.`,
+  },
+  {
+    img: Step3,
+    step: "03",
+    title: "Add your NFT's",
+    description: `We've made the template fully responsive, so it looks great on
+    all devices: desktop, tablets and.`,
+  },
+  {
+    img: Step4,
+    step: "04",
+    title: "Sell your NFT's",
+    description: `I throw myself down among the tall grass by the stream as I
+    lie close to the earth NFT's.`,
   },
 ];

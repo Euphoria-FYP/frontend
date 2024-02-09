@@ -14,7 +14,8 @@ const Contributor = () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 m-9">
+      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 m-9"> */}
+      <div className="flex justify-center items-center gap-x-2 m-9">
         {cards.map((card, index) => (
           <ContributorCard
             key={index}

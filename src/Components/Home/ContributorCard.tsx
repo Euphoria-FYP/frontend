@@ -11,8 +11,25 @@ interface CardProps {
 const ContributorCard: React.FC<CardProps> = ({ name, ethAmount }) => {
   return (
     <>
-      <div className=" flex gap-5 justify-center items-center rounded-md text-white border-[2.2px] border-violet-800 p-2">
-        <div className="flex justify-center items-center gap-1">
+      <div className=" flex flex-col gap-5 justify-center items-center rounded-md text-white p-2">
+        <img
+          src={
+            "https://html.ditsolution.net/nftpro/assets/images/resource/seller3.png"
+          }
+          className=" rounded-md"
+          alt=""
+          height={100}
+          width={100}
+        />
+
+        <div className=" flex flex-col justify-center items-center gap-2">
+          <h4 className="text-xl font-semibold cursor-pointer hover:text-[#B900FF] transition-colors duration-300 ease-in-out">
+            {name}
+          </h4>
+          <p className=" text-[17px] text-[#B900FF]">{ethAmount} ETH</p>
+        </div>
+
+        {/* <div className="flex justify-center items-center gap-1">
           <img src={contrubutor} alt="" height={50} width={50} />
           <div>
             <h2 className=" text-sm">{name}</h2>
@@ -21,11 +38,11 @@ const ContributorCard: React.FC<CardProps> = ({ name, ethAmount }) => {
               <span>{ethAmount} ETH</span>
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div className=" cursor-pointer">
+        {/* <div className=" cursor-pointer">
           <BsThreeDots fontSize={20} />
-        </div>
+        </div> */}
       </div>
     </>
   );
