@@ -16,7 +16,7 @@ const index = ({
 
   return ( 
     <main className={`${bgImgClass}`}>
-      {/* <AnimatedCursor
+      <AnimatedCursor
         innerSize={6}
         outerSize={32}
         innerScale={1}
@@ -30,7 +30,7 @@ const index = ({
         outerStyle={{
           border: "2px solid #fff",
         }}
-      /> */}
+      />
       <BottomToTop />
       <Sidebar />
       <div className="md:ml-[70px]">{children}</div>
