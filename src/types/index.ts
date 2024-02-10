@@ -37,6 +37,11 @@ export type tagsData = {
   tag: string;
 };
 
+export type FAQsData = {
+  question: string;
+  answer: string[];
+};
+
 export type stepsData = {
   img: string;
   step: string;

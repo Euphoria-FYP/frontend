@@ -4,6 +4,7 @@ import {
   ContributorCardProps,
   tagsData,
   stepsData,
+  FAQsData,
 } from "./types";
 import Art from "./assets/images/art.jpg";
 import Game from "./assets/images/game.jpg";
@@ -253,6 +254,60 @@ export const tags: tagsData[] = [
   },
 ];
 
+export const faqs: FAQsData[] = [
+  {
+    question: "How to set up a MetaMask account?",
+    answer: [
+      "Visit the Chrome Web Store and search for MetaMask",
+      'Click "Add Extension"',
+      'Click "Get Started"',
+      'Click "I agree"',
+      "IMPORTANT: Reveal the Secret Recovery Phrase and write it down and/or save it somewhere digitally protected",
+      "You have now created a MetaMask wallet",
+    ],
+  },
+  {
+    question:
+      "How to register at Ethernity.io and connect your MetaMask wallet?",
+    answer: [
+      'Click "Sign Up" on the Ethernity.io homepage',
+      "Enter your email address, select a username and password",
+      "A code will be delivered to your email, retrieve the code and enter it where prompted.",
+      'Sign in to Ethernity using your credentials and click "Connect"',
+      "Sign into your MetaMask account",
+      'Click "Accept"',
+      "You have now connected your MetaMask wallet on Ethernity",
+    ],
+  },
+  {
+    question: "How do I buy ERN?",
+    answer: [
+      "You can currently buy ERN on the following exchanges:",
+      "Centralized exchanges:",
+      "Coinbase",
+      "Binance",
+      "Crypto.com",
+      "OKX",
+      "KuCoin",
+      "Huobi",
+      "Gemini",
+      "Gate.io",
+      "Decentralized exchanges:",
+      "Uniswap",
+      "Quickswap",
+    ],
+  },
+  {
+    question: "How can I send a NFT to another person?",
+    answer: [
+      "To transfer your aNFT to another wallet address, you will need to:",
+      "Step 1: Log in to your account and connect your Metamask wallet.",
+      "Step 2: Visit “My Profile” section and select the aNFT you would like to send.",
+      "Step 3: Click on “Transfer” icon and define the recipient’s wallet address.",
+      "Step 4: Validate the transaction in the Metamask pop-up window.",
+    ],
+  },
+];
 export const Steps: stepsData[] = [
   {
     img: Step1,
