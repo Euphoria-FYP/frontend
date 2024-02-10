@@ -4,10 +4,14 @@ import logoImg from "../../assets/images/logo.png";
 import profileImg from "../../assets/images/profileImg.jpeg";
 import { GoHome } from "react-icons/go";
 import { RxDashboard } from "react-icons/rx";
-import { BiSearchAlt, BiCollection } from "react-icons/bi";
+import { BiSearchAlt, BiCollection, BiDroplet } from "react-icons/bi";
 import { TbCategoryPlus } from "react-icons/tb";
 import { IoIosArrowUp, IoIosArrowDown, IoIosArrowBack } from "react-icons/io";
-import contrubutor from "../../assets/images/contrubutor.png";
+import Art from "../../assets/images//art.jpg";
+import Game from "../../assets/images//game.jpg";
+import Music from "../../assets/images//music.jpg";
+import Sports from "../../assets/images//sports.jpg";
+import Collection from "../../assets/images/collection.png";
 
 const Links = [
   {
@@ -30,12 +34,15 @@ const Links = [
     dropdownitems: [
       {
         title: "Sports",
+        img: Sports,
       },
       {
-        title: "Cricket",
+        title: "Game",
+        img: Game,
       },
       {
         title: "Art",
+        img: Art,
       },
     ],
   },
@@ -47,12 +54,18 @@ const Links = [
     dropdownitems: [
       {
         title: "BabarSon",
+        username: "obaid2003",
+        img: Collection,
       },
       {
         title: "RunMachine",
+        username: "dani123",
+        img: Collection,
       },
       {
         title: "Ronaldo",
+        username: "ahsan2005",
+        img: Collection,
       },
     ],
   },
@@ -61,7 +74,7 @@ const Links = [
 const Sidebar = () => {
   const location = useLocation();
   const [active, setActive] = useState<number>(1);
-  const [dropDown, setDropDown] = useState<boolean[]>([true, false]);
+  const [dropDown, setDropDown] = useState<boolean[]>([false, true]);
 
   const handleDropdownClick = (index: number | null) => {
     if (index !== null) {
@@ -144,10 +157,9 @@ const Sidebar = () => {
                       return (
                         <div className=" flex  justify-start items-center gap-3 py-[4px]">
                           <img
-                            src={contrubutor}
+                            src={dropdown.img}
+                            className=" rounded-md w-8 h-8"
                             alt=""
-                            height={28}
-                            width={28}
                           />
                           <a href="">{dropdown.title}</a>
                         </div>
@@ -157,16 +169,22 @@ const Sidebar = () => {
                 )}
                 {item.title === "Collections" && dropDown[1] && (
                   <div className="flex-col justify-start items-start gap-3 py-[4px] pl-12 pr-2 rounded-e-[20px] w-full hidden group-hover:flex text-white">
-                    {item.dropdownitems?.map((dropdown, i) => {
+                    {item.dropdownitems?.map((dropdown: any, i) => {
                       return (
                         <div className=" flex  justify-start items-center gap-3 py-[4px]">
                           <img
-                            src={contrubutor}
+                            src={dropdown.img}
+                            className="rounded-md w-8 h-8"
                             alt=""
-                            height={28}
-                            width={28}
                           />
-                          <a href="">{dropdown.title}</a>
+                          <div className=" flex flex-col">
+                            <a className=" text-base" href="">
+                              {dropdown.title}
+                            </a>
+                            <span className=" text-sm text-[#B900FF]">
+                              @{dropdown.username}
+                            </span>
+                          </div>
                         </div>
                       );
                     })}
@@ -177,13 +195,16 @@ const Sidebar = () => {
           })}
         </div>
       </div>
-      <div className=" flex justify-start items-center gap-4 sticky bottom-0 mt-5 text-white">
+      <div className="flex justify-start items-center gap-4 sticky bottom-0 mt-5 text-white w-full">
         <img
           src={profileImg}
           alt="profile"
           className=" ml-4 w-10 h-10 rounded-[50%] object-cover"
         />
-        <h4 className=" hidden group-hover:block">Ahsan Omerjee</h4>
+        <div className="hidden group-hover:block w-full">
+          <h4 className=" text-lg">Ahsan Omerjee</h4>
+          <span className="text-base text-[#B900FF]">@ahsan2002</span>
+        </div>
       </div>
     </div>
   );
