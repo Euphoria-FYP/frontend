@@ -35,3 +35,8 @@ export type ContributorCardProps = {
 export type tagsData = {
   tag: string;
 };
+
+export type stepsData = {
+  question: string;
+  answer: string[];
+};
