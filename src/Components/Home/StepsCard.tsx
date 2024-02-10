@@ -36,7 +36,7 @@ const StepsCard = () => {
                   <p className="text-sm text-[#cfcfcf] font-light">
                     {item.description}
                   </p>
-                  <FaArrowRight className=" mt-2 text-2xl text-[#B900FF] group-hover:text-[#B900FF] transition-colors duration-300 ease-in-out" />
+                  <FaArrowRight className=" mt-2 text-2xl group-hover:text-[#B900FF] transition-colors duration-300 ease-in-out" />
                 </div>
               </div>
             </>
