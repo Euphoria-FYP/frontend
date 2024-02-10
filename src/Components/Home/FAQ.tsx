@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import { steps } from "../../data"; // Assuming steps are imported from an external data source
+import { faqs } from "../../data"; // Assuming steps are imported from an external data source
 
 const FAQ = () => {
-  const [openIndexes, setOpenIndexes] = useState<boolean[]>(new Array(steps.length).fill(false));
+  const [openIndexes, setOpenIndexes] = useState<boolean[]>(
+    new Array(faqs.length).fill(false)
+  );
 
   const handleAccordionClick = (index: number) => {
-    setOpenIndexes(prevState => {
-      const newOpenIndexes = prevState.map((item, i) => i === index ? !prevState[i] : false);
+    setOpenIndexes((prevState) => {
+      const newOpenIndexes = prevState.map((item, i) =>
+        i === index ? !prevState[i] : false
+      );
       return newOpenIndexes;
     });
   };
@@ -17,19 +21,28 @@ const FAQ = () => {
       {/* FAQ */}
       <div className="flex flex-col justify-center items-center mx-auto max-w-4xl divide-y divide-gray-900/10">
         <div className="flex max-w-[768px] flex-col items-center justify-center gap-5">
-          <p className="text-center text-3xl font-semibold md:text-4xl CodeNewRomanFont">FAQ's</p>
+          <p className="text-center text-3xl font-semibold md:text-4xl CodeNewRomanFont">
+            FAQ's
+          </p>
         </div>
         {/* ACCORDION */}
         <div className="w-full mt-10 space-y-6 divide-y divide-gray-900/10">
-          {steps.map((step, index) => (
-            <div key={index} className="p-5 bg-[#000B26] rounded-xl">
+          {faqs.map((step, index) => (
+            <div
+              key={index}
+              className="p-5 bg-[#000B26] rounded-xl cursor-pointer"
+            >
               <button
                 className="flex w-full items-start justify-between text-left"
                 onClick={() => handleAccordionClick(index)}
                 type="button"
-                data-track={`faq-button-${step.question.toLowerCase().replace(/\s+/g, "-")}`}
+                data-track={`faq-button-${step.question
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
               >
-                <span className="text-base font-semibold leading-7">{step.question}</span>
+                <span className="text-base font-semibold leading-7">
+                  {step.question}
+                </span>
                 <span className="ml-6 flex h-7 items-center">
                   {openIndexes[index] ? (
                     <IoIosArrowUp className="text-xl" />

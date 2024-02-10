@@ -33,10 +33,18 @@ export type ContributorCardProps = {
 };
 
 export type tagsData = {
+  class: string;
   tag: string;
 };
 
-export type stepsData = {
+export type FAQsData = {
   question: string;
   answer: string[];
+};
+
+export type stepsData = {
+  img: string;
+  step: string;
+  title: string;
+  description: string;
 };

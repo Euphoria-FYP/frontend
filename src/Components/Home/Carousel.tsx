@@ -3,8 +3,19 @@ import carouselImg1 from "../../assets/images/carousel_1.png";
 import carouselImg2 from "../../assets/images/carousel_2.png";
 import ephHeading from "../../assets/images/Ephoria-heading.png";
 import StyledButton from "../Shared/StyledButton";
+import Lottie from "react-lottie";
+import animationData1 from "../../lottie/Animation-1.json";
+import animationData2 from "../../lottie/Animation-2.json";
 
-const carouselData = [
+interface carouselDataType {
+  id: number;
+  title: string;
+  heading: string;
+  description: string;
+  img: any;
+}
+
+const carouselData: carouselDataType[] = [
   {
     id: 1,
     title: "Euphoria",
@@ -12,7 +23,7 @@ const carouselData = [
       "Discover <span style='color:#B900FF;'>Collect</span>  & <span style='color:#B900FF;'>Sell</span>  Extraordinary NFTs Art",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam similique, ratione nisi dolores, quod optio officia eius a doloribus ea iste labore, accusantium dignissimos.zf",
-    img: carouselImg1,
+    img: animationData1,
   },
   {
     id: 2,
@@ -21,12 +32,21 @@ const carouselData = [
       "Unlock the <span style='color:#B900FF;'>Glamour</span>, <span style='color:#B900FF;'>Connect</span> with Digital Realm!",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam similique, ratione nisi dolores, quod optio officia eius a doloribus ea iste labore, accusantium dignissimos.zf",
-    img: carouselImg2,
+    img: carouselImg1,
   },
 ];
 
 const Carousel = () => {
   const [carousel, setCarousel] = useState(carouselData[0]);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: carousel.img,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -71,7 +91,11 @@ const Carousel = () => {
             {carousel.description}
           </p>
           <div className="mt-4 md:mt-0 mx-auto my-5 w-60 md:hidden flex justify-center items-center">
-            <img src={carousel.img} alt="carouselImg" className="  " />
+            {carousel.id === 1 ? (
+              <Lottie options={defaultOptions} width={400} height={500} />
+            ) : (
+              <img src={carousel.img} alt="carouselImg" className="  " />
+            )}
           </div>
           {carousel.id === 1 && (
             <>
@@ -109,7 +133,11 @@ const Carousel = () => {
         </div>
         {/* RIGHT SIDE */}
         <div className=" w-[40%] mt-20 hidden md:flex justify-end items-center">
-          <img src={carousel.img} alt="carouselImg" className="  " />
+          {carousel.id === 1 ? (
+            <Lottie options={defaultOptions} width={400} height={500} />
+          ) : (
+            <img src={carousel.img} alt="carouselImg" className="  " />
+          )}
         </div>
       </section>
     </>

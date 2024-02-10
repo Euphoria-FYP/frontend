@@ -4,11 +4,16 @@ import {
   ContributorCardProps,
   tagsData,
   stepsData,
+  FAQsData,
 } from "./types";
 import Art from "./assets/images/art.jpg";
 import Game from "./assets/images/game.jpg";
 import Music from "./assets/images/music.jpg";
 import Sports from "./assets/images/sports.jpg";
+import Step1 from "./assets/images/step1.png";
+import Step2 from "./assets/images/step2.png";
+import Step3 from "./assets/images/step3.png";
+import Step4 from "./assets/images/step4.png";
 
 export const marketPlaceData: MarketPlaceItem[] = [
   {
@@ -62,11 +67,11 @@ export const marketPlaceData: MarketPlaceItem[] = [
         details: [
           {
             contractAddress: "0XD564...7B38",
-            name: "Brodband",
-            tokenId: 3740,
+            name: "The Stunning Game",
+            tokenId: 3540,
             tokenStandard: "ERC-721",
             chain: "Ethereum",
-            lastUpdated: "1 Month Ago",
+            lastUpdated: "2 Month Ago",
             creatorEarnings: "5%",
           },
         ],
@@ -81,11 +86,11 @@ export const marketPlaceData: MarketPlaceItem[] = [
         details: [
           {
             contractAddress: "0XD564...7B38",
-            name: "Brodband",
-            tokenId: 3740,
+            name: "The Amazing Art",
+            tokenId: 3712,
             tokenStandard: "ERC-721",
             chain: "Ethereum",
-            lastUpdated: "1 Month Ago",
+            lastUpdated: "2 Days Ago",
             creatorEarnings: "5%",
           },
         ],
@@ -215,85 +220,121 @@ export const Categories: CategoriesCardProps[] = [
 ];
 
 export const cards: ContributorCardProps[] = [
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
-  { name: "Adaugo Chibuike Sandra", ethAmount: "0.86" },
+  { name: "John Moris", ethAmount: "0.86" },
+  { name: "Daniyal Saleem", ethAmount: "0.26" },
+  { name: "Ahsan Omerjee", ethAmount: "0.89" },
+  { name: "John Cena", ethAmount: "0.76" },
+  { name: "Obaid Bihari", ethAmount: "0.86" },
+  { name: "Kaleen Bhaiya", ethAmount: "0.26" },
+  { name: "The Rock", ethAmount: "0.86" },
+  { name: "Romain Reigns", ethAmount: "0.86" },
+  { name: "Robert D. Jr", ethAmount: "0.36" },
 ];
 
 export const tags: tagsData[] = [
   {
+    class: "bgTabImgSports",
     tag: "Sports",
   },
   {
+    class: "bgTabImgMusic",
     tag: "Music",
   },
   {
+    class: "null",
     tag: "Art",
   },
   {
+    class: "bgTabImgGame",
     tag: "Game",
   },
   {
+    class: "null",
     tag: "Painting",
   },
 ];
 
-export const steps: stepsData[] = [
+export const faqs: FAQsData[] = [
   {
-    question: 'How to set up a MetaMask account?',
+    question: "How to set up a MetaMask account?",
     answer: [
-      'Visit the Chrome Web Store and search for MetaMask',
+      "Visit the Chrome Web Store and search for MetaMask",
       'Click "Add Extension"',
       'Click "Get Started"',
       'Click "I agree"',
-      'IMPORTANT: Reveal the Secret Recovery Phrase and write it down and/or save it somewhere digitally protected',
-      'You have now created a MetaMask wallet',
-    ]
+      "IMPORTANT: Reveal the Secret Recovery Phrase and write it down and/or save it somewhere digitally protected",
+      "You have now created a MetaMask wallet",
+    ],
   },
   {
-    question: 'How to register at Ethernity.io and connect your MetaMask wallet?',
+    question:
+      "How to register at Ethernity.io and connect your MetaMask wallet?",
     answer: [
       'Click "Sign Up" on the Ethernity.io homepage',
-      'Enter your email address, select a username and password',
-      'A code will be delivered to your email, retrieve the code and enter it where prompted.',
+      "Enter your email address, select a username and password",
+      "A code will be delivered to your email, retrieve the code and enter it where prompted.",
       'Sign in to Ethernity using your credentials and click "Connect"',
-      'Sign into your MetaMask account',
+      "Sign into your MetaMask account",
       'Click "Accept"',
-      'You have now connected your MetaMask wallet on Ethernity',
-    ]
+      "You have now connected your MetaMask wallet on Ethernity",
+    ],
   },
   {
-    question: 'How do I buy ERN?',
+    question: "How do I buy ERN?",
     answer: [
-      'You can currently buy ERN on the following exchanges:',
-      'Centralized exchanges:',
-      'Coinbase',
-      'Binance',
-      'Crypto.com',
-      'OKX',
-      'KuCoin',
-      'Huobi',
-      'Gemini',
-      'Gate.io',
-      'Decentralized exchanges:',
-      'Uniswap',
-      'Quickswap',
-    ]
+      "You can currently buy ERN on the following exchanges:",
+      "Centralized exchanges:",
+      "Coinbase",
+      "Binance",
+      "Crypto.com",
+      "OKX",
+      "KuCoin",
+      "Huobi",
+      "Gemini",
+      "Gate.io",
+      "Decentralized exchanges:",
+      "Uniswap",
+      "Quickswap",
+    ],
   },
   {
-    question: 'How can I send a NFT to another person?',
+    question: "How can I send a NFT to another person?",
     answer: [
-      'To transfer your aNFT to another wallet address, you will need to:',
-      'Step 1: Log in to your account and connect your Metamask wallet.',
-      'Step 2: Visit “My Profile” section and select the aNFT you would like to send.',
-      'Step 3: Click on “Transfer” icon and define the recipient’s wallet address.',
-      'Step 4: Validate the transaction in the Metamask pop-up window.',
-    ]
-  }
+      "To transfer your aNFT to another wallet address, you will need to:",
+      "Step 1: Log in to your account and connect your Metamask wallet.",
+      "Step 2: Visit “My Profile” section and select the aNFT you would like to send.",
+      "Step 3: Click on “Transfer” icon and define the recipient’s wallet address.",
+      "Step 4: Validate the transaction in the Metamask pop-up window.",
+    ],
+  },
+];
+export const Steps: stepsData[] = [
+  {
+    img: Step1,
+    step: "01",
+    title: "Set up your wallet",
+    description: `Powerful features and inclusions, which makes Nuron standout,
+    easily customizable and scalable.`,
+  },
+  {
+    img: Step2,
+    step: "02",
+    title: "Create your collection",
+    description: `A great collection of beautiful website templates for your need.
+    Choose the best suitable template.`,
+  },
+  {
+    img: Step3,
+    step: "03",
+    title: "Add your NFT's",
+    description: `We've made the template fully responsive, so it looks great on
+    all devices: desktop, tablets and.`,
+  },
+  {
+    img: Step4,
+    step: "04",
+    title: "Sell your NFT's",
+    description: `I throw myself down among the tall grass by the stream as I
+    lie close to the earth NFT's.`,
+  },
 ];

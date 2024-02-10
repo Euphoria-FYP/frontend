@@ -14,7 +14,7 @@ import {
 } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
-const MarketPlace = () => {
+const MarketPlace = ({ setBgImg }: any) => {
   const [filterData, setFilterData] = useState<MarketPlaceItem[] | NFT[]>(
     marketPlaceData
   );
@@ -81,25 +81,29 @@ const MarketPlace = () => {
     .flatMap((item) => item.nft.map((nft) => nft.marketplace))
     .filter((value, index, self) => self.indexOf(value) === index);
 
-  // useEffect(() => {
-  //   console.log("hello", filterData);
-  // }, [filterData]);
-
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
+
+  const handleBgImg = (item: any) => {
+    setBgImg(item.class);
+  };
 
   return (
     <>
-      <div className=" flex h-screen ">
+      <div className=" flex h-screen">
         {/* LEFT SIDE */}
         <div
           className={` ${
             isSidebarOpen ? "w-[75%]" : "w-[100%]"
           } flex flex-col justify-start gap-8 pt-12 ${
-            isSidebarOpen ? "px-12" : " px-10"
+            isSidebarOpen ? "px-12" : " px-8"
           }  `}
         >
           {/* DROPDOWNS */}
-          <div className=" flex gap-8 text-[#cfcfcf]">
+          <div
+            className={` flex text-[#cfcfcf] ${
+              isSidebarOpen ? "pl-0 gap-8" : "gap-6 pl-2"
+            }`}
+          >
             <div className="relative flex flex-col gap-2 w-[270px] ">
               <button
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
@@ -115,11 +119,11 @@ const MarketPlace = () => {
               <div
                 className={`${
                   openDropDown[0] ? "block" : "hidden"
-                }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown`}
+                }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
               >
                 {uniqueMarketplaceNames.map((item) => (
                   <p
-                    className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
+                    className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer "
                     onClick={() => {
                       tagsFilter(item, "category");
                       setType("category");
@@ -174,7 +178,7 @@ const MarketPlace = () => {
           <div
             className={`  flex flex-wrap justify-start ${
               isSidebarOpen ? "gap-8" : " gap-6"
-            } pb-12 overflow-y-auto whitespace-nowrap scrollbarHide `}
+            } pb-12 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
           >
             {type === "tags" ? (
               filterData ? (
@@ -225,7 +229,7 @@ const MarketPlace = () => {
         {/* RIGHT SIDE */}
         {isSidebarOpen && (
           <div
-            className={` flex flex-col gap-2 w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace`}
+            className={` flex flex-col gap-2 w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace transition-all`}
           >
             <div className="lfr-direction flex justify-between items-center  border-b-2 pb-3 border-[#1e1e23]">
               <div className="flex items-center gap-5">
@@ -281,9 +285,10 @@ const MarketPlace = () => {
             <div className="lfr-direction flex flex-col gap-4 mt-3">
               <h2 className=" text-lg font-medium">MarktePlace Tags</h2>
               <div className=" flex flex-wrap gap-2 w-full">
-                {tags.map((item) => {
+                {tags.map((item, i) => {
                   return (
                     <button
+                      key={i}
                       className={` rounded-lg ${
                         tag === item.tag ? `bg-[#7000ff]` : `bg-[#1e1e23]`
                       } text-sm py-2 px-4 `}
@@ -292,6 +297,7 @@ const MarketPlace = () => {
                         setType("tags");
                         setCategory("");
                         setSort("");
+                        handleBgImg(item);
                       }}
                     >
                       {item.tag}
@@ -316,7 +322,7 @@ const MarketPlace = () => {
           </div>
         )}
         {!isSidebarOpen && (
-          <div className=" flex flex-col gap-2 w-[65px] py-[28px] px-[20px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow">
+          <div className=" flex flex-col gap-2 w-[65px] py-[28px] px-[20px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow transition-all">
             <div
               className=" bg-violet-800 rounded py-[2px] pr-[3px] pl-[2px] cursor-pointer"
               onClick={() => setIsSideBarOpen((prev) => !prev)}

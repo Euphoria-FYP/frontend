@@ -7,6 +7,7 @@ import Contributor from "./Contributor";
 import MarketPlace from "./MarketPlace";
 import FAQ from "./FAQ";
 import Footer from "../Shared/Footer/Footer";
+import StepsCard from "./StepsCard";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <ExploreCategories />
       <Contributor />
       <NftBanner />
+      <StepsCard/>
       <FAQ/>
       <Footer/>
     </>
