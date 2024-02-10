@@ -94,25 +94,25 @@ export const marketPlaceData: MarketPlaceItem[] = [
           },
         ],
       },
-      // {
-      //   id: 5,
-      //   marketplace: "football",
-      //   name: "Michael Johnson",
-      //   userName: "mike_j",
-      //   currentBid: 0.589,
-      //   inDollars: 2200.97,
-      //   details: [
-      //     {
-      //       contractAddress: "0XD564...7B38",
-      //       name: "Brodband",
-      //       tokenId: 3740,
-      //       tokenStandard: "ERC-721",
-      //       chain: "Ethereum",
-      //       lastUpdated: "1 Month Ago",
-      //       creatorEarnings: "5%",
-      //     },
-      //   ],
-      // },
+      {
+        id: 5,
+        marketplace: "football",
+        name: "Michael Johnson",
+        userName: "mike_j",
+        currentBid: 0.589,
+        inDollars: 2200.97,
+        details: [
+          {
+            contractAddress: "0XD564...7B38",
+            name: "Brodband",
+            tokenId: 3740,
+            tokenStandard: "ERC-721",
+            chain: "Ethereum",
+            lastUpdated: "1 Month Ago",
+            creatorEarnings: "5%",
+          },
+        ],
+      },
     ],
   },
 
@@ -220,14 +220,14 @@ export const Categories: CategoriesCardProps[] = [
 
 export const cards: ContributorCardProps[] = [
   { name: "John Moris", ethAmount: "0.86" },
-  { name: "John Moris", ethAmount: "0.26" },
-  { name: "John Moris", ethAmount: "0.89" },
-  { name: "John Moris", ethAmount: "0.76" },
-  { name: "John Moris", ethAmount: "0.86" },
-  { name: "John Moris", ethAmount: "0.26" },
-  { name: "John Moris", ethAmount: "0.86" },
-  { name: "John Moris", ethAmount: "0.86" },
-  { name: "John Moris", ethAmount: "0.36" },
+  { name: "Daniyal Saleem", ethAmount: "0.26" },
+  { name: "Ahsan Omerjee", ethAmount: "0.89" },
+  { name: "John Cena", ethAmount: "0.76" },
+  { name: "Obaid Bihari", ethAmount: "0.86" },
+  { name: "Kaleen Bhaiya", ethAmount: "0.26" },
+  { name: "The Rock", ethAmount: "0.86" },
+  { name: "Romain Reigns", ethAmount: "0.86" },
+  { name: "Robert D. Jr", ethAmount: "0.36" },
 ];
 
 export const tags: tagsData[] = [

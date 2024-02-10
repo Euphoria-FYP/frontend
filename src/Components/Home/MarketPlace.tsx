@@ -2,8 +2,35 @@ import { useRef } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import MarketPlaceCard from "../Shared/MarketPlaceCard";
 import { marketPlaceData } from "../../data";
+import Slider from "react-slick";
 
 const MarketPlace = () => {
+  const settings: any = {
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    pauseOnHover: true,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 768,
+        setting: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 520,
+        setting: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  };
   const scrollRef = useRef<HTMLDivElement>(null);
   const scroll = (scrollOffset: number): void => {
     if (scrollRef.current) {
@@ -25,11 +52,11 @@ const MarketPlace = () => {
           Super Hot Drops
         </h1>
       </div>
-      <div className=" w-[95%] md:w-[85%]">
+      <div className=" w-[95%] md:w-[90%]">
         {/* CATEGORY BUTTONS */}
-        <div className=" flex items-center my-10">
+        <div className=" w-[80%] flex items-center mx-auto my-10">
           <IoIosArrowBack
-            className=" w-[6%] text-2xl text-white cursor-pointer"
+            className=" w-[7%] text-2xl text-white cursor-pointer"
             onClick={() => scroll(-132)}
           />
           <div
@@ -50,22 +77,24 @@ const MarketPlace = () => {
           />
         </div>
         {/* CARDS */}
-        <div className=" mx-auto flex md:flex-wrap md:justify-start justify-center gap-4 md:gap-16 md:w-[90%] w-[88%] overflow-x-auto whitespace-nowrap scrollbarHide">
-          {marketPlaceData.map((card, index) =>
-            card.nft.map((nft) => {
-              return (
-                <MarketPlaceCard
-                  key={index}
-                  id={nft.id}
-                  marketplace={nft.marketplace}
-                  name={nft.name}
-                  userName={nft.userName}
-                  currentBid={nft.currentBid}
-                  inDollars={nft.inDollars}
-                />
-              );
-            })
-          )}
+        <div className=" mx-auto flex justify-center gap-4 ">
+          <Slider {...settings} className=" w-full py-3">
+            {marketPlaceData.map((card, index) =>
+              card.nft.map((nft) => {
+                return (
+                  <MarketPlaceCard
+                    key={index}
+                    id={nft.id}
+                    marketplace={nft.marketplace}
+                    name={nft.name}
+                    userName={nft.userName}
+                    currentBid={nft.currentBid}
+                    inDollars={nft.inDollars}
+                  />
+                );
+              })
+            )}
+          </Slider>
         </div>
       </div>
     </section>
