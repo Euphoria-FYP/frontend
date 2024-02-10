@@ -50,7 +50,7 @@ const Profile = () => {
               <p>@davis.jhon</p>
 
               <div className=" flex gap-2 mt-5">
-                <StyledButton heading="Follow" width={120} />
+                <StyledButton heading="Follow" bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)" width={120} />
 
                 <div
                   className=" flex justify-center items-center gap-2 p-3 rounded"
