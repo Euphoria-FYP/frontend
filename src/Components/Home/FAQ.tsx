@@ -53,7 +53,7 @@ const FAQ = () => {
               </button>
               {openIndexes[index] && (
                 <div className="mt-2 pr-12">
-                  <p className="text-base leading-7">{step.answer}</p>
+                  <p className="text-sm font-extralight leading-7">{step.answer}</p>
                 </div>
               )}
             </div>
