@@ -20,7 +20,7 @@ const StepsCard = () => {
                   <img
                     src={item.img}
                     alt=""
-                    className=" max-w-full max-h-[85px]"
+                    className=" max-w-full max-h-[65px]"
                   />
                 </div>
 

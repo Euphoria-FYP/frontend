@@ -14,7 +14,7 @@ const index = ({
 }) => {
   // localStorage.setItem("bgImg", "marketPlaceBgImg");
 
-  return (
+  return ( 
     <main className={`${bgImgClass}`}>
       <AnimatedCursor
         innerSize={6}
