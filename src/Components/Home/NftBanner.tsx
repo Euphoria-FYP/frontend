@@ -18,7 +18,7 @@ const NftBanner = () => {
         </p>
 
         <div className=" mt-2">
-          <StyledButton heading="Create NFT" width={160} />
+          <StyledButton heading="Create NFT" bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)" width={160} />
         </div>
       </div>
     </section>

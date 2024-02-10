@@ -100,8 +100,16 @@ const Carousel = () => {
           {carousel.id === 1 && (
             <>
               <div className="mt-4 md:mt-0 flex gap-8 w-full">
-                <StyledButton heading="Sell" width={130} />
-                <StyledButton heading="Create" width={130} />
+                <StyledButton
+                  heading="Sell"
+                  bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
+                  width={130}
+                />
+                <StyledButton
+                  heading="Create"
+                  bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
+                  width={130}
+                />
               </div>
               <div className="mt-4 md:mt-0 flex gap-8">
                 <div className=" flex flex-col">
@@ -127,7 +135,11 @@ const Carousel = () => {
           )}
           {carousel.id === 2 && (
             <div className="mt-4 md:mt-0 flex gap-8 md:justify-start justify-center">
-              <StyledButton heading="Connect Wallet" width={180} />
+              <StyledButton
+                heading="Connect Wallet"
+                bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
+                width={180}
+              />
             </div>
           )}
         </div>

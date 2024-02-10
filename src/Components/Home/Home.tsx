@@ -8,18 +8,20 @@ import MarketPlace from "./MarketPlace";
 import FAQ from "./FAQ";
 import Footer from "../Shared/Footer/Footer";
 import StepsCard from "./StepsCard";
+import HeaderSection from "../Shared/Header/HeaderSection";
 
 const Home = () => {
   return (
     <>
+      <HeaderSection />
       <Carousel />
       <MarketPlace />
       <ExploreCategories />
       <Contributor />
       <NftBanner />
-      <StepsCard/>
-      <FAQ/>
-      <Footer/>
+      <StepsCard />
+      <FAQ />
+      <Footer />
     </>
   );
 };
