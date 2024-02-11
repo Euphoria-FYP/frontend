@@ -1,7 +1,7 @@
 import React from "react";
 import ContributorCard from "./ContributorCard";
 import Slider from "react-slick";
-import { cards } from "../../data";
+import { cards } from "../../../data";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

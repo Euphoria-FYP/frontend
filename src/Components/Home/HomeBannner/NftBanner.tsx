@@ -1,4 +1,4 @@
-import StyledButton from "../Shared/StyledButton";
+import StyledButton from "../../Shared/StyledButton";
 import React from "react";
 
 const NftBanner = () => {

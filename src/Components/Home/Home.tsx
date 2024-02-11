@@ -1,14 +1,15 @@
 import React from "react";
 import Carousel from "./Carousel";
-import ExploreCategories from "./ExploreCategories";
-import NftBanner from "./NftBanner";
+import ExploreCategories from "./Categories/ExploreCategories";
+import NftBanner from "./HomeBannner/NftBanner";
 // import Card from "./ContributorCard";
-import Contributor from "./Contributor";
+import Contributor from "./Contributors/Contributor";
 import MarketPlace from "./MarketPlace";
 import FAQ from "./FAQ";
 import Footer from "../Shared/Footer/Footer";
-import StepsCard from "./StepsCard";
+import StepsCard from "./HomeBannner/StepsCard";
 import HeaderSection from "../Shared/Header/HeaderSection";
+import Collections from "./Collections/Collections";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <MarketPlace />
       <ExploreCategories />
       <Contributor />
+      <Collections/>
       <NftBanner />
       <StepsCard />
       <FAQ />
