@@ -1,16 +1,39 @@
-import React from 'react'
-import CollectionCard from './CollectionCard'
+import React from "react";
+import CollectionCard from "./CollectionCard";
+import { MyCollections } from "../../../data";
 
 const Collections = () => {
   return (
     <>
-    <section className=" w-[90%] flex flex-col justify-center items-center my-5 mx-auto mt-16">
+      <section className=" w-[90%] flex flex-col justify-center items-center my-5 mx-auto mt-16">
+        <div className="flex flex-col justify-center items-center gap-3">
+          <h2 className="uppercase  font-semibold text-xl text-[#B900FF]">
+            NFT Creators
+          </h2>
+          <h1 className=" text-white font-semibold text-3xl md:text-5xl tracking-wider CodeNewRomanFont">
+            Top Collections
+          </h1>
+        </div>
 
-      <CollectionCard/>
-
-    </section>
+        <div className=" flex justify-center items-center md:gap-5 mt-10 mb-5 flex-wrap">
+          {MyCollections.map((item, i) => {
+            return (
+              <CollectionCard
+                key={i}
+                img1={item.img1}
+                img2={item.img2}
+                img3={item.img3}
+                img4={item.img4}
+                title={item.title}
+                createdBy={item.createdBy}
+                price={item.price}
+              />
+            );
+          })}
+        </div>
+      </section>
     </>
-  )
-}
+  );
+};
 
-export default Collections
+export default Collections;

@@ -5,6 +5,7 @@ import {
   tagsData,
   stepsData,
   FAQsData,
+  CollectionsData,
 } from "./types";
 import Art from "./assets/images/art.jpg";
 import Game from "./assets/images/game.jpg";
@@ -14,6 +15,10 @@ import Step1 from "./assets/images/step1.png";
 import Step2 from "./assets/images/step2.png";
 import Step3 from "./assets/images/step3.png";
 import Step4 from "./assets/images/step4.png";
+import collection1 from "./assets/images/collection/one.jpeg";
+import collection2 from "./assets/images/collection/two.jpeg";
+import collection3 from "./assets/images/collection/three.jpeg";
+import collection4 from "./assets/images/collection/four.jpeg";
 
 export const marketPlaceData: MarketPlaceItem[] = [
   {
@@ -336,5 +341,48 @@ export const Steps: stepsData[] = [
     title: "Sell your NFT's",
     description: `I throw myself down among the tall grass by the stream as I
     lie close to the earth NFT's.`,
+  },
+];
+
+export const MyCollections: CollectionsData[] = [
+  {
+    id: 1,
+    img1: collection1,
+    img2: collection2,
+    img3: collection3,
+    img4: collection4,
+    title: "Checks - VV Edition",
+    createdBy: "Ahsan Omerjee",
+    price: 0.48,
+  },
+  {
+    id: 2,
+    img1: collection1,
+    img2: collection2,
+    img3: collection3,
+    img4: collection4,
+    title: "BasePaint",
+    createdBy: "John Doe",
+    price: 0.65,
+  },
+  {
+    id: 3,
+    img1: collection1,
+    img2: collection2,
+    img3: collection3,
+    img4: collection4,
+    title: "Pudgy Rods",
+    createdBy: "Emily Smith",
+    price: 0.75,
+  },
+  {
+    id: 4,
+    img1: collection1,
+    img2: collection2,
+    img3: collection3,
+    img4: collection4,
+    title: "NextGen 6529",
+    createdBy: "Michael Johnson",
+    price: 0.53,
   },
 ];

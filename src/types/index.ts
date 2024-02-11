@@ -32,6 +32,16 @@ export type ContributorCardProps = {
   ethAmount: string;
 };
 
+export type CollectionsCardProps = {
+  img1: string;
+  img2: string;
+  img3: string;
+  img4: string;
+  title: string;
+  price: number;
+  createdBy: string;
+};
+
 export type tagsData = {
   class: string;
   tag: string;
@@ -47,4 +57,15 @@ export type stepsData = {
   step: string;
   title: string;
   description: string;
+};
+
+export type CollectionsData = {
+  id: number;
+  title: string;
+  img1: string;
+  img2: string;
+  img3: string;
+  img4: string;
+  createdBy: string;
+  price: number;
 };

@@ -42,7 +42,7 @@ const Contributor = () => {
           Top Contributors
         </h1>
       </div>
-      <Slider {...settings} className=" w-full  my-9">
+      <Slider {...settings} className=" w-full my-9">
         {cards.map((card, index) => (
           <ContributorCard
             key={index}
