@@ -1,84 +1,59 @@
 import React from "react";
-import Art from "../../../assets/images/art.jpg";
-import Game from "../../../assets/images/game.jpg";
-import Music from "../../../assets/images/music.jpg";
-import Sports from "../../../assets/images/sports.jpg";
+import collection1 from "../../../assets/images/collection/one.jpeg";
+import collection2 from "../../../assets/images/collection/two.jpeg";
+import collection3 from "../../../assets/images/collection/three.jpeg";
+import collection4 from "../../../assets/images/collection/four.jpeg";
 
 const CollectionCard = () => {
   return (
     <>
-      <div className=" text-white bg-slate-800 rounded-md h-50 w-96 px-1 py-3">
+      <div className=" text-white bg-slate-800 flex flex-col gap-4 rounded-lg h-60 w-64 px-3 py-3">
         {/* image */}
-        
-
-{/* <div className="grid grid-cols-3 gap-4">
-  <div className="col-span-2 md:col-span-1">
-    <img src={Art} alt="Image 1"/>
-  </div>
-  <div className="col-span-2 md:col-span-2">
-    <img src={Music} alt="Image 4"/>
-  </div>
-  <div className="col-span-2 md:col-span-1">
-    <img src={Sports} alt="Image 2"/>
-  </div>
-  <div className="col-span-2 md:col-span-1">
-    <img src={Game} alt="Image 3"/>
-  </div>
-</div> */}
-
-
-<div className="flex gap-5">
-
-    {/* <div>
-
-       <div className="flex">
-        <img src={Game} className=" h-20 w-10"  alt="" />
-        <img src={Art} className=" h-20 w-10"alt="" />
-       </div>
- 
-    <img src={Sports} className=" h-20 w-10" alt="" />
-        
-    </div>
-
-
-
-    <div>
-        <img src={Art} className=" h-20 w-10" alt="" />
-    </div> */}
-
-<div className=" flex flex-col">
-    <div className=" flex">
-<img src={Sports} className=" h-32 w-32" alt="" />
-<img src={Game} className=" h-32 w-32" alt="" />
-    </div>
-
-    <img src={Art} className=" h-32 w-72" alt="" />
-
-</div>
-
-
-<img src={Art} className=" h-60 w-32" alt="" />
-
-
-
-</div>
+        <div className=" h-[60%] grid grid-rows-2 grid-flow-col gap-2">
+          <div className="col-span-2 gap-2">
+            <div className=" grid grid-cols-2 h-full gap-2">
+              <img
+                src={collection1}
+                alt="collection1"
+                className=" object-cover h-full rounded-lg"
+              />
+              <img
+                src={collection2}
+                alt="collection2"
+                className=" object-cover  h-full rounded-lg"
+              />
+            </div>
+          </div>
+          <div className="row-span-2 col-span-2 rounded-lg mt-1">
+            <img
+              src={collection3}
+              alt="collection3"
+              className=" object-cover  w-full h-full rounded-lg"
+            />
+          </div>
+          <div className="row-span-3 col-span-2 rounded-lg">
+            <img
+              src={collection4}
+              alt="collection4"
+              className=" object-cover h-full rounded-lg"
+            />
+          </div>
+        </div>
         {/* content */}
-        <div className="flex flex-col justify-between gap-5 mt-5">
+        <div className=" h-[40%] flex flex-col justify-center gap-1">
           {/* main heading */}
-          <h4>Checks - VV Edition ✅</h4>
-
+          <h4 className=" text-base font-medium">Checks - VV Edition </h4>
           {/* Created by & price */}
           <div className="flex justify-between items-center">
             {/* first div */}
             <div>
-              <span className=" text-sm">Created By</span>
-              <h3 className=" text-lg font-semibold">Ahsan Omerjee</h3>
+              <span className=" text-xs font-extralight">Created By</span>
+              <h3 className=" text-[15px] font-light">Ahsan Omerjee</h3>
             </div>
-
             {/* second div */}
             <div>
-              <span className=" text-sm">Floor</span>
-              <h3 className=" text-lg font-semibold">0.48 ETH</h3>
+              <span className=" text-xs font-extralight">Floor</span>
+              <h3 className=" text-[15px] font-light">0.48 ETH</h3>
             </div>
           </div>
         </div>
