@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { Steps } from "../../data";
+import { Steps } from "../../../data";
 
 const StepsCard = () => {
   return (
