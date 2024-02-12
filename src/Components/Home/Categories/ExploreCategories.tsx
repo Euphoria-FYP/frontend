@@ -2,6 +2,7 @@ import React from "react";
 import StyledButton from "../../Shared/StyledButton";
 import CategoriesCard from "./CategoriesCard";
 import { Categories } from "../../../data";
+import { NavLink } from "react-router-dom";
 
 const ExploreCategories = () => {
   return (
@@ -24,12 +25,14 @@ const ExploreCategories = () => {
           />
         ))}
       </div>
-
+      
+      <NavLink to={'/marketplace'}>
       <StyledButton
         heading="All Categories"
         bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
         width={180}
-      />
+        />
+        </NavLink>
     </section>
   );
 };

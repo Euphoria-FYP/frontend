@@ -12,13 +12,18 @@ const NftBanner = () => {
           Create, Sell and Collect <br /> NFT Digital Assests
         </h1>
         <p className=" text-[#cfcfcf] text-center text-sm md:text-base w-full md:w-[70%]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem sequi in
-          molestiae praesentium voluptatum exercitationem fuga tempore
-          voluptates repellendus est, expedita ullam excepturi quaerat eum
+          Explore the world of NFT creation with just a click! Discover our
+          platform's intuitive process below, outlined in four easy steps. Start
+          your journey towards unleashing your creativity and turning it into
+          digital assets today!
         </p>
 
         <div className=" mt-2">
-          <StyledButton heading="Create NFT" bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)" width={160} />
+          <StyledButton
+            heading="Create NFT"
+            bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
+            width={160}
+          />
         </div>
       </div>
     </section>

@@ -178,7 +178,7 @@ const MarketPlace = ({ setBgImg }: any) => {
           <div
             className={`  flex flex-wrap justify-start ${
               isSidebarOpen ? "gap-8" : " gap-6"
-            } pb-12 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
+            } pb-12 pt-3 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
           >
             {type === "tags" ? (
               filterData ? (

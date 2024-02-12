@@ -5,7 +5,7 @@ import { MyCollections } from "../../../data";
 const Collections = () => {
   return (
     <>
-      <section className=" w-[90%] flex flex-col justify-center items-center my-5 mx-auto mt-16">
+      <section className=" w-[90%] flex flex-col justify-center items-center my-8 mx-auto">
         <div className="flex flex-col justify-center items-center gap-3">
           <h2 className="uppercase  font-semibold text-xl text-[#B900FF]">
             NFT Creators

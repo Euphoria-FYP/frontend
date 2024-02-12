@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import { faqs } from "../../data"; // Assuming steps are imported from an external data source
+import { faqs } from "../../data"; // Assuming faqs are imported from an external data source
 
 const FAQ = () => {
   const [openIndexes, setOpenIndexes] = useState<boolean[]>(
@@ -51,11 +51,17 @@ const FAQ = () => {
                   )}
                 </span>
               </button>
-              {openIndexes[index] && (
-                <div className="mt-2 pr-12">
-                  <p className="text-sm font-extralight leading-7">{step.answer}</p>
-                </div>
-              )}
+              <div
+                className={`transition-all duration-300 mt-2 pr-12 ${
+                  openIndexes[index]
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0 overflow-hidden"
+                }`}
+              >
+                <p className="text-sm font-extralight leading-7">
+                  {step.answer}
+                </p>
+              </div>
             </div>
           ))}
         </div>

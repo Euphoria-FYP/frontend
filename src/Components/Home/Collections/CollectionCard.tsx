@@ -1,11 +1,19 @@
 import React from "react";
 import { CollectionsCardProps } from "../../../types/index";
 
-const CollectionCard: React.FC<CollectionsCardProps> = ({img1,img2,img3,img4,createdBy,title,price}) => {
+const CollectionCard: React.FC<CollectionsCardProps> = ({
+  img1,
+  img2,
+  img3,
+  img4,
+  createdBy,
+  title,
+  price,
+}) => {
   return (
     <>
-      <div className=" text-white bg-slate-800 flex flex-col gap-4 rounded-lg h-60 w-64 px-3 py-3">
-        {/* image */}
+      <div className=" text-white bg-slate-800 flex flex-col gap-4 rounded-lg h-60 w-64 px-3 py-3 cursor-pointer">
+        {/* images */}
         <div className=" h-[60%] grid grid-rows-2 grid-flow-col gap-2">
           <div className="col-span-2 gap-2">
             <div className=" grid grid-cols-2 h-full gap-2">
@@ -45,12 +53,12 @@ const CollectionCard: React.FC<CollectionsCardProps> = ({img1,img2,img3,img4,cre
             {/* first div */}
             <div>
               <span className=" text-xs font-extralight">Created By</span>
-              <h3 className=" text-[15px] font-light">{createdBy}</h3>
+              <h3 className=" text-[16px] leading-5 font-light">{createdBy}</h3>
             </div>
             {/* second div */}
             <div>
               <span className=" text-xs font-extralight">Floor</span>
-              <h3 className=" text-[15px] font-light">{price}{" "}ETH</h3>
+              <h3 className=" text-[16px] leading-5 font-light">{price} ETH</h3>
             </div>
           </div>
         </div>

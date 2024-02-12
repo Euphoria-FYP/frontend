@@ -15,10 +15,22 @@ import Step1 from "./assets/images/step1.png";
 import Step2 from "./assets/images/step2.png";
 import Step3 from "./assets/images/step3.png";
 import Step4 from "./assets/images/step4.png";
-import collection1 from "./assets/images/collection/one.jpeg";
-import collection2 from "./assets/images/collection/two.jpeg";
-import collection3 from "./assets/images/collection/three.jpeg";
-import collection4 from "./assets/images/collection/four.jpeg";
+import collection1 from "./assets/images/collection/c1.jpeg";
+import collection2 from "./assets/images/collection/c2.jpeg";
+import collection3 from "./assets/images/collection/c3.jpeg";
+import collection4 from "./assets/images/collection/c4.jpeg";
+import collection5 from "./assets/images/collection/c5.jpg";
+import collection6 from "./assets/images/collection/c6.jpg";
+import collection7 from "./assets/images/collection/c7.jpg";
+import collection8 from "./assets/images/collection/c8.jpg";
+import collection9 from "./assets/images/collection/c9.jpg";
+import collection10 from "./assets/images/collection/c10.png";
+import collection11 from "./assets/images/collection/c11.jpg";
+import collection12 from "./assets/images/collection/c12.png";
+import collection13 from "./assets/images/collection/c13.png";
+import collection14 from "./assets/images/collection/c14.jpg";
+import collection15 from "./assets/images/collection/c15.jpg";
+import collection16 from "./assets/images/collection/c16.jpg";
 
 export const marketPlaceData: MarketPlaceItem[] = [
   {
@@ -357,30 +369,30 @@ export const MyCollections: CollectionsData[] = [
   },
   {
     id: 2,
-    img1: collection1,
-    img2: collection2,
-    img3: collection3,
-    img4: collection4,
+    img1: collection5,
+    img2: collection6,
+    img3: collection7,
+    img4: collection8,
     title: "BasePaint",
     createdBy: "John Doe",
     price: 0.65,
   },
   {
     id: 3,
-    img1: collection1,
-    img2: collection2,
-    img3: collection3,
-    img4: collection4,
+    img1: collection9,
+    img2: collection10,
+    img3: collection11,
+    img4: collection12,
     title: "Pudgy Rods",
     createdBy: "Emily Smith",
     price: 0.75,
   },
   {
     id: 4,
-    img1: collection1,
-    img2: collection2,
-    img3: collection3,
-    img4: collection4,
+    img1: collection13,
+    img2: collection14,
+    img3: collection15,
+    img4: collection16,
     title: "NextGen 6529",
     createdBy: "Michael Johnson",
     price: 0.53,
