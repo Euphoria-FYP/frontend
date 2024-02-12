@@ -60,6 +60,7 @@ const FAQ = () => {
               >
                 <p className="text-sm font-extralight leading-7">
                   {step.answer}
+                  
                 </p>
               </div>
             </div>
