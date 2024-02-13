@@ -28,7 +28,7 @@ const data = [
 const SideContent = () => {
   return (
     <>
-      <div className="flex flex-col gap-4 rounded-2xl bg-slate-700 p-8 max-w-[320px]">
+      <div className="flex flex-col gap-4 rounded-2xl bg-slate-700 p-9 max-w-[320px]">
         {/* first div */}
         <div>
           <p className="text-md leading-md font-semibold mb-4">
