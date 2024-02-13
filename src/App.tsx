@@ -26,11 +26,11 @@ function App() {
       element: <Profile />,
     },
     {
-      path: "/uploadnft",
+      path: "/upload-nft",
       element: <UploadNFT />,
     },
     {
-      path: "/collection",
+      path: "/create-collection",
       element: <CreateCollection />,
     },
   ]);

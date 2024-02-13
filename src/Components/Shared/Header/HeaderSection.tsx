@@ -37,7 +37,7 @@ const HeaderSection = () => {
               Drops
             </NavLink>
             <NavLink
-              to={"#"}
+              to={"/create-collection"}
               className={
                 " text-white font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
               }
