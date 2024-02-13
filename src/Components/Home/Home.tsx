@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "./Carousel";
 import ExploreCategories from "./Categories/ExploreCategories";
-import NftBanner from "./HomeBannner/NftBanner";
+import NftBanner from "../../Components/Home/HomeBannner/NftBanner";
 // import Card from "./ContributorCard";
 import Contributor from "./Contributors/Contributor";
 import MarketPlace from "./MarketPlace";
