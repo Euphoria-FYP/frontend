@@ -6,9 +6,12 @@
 
 @font-face {
   font-family: "CodeNewRoman";
-  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf") format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf") format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf") format("truetype");
+  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf")
+      format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf")
+      format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf")
+      format("truetype");
 }
 
 body {
@@ -170,9 +173,11 @@ body {
   left: 0;
   width: 260px;
   /* height: 100%; */
-  background: linear-gradient(90deg,
-      rgba(226, 37, 122, 0.4) 0%,
-      rgba(86, 59, 218, 0.4) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(226, 37, 122, 0.4) 0%,
+    rgba(86, 59, 218, 0.4) 100%
+  );
   border-radius: 8px;
   transition: transform 0.3s;
   z-index: -1;
@@ -190,7 +195,6 @@ body {
   border-radius: 6px;
   /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }
-
 
 /* collection form */
 
@@ -223,4 +227,8 @@ body {
   backdrop-filter: blur(20px);
   transition: background-color 0.2s cubic-bezier(0.05, 0, 0.2, 1) 0s,
     border-color 0.2s cubic-bezier(0.05, 0, 0.2, 1) 0s;
+}
+
+.disabled {
+  background-color: rgba(146, 146, 146, 0.12);
 }

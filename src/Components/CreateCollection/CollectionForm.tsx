@@ -30,8 +30,8 @@ const CollectionForm = () => {
           <input
             type="text"
             placeholder="Collection Name"
-            name="search"
-            id="search"
+            name="name"
+            id="name"
             className=" collectionforminput rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none mt-3"
           />
         </div>
