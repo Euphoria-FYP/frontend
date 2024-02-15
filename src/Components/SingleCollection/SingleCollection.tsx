@@ -16,13 +16,12 @@ const SingleCollection = () => {
       <div className=" flex h-screen">
         {/* LEFT SIDE */}
         <div className={`flex flex-col justify-start gap-8 w-[75%]`}>
-
           <div
             className={` bg-[url('https://i.seadn.io/gcs/files/a15e1494749043f96f3c4d5bf11ee1e8.png?auto=format&dpr=1&w=828')] bg-cover bg-center  w-full h-80`}
           >
             {/* bg shade */}
             <div
-              className=" flex items-end justify-between w-full h-80 text-white px-10 py-10 "
+              className=" flex items-end justify-between w-full h-80 text-white px-10 py-8 "
               style={{
                 background:
                   "linear-gradient(rgba(0, 0, 0, 0.419), rgba(65, 61, 61, 0.97))",
@@ -34,7 +33,7 @@ const SingleCollection = () => {
 
               {/* first div */}
 
-              <div className=" flex flex-col justify-center items-start gap-5">
+              <div className=" flex flex-col justify-center items-start gap-4">
                 <div className=" rounded-xl border border-gray-400">
                   <img
                     src="https://i.seadn.io/gcs/files/4ae945fc0ce81d1cacbb2d607cdc5761.png?auto=format&dpr=1&w=384"
@@ -44,14 +43,14 @@ const SingleCollection = () => {
                   />
                 </div>
 
-                <h1 className="font-semibold text-lg leading-3 text-white">
+                <h1 className="font-semibold text-lg leading-3 tracking-wider text-white mt-2">
                   BoredApeYachtClub - GOERLI
                 </h1>
+                <span className=" opacity-80">The Rocks</span>
               </div>
 
               {/* second div */}
               <div className=" flex justify-between gap-5">
-
                 <div className="flex flex-col justify-between gap-[5px]">
                   <span className=" font-bold text-[19px]">5%</span>
                   <span className="text-sm opacity-80">Creator Earnings</span>
@@ -59,24 +58,52 @@ const SingleCollection = () => {
 
                 <div className="flex flex-col justify-between gap-[5px]">
                   <span className=" font-bold text-[19px]">1,250</span>
-                  <span className="text-sm opacity-80">Total Listings</span>
+                  <span className="text-sm opacity-80">Total Items</span>
                 </div>
-
               </div>
-
-
             </div>
-
           </div>
 
           {/* description */}
 
-          <div className=" text-white w-1/2 px-10">
+          <div className=" text-white w-1/2 px-10 text-base">
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, doloribus sint amet mollitia est illo consequuntur aliquid sunt voluptates non?
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Quibusdam consectetur temporibus nisi illo quam architecto dolor
+              autem repellendus quod, deserunt perferendis, iusto laudantium ab
+              sapiente eum quisquam reiciendis
             </p>
-          </div>
 
+            <div className="mt-3 inline-block">
+              <span className="text-base">
+                <span className="whitespace-pre">
+                  <div className="inline-flex">
+                    <span className="font-normal text-sm">
+                      Created{" "}
+                      <div className="inline-flex">
+                        <span className="font-semibold text-sm">Dec 2021</span>
+                      </div>
+                    </span>
+                  </div>
+                </span>
+                &nbsp;&nbsp;·&nbsp;{" "}
+                <span className="whitespace-pre">
+                  <div className="inline-flex whitespace-pre">
+                    <div className="inline-flex">
+                      <span className=" text-sm">
+                        Chain{" "}
+                        <div className="inline-flex">
+                          <span className="font-semibold text-sm">
+                            Ethereum
+                          </span>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+                </span>
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* RIGHT SIDE */}
