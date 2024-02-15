@@ -197,6 +197,8 @@ const SingleNft = () => {
               </button>
             ))}
           </div>
+
+          
           {/* DETAILS */}
           {currentTab.id === 1 && <BidTab />}
           {currentTab.id === 2 &&

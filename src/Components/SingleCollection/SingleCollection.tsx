@@ -9,6 +9,7 @@ import {
   IoIosArrowBack,
 } from "react-icons/io";
 import CollectionCard from "../Home/Collections/CollectionCard";
+import TabsCollection from "./TabsCollection";
 
 const SingleCollection = () => {
   return (
@@ -76,6 +77,8 @@ const SingleCollection = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, doloribus sint amet mollitia est illo consequuntur aliquid sunt voluptates non?
             </p>
           </div>
+          
+          <TabsCollection/>
 
         </div>
 
