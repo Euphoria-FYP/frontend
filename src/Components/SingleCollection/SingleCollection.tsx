@@ -16,6 +16,7 @@ const SingleCollection = () => {
       <div className=" flex h-screen">
         {/* LEFT SIDE */}
         <div className={`flex flex-col justify-start gap-8 w-[75%]`}>
+
           <div
             className={` bg-[url('https://i.seadn.io/gcs/files/a15e1494749043f96f3c4d5bf11ee1e8.png?auto=format&dpr=1&w=828')] bg-cover bg-center  w-full h-80`}
           >
@@ -49,8 +50,33 @@ const SingleCollection = () => {
               </div>
 
               {/* second div */}
+              <div className=" flex justify-between gap-5">
+
+                <div className="flex flex-col justify-between gap-[5px]">
+                  <span className=" font-bold text-[19px]">5%</span>
+                  <span className="text-sm opacity-80">Creator Earnings</span>
+                </div>
+
+                <div className="flex flex-col justify-between gap-[5px]">
+                  <span className=" font-bold text-[19px]">1,250</span>
+                  <span className="text-sm opacity-80">Total Listings</span>
+                </div>
+
+              </div>
+
+
             </div>
+
           </div>
+
+          {/* description */}
+
+          <div className=" text-white w-1/2 px-10">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, doloribus sint amet mollitia est illo consequuntur aliquid sunt voluptates non?
+            </p>
+          </div>
+
         </div>
 
         {/* RIGHT SIDE */}
