@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SingleNft from "./Pages/SingleNft";
 import Profile from "./Pages/Profile";
 import CreateCollection from "./Pages/CreateCollection";
+import SingleCollection from "./Pages/SingleCollection";
 import UploadNFT from "./Pages/UploadNft";
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
     {
       path: "/create-collection",
       element: <CreateCollection />,
+    },
+    {
+      path: "/single-collection",
+      element: <SingleCollection />,
     },
   ]);
   return <RouterProvider router={router} />;
