@@ -11,7 +11,7 @@ const StepsCard = () => {
             <>
               {/* main card */}
               <div
-                className="w-[20%] py-4 bg-slate-700 py relative z-[1] h-[260px] rounded-xl cursor-pointer group step_card"
+                className="w-[20%] py-4 bg-slate-800 py relative z-[1] h-[260px] rounded-xl cursor-pointer group step_card"
                 key={i}
               >
                 {/* icon */}
