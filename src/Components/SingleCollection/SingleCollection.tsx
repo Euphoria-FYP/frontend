@@ -9,6 +9,7 @@ import {
   IoIosArrowBack,
 } from "react-icons/io";
 import CollectionCard from "../Home/Collections/CollectionCard";
+import TabsCollection from "./TabsCollection";
 
 const SingleCollection = () => {
   return (
@@ -66,7 +67,7 @@ const SingleCollection = () => {
 
           {/* description */}
 
-          <div className=" text-white w-1/2 px-10 text-base">
+          <div className=" text-white w-[60%] font-extralight px-10 text-[13px]">
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Quibusdam consectetur temporibus nisi illo quam architecto dolor
@@ -104,6 +105,8 @@ const SingleCollection = () => {
               </span>
             </div>
           </div>
+
+          <TabsCollection />
         </div>
 
         {/* RIGHT SIDE */}
@@ -162,7 +165,7 @@ const SingleCollection = () => {
                 />
               </div>
             </div>
-            <div className="lfr-direction flex flex-col gap-4 mt-3">
+            {/* <div className="lfr-direction flex flex-col gap-4 mt-3">
               <h2 className=" text-lg font-medium">MarktePlace Tags</h2>
               <div className=" flex flex-wrap gap-2 w-full">
                 {tags.map((item, i) => {
@@ -183,7 +186,7 @@ const SingleCollection = () => {
                   );
                 })}
               </div>
-            </div>
+            </div> */}
           </div>
         }
         {/* {!isSidebarOpen && (
