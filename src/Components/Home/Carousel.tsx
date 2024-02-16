@@ -150,8 +150,7 @@ const Carousel = () => {
               className={` md:w-[76px] md:h-[75px] w-[66px] h-[64px] p-[10px] border-[2.5px] rounded-[50%] cursor-pointer ${
                 carousel.id === carouselData[0].id && "circle"
               } `}
-              onClick={() => setCarousel(carouselData[0])}
-            />
+              onClick={() => setCarousel(carouselData[0])} />
             <img
               src={carouselImg2}
               alt="carousel2"
