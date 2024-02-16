@@ -7,8 +7,8 @@ const UploadNFT = () => {
     <section className=" w-[80%] h-full flex justify-center gap-12 text-white mx-auto py-10">
       <div className=" w-[45%] flex flex-col">
         <div>
-          <h2 className="text-white mb-2 font-semibold text-lg">Upload File</h2>
-          <p className=" text-gray-400">Drag or choose your file to upload</p>
+          <h2 className="text-white mb-2 font-semibold text-base">Upload File</h2>
+          <p className=" text-[15px] font-light text-gray-400">Drag or choose your file to upload</p>
         </div>
 
         <div
@@ -17,7 +17,7 @@ const UploadNFT = () => {
         >
           <div className=" flex gap-5 mt-3 mb-5 px-5 py-5">
             {/* icon */}
-            <div className=" flex-1 flex flex-col justify-center items-center border border-dashed border-level-1 transition-all group-hover:border-solid w-16 h-72 rounded-xl">
+            <div className=" flex-1 flex flex-col justify-center items-center border border-dashed border-level-1 transition-all group-hover:border-solid w-16 h-72 rounded-lg">
               <FiUpload className="text-2xl mb-3" />
               <h1>Drag and drop media</h1>
               <p className=" text-gray-400 text-sm mt-2">Max size: 50MB</p>
@@ -27,8 +27,8 @@ const UploadNFT = () => {
         </div>
 
         <div>
-          <h1 className="text-white font-semibold text-xl mb-2 mt-10">Note:</h1>
-          <p className=" text-gray-400">Service Fee: 2.5%</p>
+          <h1 className="text-white font-semibold text-base mb-2 mt-10">Note:</h1>
+          <p className=" text-[15px] font-light text-gray-400">Service Fee: 2.5%</p>
         </div>
       </div>
 

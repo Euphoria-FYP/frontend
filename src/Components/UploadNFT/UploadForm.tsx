@@ -8,7 +8,7 @@ const UploadForm = () => {
       <div className=" flex flex-col gap-6">
         {/* first input */}
         <div>
-          <label className="text-md leading-md font-semibold">
+          <label className="text-base font-medium">
             Product Name
           </label>
           <input
@@ -16,7 +16,7 @@ const UploadForm = () => {
             placeholder="e.g. `Digital Awesome Game` "
             name="search"
             id="search"
-            className=" collectionforminput rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none mt-3"
+            className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
           />
         </div>
 
@@ -24,7 +24,7 @@ const UploadForm = () => {
         <div className=" flex gap-4">
           {/* Price in $ */}
           <div className="flex-1">
-            <label className="text-md leading-md font-semibold">
+            <label className="text-base font-medium">
               Base Price in $
             </label>
             <input
@@ -32,12 +32,12 @@ const UploadForm = () => {
               placeholder="e.g. `20$` "
               name="price"
               id="price"
-              className=" collectionforminput rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none mt-3"
+              className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
             />
           </div>
           {/* Price in Eth */}
           <div className="flex-1">
-            <label className="text-md leading-md font-semibold">
+            <label className="text-base font-medium">
               Base Price in Eth
             </label>
             <input
@@ -46,14 +46,14 @@ const UploadForm = () => {
               name="price"
               id="price"
               disabled
-              className=" collectionforminput disabled rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none mt-3"
+              className=" collectionforminput disabled rounded-lg w-full text-sm font-extralight placeholder:text-white placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
             />
           </div>
         </div>
 
         {/* Royalty */}
         <div className="flex-1">
-          <label className="text-md leading-md font-semibold">
+          <label className="text-base font-medium">
             Creator Earning
           </label>
           <input
@@ -61,7 +61,7 @@ const UploadForm = () => {
             placeholder="e.g `0%-5%` "
             name="price"
             id="price"
-            className=" collectionforminput rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none mt-3"
+            className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
           />
         </div>
 
@@ -69,7 +69,7 @@ const UploadForm = () => {
         <div className=" flex gap-4">
           {/* Start Date */}
           <div className="flex-1">
-            <label className="text-md leading-md font-semibold">
+            <label className="text-base font-medium">
               Start Date
             </label>
             <input
@@ -77,25 +77,25 @@ const UploadForm = () => {
               placeholder=""
               name="date"
               id="date"
-              className=" collectionforminput rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none mt-3"
+              className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
             />
           </div>
           {/* End Date */}
           <div className="flex-1">
-            <label className="text-md leading-md font-semibold">End Date</label>
+            <label className="text-base font-medium">End Date</label>
             <input
               type="date"
               placeholder=""
               name="date"
               id="date"
-              className=" collectionforminput rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none mt-3"
+              className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
             />
           </div>
         </div>
 
         {/* description */}
         <div>
-          <label className="text-md leading-md font-semibold">
+          <label className="text-base font-medium">
             Description
           </label>
 
@@ -106,7 +106,7 @@ const UploadForm = () => {
               placeholder="e.g. `After purchasing the product you can get item`..."
               cols={5}
               rows={5}
-              className="rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none collectionforminput"
+              className="rounded-lg w-full text-sm font-extralight placeholder:text-white placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none collectionforminput"
             />
           </div>
         </div>

@@ -23,7 +23,7 @@ const CreateCollection = () => {
           <SideContent />
         </div>
       </section>
-      <div className=" px-4 py-[13px] sticky bottom-0 bg-[#1f2045] flex justify-end items-center border-t-[1px] border-gray-400">
+      <div className=" px-4 py-[10px] sticky bottom-0 bg-[#1f2045] flex justify-end items-center border-t-[1px] border-gray-400">
         <div className=" ">
           <StyledButton
             heading="Submit"

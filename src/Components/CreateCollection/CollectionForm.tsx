@@ -39,7 +39,7 @@ const CollectionForm = () => {
           {/* first dropdown */}
           <div className=" flex-1">
             <label className="text-base font-medium">Category</label>
-            <div className=" flex flex-col gap-2 w-[330px] mt-3  ">
+            <div className=" flex flex-col gap-2 mt-3  ">
               <button
                 className=" flex justify-between items-center rounded-lg text-[13px] font-extralight collectionforminput"
                 onClick={() => handleDropDownClick(0)}
@@ -66,7 +66,7 @@ const CollectionForm = () => {
           {/* second dropdown */}
           <div className=" flex-1">
             <label className="text-base font-medium">Sub Category</label>
-            <div className=" flex flex-col gap-2 w-[330px] mt-3  ">
+            <div className=" flex flex-col gap-2 mt-3  ">
               <button
                 className=" flex justify-between items-center rounded-lg text-[13px] font-extralight collectionforminput"
                 onClick={() => handleDropDownClick(1)}
