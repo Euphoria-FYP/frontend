@@ -10,7 +10,7 @@ const CreateCollection = () => {
       <section className=" w-[80%] h-full flex justify-center  gap-12 text-white mx-auto py-10">
         {/* image and  form section */}
         <div className=" w-[65%]">
-          <h1 className=" text-3xl font-semibold mb-6">
+          <h1 className=" text-4xl font-semibold mb-6">
             Create your Collection
           </h1>
           <ImageSection />

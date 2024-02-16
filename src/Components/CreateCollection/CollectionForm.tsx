@@ -24,15 +24,13 @@ const CollectionForm = () => {
       <div className=" flex flex-col gap-6">
         {/* first input */}
         <div>
-          <label className="text-md leading-md font-semibold">
-            Contract name
-          </label>
+          <label className="text-base font-medium">Contract name</label>
           <input
             type="text"
             placeholder="Collection Name"
             name="name"
             id="name"
-            className=" collectionforminput rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none mt-3"
+            className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
           />
         </div>
 
@@ -40,10 +38,10 @@ const CollectionForm = () => {
         <div className=" flex gap-4">
           {/* first dropdown */}
           <div className=" flex-1">
-            <label className="text-md leading-md font-semibold">Category</label>
-            <div className=" flex flex-col gap-2 w-[330px]] mt-3  ">
+            <label className="text-base font-medium">Category</label>
+            <div className=" flex flex-col gap-2 w-[330px] mt-3  ">
               <button
-                className=" flex justify-between items-center rounded-lg text-base font-light collectionforminput"
+                className=" flex justify-between items-center rounded-lg text-[13px] font-extralight collectionforminput"
                 onClick={() => handleDropDownClick(0)}
               >
                 <span>Add Categories</span>
@@ -58,7 +56,7 @@ const CollectionForm = () => {
                   openDropDown[0] ? "block" : "hidden"
                 }  rounded-lg  text-base  scroll-marketplace-dropdown collectiondropdown w-full`}
               >
-                <p className=" w-full capitalize font-medium text-sm py-2 px-5 cursor-pointer ">
+                <p className=" w-full capitalize font-normal text-sm py-2 px-5 cursor-pointer ">
                   Sports
                 </p>
               </div>
@@ -67,12 +65,10 @@ const CollectionForm = () => {
 
           {/* second dropdown */}
           <div className=" flex-1">
-            <label className="text-md leading-md font-semibold">
-              Sub Category
-            </label>
+            <label className="text-base font-medium">Sub Category</label>
             <div className=" flex flex-col gap-2 w-[330px] mt-3  ">
               <button
-                className=" flex justify-between items-center rounded-lg text-base font-light collectionforminput"
+                className=" flex justify-between items-center rounded-lg text-[13px] font-extralight collectionforminput"
                 onClick={() => handleDropDownClick(1)}
               >
                 <span>Add Sub Categories</span>
@@ -87,7 +83,7 @@ const CollectionForm = () => {
                   openDropDown[1] ? "block" : "hidden"
                 }  rounded-lg  text-base  scroll-marketplace-dropdown collectiondropdown w-full`}
               >
-                <p className=" w-full capitalize font-medium text-sm py-2 px-5 cursor-pointer ">
+                <p className=" w-full capitalize font-normal text-sm py-2 px-5 cursor-pointer ">
                   Sports
                 </p>
               </div>
@@ -98,9 +94,7 @@ const CollectionForm = () => {
         {/* description */}
 
         <div>
-          <label className="text-md leading-md font-semibold">
-            Description
-          </label>
+          <label className="text-base font-medium">Description</label>
 
           <div className=" mt-3">
             <textarea
@@ -109,7 +103,7 @@ const CollectionForm = () => {
               placeholder="Write a description of your collection"
               cols={5}
               rows={5}
-              className="rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none collectionforminput"
+              className="collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none collectionforminput"
             />
           </div>
         </div>
@@ -117,25 +111,22 @@ const CollectionForm = () => {
         {/* blockchain */}
 
         <div>
-          <label className="text-md leading-md font-semibold">Blockchain</label>
+          <label className="text-base font-medium">Blockchain</label>
 
-          <div className="flex flex-col w-[190px] flex-1 rounded-xl px-4 py-6 border-2 border-gray-500 cursor-pointer hover:border-gray-300 mt-3">
+          <div className="flex flex-col w-[160px] flex-1 rounded-xl px-4 py-4 border-2 border-gray-500 cursor-pointer hover:border-gray-300 mt-3">
             {/* icon */}
-            <div className="mb-6 h-8 w-8">
-              <img src={Eth} alt="" />
+            <div className="flex gap-2 items-center mb-3 ">
+              <img src={Eth} alt="" className="h-8 w-8" />
+              <span className="text-lg font-medium ">Ethereum</span>
             </div>
 
             {/* content */}
             <div className=" flex flex-col gap-1">
-              <span className="text-md leading-md font-semibold mb-1">
-                Ethereum
-              </span>
-
-              <span className="text-xs w-28 font-semibold rounded-[8px] bg-gray-600 px-3 py-2 md:my-2">
+              <span className="text-xs w-full text-center font-medium rounded-[8px] bg-gray-600 px-3 py-[10px] tracking-wider md:my-2">
                 Most popular
               </span>
 
-              <span className="text-sm leading-sm text-secondary">
+              <span className="text-xs leading-sm font-light text-justify">
                 Estimated cost to deploy contract
               </span>
             </div>
