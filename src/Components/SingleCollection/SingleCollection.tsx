@@ -13,6 +13,17 @@ import TabsCollection from "./TabsCollection";
 
 const SingleCollection = () => {
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
+  const [expanded, setExpanded] = useState(false);
+  const maxLength = 70;
+  const longText = `Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+  Quibusdam consectetur temporibus nisi illo quam architecto dolor
+  autem repellendus quod, deserunt perferendis, iusto laudantium ab
+  sapiente eum quisquam reiciendis`;
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+  const displayText = expanded ? longText : longText.slice(0, maxLength);
   return (
     <>
       <div className=" flex h-full">
@@ -75,14 +86,19 @@ const SingleCollection = () => {
           <div
             className={` text-white ${
               isSidebarOpen ? "w-[60%]" : "w-1/2"
-            } font-extralight px-10 text-[13.5px]`}
+            } font-extralight px-10 text-[13.5px] transition-all duration-300`}
           >
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Quibusdam consectetur temporibus nisi illo quam architecto dolor
-              autem repellendus quod, deserunt perferendis, iusto laudantium ab
-              sapiente eum quisquam reiciendis
-            </p>
+            <div>
+              <p className=" transition-all duration-300 leading-4">
+                {expanded ? displayText : displayText + "...."}
+              </p>
+              <span
+                className={`font-semibold cursor-pointer hover:opacity-80`}
+                onClick={toggleExpanded}
+              >
+                {expanded ? "See less" : "See more"}
+              </span>
+            </div>
 
             <div className="mt-3 inline-block">
               <span className="text-base">
@@ -100,7 +116,7 @@ const SingleCollection = () => {
                 <span className="whitespace-pre">
                   <div className="inline-flex whitespace-pre">
                     <div className="inline-flex">
-                      <span className=" text-sm">
+                      <span className=" font-normal text-sm">
                         Chain{" "}
                         <div className="inline-flex">
                           <span className="font-semibold text-sm">
