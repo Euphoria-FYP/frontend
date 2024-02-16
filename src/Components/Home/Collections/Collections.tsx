@@ -8,7 +8,7 @@ const Collections = () => {
       <section className=" w-[90%] flex flex-col justify-center items-center my-8 mx-auto">
         <div className="flex flex-col justify-center items-center gap-3">
           <h2 className="uppercase  font-semibold text-xl text-[#B900FF]">
-            NFT Creators
+            Popular Creators
           </h2>
           <h1 className=" text-white font-semibold text-3xl md:text-5xl tracking-wider CodeNewRomanFont">
             Top Collections

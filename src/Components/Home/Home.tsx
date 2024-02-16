@@ -16,10 +16,10 @@ const Home = () => {
     <>
       <HeaderSection />
       <Carousel />
-      <MarketPlace />
       <ExploreCategories />
-      <Contributor />
+      <MarketPlace />
       <Collections/>
+      <Contributor />
       <NftBanner />
       <StepsCard />
       <FAQ />

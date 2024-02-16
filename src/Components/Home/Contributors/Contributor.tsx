@@ -33,7 +33,7 @@ const Contributor = () => {
     ],
   };
   return (
-    <section className=" w-[90%] flex flex-col justify-center items-center my-5 mx-auto mt-16">
+    <section className=" w-[90%] flex flex-col justify-center items-center my-5 mx-auto mt-10">
       <div className="flex flex-col justify-center items-center gap-3">
         <h2 className="uppercase  font-semibold text-xl text-[#B900FF]">
           NFT Creators

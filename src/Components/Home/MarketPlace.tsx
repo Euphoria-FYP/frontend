@@ -43,7 +43,7 @@ const MarketPlace = () => {
     .filter((value, index, self) => self.indexOf(value) === index);
 
   return (
-    <section className="flex flex-col justify-center items-center  mx-auto">
+    <section id="drop" className="flex flex-col justify-center items-center  mx-auto">
       <div className="flex flex-col justify-center items-center gap-3">
         <h2 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">
           NFT MARKETPLACE

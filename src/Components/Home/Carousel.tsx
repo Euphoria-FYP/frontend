@@ -60,7 +60,7 @@ const Carousel = () => {
   return (
     <>
       <section className="relative text-white md:h-screen w-full md:w-4/5 flex md:flex-row flex-col justify-center md:justify-between items-center md:gap-6 mx-auto md:px-0 px-5 pt-24 md:pt-0 pb-16 md:pb-0">
-        {/* BUTTON SECTION */}
+        {/* BUTTON SECTION
         <div className="   absolute flex gap-3 md:top-6 top-3 md:right-2 right-4">
           <img
             src={carouselImg1}
@@ -78,7 +78,7 @@ const Carousel = () => {
             } `}
             onClick={() => setCarousel(carouselData[1])}
           />
-        </div>
+        </div> */}
         {/* LEFT SIDE */}
         <div className=" w-full md:w-[55%] flex flex-col md:gap-6 gap-1">
           {/* <h1 className=" text-[32px] font-bold">{carousel.title}</h1> */}
@@ -111,7 +111,7 @@ const Carousel = () => {
                   width={130}
                 />
               </div>
-              <div className="mt-4 md:mt-0 flex gap-8">
+              {/* <div className="mt-4 md:mt-0 flex gap-8">
                 <div className=" flex flex-col">
                   <p className=" text-3xl CodeNewRomanFont">15K+</p>
                   <span className="text-[#cfcfcf] text-sm tracking-widest">
@@ -130,7 +130,7 @@ const Carousel = () => {
                     Creators
                   </span>
                 </div>
-              </div>
+              </div> */}
             </>
           )}
           {carousel.id === 2 && (
@@ -142,7 +142,27 @@ const Carousel = () => {
               />
             </div>
           )}
+          {/* BUTTON SECTION */}
+          <div className="flex gap-3 md:top-6 top-3 md:right-2 right-4">
+            <img
+              src={carouselImg1}
+              alt="carousel1"
+              className={` md:w-[76px] md:h-[75px] w-[66px] h-[64px] p-[10px] border-[2.5px] rounded-[50%] cursor-pointer ${
+                carousel.id === carouselData[0].id && "circle"
+              } `}
+              onClick={() => setCarousel(carouselData[0])}
+            />
+            <img
+              src={carouselImg2}
+              alt="carousel2"
+              className={` md:w-[76px] md:h-[75px] w-[66px] h-[64px] p-[10px] border-[2.5px] rounded-[50%] cursor-pointer ${
+                carousel.id === carouselData[1].id && "circle"
+              } `}
+              onClick={() => setCarousel(carouselData[1])}
+            />
+          </div>
         </div>
+
         {/* RIGHT SIDE */}
         <div className=" w-[40%] mt-20 hidden md:flex justify-end items-center">
           {carousel.id === 1 ? (

@@ -29,7 +29,7 @@ const HeaderSection = () => {
         <section className=" flex justify-between items-center w-[80%] py-[14px] mx-auto">
           <div className=" flex justify-center gap-8 items-center">
             <NavLink
-              to={"#"}
+              to={"#drop"}
               className={
                 " text-white font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
               }

@@ -19,7 +19,7 @@ const UploadNFT = () => {
             {/* icon */}
             <div className=" flex-1 flex flex-col justify-center items-center border border-dashed border-level-1 transition-all group-hover:border-solid w-16 h-72 rounded-lg">
               <FiUpload className="text-2xl mb-3" />
-              <h1>Drag and drop media</h1>
+              <h1 className=" text-lg">Drag and drop media</h1>
               <p className=" text-gray-400 text-sm mt-2">Max size: 50MB</p>
               <p className=" text-gray-400 text-sm">JPG, PNG, GIF, SVG, MP4</p>
             </div>
