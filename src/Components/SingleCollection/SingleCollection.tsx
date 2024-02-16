@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MarketContrubutor from "../MarketPlace/MarketContrubutor";
 import { tags, MyCollections } from "../../data";
 import { BiSearchAlt } from "react-icons/bi";
@@ -12,11 +12,16 @@ import CollectionCard from "../Home/Collections/CollectionCard";
 import TabsCollection from "./TabsCollection";
 
 const SingleCollection = () => {
+  const [isSidebarOpen, setIsSideBarOpen] = useState(true);
   return (
     <>
-      <div className=" flex h-screen">
+      <div className=" flex h-full">
         {/* LEFT SIDE */}
-        <div className={`flex flex-col justify-start gap-8 w-[75%]`}>
+        <div
+          className={` ${
+            isSidebarOpen ? "w-[75%]" : "w-[100%]"
+          } flex flex-col justify-start gap-8 transition-all duration-300 `}
+        >
           <div
             className={` bg-[url('https://i.seadn.io/gcs/files/a15e1494749043f96f3c4d5bf11ee1e8.png?auto=format&dpr=1&w=828')] bg-cover bg-center  w-full h-80`}
           >
@@ -67,7 +72,11 @@ const SingleCollection = () => {
 
           {/* description */}
 
-          <div className=" text-white w-[60%] font-extralight px-10 text-[13px]">
+          <div
+            className={` text-white ${
+              isSidebarOpen ? "w-[60%]" : "w-1/2"
+            } font-extralight px-10 text-[13.5px]`}
+          >
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Quibusdam consectetur temporibus nisi illo quam architecto dolor
@@ -87,7 +96,7 @@ const SingleCollection = () => {
                     </span>
                   </div>
                 </span>
-                &nbsp;&nbsp;·&nbsp;{" "}
+                <span className=" font-bold">&nbsp;&nbsp;·&nbsp; </span>
                 <span className="whitespace-pre">
                   <div className="inline-flex whitespace-pre">
                     <div className="inline-flex">
@@ -106,15 +115,15 @@ const SingleCollection = () => {
             </div>
           </div>
 
-          <TabsCollection />
+          <TabsCollection sidebarOpen={isSidebarOpen} />
         </div>
 
         {/* RIGHT SIDE */}
-        {
+        {isSidebarOpen && (
           <div
-            className={` flex flex-col gap-2 w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace transition-all`}
+            className={` flex flex-col gap-2 w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace transition-all duration-300l`}
           >
-            <div className="lfr-direction flex justify-between items-center  border-b-2 pb-3 border-[#1e1e23]">
+            <div className="lfr-direction flex justify-between items-center  border-b  pb-3 border-gray-300">
               <div className="flex items-center gap-5">
                 <h2 className=" text-lg font-medium">Filters</h2>
                 <button className=" font-light active:underline underline-offset-[3px] ">
@@ -123,7 +132,7 @@ const SingleCollection = () => {
               </div>
               <div
                 className=" bg-violet-800 rounded py-[2px] pr-[2px] pl-[3px] cursor-pointer"
-                // onClick={() => setIsSideBarOpen((prev) => !prev)}
+                onClick={() => setIsSideBarOpen((prev) => !prev)}
               >
                 <IoIosArrowForward className=" text-xl" />
               </div>
@@ -165,40 +174,18 @@ const SingleCollection = () => {
                 />
               </div>
             </div>
-            {/* <div className="lfr-direction flex flex-col gap-4 mt-3">
-              <h2 className=" text-lg font-medium">MarktePlace Tags</h2>
-              <div className=" flex flex-wrap gap-2 w-full">
-                {tags.map((item, i) => {
-                  return (
-                    <button
-                      key={i}
-                      className={` rounded-lg text-sm py-2 px-4 `}
-                      // onClick={() => {
-                      //   tagsFilter(item.tag, "tags");
-                      //   setType("tags");
-                      //   setCategory("");
-                      //   setSort("");
-                      //   handleBgImg(item);
-                      // }}
-                    >
-                      {item.tag}
-                    </button>
-                  );
-                })}
-              </div>
-            </div> */}
           </div>
-        }
-        {/* {!isSidebarOpen && (
-        <div className=" flex flex-col gap-2 w-[65px] py-[28px] px-[20px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow transition-all">
-          <div
-            className=" bg-violet-800 rounded py-[2px] pr-[3px] pl-[2px] cursor-pointer"
-            onClick={() => setIsSideBarOpen((prev) => !prev)}
-          >
-            <IoIosArrowBack className=" text-xl" />
+        )}
+        {!isSidebarOpen && (
+          <div className=" flex flex-col gap-2 w-[65px] py-[28px] px-[20px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow transition-all duration-300">
+            <div
+              className=" bg-violet-800 rounded py-[2px] pr-[3px] pl-[2px] cursor-pointer"
+              onClick={() => setIsSideBarOpen((prev) => !prev)}
+            >
+              <IoIosArrowBack className=" text-xl" />
+            </div>
           </div>
-        </div>
-      )} */}
+        )}
       </div>
     </>
   );

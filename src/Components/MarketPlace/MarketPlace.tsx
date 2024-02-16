@@ -229,7 +229,7 @@ const MarketPlace = ({ setBgImg }: any) => {
         {/* RIGHT SIDE */}
         {isSidebarOpen && (
           <div
-            className={` flex flex-col gap-2 w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace transition-all`}
+            className={` flex flex-col gap-2 w-[25%] py-[28px] px-[36px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow scroll-marketplace transition-all duration-300`}
           >
             <div className="lfr-direction flex justify-between items-center  border-b-2 pb-3 border-[#1e1e23]">
               <div className="flex items-center gap-5">
@@ -322,7 +322,7 @@ const MarketPlace = ({ setBgImg }: any) => {
           </div>
         )}
         {!isSidebarOpen && (
-          <div className=" flex flex-col gap-2 w-[65px] py-[28px] px-[20px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow transition-all">
+          <div className=" flex flex-col gap-2 w-[65px] py-[28px] px-[20px] bg-[#1f2045] text-[#cfcfcf] border border-[#2e2459] marketPlaceBoxShadow transition-all duration-300">
             <div
               className=" bg-violet-800 rounded py-[2px] pr-[3px] pl-[2px] cursor-pointer"
               onClick={() => setIsSideBarOpen((prev) => !prev)}

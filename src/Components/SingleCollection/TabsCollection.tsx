@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import MarketPlaceCard from "../Shared/MarketPlaceCard";
 
 interface TabButtonType {
   id: number;
@@ -13,16 +14,13 @@ const tabButtons = [
   },
   {
     id: 2,
-    title: "Offer",
-  },
-  {
-    id: 3,
     title: "History",
   },
 ];
 
-const TabsCollection = () => {
+const TabsCollection = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
   const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[1]);
+
   return (
     <>
       <div>
@@ -30,7 +28,7 @@ const TabsCollection = () => {
           {tabButtons.map((item) => (
             <button
               key={item.id}
-              className={` flex-1 h-9 rounded-lg text-sm
+              className={`h-9 w-20 rounded-lg text-sm
                 transition-all duration-300 transform-gpu  ${
                   currentTab.id === item.id
                     ? "bg-[#212e48] text-stone-200"
@@ -42,10 +40,57 @@ const TabsCollection = () => {
             </button>
           ))}
         </div>
-        
-        <div className=" px-10 mt-3">
-        <hr className="border-t border-gray-300" />
+
+        <div className=" px-10 mt-3 mb-5">
+          <hr className="border-t border-gray-300" />
         </div>
+
+        {currentTab.title === "Listing" && (
+          <div
+            className={` flex flex-wrap justify-start ${
+              sidebarOpen ? `gap-8` : `gap-6`
+            } pb-12 pt-3 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300 ${
+              sidebarOpen ? `px-6` : `px-8`
+            }`}
+          >
+            <MarketPlaceCard
+              key={1}
+              id={1}
+              marketplace={"sports"}
+              name={"myy"}
+              userName={"ahsan"}
+              currentBid={5000}
+              inDollars={2500}
+            />
+            <MarketPlaceCard
+              key={1}
+              id={1}
+              marketplace={"sports"}
+              name={"myy"}
+              userName={"ahsan"}
+              currentBid={5000}
+              inDollars={2500}
+            />
+            <MarketPlaceCard
+              key={1}
+              id={1}
+              marketplace={"sports"}
+              name={"myy"}
+              userName={"ahsan"}
+              currentBid={5000}
+              inDollars={2500}
+            />
+            <MarketPlaceCard
+              key={1}
+              id={1}
+              marketplace={"sports"}
+              name={"myy"}
+              userName={"ahsan"}
+              currentBid={5000}
+              inDollars={2500}
+            />
+          </div>
+        )}
       </div>
     </>
   );
