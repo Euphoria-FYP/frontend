@@ -28,10 +28,10 @@ const data = [
 const SideContent = () => {
   return (
     <>
-      <div className="flex flex-col gap-4 rounded-2xl bg-slate-700 p-9 max-w-[320px]">
+      <div className="flex flex-col gap-4 rounded-2xl bg-slate-700 p-7 max-w-[320px]">
         {/* first div */}
         <div>
-          <p className="text-md leading-md font-semibold mb-4">
+          <p className="text-lg font-semibold mb-4">
             After you deploy your contract you’ll be able to:
           </p>
           <div className="flex flex-col gap-4">
@@ -40,10 +40,10 @@ const SideContent = () => {
                 <div className=" flex">
                   {item.icon}
                   <div className=" ml-[16px]">
-                    <h3 className="text-sm leading-sm font-semibold mb-1 text-secondary">
+                    <h3 className="text-[15px] font-medium mb-1 text-secondary">
                       {item.title}
                     </h3>
-                    <p className="text-sm leading-sm">{item.description}</p>
+                    <p className="text-[13px] font-light leading-sm">{item.description}</p>
                   </div>
                 </div>
               );
@@ -54,17 +54,17 @@ const SideContent = () => {
         {/* second div */}
 
         <div>
-          <p className="text-md leading-md font-semibold mb-4">
+          <p className="text-lg font-semibold mb-4">
             Your community:
           </p>
           <div className="flex flex-col gap-4">
             <div className=" flex">
               <FiEyeOff className=" text-3xl text-white" />
               <div className=" ml-[16px]">
-                <h3 className="text-sm leading-sm font-semibold mb-1 text-secondary">
+                <h3 className="text-[15px] font-medium mb-1 text-secondary">
                   Can’t view
                 </h3>
-                <p className="text-sm leading-sm">
+                <p className="text-[13px] font-light leading-sm">
                   Your drop page or items until you publish them.
                 </p>
               </div>
@@ -73,10 +73,10 @@ const SideContent = () => {
             <div className=" flex">
               <FiEye className=" text-3xl text-white" />
               <div className=" ml-[16px]">
-                <h3 className="text-sm leading-sm font-semibold mb-1 text-secondary">
+                <h3 className="text-[15px] font-medium mb-1 text-secondary">
                   Can view
                 </h3>
-                <p className="text-sm leading-sm">
+                <p className="text-[13px] font-light leading-sm">
                   That you’ve deployed a contract onto the blockchain.
                 </p>
               </div>
