@@ -30,7 +30,7 @@ const ExploreCategories = () => {
       <StyledButton
         heading="All Categories"
         bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
-        width={180}
+        width={160}
         />
         </NavLink>
     </section>

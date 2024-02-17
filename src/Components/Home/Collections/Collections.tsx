@@ -1,6 +1,8 @@
 import React from "react";
 import CollectionCard from "./CollectionCard";
 import { MyCollections } from "../../../data";
+import StyledButton from "../../Shared/StyledButton";
+import { NavLink } from "react-router-dom";
 
 const Collections = () => {
   return (
@@ -15,7 +17,7 @@ const Collections = () => {
           </h1>
         </div>
 
-        <div className=" flex justify-center items-center md:gap-5 mt-10 mb-5 flex-wrap">
+        <div className=" flex justify-center items-center md:gap-5 mt-10 mb-7 flex-wrap">
           {MyCollections.map((item, i) => {
             return (
               <CollectionCard
@@ -31,6 +33,13 @@ const Collections = () => {
             );
           })}
         </div>
+        <NavLink to={"/marketplace"}>
+          <StyledButton
+            heading="See All Collections"
+            bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
+            width={180}
+          />
+        </NavLink>
       </section>
     </>
   );

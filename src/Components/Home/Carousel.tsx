@@ -101,12 +101,12 @@ const Carousel = () => {
             <>
               <div className="mt-4 md:mt-0 flex gap-8 w-full">
                 <StyledButton
-                  heading="Sell"
+                  heading="Sell NFT"
                   bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
                   width={130}
                 />
                 <StyledButton
-                  heading="Create"
+                  heading="Create NFT"
                   bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
                   width={130}
                 />

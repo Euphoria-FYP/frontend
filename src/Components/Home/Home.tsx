@@ -14,7 +14,7 @@ import Collections from "./Collections/Collections";
 const Home = () => {
   return (
     <>
-      <HeaderSection />
+      {/* <HeaderSection /> */}
       <Carousel />
       <ExploreCategories />
       <MarketPlace />
