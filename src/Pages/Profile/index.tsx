@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import Layout from "../../Components/Shared/Layout";
-import Profile from '../../Components/Profile/Profile';
+import Profile from "../../Components/Profile/Profile";
 
 const index = () => {
   return (
     <Layout bgImgClass={"marketPlaceBgImg"}>
-    <Profile />
-  </Layout>
-  )
-}
+      <Profile />
+    </Layout>
+  );
+};
 
-export default index
+export default index;

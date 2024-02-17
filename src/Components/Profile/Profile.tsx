@@ -37,8 +37,8 @@ const Profile = () => {
     <>
       <section className=" w-[90%] h-full flex flex-col justify-center gap-12 text-white mx-auto py-10">
         {/* header */}
-        <div className=" bg-[url('https://html.ditsolution.net/nftpro/assets/images/resource/author-bg.png')] bg-cover bg-center pt-10 pb-28 w-full h-[350px] rounded-xl">
-          {/* profile photo */}
+        {/* <div className=" bg-[url('https://html.ditsolution.net/nftpro/assets/images/resource/author-bg.png')] bg-cover bg-center pt-10 pb-28 w-full h-[350px] rounded-xl">
+          
           <div className="float-left mr-5 relative flex justify-center items-center gap-5 px-8 z-10 mt-3">
             <img
               className=" rounded-lg"
@@ -50,7 +50,11 @@ const Profile = () => {
               <p>@davis.jhon</p>
 
               <div className=" flex gap-2 mt-5">
-                <StyledButton heading="Follow" bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)" width={120} />
+                <StyledButton
+                  heading="Follow"
+                  bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
+                  width={120}
+                />
 
                 <div
                   className=" flex justify-center items-center gap-2 p-3 rounded"
@@ -90,9 +94,43 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="bg-[#212e48] h-[50%] py-10 text-white  relative -top-[125px] rounded-bl-xl rounded-br-xl"></div>
+        <div className="bg-[#212e48] h-[50%] py-10 text-white  relative -top-[125px] rounded-bl-xl rounded-br-xl"></div> */}
+        <div className="w-full h-[350px] rounded-xl ">
+          <div className="  h-[75%] bg-[url('https://html.ditsolution.net/nftpro/assets/images/resource/author-bg.png')] rounded-tl-xl rounded-tr-xl">
+            <div className=" flex justify-start items-start gap-5 px-10 pt-24">
+              <img
+                className=" relative rounded-[50%] border-4 border-white w-52 h-52 z-20"
+                src="https://html.ditsolution.net/nftpro/assets/images/resource/profile.jpg"
+                alt=""
+              />
+              <div className=" flex flex-col pt-8">
+                <h4 className=" text-xl font-bold">Davis Jhon</h4>
+                <p>@davis.jhon</p>
 
-        <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#24243557] p-2 -mt-32">
+                <div className=" flex gap-2 mt-4">
+                  <button className="profilePageBtn"> Follow</button>
+                  <button className=" group flex justify-center items-center gap-2 rounded-[5px]  pl-5 bg-[#444882]">
+                    <span className=" py-2">0x731F9FBF4163D </span>
+                    <div
+                      className="profilePageBtn h-full flex items-center justify-center"
+                      style={{
+                        padding: "0px 8px",
+                        display: "flex",
+                        borderTopLeftRadius: "0px",
+                        borderBottomLeftRadius: "0px",
+                      }}
+                    >
+                      <FaCopy className="" />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className=" bg-[#212e48] h-[20%] text-white rounded-bl-xl rounded-br-xl"></div>
+        </div>
+
+        <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#24243557] p-2 ">
           {tabButtons.map((item) => (
             <button
               key={item.id}
