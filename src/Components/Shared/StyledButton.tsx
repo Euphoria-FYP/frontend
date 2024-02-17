@@ -21,7 +21,8 @@ const StyledButton = (props: props) => {
           width: `${props.width}px`,
         }}
       >
-        {props.icon && <span className=" mr-2">{props.icon}</span>} {props.heading}
+        {props.icon && <span className=" mr-2">{props.icon}</span>}{" "}
+        {props.heading}
       </button>
     </>
   );

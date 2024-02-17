@@ -1,5 +1,5 @@
 import * as Yup from "yup";
-type UploadNF = Yup.InferType<typeof UploadnftSchema>;
+type UploadNFT = Yup.InferType<typeof UploadnftSchema>;
 
 export const UploadnftSchema = Yup.object({
   productName: Yup.string().required("Please enter the Product name"),
