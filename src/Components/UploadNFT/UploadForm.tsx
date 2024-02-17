@@ -73,7 +73,7 @@ const UploadForm = () => {
                     ...prevValues,
                     basePriceDollars: dollarValue,
                     basePriceETH: (parseFloat(dollarValue) * 0.000379).toFixed(
-                      6
+                      2
                     ),
                   }));
                 }}
