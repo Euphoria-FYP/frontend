@@ -14,7 +14,7 @@ import TabsCollection from "./TabsCollection";
 const SingleCollection = () => {
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
   const [expanded, setExpanded] = useState(false);
-  const maxLength = 70;
+  const maxLength = 50;
   const longText = `Lorem ipsum, dolor sit amet consectetur adipisicing elit.
   Quibusdam consectetur temporibus nisi illo quam architecto dolor
   autem repellendus quod, deserunt perferendis, iusto laudantium ab
@@ -93,7 +93,7 @@ const SingleCollection = () => {
                 {expanded ? displayText : displayText + "...."}
               </p>
               <span
-                className={`font-semibold cursor-pointer hover:opacity-80`}
+                className={`font-bold cursor-pointer hover:opacity-80`}
                 onClick={toggleExpanded}
               >
                 {expanded ? "See less" : "See more"}

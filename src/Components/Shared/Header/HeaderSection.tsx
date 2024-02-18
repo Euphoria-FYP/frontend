@@ -28,7 +28,8 @@ const HeaderSection = () => {
     <>
       {location.pathname !== "/upload-nft" &&
         location.pathname !== "/create-collection" &&
-        location.pathname !== "/marketplace" && (
+        location.pathname !== "/marketplace" &&
+        location.pathname !== "/single-collection" && (
           <header
             className={` flex flex-col w-full z-[20000] ${
               isVisible ? "default-header  scroll-header" : "default-header "

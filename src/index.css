@@ -6,19 +6,17 @@
 
 @font-face {
   font-family: "CodeNewRoman";
-  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf")
-      format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf")
-      format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf")
-      format("truetype");
+  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf") format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf") format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf") format("truetype");
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "CodeNewRoman", sans-serif;
 }
 
-/* HomePage Background */
+/* ---------------------- HOMEPAGE BACKGROUND ---------------------- */
 .homeBgImg {
   /* background-image: url("./assets/images/BgHome–2-wecompress.png"); */
   background-image: url("./assets/images/homebgfinal.jpg");
@@ -26,7 +24,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* MarketplacePage Background */
+/* ---------------------- MARKETPLACE BACKGROUND ---------------------- */
 .marketPlaceBgImg {
   background-image: url("./assets/images/Home–2b.png");
   background-size: cover;
@@ -41,9 +39,9 @@ body {
   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
-.CodeNewRomanFont {
+/* .CodeNewRomanFont {
   font-family: "CodeNewRoman", sans-serif;
-}
+} */
 
 .BarlowFont {
   font-family: "Barlow", sans-serif;
@@ -62,6 +60,8 @@ body {
 .lfr-direction {
   direction: ltr !important;
 }
+
+/* ---------------------- SCROLL BAR ---------------------- */
 
 .scroll-marketplace {
   overflow-y: scroll;
@@ -99,7 +99,8 @@ body {
   background-color: none;
 }
 
-/* carousel circle animation */
+
+/* ---------------------- CRICLE ANIMATION ---------------------- */
 .circle {
   border-color: #518eff;
   animation: colorChange 8s linear infinite;
@@ -174,11 +175,9 @@ body {
   left: 0;
   width: 260px;
   /* height: 100%; */
-  background: linear-gradient(
-    90deg,
-    rgba(226, 37, 122, 0.4) 0%,
-    rgba(86, 59, 218, 0.4) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(226, 37, 122, 0.4) 0%,
+      rgba(86, 59, 218, 0.4) 100%);
   border-radius: 8px;
   transition: transform 0.3s;
   z-index: -1;
@@ -197,7 +196,7 @@ body {
   /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 }
 
-/* collection form */
+/* ---------------------- COLLECTION FORM ---------------------- */
 
 .collectionforminput {
   width: 100%;
@@ -238,13 +237,13 @@ body {
 
 /* ---------------------- PROFILE PAGE ---------------------- */
 
-.profilePageBtn{
+.profilePageBtn {
   display: inline-block;
   padding: 8px 20px;
   border-radius: 5px;
   color: #fff;
   font-size: 16px;
-  background: linear-gradient(to right, #518EFF 35%, #B725FF 88% );
+  background: linear-gradient(to right, #518EFF 35%, #B725FF 88%);
   position: relative;
   z-index: 1;
   /* margin-right: 6px; */
@@ -254,6 +253,7 @@ body {
 .profilePageBtn:hover:before {
   transform: scale(1);
 }
+
 .profilePageBtn:before {
   position: absolute;
   content: "";

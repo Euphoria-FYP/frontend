@@ -40,7 +40,7 @@ function App() {
       element: <SingleCollection />,
     },
     {
-      path: "/help-page",
+      path: "/help",
       element: <HelpPage/>
     }
   ]);

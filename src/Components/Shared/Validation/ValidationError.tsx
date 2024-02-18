@@ -18,7 +18,7 @@ const ValidationError: React.FC<ValidationErrorProps> = ({
   return (
     <>
       {errors[fieldName] && touched[fieldName] ? (
-        <p className=" text-[13px] text-red-600 mt-3">{errors[fieldName]}</p>
+        <p className=" text-[14px] text-red-600 mt-3">{errors[fieldName]}</p>
       ) : null}
     </>
   );

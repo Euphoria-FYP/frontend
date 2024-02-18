@@ -299,19 +299,7 @@ export const faqs: FAQsData[] = [
   {
     question: "How do I buy ERN?",
     answer: [
-      "You can currently buy ERN on the following exchanges:",
-      "Centralized exchanges:",
-      "Coinbase",
-      "Binance",
-      "Crypto.com",
-      "OKX",
-      "KuCoin",
-      "Huobi",
-      "Gemini",
-      "Gate.io",
-      "Decentralized exchanges:",
-      "Uniswap",
-      "Quickswap",
+      `You can currently buy ERN on the following exchanges:`,
     ],
   },
   {

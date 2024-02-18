@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import { faqs } from "../../data"; // Assuming faqs are imported from an external data source
+import { faqs } from "../../data";
 
 const FAQ = () => {
   const [openIndexes, setOpenIndexes] = useState<boolean[]>(
@@ -17,11 +17,11 @@ const FAQ = () => {
   };
 
   return (
-    <div className="text-white mx-auto max-w-7xl px-6 sm:py-8 lg:px-8">
+    <div className="text-white mx-auto max-w-7xl px-5 sm:py-8 lg:px-8">
       {/* FAQ */}
       <div className="flex flex-col justify-center items-center mx-auto max-w-4xl divide-y divide-gray-900/10">
         <div className="flex max-w-[768px] flex-col items-center justify-center gap-5">
-          <p className="text-center text-3xl font-semibold md:text-4xl CodeNewRomanFont">
+          <p className="text-center text-3xl font-semibold md:text-4xl">
             FAQ's
           </p>
         </div>
@@ -40,7 +40,7 @@ const FAQ = () => {
                   .toLowerCase()
                   .replace(/\s+/g, "-")}`}
               >
-                <span className="text-base font-semibold leading-7">
+                <span className="text-sm font-semibold leading-7">
                   {step.question}
                 </span>
                 <span className="ml-6 flex h-7 items-center">
@@ -60,7 +60,6 @@ const FAQ = () => {
               >
                 <p className="text-sm font-extralight leading-7">
                   {step.answer}
-                  
                 </p>
               </div>
             </div>
