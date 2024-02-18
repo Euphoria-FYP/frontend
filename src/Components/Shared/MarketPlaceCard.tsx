@@ -82,7 +82,7 @@ const MarketPlaceCard: React.FC<MarketCardProps> = ({
 
         <div className=" w-3/6 pl-6 flex flex-col gap-1">
           <p className=" text-[#cfcfcf] text-xs">Ending In</p>
-          <h3 className=" text-[15px] font-semibold">08 : 07 : 45</h3>
+          <h3 className=" text-[15px] font-semibold">08:07:45</h3>
           <div className=" flex gap-2">
             <p className=" text-[#cfcfcf] text-xs">Hrs</p>
             <p className=" text-[#cfcfcf] text-xs">Mins</p>

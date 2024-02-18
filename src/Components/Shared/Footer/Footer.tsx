@@ -124,19 +124,19 @@ const Footer = () => {
           <div className=" flex gap-5">
             <BsFacebook
               className=" cursor-pointer hover:text-[#B900FF]"
-              fontSize={25}
+              fontSize={24}
             />
             <ImLinkedin
               className=" cursor-pointer hover:text-[#B900FF]"
-              fontSize={25}
+              fontSize={24}
             />
             <IoLogoInstagram
               className=" cursor-pointer hover:text-[#B900FF]"
-              fontSize={25}
+              fontSize={24}
             />
             <RxTwitterLogo
               className=" cursor-pointer hover:text-[#B900FF]"
-              fontSize={25}
+              fontSize={24}
             />
           </div>
         </div>

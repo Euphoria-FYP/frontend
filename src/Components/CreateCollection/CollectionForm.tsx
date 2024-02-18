@@ -69,7 +69,7 @@ const CollectionForm = () => {
           </div>
 
           {/* dropdowns */}
-          <div className=" flex gap-4">
+          <div className=" flex flex-col md:flex-row gap-4">
             {/* first dropdown */}
             <div className=" flex-1">
               <label className="text-base font-medium">Category</label>
@@ -162,7 +162,7 @@ const CollectionForm = () => {
               </div>
 
               {/* content */}
-              <div className=" flex flex-col gap-1">
+              <div className=" flex flex-col gap-3">
                 <span className="text-xs w-full text-center font-medium rounded-[8px] bg-gray-600 px-3 py-[10px] tracking-wider md:my-2">
                   Most popular
                 </span>
