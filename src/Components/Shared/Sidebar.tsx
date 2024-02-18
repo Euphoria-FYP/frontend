@@ -4,6 +4,7 @@ import logoImg from "../../assets/images/logo.png";
 import profileImg from "../../assets/images/profileImg.jpeg";
 import { GoHome } from "react-icons/go";
 import { RxDashboard } from "react-icons/rx";
+import { HiOutlineQuestionMarkCircle } from "react-icons/hi2";
 import { BiSearchAlt, BiCollection, BiDroplet } from "react-icons/bi";
 import { TbCategoryPlus } from "react-icons/tb";
 import { IoIosArrowUp, IoIosArrowDown, IoIosArrowBack } from "react-icons/io";
@@ -69,6 +70,12 @@ const Links = [
       },
     ],
   },
+  {
+    id: 5,
+    button: <HiOutlineQuestionMarkCircle  className=" text-white text-[24px] " />,
+    link: "/help",
+    title: "Help Center",
+  }
 ];
 
 const Sidebar = () => {
@@ -96,7 +103,7 @@ const Sidebar = () => {
     }
   }, [location.pathname]);
   return (
-    <div className=" hidden md:flex py-4 fixed flex-col  hover:items-start justify-between border-r border-[#858586] h-screen bg-[#1f2045] w-[70px] hover:w-64 pl-0 z-20 group transition-width duration-300 ease-out delay-250">
+    <div className=" hidden md:flex py-4 fixed flex-col  hover:items-start justify-between border-r border-[#858586] h-screen bg-[#1f2045] w-[70px] hover:w-64 pl-0 z-50 group transition-width duration-300 ease-out delay-250">
       <div
         className=" flex flex-col  w-[60px] group-hover:w-60 group-hover:items-start gap-8 
       transition-width duration-300 ease-out delay-250 overflow-y-scroll scrollbarHide"
