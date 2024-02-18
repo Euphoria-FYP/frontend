@@ -12,8 +12,7 @@
 }
 
 body {
-  /* font-family: "Poppins", sans-serif; */
-  font-family: "CodeNewRoman", sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 /* ---------------------- HOMEPAGE BACKGROUND ---------------------- */
@@ -39,9 +38,13 @@ body {
   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
-/* .CodeNewRomanFont {
+.CodeNewRomanFont {
   font-family: "CodeNewRoman", sans-serif;
-} */
+}
+
+h3 {
+  font-family: "CodeNewRoman", sans-serif;
+}
 
 .BarlowFont {
   font-family: "Barlow", sans-serif;
