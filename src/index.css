@@ -20,7 +20,8 @@ body {
 
 /* HomePage Background */
 .homeBgImg {
-  background-image: url("./assets/images/BgHome–2-wecompress.png");
+  /* background-image: url("./assets/images/BgHome–2-wecompress.png"); */
+  background-image: url("./assets/images/homebgfinal.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -231,4 +232,38 @@ body {
 
 .disabled {
   background-color: rgba(146, 146, 146, 0.12);
+}
+
+
+
+/* ---------------------- PROFILE PAGE ---------------------- */
+
+.profilePageBtn{
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  background: linear-gradient(to right, #518EFF 35%, #B725FF 88% );
+  position: relative;
+  z-index: 1;
+  /* margin-right: 6px; */
+  transition: all 0.3s ease-out 0s;
+}
+
+.profilePageBtn:hover:before {
+  transform: scale(1);
+}
+.profilePageBtn:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: linear-gradient(to right, #B725FF 35%, #518EFF 88%);
+  transform: scale(0);
+  transition: .5s;
 }
