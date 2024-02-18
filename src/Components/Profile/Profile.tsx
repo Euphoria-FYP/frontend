@@ -104,15 +104,15 @@ const Profile = () => {
         {/* BODY */}
         <div className="w-full flex gap-5">
           <div className=" w-[75%] flex flex-col gap-5">
-            <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#24243557] p-2 ">
+            <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#2A273E] p-2 ">
               {tabButtons.map((item) => (
                 <button
                   key={item.id}
-                  className={` flex-1 h-12  rounded-[5px] 
+                  className={` flex-1 h-10 text-sm font-light rounded-[6px] 
                 transition-all duration-300 transform-gpu  ${
                   currentTab.id === item.id
-                    ? "bg-[#212e48]"
-                    : " hover:border-white border border-dashed border-[#ffffff14]"
+                    ? "border-white border border-dashed"
+                    : " hover:border-white border border-dashed border-[#ffffff40]"
                 }`}
                   onClick={() => setCurrentTab(tabButtons[item.id - 1])}
                 >
@@ -120,7 +120,7 @@ const Profile = () => {
                 </button>
               ))}
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid xl:grid-cols-3 grid-cols-2 gap-4">
               {filterData
                 ? filterData.map((card: any, index: number) =>
                     card.nft.map((nft: any) => {
