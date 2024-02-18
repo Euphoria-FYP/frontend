@@ -7,6 +7,7 @@ import Profile from "./Pages/Profile";
 import CreateCollection from "./Pages/CreateCollection";
 import SingleCollection from "./Pages/SingleCollection";
 import UploadNFT from "./Pages/UploadNft";
+import HelpPage from "./Pages/Help";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
       path: "/single-collection",
       element: <SingleCollection />,
     },
+    {
+      path: "/help-page",
+      element: <HelpPage/>
+    }
   ]);
   return <RouterProvider router={router} />;
 }
