@@ -198,14 +198,11 @@ const SingleNft = () => {
             ))}
           </div>
 
-          
           {/* DETAILS */}
           {currentTab.id === 1 && <BidTab />}
           {currentTab.id === 2 &&
             singleNFTdata &&
-            singleNFTdata.map((obj, index) => (
-              <DetailTab details={obj} />
-            ))}
+            singleNFTdata.map((obj, index) => <DetailTab details={obj} />)}
           {currentTab.id === 3 && <h1>History</h1>}
         </div>
       </section>

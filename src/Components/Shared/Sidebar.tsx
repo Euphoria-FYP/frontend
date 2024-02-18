@@ -201,9 +201,9 @@ const Sidebar = () => {
           alt="profile"
           className=" ml-4 w-10 h-10 rounded-[50%] object-cover"
         />
-        <div className="hidden group-hover:block w-full">
-          <h4 className=" text-lg">Ahsan Omerjee</h4>
-          <span className="text-base text-[#B900FF]">@ahsan2002</span>
+        <div className="hidden group-hover:flex flex-col">
+          <h4 className="text-lg">Ahsan Omerjee</h4>
+          <span className=" text-base text-[#B900FF]">@ahsan2002</span>
         </div>
       </div>
     </div>

@@ -7,10 +7,10 @@ import ImageSection from "./ImageSection";
 const CreateCollection = () => {
   return (
     <>
-      <section className=" w-[80%] h-full flex justify-center  gap-12 text-white mx-auto py-10">
+      <section className=" w-full md:w-[80%] h-full flex justify-center  gap-12 text-white mx-auto py-10">
         {/* image and  form section */}
-        <div className=" w-[65%]">
-          <h1 className=" text-4xl font-semibold mb-6">
+        <div className=" w-[90%] md:w-[65%]">
+          <h1 className=" text-2xl md:text-4xl font-semibold mb-6">
             Create your Collection
           </h1>
           <ImageSection />
@@ -19,7 +19,7 @@ const CreateCollection = () => {
 
         {/* side content section */}
 
-        <div className="w-[35%]">
+        <div className="w-[35%] hidden md:block">
           <SideContent />
         </div>
       </section>

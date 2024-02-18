@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 
 // import AnimatedCursor from "react-animated-cursor";
 import BottomToTop from "../BottomToTop/BottomToTop";
+import HeaderSection from "../Header/HeaderSection";
 
 const index = ({
   children,
@@ -14,7 +15,7 @@ const index = ({
 }) => {
   // localStorage.setItem("bgImg", "marketPlaceBgImg");
 
-  return ( 
+  return (
     <main className={`${bgImgClass}`}>
       {/* <AnimatedCursor
         innerSize={6}
@@ -33,7 +34,10 @@ const index = ({
       /> */}
       <BottomToTop />
       <Sidebar />
-      <div className="md:ml-[70px]">{children}</div>
+      <div className="md:ml-[70px]">
+        <HeaderSection />
+        {children}
+      </div>
     </main>
   );
 };
