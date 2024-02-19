@@ -22,7 +22,6 @@ const Home = () => {
       <Contributor />
       <NftBanner />
       <StepsCard />
-      <FAQ />
       <Footer />
     </>
   );
