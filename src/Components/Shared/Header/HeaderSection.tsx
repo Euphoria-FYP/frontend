@@ -20,6 +20,13 @@ const HeaderSection = () => {
     }
   };
 
+  const scrollToDrop = (): void => {
+    const dropElement: HTMLElement | null = document.getElementById("drop");
+    if (dropElement) {
+      dropElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
@@ -37,14 +44,15 @@ const HeaderSection = () => {
           >
             <section className=" flex justify-between items-center w-[80%] py-[14px] mx-auto">
               <div className=" flex justify-center gap-8 items-center">
-                <NavLink
-                  to={"#drop"}
+                <button
+                  onClick={scrollToDrop}
+                  style={{scrollPadding:"50px"}}
                   className={
                     " text-white font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
                   }
                 >
                   Drops
-                </NavLink>
+                </button>
                 <NavLink
                   to={"/create-collection"}
                   className={
@@ -52,6 +60,14 @@ const HeaderSection = () => {
                   }
                 >
                   Create NFT
+                </NavLink>
+                <NavLink
+                  to={"/top-collections"}
+                  className={
+                    " text-white font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
+                  }
+                >
+                  Ranking
                 </NavLink>
               </div>
               <div className=" relative w-[40%]">

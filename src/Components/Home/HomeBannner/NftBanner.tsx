@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import StyledButton from "../../Shared/StyledButton";
 import React from "react";
 
@@ -19,11 +20,13 @@ const NftBanner = () => {
         </p>
 
         <div className=" mt-2">
-          <StyledButton
-            heading="Create NFT"
-            bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
-            width={160}
-          />
+          <NavLink to="/create-collection">
+            <StyledButton
+              heading="Create NFT"
+              bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
+              width={160}
+            />
+          </NavLink>
         </div>
       </div>
     </section>

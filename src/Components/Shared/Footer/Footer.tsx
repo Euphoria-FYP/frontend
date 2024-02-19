@@ -9,7 +9,7 @@ import { FaRegCircle } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#000B26] px-16 py-10">
+      <footer className="bg-[#000B26] px-16 py-10 mt-10">
         <div className="flex flex-wrap  justify-between w-full">
           {/* first div */}
           <div className=" flex flex-col gap-5">

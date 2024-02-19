@@ -72,10 +72,12 @@ const Links = [
   },
   {
     id: 5,
-    button: <HiOutlineQuestionMarkCircle  className=" text-white text-[24px] " />,
+    button: (
+      <HiOutlineQuestionMarkCircle className=" text-white text-[24px] " />
+    ),
     link: "/help",
     title: "Help Center",
-  }
+  },
 ];
 
 const Sidebar = () => {
@@ -103,7 +105,7 @@ const Sidebar = () => {
     }
   }, [location.pathname]);
   return (
-    <div className=" hidden md:flex py-4 fixed flex-col  hover:items-start justify-between border-r border-[#858586] h-screen bg-[#1f2045] w-[70px] hover:w-64 pl-0 z-50 group transition-width duration-300 ease-out delay-250">
+    <div className=" hidden md:flex py-4 fixed flex-col  hover:items-start justify-between border-r border-[#858586] h-screen bg-[#1f2045] w-[70px] hover:w-64 pl-0 z-[2000] group transition-width duration-300 ease-out delay-250">
       <div
         className=" flex flex-col  w-[60px] group-hover:w-60 group-hover:items-start gap-8 
       transition-width duration-300 ease-out delay-250 overflow-y-scroll scrollbarHide"
@@ -202,17 +204,19 @@ const Sidebar = () => {
           })}
         </div>
       </div>
-      <div className="flex justify-start items-center gap-4 sticky bottom-0 mt-5 text-white w-full">
-        <img
-          src={profileImg}
-          alt="profile"
-          className=" ml-4 w-10 h-10 rounded-[50%] object-cover"
-        />
-        <div className="hidden group-hover:flex flex-col">
-          <h4 className="text-lg">Ahsan Omerjee</h4>
-          <span className=" text-base text-[#B900FF]">@ahsan2002</span>
+      <NavLink to="/profile">
+        <div className="flex justify-start items-center gap-4 sticky bottom-0 mt-5 text-white w-full">
+          <img
+            src={profileImg}
+            alt="profile"
+            className=" ml-4 w-10 h-10 rounded-[50%] object-cover"
+          />
+          <div className="hidden group-hover:flex flex-col">
+            <h4 className="text-lg">Ahsan Omerjee</h4>
+            <span className=" text-base text-[#B900FF]">@ahsan2002</span>
+          </div>
         </div>
-      </div>
+      </NavLink>
     </div>
   );
 };

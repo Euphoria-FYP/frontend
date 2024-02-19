@@ -45,7 +45,7 @@ function App() {
       element: <HelpPage />,
     },
     {
-      path: "/ranking",
+      path: "/top-collections",
       element: <CollectionRanking />,
     },
   ]);
