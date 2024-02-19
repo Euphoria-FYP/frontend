@@ -6,6 +6,7 @@ import SingleNft from "./Pages/SingleNft";
 import Profile from "./Pages/Profile";
 import CreateCollection from "./Pages/CreateCollection";
 import SingleCollection from "./Pages/SingleCollection";
+import CollectionRanking from "./Pages/CollectionRanking";
 import UploadNFT from "./Pages/UploadNft";
 import HelpPage from "./Pages/Help";
 
@@ -41,8 +42,12 @@ function App() {
     },
     {
       path: "/help",
-      element: <HelpPage/>
-    }
+      element: <HelpPage />,
+    },
+    {
+      path: "/ranking",
+      element: <CollectionRanking />,
+    },
   ]);
   return <RouterProvider router={router} />;
 }
