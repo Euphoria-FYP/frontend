@@ -10,6 +10,7 @@ import CollectionRanking from "./Pages/CollectionRanking";
 import CreateProfile from "./Pages/CreateProfile";
 import UploadNFT from "./Pages/UploadNft";
 import HelpPage from "./Pages/Help";
+import PageNotFound from "./Pages/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -52,6 +53,10 @@ function App() {
     {
       path: "/create-profile",
       element: <CreateProfile />,
+    },
+    {
+      path: "*",
+      element: <PageNotFound />,
     },
   ]);
   return <RouterProvider router={router} />;

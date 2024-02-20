@@ -309,3 +309,13 @@ h3 {
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.16);
 }
+
+.bg-text-image {
+  background-image: url("./assets/images/Bg-Error.jpg");
+  font-family: sans-serif;
+  font-weight: 900;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
