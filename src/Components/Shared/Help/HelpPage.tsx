@@ -14,12 +14,14 @@ const HelpPage = () => {
       <div className="h-full">
 
         {/* main heading */}
-        <h1 className=" text-[35px] md:text-[40px] px-5 md:px-16 pt-7 pb-5 text-white font-bold">
+        <h1 className=" text-[35px] md:text-[44px] px-5 md:px-16 pt-7 text-white font-bold">
           Help Center
         </h1>
 
         {/* fqa section */}
+        <div className="px-5 md:px-16 py-5"> 
         <FAQ />
+        </div>
 
         <div className="px-5 md:px-16 py-5">
           <hr className="border-t border-gray-300" />
