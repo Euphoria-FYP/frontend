@@ -312,6 +312,26 @@ export const faqs: FAQsData[] = [
       "Step 4: Validate the transaction in the Metamask pop-up window.",
     ],
   },
+  {
+    question: "How can I send a NFT to another person?",
+    answer: [
+      "To transfer your aNFT to another wallet address, you will need to:",
+      "Step 1: Log in to your account and connect your Metamask wallet.",
+      "Step 2: Visit “My Profile” section and select the aNFT you would like to send.",
+      "Step 3: Click on “Transfer” icon and define the recipient’s wallet address.",
+      "Step 4: Validate the transaction in the Metamask pop-up window.",
+    ],
+  },
+  {
+    question: "How can I send a NFT to another person?",
+    answer: [
+      "To transfer your aNFT to another wallet address, you will need to:",
+      "Step 1: Log in to your account and connect your Metamask wallet.",
+      "Step 2: Visit “My Profile” section and select the aNFT you would like to send.",
+      "Step 3: Click on “Transfer” icon and define the recipient’s wallet address.",
+      "Step 4: Validate the transaction in the Metamask pop-up window.",
+    ],
+  },
 ];
 export const Steps: stepsData[] = [
   {
