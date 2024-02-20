@@ -1,3 +1,4 @@
+// TYPES
 import {
   MarketPlaceItem,
   CategoriesCardProps,
@@ -6,7 +7,10 @@ import {
   stepsData,
   FAQsData,
   CollectionsData,
+  NFTType,
 } from "./types";
+
+// IMAGES
 import Art from "./assets/images/art.jpg";
 import Game from "./assets/images/game.jpg";
 import Music from "./assets/images/music.jpg";
@@ -298,9 +302,7 @@ export const faqs: FAQsData[] = [
   },
   {
     question: "How do I buy ERN?",
-    answer: [
-      `You can currently buy ERN on the following exchanges:`,
-    ],
+    answer: [`You can currently buy ERN on the following exchanges:`],
   },
   {
     question: "How can I send a NFT to another person?",
@@ -404,5 +406,24 @@ export const MyCollections: CollectionsData[] = [
     title: "NextGen 6529",
     createdBy: "Michael Johnson",
     price: 0.53,
+  },
+];
+
+export const NftTypes: NFTType[] = [
+  {
+    id: 1,
+    type: "Photo",
+  },
+  {
+    id: 2,
+    type: "Video/GIF",
+  },
+  {
+    id: 3,
+    type: "Link",
+  },
+  {
+    id: 4,
+    type: "Music",
   },
 ];
