@@ -69,3 +69,8 @@ export type CollectionsData = {
   createdBy: string;
   price: number;
 };
+
+export type NFTType = {
+  id: number;
+  type: string;
+};
