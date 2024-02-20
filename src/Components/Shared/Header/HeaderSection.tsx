@@ -46,7 +46,7 @@ const HeaderSection = () => {
               <div className=" flex justify-center gap-8 items-center">
                 <button
                   onClick={scrollToDrop}
-                  style={{scrollPadding:"50px"}}
+                  style={{ scrollPadding: "50px" }}
                   className={
                     " text-white font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
                   }

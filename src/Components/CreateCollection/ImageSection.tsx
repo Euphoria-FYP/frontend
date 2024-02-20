@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import { IoMdImage } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
 
-const ImageSection = () => {
+const ImageSection = ({
+  label1,
+  label2,
+}: {
+  label1: string;
+  label2: string;
+}) => {
   const [logoFile, setlogoFile] = useState<File | null>(null);
   const [logoPreview, setlogoPreview] = useState<string | null>(null);
 
@@ -48,7 +54,7 @@ const ImageSection = () => {
             document.getElementById("uploadlogo")?.click();
           }}
         >
-          <label className="text-base font-semibold">Logo Image</label>
+          <label className="text-base font-semibold">{label1}</label>
           {/* upload */}
           <div
             className={` ${
@@ -94,12 +100,12 @@ const ImageSection = () => {
             document.getElementById("uploadcover")?.click();
           }}
         >
-          <label className="text-base font-semibold">Cover Image</label>
+          <label className="text-base font-semibold">{label2}</label>
           {/* upload */}
           <div
             className={` ${
               coverPreview && "hidden"
-            } flex flex justify-center items-center gap-5 mt-3 mb-5 border border-gray-500 px-2 py-3 rounded-lg group transition-all hover:border-gray-200 cursor-pointer`}
+            } flex justify-center items-center gap-5 mt-3 mb-5 border border-gray-500 px-2 py-3 rounded-lg group transition-all hover:border-gray-200 cursor-pointer`}
           >
             {/* icon */}
             <input

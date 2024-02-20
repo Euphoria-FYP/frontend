@@ -13,7 +13,7 @@ const CreateCollection = () => {
           <h1 className=" text-2xl md:text-4xl font-semibold mb-6">
             Create your Collection
           </h1>
-          <ImageSection />
+          <ImageSection label1={"Logo Image"} label2={"Cover Image"} />
           <CollectionForm />
         </div>
 

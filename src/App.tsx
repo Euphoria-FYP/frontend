@@ -7,6 +7,7 @@ import Profile from "./Pages/Profile";
 import CreateCollection from "./Pages/CreateCollection";
 import SingleCollection from "./Pages/SingleCollection";
 import CollectionRanking from "./Pages/CollectionRanking";
+import CreateProfile from "./Pages/CreateProfile";
 import UploadNFT from "./Pages/UploadNft";
 import HelpPage from "./Pages/Help";
 
@@ -47,6 +48,10 @@ function App() {
     {
       path: "/top-collections",
       element: <CollectionRanking />,
+    },
+    {
+      path: "/create-profile",
+      element: <CreateProfile />,
     },
   ]);
   return <RouterProvider router={router} />;
