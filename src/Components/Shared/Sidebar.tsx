@@ -8,6 +8,7 @@ import { HiOutlineQuestionMarkCircle } from "react-icons/hi2";
 import { BiSearchAlt, BiCollection, BiDroplet } from "react-icons/bi";
 import { TbCategoryPlus } from "react-icons/tb";
 import { IoIosArrowUp, IoIosArrowDown, IoIosArrowBack } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 import Art from "../../assets/images//art.jpg";
 import Game from "../../assets/images//game.jpg";
 import Music from "../../assets/images//music.jpg";
@@ -80,7 +81,13 @@ const Links = [
   },
 ];
 
-const Sidebar = () => {
+interface Props {
+  openMobileSidebar: boolean;
+  setOpenMobileSidebar: (value: boolean) => void;
+}
+
+const Sidebar = (props: Props) => {
+  const { openMobileSidebar, setOpenMobileSidebar } = props;
   const location = useLocation();
   const [active, setActive] = useState<number>(1);
   const [dropDown, setDropDown] = useState<boolean[]>([false, true]);
@@ -105,16 +112,30 @@ const Sidebar = () => {
     }
   }, [location.pathname]);
   return (
-    <div className=" hidden md:flex py-4 fixed flex-col  hover:items-start justify-between border-r border-[#858586] h-screen bg-[#1f2045] w-[70px] hover:w-64 pl-0 z-[2000] group transition-width duration-300 ease-out delay-250">
+    <div
+      className={`${
+        openMobileSidebar
+          ? " fixed top-0 md:w-[70px] md:hover:w-64 w-[70%]"
+          : " md:w-[70px] md:hover:w-64 w-0"
+      } flex py-4 fixed flex-col  hover:items-start justify-between border-r border-[#858586] h-full bg-[#1f2045] pl-0 z-[2000] group transition-width duration-300 ease-out delay-250`}
+    >
       <div
-        className=" flex flex-col  w-[60px] group-hover:w-60 group-hover:items-start gap-8 
-      transition-width duration-300 ease-out delay-250 overflow-y-scroll scrollbarHide"
+        className={`${
+          openMobileSidebar ? " w-60" : "w-0"
+        } flex flex-col  md:w-[60px] md:group-hover:w-60 group-hover:items-start gap-8 
+      transition-width duration-300 ease-out delay-250 overflow-y-scroll scrollbarHide`}
       >
-        <img
-          src={logoImg}
-          alt="logo"
-          className=" ml-3 w-10 h-10 rounded-[50%] object-cover"
-        />
+        <div className=" w-full flex justify-between items-center">
+          <img
+            src={logoImg}
+            alt="logo"
+            className=" ml-3 w-10 h-10 rounded-[50%] object-cover"
+          />
+          <IoClose
+            className=" md:hidden text-2xl text-white"
+            onClick={() => setOpenMobileSidebar(false)}
+          />
+        </div>
         <div
           className=" flex flex-col items-center group-hover:items-start gap-3 w-full 
         transition-width duration-200 ease-out delay-250"
@@ -138,11 +159,19 @@ const Sidebar = () => {
                   }}
                 >
                   {item.button}
-                  <p className=" hidden group-hover:block text-white ">
+                  <p
+                    className={`${
+                      openMobileSidebar && "block"
+                    } md:hidden md:group-hover:block text-white `}
+                  >
                     {item.title}
                   </p>
                   {item.title === "Categories" && (
-                    <span className={`hidden ml-auto group-hover:block`}>
+                    <span
+                      className={`${
+                        openMobileSidebar && "block"
+                      } md:hidden ml-auto md:group-hover:block`}
+                    >
                       {dropDown[0] ? (
                         <IoIosArrowDown className="text-xl text-white" />
                       ) : (
@@ -151,7 +180,11 @@ const Sidebar = () => {
                     </span>
                   )}
                   {item.title === "Collections" && (
-                    <span className={`hidden ml-auto group-hover:block`}>
+                    <span
+                      className={`${
+                        openMobileSidebar && "block"
+                      } md:hidden ml-auto md:group-hover:block`}
+                    >
                       {dropDown[1] ? (
                         <IoIosArrowDown className="text-xl text-white" />
                       ) : (
@@ -161,7 +194,11 @@ const Sidebar = () => {
                   )}
                 </NavLink>
                 {item.title === "Categories" && dropDown[0] && (
-                  <div className="flex-col justify-start items-start gap-3 py-[4px] pl-12 pr-2 rounded-e-[20px] w-full hidden group-hover:flex text-white ">
+                  <div
+                    className={`${
+                      openMobileSidebar && "block"
+                    } flex-col md:justify-start justify-between items-start gap-3 py-[4px] pl-12 pr-2 rounded-e-[20px] w-full md:hidden md:group-hover:flex text-white `}
+                  >
                     {item.dropdownitems?.map((dropdown, i) => {
                       return (
                         <div className=" flex  justify-start items-center gap-3 py-[4px]">
@@ -177,7 +214,11 @@ const Sidebar = () => {
                   </div>
                 )}
                 {item.title === "Collections" && dropDown[1] && (
-                  <div className="flex-col justify-start items-start gap-3 py-[4px] pl-12 pr-2 rounded-e-[20px] w-full hidden group-hover:flex text-white">
+                  <div
+                    className={`${
+                      openMobileSidebar && "block"
+                    } flex-col md:justify-start justify-between items-start gap-3 py-[4px] pl-12 pr-2 rounded-e-[20px] w-full md:hidden md:group-hover:flex text-white `}
+                  >
                     {item.dropdownitems?.map((dropdown: any, i) => {
                       return (
                         <div className=" flex  justify-start items-center gap-3 py-[4px]">
@@ -205,13 +246,21 @@ const Sidebar = () => {
         </div>
       </div>
       <NavLink to="/profile">
-        <div className="flex justify-start items-center gap-4 sticky bottom-0 mt-5 text-white w-full">
+        <div
+          className={`${
+            openMobileSidebar ? " w-full" : "w-0"
+          } flex justify-start items-center gap-4  bottom-0 mt-5 text-white`}
+        >
           <img
             src={profileImg}
             alt="profile"
             className=" ml-4 w-10 h-10 rounded-[50%] object-cover"
           />
-          <div className="hidden group-hover:flex flex-col">
+          <div
+            className={`${
+              openMobileSidebar ? "block" : "hidden"
+            } md:hidden md:group-hover:flex flex-col`}
+          >
             <h4 className="text-lg">Ahsan Omerjee</h4>
             <span className=" text-base text-[#B900FF]">@ahsan2002</span>
           </div>

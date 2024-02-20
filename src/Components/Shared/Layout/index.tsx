@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer/Footer";
 
@@ -14,6 +14,8 @@ const index = ({
   bgImgClass: string;
 }) => {
   // localStorage.setItem("bgImg", "marketPlaceBgImg");
+
+  const [openMobileSidebar, setOpenMobileSidebar] = useState(false)
 
   return (
     <main className={`${bgImgClass}`}>
@@ -33,9 +35,9 @@ const index = ({
         }}
       /> */}
       <BottomToTop />
-      <Sidebar />
+      <Sidebar openMobileSidebar={openMobileSidebar} setOpenMobileSidebar={setOpenMobileSidebar}/>
       <div className="md:ml-[70px]">
-        <HeaderSection />
+        <HeaderSection openMobileSidebar={openMobileSidebar} setOpenMobileSidebar={setOpenMobileSidebar} />
         {children}
       </div>
     </main>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import MarketPlace from "../../Components/MarketPlace/MarketPlace";
-import Layout from "../../Components/Shared/Layout";
+import Layout from "../../Components/Shared/Layout/Index";
 
 const MarketPlacePage = () => {
   const [bgImg, setBgImg] = useState("marketPlaceBgImg");
