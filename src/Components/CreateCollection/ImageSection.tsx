@@ -75,13 +75,13 @@ const ImageSection = ({
 
             {/* content */}
             <div className=" flex-1 flex flex-col">
-              <span className=" text-[14px] font-bold">
+              <h3 className="text-[14px] font-semibold">
                 Drag and drop or click to upload
-              </span>
+              </h3>
 
-              <span className="text-[13px] font-extralight mt-2">
+              <h3 className="text-[13px] font-extralight mt-2">
                 File types allowed: JPG, PNG, SVG, or GIF
-              </span>
+              </h3>
             </div>
           </div>
           {logoPreview && (
@@ -121,13 +121,13 @@ const ImageSection = ({
 
             {/* content */}
             <div className=" flex-1 flex flex-col">
-              <span className="text-[14px] font-bold">
+              <h3 className="text-[14px] font-semibold">
                 Drag and drop or click to upload
-              </span>
+              </h3>
 
-              <span className="text-[13px] font-extralight mt-2">
+              <h3 className="text-[13px] font-extralight mt-2">
                 File types allowed: JPG, PNG, SVG, or GIF
-              </span>
+              </h3>
             </div>
           </div>
           {coverPreview && (

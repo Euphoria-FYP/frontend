@@ -45,12 +45,12 @@ const MarketPlace = () => {
   return (
     <section id="drop" className="flex flex-col justify-center items-center  mx-auto">
       <div className="flex flex-col justify-center items-center gap-3">
-        <h2 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">
+        <h4 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">
           NFT MARKETPLACE
-        </h2>
-        <h1 className=" text-white text-center font-semibold text-3xl md:text-5xl tracking-wider CodeNewRomanFont">
+        </h4>
+        <h3 className=" text-white text-center font-semibold text-3xl md:text-5xl tracking-wider">
           Super Hot Drops
-        </h1>
+        </h3>
       </div>
       <div className=" w-[95%] md:w-[90%]">
         {/* CATEGORY BUTTONS */}

@@ -21,9 +21,9 @@ const FAQ = () => {
       {/* FAQ */}
       <div className="flex flex-col justify-center items-center mx-auto max-w-4xl divide-y divide-gray-900/10">
         <div className="flex max-w-[768px] flex-col items-center justify-center gap-5">
-          <p className="text-center text-3xl font-semibold md:text-4xl">
+          <h3 className="text-center text-3xl font-semibold md:text-4xl">
             FAQ's
-          </p>
+          </h3>
         </div>
         {/* ACCORDION */}
         <div className="w-full mt-10 space-y-6 divide-y divide-gray-900/10">

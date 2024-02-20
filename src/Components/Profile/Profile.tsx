@@ -61,7 +61,7 @@ const Profile = () => {
                 alt=""
               />
               <div className=" flex flex-col pt-8">
-                <h4 className=" text-xl font-bold">Davis Jhon</h4>
+                <h3 className=" text-xl font-bold">Davis Jhon</h3>
                 <p>@davis.jhon</p>
 
                 <div className=" flex gap-2 mt-4">
@@ -142,7 +142,7 @@ const Profile = () => {
           </div>
           <div className=" w-[25%] flex flex-col gap-5">
             <div className=" flex flex-col gap-4 bg-[#2A273E] rounded-md py-6 px-8">
-              <h3>Search NFT</h3>
+              <h4>Search NFT</h4>
               <hr />
               <input
                 type="text"
@@ -151,7 +151,7 @@ const Profile = () => {
               />
             </div>
             <div className=" flex flex-col gap-4 bg-[#2A273E] rounded-md py-6 px-8">
-              <h3>Features</h3>
+              <h4>Features</h4>
               <hr />
               <div className=" grid md:grid-cols-3 grid-cols-2 gap-3 pt-1">
                 <img

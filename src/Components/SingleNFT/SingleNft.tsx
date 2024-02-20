@@ -112,9 +112,9 @@ const SingleNft = () => {
             {singleNFTdata?.map((item, index) => (
               <div key={index}>
                 {item.details.map((name, i) => (
-                  <h4 key={i} className="text-[34px] font-bold">
+                  <h3 key={i} className="text-[34px] font-bold">
                     {name.name}
-                  </h4>
+                  </h3>
                 ))}
               </div>
             ))}

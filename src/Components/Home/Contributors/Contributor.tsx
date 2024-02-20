@@ -35,12 +35,12 @@ const Contributor = () => {
   return (
     <section className=" w-[90%] flex flex-col justify-center items-center my-5 mx-auto mt-10">
       <div className="flex flex-col justify-center items-center gap-3">
-        <h2 className="uppercase  font-semibold text-xl text-[#B900FF]">
+        <h4 className="uppercase  font-semibold text-xl text-[#B900FF]">
           NFT Creators
-        </h2>
-        <h1 className=" text-white font-semibold text-3xl md:text-5xl tracking-wider CodeNewRomanFont">
+        </h4>
+        <h3 className=" text-white font-semibold text-3xl md:text-5xl tracking-wider">
           Top Contributors
-        </h1>
+        </h3>
       </div>
       <Slider {...settings} className=" w-full my-9">
         {cards.map((card, index) => (

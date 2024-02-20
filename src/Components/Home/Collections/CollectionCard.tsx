@@ -53,12 +53,12 @@ const CollectionCard: React.FC<CollectionsCardProps> = ({
             {/* first div */}
             <div>
               <span className=" text-xs font-extralight">Created By</span>
-              <h3 className=" text-[16px] leading-5 font-light">{createdBy}</h3>
+              <h4 className=" text-[16px] leading-5 font-light">{createdBy}</h4>
             </div>
             {/* second div */}
             <div>
               <span className=" text-xs font-extralight">Floor</span>
-              <h3 className=" text-[16px] leading-5 font-light">{price} ETH</h3>
+              <h4 className=" text-[16px] leading-5 font-light">{price} ETH</h4>
             </div>
           </div>
         </div>

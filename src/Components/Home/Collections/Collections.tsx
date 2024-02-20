@@ -9,12 +9,12 @@ const Collections = () => {
     <>
       <section className=" w-[90%] flex flex-col justify-center items-center my-8 mx-auto">
         <div className="flex flex-col justify-center items-center gap-3">
-          <h2 className="uppercase  font-semibold text-xl text-[#B900FF]">
+          <h4 className="uppercase font-semibold text-xl text-[#B900FF]">
             Popular Creators
-          </h2>
-          <h1 className=" text-white font-semibold text-3xl md:text-5xl tracking-wider CodeNewRomanFont">
+          </h4>
+          <h3 className=" text-white font-semibold text-3xl md:text-5xl tracking-wider">
             Top Collections
-          </h1>
+          </h3>
         </div>
 
         <div className=" flex justify-center items-center md:gap-5 mt-10 mb-7 flex-wrap">

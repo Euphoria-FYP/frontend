@@ -15,9 +15,9 @@ const MarketContrubutor: React.FC <CardProps> = ({name, ethAmount }) => {
     
           <div className="flex justify-center items-center gap-1">
             <img src={contrubutor} alt="" height={40} width={40} />
-          <div>
-            <h2 className=" text-xs">{name}</h2>
-            <p className="text-xs flex items-center gap-1"><img src={eth} alt="" width={12} height={12} /><span>{ethAmount} ETH</span></p>
+          <div className="text-xs">
+            <h2 >{name}</h2>
+            <p className=" flex items-center gap-1"><img src={eth} alt="" width={12} height={12} /><span>{ethAmount} ETH</span></p>
           </div>
           </div>
     

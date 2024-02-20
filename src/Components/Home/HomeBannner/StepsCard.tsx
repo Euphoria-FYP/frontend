@@ -11,7 +11,7 @@ const StepsCard = () => {
             <>
               {/* main card */}
               <div
-                className="w-[20%] py-4 bg-[#1f2045] py relative z-[1] h-[260px] rounded-xl cursor-pointer group step_card"
+                className="w-[20%] py-4 bg-[#191a34] py relative z-[1] h-[260px] rounded-xl cursor-pointer group step_card"
                 key={i}
               >
                 {/* icon */}
@@ -30,9 +30,9 @@ const StepsCard = () => {
                   <span className="text-[15px] text-[#cfcfcf] font-semibold tracking-[0.5px] uppercase">
                     Step-{item.step}
                   </span>
-                  <h4 className="text-lg font-semibold text-white group-hover:text-[#B900FF] transition-colors duration-300 ease-in-out">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-[#B900FF] transition-colors duration-300 ease-in-out">
                     {item.title}
-                  </h4>
+                  </h3>
                   <p className="text-sm text-[#cfcfcf] font-light">
                     {item.description}
                   </p>

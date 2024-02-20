@@ -212,7 +212,7 @@ const Sidebar = () => {
             className=" ml-4 w-10 h-10 rounded-[50%] object-cover"
           />
           <div className="hidden group-hover:flex flex-col">
-            <h4 className="text-lg">Ahsan Omerjee</h4>
+            <h3 className="text-lg">Ahsan Omerjee</h3>
             <span className=" text-base text-[#B900FF]">@ahsan2002</span>
           </div>
         </div>
