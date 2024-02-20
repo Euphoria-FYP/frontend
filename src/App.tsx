@@ -9,6 +9,7 @@ import SingleCollection from "./Pages/SingleCollection";
 import CollectionRanking from "./Pages/CollectionRanking";
 import UploadNFT from "./Pages/UploadNft";
 import HelpPage from "./Pages/Help";
+import PageNotFound from "./Pages/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -47,6 +48,10 @@ function App() {
     {
       path: "/top-collections",
       element: <CollectionRanking />,
+    },
+    {
+      path: "*",
+      element: <PageNotFound />,
     },
   ]);
   return <RouterProvider router={router} />;
