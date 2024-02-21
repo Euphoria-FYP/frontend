@@ -16,15 +16,8 @@ const HistoryTab = () => {
           <div className=" flex flex-col items-start gap-[1px]">
             <h6 className="text-base font-medium text-[#00a3ff] capitalize transition-all duration-200 ease-in-out transform-gpu ">
               Allen Waltker{" "}
-              {/* <span
-                className="  text-sm font-light text-[#cfcfcf]"
-                style={{ textTransform: "none" }}
-              >
-                {" "}
-                <span className=" mx-2">-</span> Placed a Bid
-              </span> */}
             </h6>
-            {/* <span className=" text-sm text-[#cfcfcf]"> 1 hour ago</span> */}
+            <span className=" text-sm text-[#cfcfcf]">@ahsan2002</span>
           </div>
         </div>
         <div className=" flex flex-col items-end">
@@ -46,15 +39,8 @@ const HistoryTab = () => {
           <div className=" flex flex-col items-start gap-[1px]">
             <h6 className="text-base font-medium text-[#00a3ff] capitalize transition-all duration-200 ease-in-out transform-gpu ">
               Allen Waltker{" "}
-              {/* <span
-                className="  text-sm font-light text-[#cfcfcf]"
-                style={{ textTransform: "none" }}
-              >
-                {" "}
-                <span className=" mx-2">-</span> Placed a Bid
-              </span> */}
             </h6>
-            {/* <span className=" text-sm text-[#cfcfcf]"> 1 hour ago</span> */}
+            <span className=" text-sm text-[#cfcfcf]">@ahsan2002</span>
           </div>
         </div>
         <div className=" flex flex-col items-end">
@@ -76,15 +62,8 @@ const HistoryTab = () => {
           <div className=" flex flex-col items-start gap-[1px]">
             <h6 className="text-base font-medium text-[#00a3ff] capitalize transition-all duration-200 ease-in-out transform-gpu ">
               Allen Waltker{" "}
-              {/* <span
-                className="  text-sm font-light text-[#cfcfcf]"
-                style={{ textTransform: "none" }}
-              >
-                {" "}
-                <span className=" mx-2">-</span> Placed a Bid
-              </span> */}
             </h6>
-            {/* <span className=" text-sm text-[#cfcfcf]"> 1 hour ago</span> */}
+            <span className=" text-sm text-[#cfcfcf]">@ahsan2002</span>
           </div>
         </div>
         <div className=" flex flex-col items-end">
@@ -106,15 +85,8 @@ const HistoryTab = () => {
           <div className=" flex flex-col items-start gap-[1px]">
             <h6 className="text-base font-medium text-[#00a3ff] capitalize transition-all duration-200 ease-in-out transform-gpu ">
               Allen Waltker{" "}
-              {/* <span
-                className="  text-sm font-light text-[#cfcfcf]"
-                style={{ textTransform: "none" }}
-              >
-                {" "}
-                <span className=" mx-2">-</span> Placed a Bid
-              </span> */}
             </h6>
-            {/* <span className=" text-sm text-[#cfcfcf]"> 1 hour ago</span> */}
+            <span className=" text-sm text-[#cfcfcf]">@ahsan2002</span>
           </div>
         </div>
         <div className=" flex flex-col items-end">
@@ -136,15 +108,8 @@ const HistoryTab = () => {
           <div className=" flex flex-col items-start gap-[1px]">
             <h6 className="text-base font-medium text-[#00a3ff] capitalize transition-all duration-200 ease-in-out transform-gpu ">
               Allen Waltker{" "}
-              {/* <span
-                className="  text-sm font-light text-[#cfcfcf]"
-                style={{ textTransform: "none" }}
-              >
-                {" "}
-                <span className=" mx-2">-</span> Placed a Bid
-              </span> */}
             </h6>
-            {/* <span className=" text-sm text-[#cfcfcf]"> 1 hour ago</span> */}
+            <span className=" text-sm text-[#cfcfcf]">@ahsan2002</span>
           </div>
         </div>
         <div className=" flex flex-col items-end">
@@ -154,6 +119,7 @@ const HistoryTab = () => {
           <span className=" text-sm font-medium text-[#00a3ff]">= $128.36</span>
         </div>
       </div>
+      
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import MarketPlaceCard from "../Shared/MarketPlaceCard";
+import HistoryTab from "../SingleNFT/HistoryTab";
 
 interface TabButtonType {
   id: number;
@@ -19,7 +20,7 @@ const tabButtons = [
 ];
 
 const TabsCollection = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
-  const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[1]);
+  const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[0]);
 
   return (
     <>
@@ -89,6 +90,12 @@ const TabsCollection = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
               currentBid={5000}
               inDollars={2500}
             />
+          </div>
+        )}
+
+        {currentTab.title === "History" && (
+          <div className={`w-full px-10`}>
+            <HistoryTab />
           </div>
         )}
       </div>
