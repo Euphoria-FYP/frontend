@@ -1,36 +1,77 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import MarketPlaceCard from "../Shared/MarketPlaceCard";
 import { marketPlaceData } from "../../data";
 import Slider from "react-slick";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+type MarketCardProps = {
+  id: number;
+  marketplace: string;
+  name: string;
+  userName: string;
+  currentBid: number;
+  inDollars: number;
+};
+
 const MarketPlace = () => {
-  const settings: any = {
+  const settings1: any = {
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     dots: false,
-    pauseOnHover: true,
+    pauseOnHover: false,
     autoplay: true,
     speed: 5000,
     autoplaySpeed: 2000,
     cssEase: "linear",
+
     responsive: [
       {
         breakpoint: 768,
         setting: {
-          slidesToShow: 4,
+          slidesToShow: 1,
         },
       },
       {
         breakpoint: 520,
         setting: {
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
     ],
   };
+  const settings2: any = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    pauseOnHover: false,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+
+    responsive: [
+      {
+        breakpoint: 768,
+        setting: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 520,
+        setting: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const scroll = (scrollOffset: number): void => {
     if (scrollRef.current) {
@@ -42,8 +83,20 @@ const MarketPlace = () => {
     .flatMap((item) => item.nft.map((nft) => nft.marketplace))
     .filter((value, index, self) => self.indexOf(value) === index);
 
+  const [showMarketPlaceData, setShowMarketPlaceData] = useState<
+    MarketCardProps[]
+  >([]);
+
+  useEffect(() => {
+    const data = marketPlaceData.flatMap((item) => item.nft);
+    setShowMarketPlaceData(data);
+  }, []);
+
   return (
-    <section id="drop" className="flex flex-col justify-center items-center  mx-auto">
+    <section
+      id="drop"
+      className="flex flex-col justify-center items-center  mx-auto"
+    >
       <div className="flex flex-col justify-center items-center gap-3">
         <h2 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">
           NFT MARKETPLACE
@@ -77,22 +130,41 @@ const MarketPlace = () => {
           />
         </div>
         {/* CARDS */}
-        <div className=" mx-auto flex justify-center gap-4 ">
-          <Slider {...settings} className=" w-full py-3">
-            {marketPlaceData.map((card, index) =>
-              card.nft.map((nft) => {
-                return (
+        <div className=" md:block hidden ">
+          <Slider {...settings1} className=" w-full">
+            {showMarketPlaceData?.map(
+              (item: MarketCardProps, index: number) => (
+                <div className="slide">
                   <MarketPlaceCard
                     key={index}
-                    id={nft.id}
-                    marketplace={nft.marketplace}
-                    name={nft.name}
-                    userName={nft.userName}
-                    currentBid={nft.currentBid}
-                    inDollars={nft.inDollars}
+                    id={item.id}
+                    marketplace={item.marketplace}
+                    name={item.name}
+                    userName={item.userName}
+                    currentBid={item.currentBid}
+                    inDollars={item.inDollars}
                   />
-                );
-              })
+                </div>
+              )
+            )}
+          </Slider>
+        </div>
+        <div className=" md:hidden block ">
+          <Slider {...settings2} className=" w-full">
+            {showMarketPlaceData?.map(
+              (item: MarketCardProps, index: number) => (
+                <div className="slide">
+                  <MarketPlaceCard
+                    key={index}
+                    id={item.id}
+                    marketplace={item.marketplace}
+                    name={item.name}
+                    userName={item.userName}
+                    currentBid={item.currentBid}
+                    inDollars={item.inDollars}
+                  />
+                </div>
+              )
             )}
           </Slider>
         </div>

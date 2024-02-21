@@ -23,8 +23,8 @@ const MarketPlaceCard: React.FC<MarketCardProps> = ({
   return (
     <NavLink
       to={`/nft/${marketplace}/${id}`}
-      className="card main-card flex flex-col gap-4 px-3 py-5 text-white md:w-[270px] md:min-w-min min-w-full bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer md:h-[390px] h-[420px] mx-auto
-    group transition-all duration-300 ease-in-out hover:scale-105"
+      className="card main-card flex flex-col gap-4 px-3 py-5 text-white md:w-[270px] w-[260px] bg-[#1f2045] border-2 border-[#2e2459] rounded-lg cursor-pointer md:h-[390px] h-[420px] mx-auto
+    group transition-all duration-300 ease-in-out hover:scale-105 my-[10px]"
     >
       {/* <div > */}
       <div className=" flex justify-between items-center">
