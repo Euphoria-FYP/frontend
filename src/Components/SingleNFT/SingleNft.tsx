@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import { FiHeart } from "react-icons/fi";
 import { BsThreeDots } from "react-icons/bs";
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -5,8 +6,9 @@ import DetailTab from "./DetailTab";
 import BidTab from "./BidTab";
 import { useParams } from "react-router-dom";
 import { marketPlaceData } from "../../data";
-import { useState, useEffect } from "react";
 import { NFT } from "../../types/index";
+import HistoryTab from "./HistoryTab";
+import PlaceBidModal from "../PlaceBid/PlaceBidModal";
 
 interface TabButtonType {
   id: number;
@@ -32,6 +34,8 @@ const SingleNft = () => {
   const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[1]);
   const [singleNFTdata, setSingleNFTdata] = useState<NFT[]>();
   const { id, category } = useParams();
+  const [open, setOpen] = useState(false);
+  const cancelButtonRef = useRef(null);
 
   const getSingleNFT = (id: any) => {
     const filteredNFTs = marketPlaceData
@@ -53,6 +57,11 @@ const SingleNft = () => {
 
   return (
     <>
+      <PlaceBidModal
+        setOpen={setOpen}
+        open={open}
+        cancelButtonRef={cancelButtonRef}
+      />
       {/* main */}
       <section className=" w-[80%] h-full flex justify-center gap-12 text-white mx-auto py-10">
         {/* first div (left side) */}
@@ -70,7 +79,7 @@ const SingleNft = () => {
           </div>
           {/* WINNIG BID  */}
           <div className=" w-full flex flex-col gap-[6px] border border-[#ffffff14] bg-[#24243557] rounded-[8px] py-3 px-4 group mt-4">
-            <h3 className=" text-[17px] font-medium capitalize">Winnig Bid</h3>
+            <h3 className=" text-[17px] font-medium capitalize">Winning Bid</h3>
             <div className=" flex justify-between items-center">
               <div className=" flex items-center gap-3">
                 <img
@@ -157,6 +166,9 @@ const SingleNft = () => {
             <button
               className=" bg-[#212e48] text-white text-center font-medium w-[40%] h-fit py-2 px-4 rounded-[10px] tracking-[0.5px]
           hover:bg-[#00a3ff] hover:text-[#fff] transition-all duration-300 ease-in-out transform-gpu hover:scale-105"
+              onClick={() => {
+                setOpen(true);
+              }}
             >
               Place a Bid
             </button>
@@ -203,7 +215,7 @@ const SingleNft = () => {
           {currentTab.id === 2 &&
             singleNFTdata &&
             singleNFTdata.map((obj, index) => <DetailTab details={obj} />)}
-          {currentTab.id === 3 && <h1>History</h1>}
+          {currentTab.id === 3 && <HistoryTab />}
         </div>
       </section>
     </>
