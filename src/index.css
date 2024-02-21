@@ -6,9 +6,12 @@
 
 @font-face {
   font-family: "CodeNewRoman";
-  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf") format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf") format("truetype"),
-    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf") format("truetype");
+  src: url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman.otf")
+      format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ b.otf")
+      format("truetype"),
+    url("./assets/code-new-roman-cufonfonts/Code\ New\ Roman\ i.otf")
+      format("truetype");
 }
 
 body {
@@ -102,7 +105,6 @@ h3 {
   background-color: none;
 }
 
-
 /* ---------------------- CRICLE ANIMATION ---------------------- */
 .circle {
   border-color: #518eff;
@@ -178,9 +180,11 @@ h3 {
   left: 0;
   width: 260px;
   /* height: 100%; */
-  background: linear-gradient(90deg,
-      rgba(226, 37, 122, 0.4) 0%,
-      rgba(86, 59, 218, 0.4) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(226, 37, 122, 0.4) 0%,
+    rgba(86, 59, 218, 0.4) 100%
+  );
   border-radius: 8px;
   transition: transform 0.3s;
   z-index: -1;
@@ -236,8 +240,6 @@ h3 {
   background-color: rgba(146, 146, 146, 0.12);
 }
 
-
-
 /* ---------------------- PROFILE PAGE ---------------------- */
 
 .profilePageBtn {
@@ -246,7 +248,7 @@ h3 {
   border-radius: 5px;
   color: #fff;
   font-size: 16px;
-  background: linear-gradient(to right, #518EFF 35%, #B725FF 88%);
+  background: linear-gradient(to right, #518eff 35%, #b725ff 88%);
   position: relative;
   z-index: 1;
   /* margin-right: 6px; */
@@ -266,9 +268,9 @@ h3 {
   right: 0;
   bottom: 0;
   border-radius: 5px;
-  background: linear-gradient(to right, #B725FF 35%, #518EFF 88%);
+  background: linear-gradient(to right, #b725ff 35%, #518eff 88%);
   transform: scale(0);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 /* ---------------------- RANKING PAGE ---------------------- */
