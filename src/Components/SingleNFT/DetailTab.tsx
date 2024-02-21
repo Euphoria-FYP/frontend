@@ -4,7 +4,7 @@ import DetailTabPropertyCard from "./DetailTabPropertyCard";
 const DetailTab = ({ details }: any) => {
   console.log(details);
   return (
-    <div className=" flex flex-col gap-5 mt-4">
+    <div className="flex flex-col gap-5 mt-4">
       {/* OWNER */}
       <div className=" flex flex-col gap-[8px] group">
         <span className=" text-sm font-medium text-[#cfcfcf]">Owner</span>
