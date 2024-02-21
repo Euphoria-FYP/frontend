@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../Components/Shared/Layout";
+import Layout from "../../Components/Shared/Layout/Index";
 import CollectionRanking from "../../Components/CollectionRanking/CollectionRanking";
 
 const index = () => {

@@ -1,4 +1,4 @@
-import Layout from "../../Components/Shared/Layout";
+import Layout from "../../Components/Shared/Layout/Index";
 import SingleNft from "../../Components/SingleNFT/SingleNft";
 
 const index = () => {
