@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { marketPlaceData } from "../../data";
 import { useState, useEffect } from "react";
 import { NFT } from "../../types/index";
+import HistoryTab from "./HistoryTab";
 
 interface TabButtonType {
   id: number;
@@ -70,7 +71,7 @@ const SingleNft = () => {
           </div>
           {/* WINNIG BID  */}
           <div className=" w-full flex flex-col gap-[6px] border border-[#ffffff14] bg-[#24243557] rounded-[8px] py-3 px-4 group mt-4">
-            <h3 className=" text-[17px] font-medium capitalize">Winnig Bid</h3>
+            <h3 className=" text-[17px] font-medium capitalize">Winning Bid</h3>
             <div className=" flex justify-between items-center">
               <div className=" flex items-center gap-3">
                 <img
@@ -203,7 +204,7 @@ const SingleNft = () => {
           {currentTab.id === 2 &&
             singleNFTdata &&
             singleNFTdata.map((obj, index) => <DetailTab details={obj} />)}
-          {currentTab.id === 3 && <h1>History</h1>}
+          {currentTab.id === 3 && <HistoryTab />}
         </div>
       </section>
     </>
