@@ -4,9 +4,7 @@ import { BidModalType } from "../../types";
 import StyledButton from "../Shared/StyledButton";
 import { IoClose } from "react-icons/io5";
 
-
 const PlaceBidModal = ({ open, setOpen, cancelButtonRef }: BidModalType) => {
-
   const closeModal = () => {
     setOpen(false);
   };
@@ -43,7 +41,7 @@ const PlaceBidModal = ({ open, setOpen, cancelButtonRef }: BidModalType) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative flex flex-col gap-3 py-5 px-10 pb-10 transform overflow-hidden rounded-2xl bg-[#000B26] text-left shadow-xl transition-all 2xl:w-[40vw] xl:w-[32vw] md:w-[50vw]">
+                <Dialog.Panel className="relative flex flex-col gap-3 py-5 px-5 md:px-10 pb-10 transform overflow-hidden rounded-2xl bg-[#000B26] text-left shadow-xl transition-all 2xl:w-[40vw] xl:w-[32vw] md:w-[50vw]">
                   <div className="text-white flex justify-end items-end cursor-pointer">
                     <IoClose
                       className="text-2xl text-white"
@@ -53,8 +51,11 @@ const PlaceBidModal = ({ open, setOpen, cancelButtonRef }: BidModalType) => {
 
                   {/* first div */}
                   <div className="flex flex-col items-center text-white">
-                    <h3 className="text-3xl ">Place a bid</h3>
-                    <p> You are about to purchase This Product</p>
+                    <h3 className="text-3xl ">Place your bid</h3>
+                    <p className=" text-center md:text-left">
+                      {" "}
+                      You are about to purchase This Product
+                    </p>
                   </div>
 
                   {/* {Label} */}
@@ -71,7 +72,7 @@ const PlaceBidModal = ({ open, setOpen, cancelButtonRef }: BidModalType) => {
                   </div>
 
                   {/* last one */}
-                  <div className="flex flex-row text-slate-600 justify-between">
+                  <div className="flex flex-row text-[#cfcfcf] justify-between leading-6">
                     <div>
                       <p>Your Balance</p>
                       <p>Service Fee</p>
@@ -85,13 +86,17 @@ const PlaceBidModal = ({ open, setOpen, cancelButtonRef }: BidModalType) => {
                   </div>
 
                   {/* Button */}
-                  <div className="mt-6 md:mt-0 w-full">
-                    <StyledButton
-                      heading="Place a Bid"
-                      bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
-                      width={365}
-                    />
-                  </div>
+                  {/* <div className="mt-6 md:mt-0 w-full"> */}
+                  <button
+                    className={` w-full flex justify-center items-center text-center rounded-lg text-white py-3 font-semibold transition duration-300 ease-in-out hover:shadow-md hover:scale-105`}
+                    style={{
+                      background:
+                        "linear-gradient(103deg, #E2257A 0%, #563BDA 100%)",
+                    }}
+                  >
+                    Place a Bid
+                  </button>
+                  {/* </div> */}
                 </Dialog.Panel>
               </Transition.Child>
             </div>
