@@ -18,10 +18,10 @@ const Home = () => {
       <Carousel />
       <ExploreCategories />
       <MarketPlace />
-      <Collections/>
+      <Collections />
       <Contributor />
       <NftBanner />
-      {/* <StepsCard /> */}
+      <StepsCard />
       <Footer />
     </>
   );
