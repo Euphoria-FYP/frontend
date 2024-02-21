@@ -9,7 +9,7 @@ import { FaRegCircle } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#000B26] px-16 py-10 mt-10">
+      <footer className="bg-[#000B26] px-8 md:px-16 py-10 mt-10">
         <div className="flex flex-wrap  justify-between w-full">
           {/* first div */}
           <div className=" flex flex-col gap-5">
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
 
           {/* second div */}
-          <div className=" flex flex-wrap gap-20 text-[#cfcfcf] ">
+          <div className=" flex flex-wrap gap-10 md:gap-20 text-[#cfcfcf] mt-5 ">
             <div className=" flex flex-col gap-4">
               <h3 className=" text-lg font-bold">Marketplace</h3>
               <div className="flex gap-2 items-center">
@@ -112,10 +112,10 @@ const Footer = () => {
         </div>
 
         {/* line */}
-        <div className="border-b-2 border-gray-400 w-[100%] my-10"></div>
+        <div className="border-b-2 border-gray-400 w-[100%] my-7 md:my-10"></div>
 
         {/* third div */}
-        <div className="flex justify-between text-[#cfcfcf]">
+        <div className=" flex flex-col md:flex-row gap-5 items-center  justify-between text-[#cfcfcf]">
           <div className=" ">
             <p>&copy; 2022, All rights reserved</p>
           </div>

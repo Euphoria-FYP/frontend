@@ -21,7 +21,7 @@ const Home = () => {
       <Collections/>
       <Contributor />
       <NftBanner />
-      <StepsCard />
+      {/* <StepsCard /> */}
       <Footer />
     </>
   );
