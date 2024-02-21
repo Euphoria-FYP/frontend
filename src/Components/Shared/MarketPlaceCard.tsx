@@ -73,7 +73,7 @@ const MarketPlaceCard: React.FC<MarketCardProps> = ({
       <div className=" flex justify-center w-full">
         <div className=" w-[45%] border-r flex flex-col gap-1 border-[#cfcfcf]">
           <p className=" text-[#cfcfcf] text-xs">Current Bid</p>
-          <h3 className=" text-[15px] font-semibold">{currentBid} ETH</h3>
+          <h4 className=" text-[15px] font-semibold">{currentBid} ETH</h4>
           <p className=" text-[#cfcfcf] text-xs">
             ${""}
             {inDollars}
@@ -82,7 +82,7 @@ const MarketPlaceCard: React.FC<MarketCardProps> = ({
 
         <div className=" w-3/6 pl-6 flex flex-col gap-1">
           <p className=" text-[#cfcfcf] text-xs">Ending In</p>
-          <h3 className=" text-[15px] font-semibold">08:07:45</h3>
+          <h4 className=" text-[15px] font-semibold">08:07:45</h4>
           <div className=" flex gap-2">
             <p className=" text-[#cfcfcf] text-xs">Hrs</p>
             <p className=" text-[#cfcfcf] text-xs">Mins</p>

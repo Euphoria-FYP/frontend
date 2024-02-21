@@ -84,7 +84,7 @@ const Carousel = () => {
           {/* <h1 className=" text-[32px] font-bold">{carousel.title}</h1> */}
           <img src={ephHeading} alt="Heading" className=" md:w-56 w-36" />
           <h3
-            className={`mt-4 md:mt-0 text-[42px]  md:text-[48px] w-full md:w-[90%] font-semibold md:leading-[50px] leading-[48px] CodeNewRomanFont`}
+            className={`mt-4 md:mt-0 text-[42px]  md:text-[48px] w-full md:w-[90%] font-semibold md:leading-[50px] leading-[48px]`}
             dangerouslySetInnerHTML={{ __html: carousel.heading }}
           ></h3>
           <p className=" w-full md:w-[80%] md:text-sm text-[13px] text-[#cfcfcf]">
@@ -150,6 +150,7 @@ const Carousel = () => {
               className={` md:w-[76px] md:h-[75px] w-[66px] h-[64px] p-[10px] border-[2.5px] rounded-[50%] cursor-pointer ${
                 carousel.id === carouselData[0].id && "circle"
               } `}
+              loading="lazy"
               onClick={() => setCarousel(carouselData[0])} />
             <img
               src={carouselImg2}
@@ -157,6 +158,7 @@ const Carousel = () => {
               className={` md:w-[76px] md:h-[75px] w-[66px] h-[64px] p-[10px] border-[2.5px] rounded-[50%] cursor-pointer ${
                 carousel.id === carouselData[1].id && "circle"
               } `}
+              loading="lazy"
               onClick={() => setCarousel(carouselData[1])}
             />
           </div>

@@ -59,9 +59,9 @@ const CreateProfile = () => {
                   <div className=" flex flex-col items-start gap-4 text-white">
                     <div className=" flex items-center gap-3 text-white">
                       <IoPeopleSharp className=" text-3xl" />
-                      <span className=" text-lg font-semibold">
+                      <h3 className=" text-lg font-semibold">
                         As a Celebrity
-                      </span>
+                      </h3>
                     </div>
 
                     <span>Make your Customized Fan Page</span>
@@ -74,7 +74,7 @@ const CreateProfile = () => {
                   <div className=" flex flex-col items-start gap-4 text-white">
                     <div className=" flex items-center gap-3 text-white">
                       <FaPeopleGroup className=" text-3xl" />
-                      <span className=" text-lg font-semibold">As a Fan</span>
+                      <h3 className=" text-lg font-semibold">As a Fan</h3>
                     </div>
 
                     <span>Browse the Marketplace as a Fan</span>
@@ -86,9 +86,9 @@ const CreateProfile = () => {
             </div>
 
             <div className={` ${option === "Celebrity" ? `block` : `hidden`}`}>
-              <h1 className=" text-2xl md:text-4xl font-semibold mb-4">
+              <h3 className=" text-2xl md:text-4xl font-semibold mb-4">
                 Create your Customized Fan Page
-              </h1>
+              </h3>
 
               <div>
                 <label className="text-base font-medium">Profile Pic</label>

@@ -40,9 +40,9 @@ const SideContent = () => {
                 <div className=" flex">
                   {item.icon}
                   <div className=" ml-[16px]">
-                    <h3 className="text-[15px] font-medium mb-1 text-secondary">
+                    <h4 className="text-[15px] font-medium mb-1 text-secondary">
                       {item.title}
-                    </h3>
+                    </h4>
                     <p className="text-[13px] font-light leading-sm">{item.description}</p>
                   </div>
                 </div>
@@ -61,9 +61,9 @@ const SideContent = () => {
             <div className=" flex">
               <FiEyeOff className=" text-3xl text-white" />
               <div className=" ml-[16px]">
-                <h3 className="text-[15px] font-medium mb-1 text-secondary">
+                <h4 className="text-[15px] font-medium mb-1 text-secondary">
                   Can’t view
-                </h3>
+                </h4>
                 <p className="text-[13px] font-light leading-sm">
                   Your drop page or items until you publish them.
                 </p>
@@ -73,9 +73,9 @@ const SideContent = () => {
             <div className=" flex">
               <FiEye className=" text-3xl text-white" />
               <div className=" ml-[16px]">
-                <h3 className="text-[15px] font-medium mb-1 text-secondary">
+                <h4 className="text-[15px] font-medium mb-1 text-secondary">
                   Can view
-                </h3>
+                </h4>
                 <p className="text-[13px] font-light leading-sm">
                   That you’ve deployed a contract onto the blockchain.
                 </p>

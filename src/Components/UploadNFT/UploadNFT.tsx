@@ -90,9 +90,9 @@ const UploadNFT = () => {
                 <h2 className="text-white mb-2 font-semibold text-base">
                   Upload File
                 </h2>
-                <p className=" text-[15px] font-light text-gray-400">
+                <h3 className=" text-[15px] font-light text-gray-400">
                   Drag or choose your file to upload
-                </p>
+                </h3>
               </div>
 
               {/* upload box */}
@@ -154,7 +154,7 @@ const UploadNFT = () => {
         </>
         {selectedType && (
           <div>
-            <h1 className="text-white font-semibold text-base mt-5">Note:</h1>
+            <h3 className="text-white font-semibold text-base mt-5">Note:</h3>
             <p className=" text-[15px] font-light text-gray-400">
               Service Fee: 2.5%
             </p>

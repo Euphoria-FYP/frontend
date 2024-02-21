@@ -60,9 +60,9 @@ const SingleCollection = () => {
                   />
                 </div>
 
-                <h1 className="font-semibold text-lg leading-3 tracking-wider text-white mt-2">
+                <h3 className="font-semibold text-lg leading-3 tracking-wider text-white mt-2">
                   BoredApeYachtClub - GOERLI
-                </h1>
+                </h3>
                 <span className=" opacity-80">The Rocks</span>
               </div>
 

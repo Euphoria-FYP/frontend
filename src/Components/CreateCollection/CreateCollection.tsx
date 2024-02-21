@@ -10,9 +10,9 @@ const CreateCollection = () => {
       <section className=" w-full md:w-[80%] h-full flex justify-center  gap-12 text-white mx-auto py-10">
         {/* image and  form section */}
         <div className=" w-[90%] md:w-[65%]">
-          <h1 className=" text-2xl md:text-4xl font-semibold mb-6">
+          <h3 className=" text-2xl md:text-4xl font-semibold mb-6">
             Create your Collection
-          </h1>
+          </h3>
           <ImageSection label1={"Logo Image"} label2={"Cover Image"} />
           <CollectionForm />
         </div>

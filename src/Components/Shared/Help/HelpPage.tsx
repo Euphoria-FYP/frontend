@@ -14,9 +14,9 @@ const HelpPage = () => {
       <div className="h-full">
 
         {/* main heading */}
-        <h1 className=" text-[35px] md:text-[44px] px-5 md:px-16 pt-7 text-white font-bold">
+        <h3 className=" text-[35px] md:text-[44px] px-5 md:px-16 pt-7 text-white font-bold">
           Help Center
-        </h1>
+        </h3>
 
         {/* fqa section */}
         <div className="px-5 md:px-16 py-5"> 
@@ -31,9 +31,9 @@ const HelpPage = () => {
         <div className="flex flex-col justify-center items-center md:justify-start md:items-start md:flex-row px-5 md:px-16 py-5">
           {/* first Section  (content) */}
           <div className="flex-1 flex flex-col justify-center items-center md:justify-start md:items-start">
-            <h1 className=" text-xl md:text-3xl text-white font-bold">
+            <h3 className=" text-xl md:text-3xl text-white font-bold">
               Submit your question
-            </h1>
+            </h3>
             <p className=" text-sm text-center md:text-start md:text-base text-white md:w-2/3 pt-4 leading-5">
               {" "}
               Didn’t find the solution. We are here to help. Send us your
@@ -100,9 +100,9 @@ const HelpPage = () => {
         {/* last section */}
         <div className="px-5 md:px-16 py-5 flex flex-col gap-4 justify-center items-center md:justify-start md:items-start">
           <div className=" w-full">
-          <h1 className=" text-xl text-center md:text-start md:text-3xl text-white font-bold">
+          <h3 className=" text-xl text-center md:text-start md:text-3xl text-white font-bold">
             Ask us anything, anywhere
-          </h1>
+          </h3>
           <p className=" text-sm text-center md:text-start md:text-base text-white md:w-2/3 pt-4 leading-5">
             Drop us a question anywhere at your convenience
           </p>

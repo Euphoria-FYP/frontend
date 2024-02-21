@@ -24,9 +24,9 @@ const DetailTab = ({ details }: any) => {
             );
           })} */}
           {
-            <h6 className="text-xl font-medium transition-all duration-200 ease-in-out transform-gpu group-hover:text-[#00a3ff]">
+            <h3 className="text-xl font-medium transition-all duration-200 ease-in-out transform-gpu group-hover:text-[#00a3ff]">
               {details.name}
-            </h6>
+            </h3>
           }
         </div>
       </div>

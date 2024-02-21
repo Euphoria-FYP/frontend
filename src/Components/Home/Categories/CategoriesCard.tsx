@@ -15,7 +15,7 @@ const CategoriesCard: React.FC<CategoriesCardProps> = ({
           backgroundPosition: "center",
         }}
       >
-        <h2 className=" text-white font-bold text-xl text-center">{title}</h2>
+        <h3 className=" text-white font-bold text-xl text-center">{title}</h3>
         <button className="absolute bottom-0 text-sm bg-white py-[11px] px-8 rounded-[10px] mb-5 font-semibold text-[#B900FF] w-40">
           See all {title}
         </button>
