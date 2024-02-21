@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 import BottomToTop from "../BottomToTop/BottomToTop";
 import HeaderSection from "../Header/HeaderSection";
 
-const index = ({
+const Layout = ({
   children,
   bgImgClass,
 }: {
@@ -44,4 +44,4 @@ const index = ({
   );
 };
 
-export default index;
+export default Layout;
