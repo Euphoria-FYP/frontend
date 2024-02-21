@@ -74,3 +74,10 @@ export type NFTType = {
   id: number;
   type: string;
 };
+
+
+export type BidModalType ={
+  open: boolean;
+  setOpen: (value: boolean) => void;
+  cancelButtonRef: any;
+}
