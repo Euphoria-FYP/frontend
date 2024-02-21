@@ -145,7 +145,7 @@ const RankingTable = () => {
       {/* main div */}
       <div>
         {/* filter and search bar */}
-        <div className="flex justify-start items-center gap-5">
+        <div className="flex flex-col md:flex-row justify-start items-start md:items-center gap-5">
           {/* filter */}
           <div className="flex justify-between items-center px-[16px] py-[10px] rounded-xl bg-gray-700 w-40 text-[15px] font-semibold">
             <div className=" cursor-pointer opacity-80 hover:opacity-100">
@@ -217,8 +217,6 @@ const RankingTable = () => {
               "& .css-qvtrhg-MuiDataGrid-virtualScroller": {
                 border: "2px solid gray",
                 borderRadius: "12px",
-                // paddingTop: "5px",
-                // paddingBottom: "5px",
               },
               "& .MuiDataGrid-row:hover": {
                 backgroundColor: "rgba(255, 255, 255, 0.04)",
