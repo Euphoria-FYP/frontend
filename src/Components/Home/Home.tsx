@@ -16,8 +16,8 @@ const Home = () => {
     <>
       {/* <HeaderSection /> */}
       <Carousel />
-      <ExploreCategories />
       <MarketPlace />
+      <ExploreCategories />
       <Collections />
       <Contributor />
       <NftBanner />

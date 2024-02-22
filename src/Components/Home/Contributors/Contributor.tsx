@@ -21,19 +21,19 @@ const Contributor = () => {
       {
         breakpoint: 768,
         setting: {
-          slidesToShow: 4,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 520,
         setting: {
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
     ],
   };
   return (
-    <section className=" w-[90%] flex flex-col justify-center items-center my-5 mx-auto mt-10">
+    <section className=" w-[95%] flex flex-col justify-center items-center my-5 mx-auto mt-10">
       <div className="flex flex-col justify-center items-center gap-3">
         <h4 className="uppercase  font-semibold text-xl text-[#B900FF]">
           NFT Creators

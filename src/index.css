@@ -321,3 +321,10 @@ h3 {
   -webkit-background-clip: text;
   color: transparent;
 }
+
+/* ------------ COLLECTION COMPONENT HOME PAGE ------------- */
+
+.collection .slick-slider {
+  display: flex !important;
+  align-items: center;
+}
