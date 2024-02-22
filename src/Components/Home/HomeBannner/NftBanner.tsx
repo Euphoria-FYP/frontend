@@ -9,7 +9,7 @@ const NftBanner = () => {
     w-full md:w-[86%] flex justify-center items-center gap-7 mx-auto mb-6 md:px-20 px-4 md:py-10 py-14 md:rounded-xl rounded-none"
     >
       <div className=" flex flex-col justify-center items-center gap-4 mx-auto">
-        <h3 className=" text-white text-[30px] md:text-[35px] text-center leading-[45px] tracking-widest font-bold">
+        <h3 className=" text-white text-[23px] md:text-[35px] text-center leading-[45px] tracking-widest font-bold">
           Create, Sell and Collect <br /> NFT Digital Assests
         </h3>
         <p className=" text-[#cfcfcf] text-center text-sm md:text-base w-full md:w-[70%]">
