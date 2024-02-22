@@ -33,12 +33,14 @@ export type ContributorCardProps = {
 };
 
 export type CollectionsCardProps = {
+  id: number;
+  tag: string;
   img1: string;
   img2: string;
   img3: string;
   img4: string;
-  title: string;
-  price: number;
+  name: string;
+  floorPrice: number;
   createdBy: string;
 };
 
@@ -59,15 +61,57 @@ export type stepsData = {
   description: string;
 };
 
+type Details = {
+  contractAddress: string;
+  name: string;
+  tokenId: number;
+  tokenStandard: string;
+  chain: string;
+  lastUpdated: string;
+  creatorEarnings: number;
+};
+
+type History = {
+  name: string;
+  userName: string;
+  bidPrice: number;
+};
+
+type Listings = {
+  id: number;
+  marketplace: string;
+  name: string;
+  title: string;
+  userName: string;
+  image: string;
+  currentBid: number;
+  inDollars: number;
+  startDate: string;
+  endDate: string;
+  details: Details;
+  history: History[];
+};
+
 export type CollectionsData = {
   id: number;
-  title: string;
+  userId: number;
   img1: string;
   img2: string;
   img3: string;
   img4: string;
+  tag: string;
+  category: string;
+  featured: boolean;
+  name: string;
+  description: string;
+  creatorEarning: number;
+  totalItems: number;
+  createdAt: string;
+  logo: string;
+  coverImage: string;
   createdBy: string;
-  price: number;
+  floorPrice: number;
+  Listings: Listings[];
 };
 
 export type NFTType = {
@@ -75,9 +119,8 @@ export type NFTType = {
   type: string;
 };
 
-
-export type BidModalType ={
+export type BidModalType = {
   open: boolean;
   setOpen: (value: boolean) => void;
   cancelButtonRef: any;
-}
+};

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import MarketContrubutor from "../MarketPlace/MarketContrubutor";
-import { tags, MyCollections } from "../../data";
+import React, { useState, useEffect } from "react";
+import { tags, AllCollections } from "../../data";
 import { BiSearchAlt } from "react-icons/bi";
 import {
   IoIosArrowUp,
@@ -8,22 +7,48 @@ import {
   IoIosArrowForward,
   IoIosArrowBack,
 } from "react-icons/io";
+import { useParams } from "react-router-dom";
 import CollectionCard from "../Home/Collections/CollectionCard";
 import TabsCollection from "./TabsCollection";
+import { CollectionsData } from "../../types/index";
 
 const SingleCollection = () => {
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
   const [expanded, setExpanded] = useState(false);
-  const maxLength = 50;
-  const longText = `Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-  Quibusdam consectetur temporibus nisi illo quam architecto dolor
-  autem repellendus quod, deserunt perferendis, iusto laudantium ab
-  sapiente eum quisquam reiciendis`;
+  const [singleCollectiondata, setCollectiondata] = useState<any>();
+  const { id, tag } = useParams();
+  const maxLength = 90;
+  // const longText = singleCollectiondata && singleCollectiondata[0].description;
 
   const toggleExpanded = () => {
     setExpanded(!expanded);
   };
-  const displayText = expanded ? longText : longText.slice(0, maxLength);
+
+  const displayText = expanded
+    ? singleCollectiondata && singleCollectiondata[0].description
+    : singleCollectiondata &&
+      singleCollectiondata[0].description.slice(0, maxLength);
+
+  const getSingleCollection = (id: any) => {
+    console.log(id);
+    console.log(AllCollections);
+    const filteredCollection = AllCollections.filter(
+      (item) => item.id === parseInt(id, 10)
+    );
+    setCollectiondata(filteredCollection);
+    console.log(filteredCollection);
+  };
+
+  useEffect(() => {
+    getSingleCollection(id);
+  }, []);
+
+  useEffect(() => {
+    console.log("mmm", singleCollectiondata);
+  }, [singleCollectiondata]);
+
+  // const { name } = SingleCollection[0];
+
   return (
     <>
       <div className=" flex h-full">
@@ -51,17 +76,18 @@ const SingleCollection = () => {
               {/* first div */}
 
               <div className=" flex flex-col justify-center items-start gap-4">
-                <div className=" rounded-xl border border-gray-400">
+                <div className="">
                   <img
-                    src="https://i.seadn.io/gcs/files/4ae945fc0ce81d1cacbb2d607cdc5761.png?auto=format&dpr=1&w=384"
+                    src={singleCollectiondata && singleCollectiondata[0].logo}
                     alt=""
                     width={100}
                     height={100}
+                    className="  rounded-xl border border-gray-400 object-contain"
                   />
                 </div>
 
                 <h3 className="font-semibold text-lg leading-3 tracking-wider text-white mt-2">
-                  BoredApeYachtClub - GOERLI
+                  {singleCollectiondata && singleCollectiondata[0].name}
                 </h3>
                 <span className=" opacity-80">The Rocks</span>
               </div>
@@ -69,12 +95,18 @@ const SingleCollection = () => {
               {/* second div */}
               <div className=" flex justify-between gap-5">
                 <div className="flex flex-col justify-between gap-[5px]">
-                  <span className=" font-bold text-[19px]">5%</span>
+                  <span className=" font-bold text-[19px]">
+                    {singleCollectiondata &&
+                      singleCollectiondata[0].creatorEarning}
+                    %
+                  </span>
                   <span className="text-sm opacity-80">Creator Earnings</span>
                 </div>
 
                 <div className="flex flex-col justify-between gap-[5px]">
-                  <span className=" font-bold text-[19px]">1,250</span>
+                  <span className=" font-bold text-[19px]">
+                    {singleCollectiondata && singleCollectiondata[0].totalItems}
+                  </span>
                   <span className="text-sm opacity-80">Total Items</span>
                 </div>
               </div>
@@ -107,7 +139,10 @@ const SingleCollection = () => {
                     <span className="font-normal text-sm">
                       Created{" "}
                       <div className="inline-flex">
-                        <span className="font-semibold text-sm">Dec 2021</span>
+                        <span className="font-semibold text-sm">
+                          {singleCollectiondata &&
+                            singleCollectiondata[0].createdAt}
+                        </span>
                       </div>
                     </span>
                   </div>

@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CollectionCard from "./CollectionCard";
-import { MyCollections } from "../../../data";
+import { AllCollections } from "../../../data";
 import StyledButton from "../../Shared/StyledButton";
 import { NavLink } from "react-router-dom";
+import { CollectionsData } from "@/types";
 
 const Collections = () => {
+  const [featuredCollection, setFeaturedCollection] = useState<
+    CollectionsData[]
+  >([]);
+
+  useEffect(() => {
+    setFeaturedCollection(AllCollections.filter((item) => item.featured));
+  }, []);
+
   return (
     <>
       <section className=" w-[90%] flex flex-col justify-center items-center my-8 mx-auto">
@@ -18,19 +27,8 @@ const Collections = () => {
         </div>
 
         <div className=" flex justify-center items-center md:gap-5 mt-10 mb-7 flex-wrap">
-          {MyCollections.map((item, i) => {
-            return (
-              <CollectionCard
-                key={i}
-                img1={item.img1}
-                img2={item.img2}
-                img3={item.img3}
-                img4={item.img4}
-                title={item.title}
-                createdBy={item.createdBy}
-                price={item.price}
-              />
-            );
+          {featuredCollection?.map((item, i) => {
+            return <CollectionCard key={i} {...item} />;
           })}
         </div>
         <NavLink to={"/marketplace"}>

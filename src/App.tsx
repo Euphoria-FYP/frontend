@@ -38,13 +38,17 @@ function App() {
       path: "/create-collection",
       element: <CreateCollection />,
     },
-    {
-      path: "/single-collection",
-      element: <SingleCollection />,
-    },
+    // {
+    //   path: "/single-collection",
+    //   element: <SingleCollection />,
+    // },
     {
       path: "/help",
       element: <HelpPage />,
+    },
+    {
+      path: "/collection/:tag/:id",
+      element: <SingleCollection />,
     },
     {
       path: "/top-collections",

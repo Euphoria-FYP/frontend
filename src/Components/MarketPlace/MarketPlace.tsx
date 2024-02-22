@@ -4,8 +4,9 @@ import { BiSearchAlt } from "react-icons/bi";
 import { cards } from "../../data";
 import MarketContrubutor from "./MarketContrubutor";
 import { useState, useEffect } from "react";
-import { marketPlaceData, tags } from "../../data";
+import { marketPlaceData, tags, AllCollections } from "../../data";
 import { MarketPlaceItem, NFT } from "@/types";
+import CollectionCard from "../Home/Collections/CollectionCard";
 import {
   IoIosArrowUp,
   IoIosArrowDown,
@@ -174,13 +175,14 @@ const MarketPlace = ({ setBgImg }: any) => {
               </div>
             </div>
           </div>
-          {/* NFTCARDS */}
+
+          {/* COLLECTIONS CARDS */}
           <div
             className={`  flex flex-wrap justify-start ${
               isSidebarOpen ? "gap-8" : " gap-6"
-            } pb-12 pt-3 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
+            } pb-12 pt-3 px-3 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
           >
-            {type === "tags" ? (
+            {/* {type === "tags" ? (
               filterData ? (
                 filterData.map((card: any, index: number) =>
                   card.nft.map((nft: any) => {
@@ -223,7 +225,13 @@ const MarketPlace = ({ setBgImg }: any) => {
               <div className="flex justify-center items-center mx-auto text-white">
                 <h1>No Data Found</h1>
               </div>
-            )}
+            )} */}
+
+            {/* cards */}
+
+            {AllCollections.map((item, i) => {
+              return <CollectionCard key={i} {...item} />;
+            })}
           </div>
         </div>
         {/* RIGHT SIDE */}
