@@ -247,9 +247,7 @@ const Sidebar = (props: Props) => {
       </div>
       <NavLink to="/profile">
         <div
-          className={`${
-            openMobileSidebar ? " w-full" : "w-0"
-          } flex justify-start items-center gap-4  bottom-0 mt-5 text-white`}
+          className={` flex justify-start items-center gap-4  bottom-0 mt-5 text-white`}
         >
           <img
             src={profileImg}
