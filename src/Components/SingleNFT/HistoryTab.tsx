@@ -2,9 +2,9 @@ import React from "react";
 
 const HistoryTab = () => {
   return (
-    <div className=" flex flex-col divide-y divide-[#ffffff14] h-64 overflow-y-scroll scroll-marketplace-dropdown">
+    <div className=" flex flex-col divide-y divide-[#ffffff14] hh-[265px] overflow-y-scroll scroll-marketplace-dropdown px-2">
       {/* Bid Card */}
-      <div className=" flex justify-between items-center group py-3 px-2">
+      <div className=" flex justify-between items-center group py-3">
         <div className=" flex items-center gap-4">
           <img
             className=" rounded-[50%] border-[3px] border-[#ffffff14] transition-all duration-200 ease-in-out transform-gpu group-hover:border-none group-hover:scale-105"
@@ -27,7 +27,7 @@ const HistoryTab = () => {
           <span className=" text-sm font-medium text-[#00a3ff]">= $128.36</span>
         </div>
       </div>
-      <div className=" flex justify-between items-center group py-3 px-2">
+      <div className=" flex justify-between items-center group py-3">
         <div className=" flex items-center gap-4">
           <img
             className=" rounded-[50%] border-[3px] border-[#ffffff14] transition-all duration-200 ease-in-out transform-gpu group-hover:border-none group-hover:scale-105"
@@ -50,7 +50,7 @@ const HistoryTab = () => {
           <span className=" text-sm font-medium text-[#00a3ff]">= $128.36</span>
         </div>
       </div>
-      <div className=" flex justify-between items-center group py-3 px-2">
+      <div className=" flex justify-between items-center group py-3">
         <div className=" flex items-center gap-4">
           <img
             className=" rounded-[50%] border-[3px] border-[#ffffff14] transition-all duration-200 ease-in-out transform-gpu group-hover:border-none group-hover:scale-105"
@@ -73,7 +73,7 @@ const HistoryTab = () => {
           <span className=" text-sm font-medium text-[#00a3ff]">= $128.36</span>
         </div>
       </div>
-      <div className=" flex justify-between items-center group py-3 px-2">
+      <div className=" flex justify-between items-center group py-3">
         <div className=" flex items-center gap-4">
           <img
             className=" rounded-[50%] border-[3px] border-[#ffffff14] transition-all duration-200 ease-in-out transform-gpu group-hover:border-none group-hover:scale-105"
@@ -96,7 +96,7 @@ const HistoryTab = () => {
           <span className=" text-sm font-medium text-[#00a3ff]">= $128.36</span>
         </div>
       </div>
-      <div className=" flex justify-between items-center group py-3 px-2">
+      <div className=" flex justify-between items-center group py-3">
         <div className=" flex items-center gap-4">
           <img
             className=" rounded-[50%] border-[3px] border-[#ffffff14] transition-all duration-200 ease-in-out transform-gpu group-hover:border-none group-hover:scale-105"
@@ -119,7 +119,6 @@ const HistoryTab = () => {
           <span className=" text-sm font-medium text-[#00a3ff]">= $128.36</span>
         </div>
       </div>
-      
     </div>
   );
 };

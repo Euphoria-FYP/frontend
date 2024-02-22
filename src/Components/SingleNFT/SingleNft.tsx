@@ -78,7 +78,7 @@ const SingleNft = () => {
             />
           </div>
           {/* WINNIG BID  */}
-          <div className=" w-full flex flex-col gap-[6px] border border-[#ffffff14] bg-[#24243557] rounded-[8px] py-3 px-4 group mt-4">
+          <div className=" w-full flex flex-col gap-[6px] border border-[#ffffff14] bg-[#24243557] rounded-[8px] py-3 px-3 md:px-4 group mt-4">
             <h3 className=" text-[17px] font-medium capitalize">Winning Bid</h3>
             <div className=" flex md:flex-row justify-between items-center">
               <div className=" flex items-center gap-3">
@@ -91,25 +91,28 @@ const SingleNft = () => {
                 />
 
                 <div className=" flex flex-col items-start gap-[1px]">
-                  <h6 className="text-base font-medium text-[#00a3ff] capitalize transition-all duration-200 ease-in-out transform-gpu ">
+                  <h6 className=" text-sm md:text-base font-medium text-[#00a3ff] capitalize transition-all duration-200 ease-in-out transform-gpu ">
                     Allen Waltker{" "}
                     <span
                       className="  text-sm font-light text-[#cfcfcf]"
                       style={{ textTransform: "none" }}
                     >
                       {" "}
-                      <span className=" mx-1">-</span> Placed a Bid
+                      <span className=" mx-0 md:mx-1">-</span> Placed a Bid
                     </span>
                   </h6>
-                  <span className=" text-sm text-[#cfcfcf]"> 1 hour ago</span>
+                  <span className="text-xs md:text-sm text-[#cfcfcf]">
+                    {" "}
+                    1 hour ago
+                  </span>
                 </div>
               </div>
 
               <div className=" flex flex-col items-end">
-                <span className=" text-lg font-medium tracking-wide text-[#cfcfcf]">
+                <span className="text-sm md:text-lg font-medium tracking-wide text-[#cfcfcf]">
                   9.83 ETH
                 </span>
-                <span className=" text-sm font-medium text-[#00a3ff]">
+                <span className=" text-sm md:text-sm font-medium text-[#00a3ff]">
                   =$128.36
                 </span>
               </div>
@@ -124,7 +127,7 @@ const SingleNft = () => {
             {singleNFTdata?.map((item, index) => (
               <div key={index}>
                 {item.details.map((name, i) => (
-                  <h3 key={i} className="text-[34px] font-bold">
+                  <h3 key={i} className=" text-[22px] md:text-[34px] font-bold">
                     {name.name}
                   </h3>
                 ))}
