@@ -2,7 +2,7 @@ import React from "react";
 
 const HistoryTab = () => {
   return (
-    <div className=" flex flex-col divide-y divide-[#ffffff14] hh-[265px] overflow-y-scroll scroll-marketplace-dropdown px-2">
+    <div className=" flex flex-col divide-y divide-[#ffffff14] h-[265px] overflow-y-scroll scroll-marketplace-dropdown px-2">
       {/* Bid Card */}
       <div className=" flex justify-between items-center group py-3">
         <div className=" flex items-center gap-4">
