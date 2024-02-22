@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { BiSearchAlt } from "react-icons/bi";
 import { MdWallet } from "react-icons/md";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import { CgMenuLeft } from "react-icons/cg";
 
 interface Props {
@@ -14,6 +14,7 @@ const HeaderSection = (props: Props) => {
   const { setOpenMobileSidebar } = props;
   const [isVisible, setVisible] = useState(false);
   const location = useLocation();
+  const { id, tag } = useParams();
 
   const listenToScroll = () => {
     let heightScroll = 200;
@@ -42,7 +43,8 @@ const HeaderSection = (props: Props) => {
       {location.pathname !== "/upload-nft" &&
         location.pathname !== "/create-collection" &&
         location.pathname !== "/marketplace" &&
-        location.pathname !== "/single-collection" && (
+        location.pathname !== "/single-collection" &&
+        location.pathname !== `/collection/${tag}/${id}` && (
           <header
             className={` flex flex-col w-full z-[20000] ${
               isVisible ? "default-header  scroll-header" : "default-header "
