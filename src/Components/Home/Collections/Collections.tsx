@@ -1,22 +1,34 @@
 import React, { useState, useEffect } from "react";
-import CollectionCard from "./CollectionCard";
-import { AllCollections } from "../../../data";
-import StyledButton from "../../Shared/StyledButton";
 import { NavLink } from "react-router-dom";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import Slider from "react-slick";
-import { CollectionsData } from "@/types";
 
+// ICONS
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
+// COMPONENTS
+import CollectionCard from "./CollectionCard";
+import StyledButton from "../../Shared/StyledButton";
+
+// MUI
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+
+// SLIDER SLICK
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
+// DATA
+import { AllCollections } from "../../../data";
+
+// TYPES
+import { CollectionsData } from "@/types";
 
 function SampleNextArrow(props: any) {
   const { onClick } = props;
   return (
     <div onClick={onClick} className=" cursor-pointer">
       <IoIosArrowForward
-        className={` text-5xl text-white`}
-        style={{ color: "white", fontSize: "50px" }}
+        className={` md:text-5xl text-4xl text-white`}
         onClick={onClick}
       />
     </div>
@@ -28,8 +40,7 @@ function SamplePrevArrow(props: any) {
   return (
     <div onClick={onClick} className=" cursor-pointer">
       <IoIosArrowBack
-        className={` text-5xl text-white`}
-        style={{ color: "white", fontSize: "50px" }}
+        className={` md:text-5xl text-4xl text-white`}
         onClick={onClick}
       />
     </div>
@@ -37,13 +48,20 @@ function SamplePrevArrow(props: any) {
 }
 
 const Collections = () => {
-  const [featuredCollection, setFeaturedCollection] = useState<
-    CollectionsData[]
-  >([]);
+  const theme = useTheme();
+  const upSm = useMediaQuery(theme.breakpoints.up("sm"));
+  const downSm = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const [featuredCollection, setFeaturedCollection] =
+    useState<CollectionsData[]>(AllCollections);
 
   useEffect(() => {
-    setFeaturedCollection(AllCollections.filter((item) => item.featured));
+    const filteredCollection = AllCollections.filter(
+      (item) => item.featured === true
+    );
+    setFeaturedCollection(filteredCollection);
   }, []);
+
   const settings1 = {
     dots: false,
     infinite: true,
@@ -62,6 +80,7 @@ const Collections = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
+
   return (
     <>
       <section className="collection w-[95%] flex flex-col justify-center items-center gap-10 my-8 mx-auto">
@@ -74,21 +93,23 @@ const Collections = () => {
           </h3>
         </div>
         {/* DESKTOP */}
-        <div className=" w-full md:block hidden">
+        {upSm && (
           <Slider {...settings1} className="w-full ">
-            {featuredCollection.map((item, i) => {
-              return <CollectionCard key={i} {...item} />;
-            })}
+            {featuredCollection.map((item, i) => (
+              <CollectionCard key={i} {...item} />
+            ))}
           </Slider>
-        </div>
+        )}
         {/* MOBILE */}
-        <div className=" w-full md:hidden block">
-          <Slider {...settings2} className="w-full ">
-            {featuredCollection.map((item, i) => {
-              return <CollectionCard key={i} {...item} />;
-            })}
-          </Slider>
-        </div>
+        {downSm && (
+          <>
+            <Slider {...settings2} className="w-full ">
+              {featuredCollection?.map((item, i) => (
+                <CollectionCard key={i} {...item} />
+              ))}
+            </Slider>
+          </>
+        )}
         <NavLink to={"/marketplace"}>
           <StyledButton
             heading="View Collections"

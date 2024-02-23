@@ -50,23 +50,28 @@ const Profile = () => {
     useState<MarketPlaceItem[]>(marketPlaceData);
   return (
     <>
-      <section className=" w-[90%] h-full flex flex-col justify-center gap-8 text-white mx-auto py-10">
+      <section className=" w-[90%] h-full flex flex-col justify-center md:gap-8 gap-4 text-white mx-auto py-10">
         {/* HEADER */}
-        <div className="w-full h-[350px] rounded-xl ">
+        <div className="w-full md:h-[350px] h-64 rounded-xl ">
           <div className="  h-[75%] bg-[url('https://html.ditsolution.net/nftpro/assets/images/resource/author-bg.png')] rounded-tl-xl rounded-tr-xl">
-            <div className=" flex justify-start items-start gap-5 px-10 pt-24">
+            <div className=" flex justify-start md:items-start items-center md:gap-5 gap-4 md:px-10 px-5 md:pt-24 pt-[100px]">
               <img
-                className=" relative rounded-[50%] border-4 border-white w-52 h-52 z-20"
+                className=" relative rounded-[50%] border-4 border-white md:w-52 md:h-52 w-32 h-24 z-20"
                 src="https://html.ditsolution.net/nftpro/assets/images/resource/profile.jpg"
                 alt=""
               />
-              <div className=" flex flex-col pt-8">
-                <h3 className=" text-xl font-bold">Davis Jhon</h3>
-                <p>@davis.jhon</p>
+              <div className=" w-full flex md:flex-col md:justify-start justify-between md:pt-8">
+                <div className=" flex flex-col">
+                  <h3 className=" md:text-xl text-sm font-bold">Davis Jhon</h3>
+                  <p className="md:text-base text-xs">@davis.jhon</p>
+                </div>
 
-                <div className=" flex gap-2 mt-4">
-                  <button className="profilePageBtn"> Follow</button>
-                  <button className=" group flex justify-center items-center gap-2 rounded-[5px]  pl-5 bg-[#444882]">
+                <div className=" flex gap-2 md:mt-4 mt-2">
+                  <button className="profilePageBtn md:inline-block hidden">
+                    {" "}
+                    Follow
+                  </button>
+                  <button className=" group md:flex hidden justify-center items-center gap-2 rounded-[5px] pl-5 bg-[#444882]">
                     <span className=" py-2">0x731F9FBF4163D </span>
                     <div
                       className="profilePageBtn h-full flex items-center justify-center"
@@ -84,26 +89,30 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div className=" flex justify-end px-16 items-center gap-6 bg-[#2A273E] h-[20%] text-white rounded-bl-xl rounded-br-xl">
-            <button className=" cursor-pointer">Create NFT</button>
-            <button className=" cursor-pointer">About</button>
-            <button className=" cursor-pointer flex justify-center items-center">
+          <div className=" flex md:justify-end justify-center md:px-16 px-5 items-center md:gap-6 gap-2 bg-[#2A273E] h-[20%] text-white rounded-bl-xl rounded-br-xl">
+            <button className=" cursor-pointer md:text-base text-xs ">
+              Create NFT
+            </button>
+            <button className=" cursor-pointer md:text-base text-xs">
+              About
+            </button>
+            <button className=" cursor-pointer md:text-base text-xs flex justify-center items-center">
               Followers
-              <span className=" bg-[#518EFF] text-xs py-[1px] px-[5px] rounded ml-2">
+              <span className=" bg-[#518EFF] md:text-xs text-[10px] py-[1px] px-[5px] rounded ml-2">
                 200
               </span>
             </button>
-            <button className=" cursor-pointer flex justify-center items-center">
+            <button className=" cursor-pointer md:text-base text-xs flex justify-center items-center">
               Following
-              <span className=" bg-[#518EFF] text-xs py-[1px] px-[5px] rounded ml-2">
+              <span className=" bg-[#518EFF] md:text-xs text-[10px] py-[1px] px-[5px] rounded ml-2">
                 200
               </span>
             </button>
           </div>
         </div>
         {/* BODY */}
-        <div className="w-full flex gap-5">
-          <div className=" w-[75%] flex flex-col gap-5">
+        <div className="w-full flex md:gap-5 gap-4">
+          <div className=" md:w-[75%] w-full flex flex-col gap-5">
             <div className=" flex gap-2 rounded-[7px] border border-[#ffffff14] bg-[#2A273E] p-2 ">
               {tabButtons.map((item) => (
                 <button
@@ -140,7 +149,7 @@ const Profile = () => {
                 : null}
             </div>
           </div>
-          <div className=" w-[25%] flex flex-col gap-5">
+          <div className=" w-[25%] md:flex hidden flex-col gap-5">
             <div className=" flex flex-col gap-4 bg-[#2A273E] rounded-md py-6 px-8">
               <h4>Search NFT</h4>
               <hr />
