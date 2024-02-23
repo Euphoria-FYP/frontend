@@ -16,7 +16,7 @@ const CollectionCard: React.FC<CollectionsCardProps> = ({
   return (
     <>
       <NavLink to={`/collection/${tag}/${id}`}>
-        <div className=" mx-auto my-3 text-white bg-slate-800 flex flex-col gap-4 rounded-lg h-60 w-64 px-3 py-3 cursor-pointer transition-all duration-300 ease-in-out hover:scale-105">
+        <div className=" mx-auto my-3 text-white bg-slate-800 flex flex-col gap-4 rounded-lg h-60  md:w-64 w-60 px-3 py-3 cursor-pointer transition-all duration-300 ease-in-out hover:scale-105">
           {/* images */}
           <div className=" h-[60%] grid grid-rows-2 grid-flow-col gap-2">
             <div className="col-span-2 gap-2">

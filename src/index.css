@@ -273,6 +273,13 @@ h3 {
   transition: 0.5s;
 }
 
+@media only screen and (max-width: 768px) {
+  .profilePageBtn{
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+}
+
 /* ---------------------- RANKING PAGE ---------------------- */
 
 .rankingInputSearch {
