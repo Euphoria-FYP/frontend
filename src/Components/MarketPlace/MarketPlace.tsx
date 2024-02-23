@@ -5,7 +5,7 @@ import { cards } from "../../data";
 import MarketContrubutor from "./MarketContrubutor";
 import { useState, useEffect } from "react";
 import { marketPlaceData, tags, AllCollections } from "../../data";
-import { MarketPlaceItem, NFT } from "@/types";
+import { CollectionsData, Listings, MarketPlaceItem, NFT } from "@/types";
 import CollectionCard from "../Home/Collections/CollectionCard";
 import {
   IoIosArrowUp,
@@ -16,58 +16,61 @@ import {
 import { NavLink } from "react-router-dom";
 
 const MarketPlace = ({ setBgImg }: any) => {
-  const [filterData, setFilterData] = useState<MarketPlaceItem[] | NFT[]>(
-    marketPlaceData
-  );
+  const [filterData, setFilterData] =
+    useState<CollectionsData[]>(AllCollections);
   const [type, setType] = useState<string>("tags");
   const [tag, setTag] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [sort, setSort] = useState<string>("");
   const [openDropDown, setOpenDropDown] = useState<boolean[]>([false, false]);
 
-  const tagsFilter = (tag: string, filtertype: string) => {
+  const tagsFilter = (type: string, filtertype: string) => {
     if (filtertype === "tags") {
-      const filteredItems: MarketPlaceItem[] = marketPlaceData.filter(
-        (item) => item.category === tag
+      const filteredItems: CollectionsData[] = AllCollections.filter(
+        (item) => item.tag === type
       );
       setFilterData(filteredItems);
       setTag(tag);
     } else if (filtertype === "category") {
-      const subcategory = tag.toLowerCase();
-      const categoryfilter: NFT[] = marketPlaceData.flatMap((item) =>
-        item.nft.filter((nftItem) => nftItem.marketplace === subcategory)
+      console.log(filtertype);
+      console.log(type);
+      const categoryfilter: CollectionsData[] = AllCollections.filter(
+        (item) => item.category.toLowerCase() === type
       );
       setFilterData(categoryfilter);
       setCategory(tag);
       setOpenDropDown([!openDropDown[0], ...openDropDown.slice(1)]);
-    } else if (filtertype === "sort") {
-      if (type === "tags") {
-        if (tag === "ltoh") {
-          const sortfilter: NFT[] = filterData
-            .flatMap((item: any) => item.nft)
-            .sort((a, b) => a.inDollars - b.inDollars);
-          setFilterData(sortfilter);
-        } else if (tag === "htol") {
-          const sortfilter: NFT[] = filterData
-            .flatMap((item: any) => item.nft)
-            .sort((a, b) => b.inDollars - a.inDollars);
-          setFilterData(sortfilter);
-        }
-      } else if (type === "category" || type === "sort") {
-        if (tag === "ltoh") {
-          const sortfilter = filterData.sort(
-            (a: any, b: any) => a.inDollars - b.inDollars
-          );
-          setFilterData(sortfilter);
-        } else if (tag === "htol") {
-          const sortfilter = filterData.sort(
-            (a: any, b: any) => b.inDollars - a.inDollars
-          );
-          setFilterData(sortfilter);
-        }
-      }
-      setOpenDropDown([!openDropDown[1], ...openDropDown.slice(0)]);
     }
+    // else if (filtertype === "sort") {
+    //   if (type === "tags") {
+    //     if (tag === "ltoh") {
+    //       const sortfilter: NFT[] = filterData
+    //         .flatMap((item: any) => item.nft)
+    //         .sort((a, b) => a.inDollars - b.inDollars);
+    //       setFilterData(sortfilter);
+    //     } else if (tag === "htol") {
+    //       const sortfilter: NFT[] = filterData
+    //         .flatMap((item: any) => item.nft)
+    //         .sort((a, b) => b.inDollars - a.inDollars);
+    //       setFilterData(sortfilter);
+    //     }
+    //   }
+
+    //   else if (type === "category" || type === "sort") {
+    //     if (tag === "ltoh") {
+    //       const sortfilter = filterData.sort(
+    //         (a: any, b: any) => a.inDollars - b.inDollars
+    //       );
+    //       setFilterData(sortfilter);
+    //     } else if (tag === "htol") {
+    //       const sortfilter = filterData.sort(
+    //         (a: any, b: any) => b.inDollars - a.inDollars
+    //       );
+    //       setFilterData(sortfilter);
+    //     }
+    //   }
+    //   setOpenDropDown([!openDropDown[1], ...openDropDown.slice(0)]);
+    // }
   };
 
   const handleDropDownClick = (index: number) => {
@@ -110,7 +113,9 @@ const MarketPlace = ({ setBgImg }: any) => {
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
                 onClick={() => handleDropDownClick(0)}
               >
-                <span>{category ? category : "Categories"}</span>
+                <span className=" capitalize">
+                  {category ? category : "Categories"}
+                </span>
                 {openDropDown[0] ? (
                   <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
                 ) : (
@@ -128,6 +133,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                     onClick={() => {
                       tagsFilter(item, "category");
                       setType("category");
+                      setCategory(item);
                     }}
                   >
                     {item}
@@ -182,56 +188,15 @@ const MarketPlace = ({ setBgImg }: any) => {
               isSidebarOpen ? "gap-8" : " gap-6"
             } pb-12 pt-3 px-3 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
           >
-            {/* {type === "tags" ? (
-              filterData ? (
-                filterData.map((card: any, index: number) =>
-                  card.nft.map((nft: any) => {
-                    return (
-                      <MarketPlaceCard
-                        key={index}
-                        id={nft.id}
-                        marketplace={nft.marketplace}
-                        name={nft.name}
-                        userName={nft.userName}
-                        currentBid={nft.currentBid}
-                        inDollars={nft.inDollars}
-                      />
-                    );
-                  })
-                )
-              ) : (
-                <div className="flex justify-center items-center mx-auto text-white">
-                  <h1>No Data Found</h1>
-                </div>
-              )
-            ) : (type === "category" || type === "sort") &&
-              filterData.length > 0 ? (
-              filterData &&
-              filterData.map((nft: any, index: any) => {
-                console.log(nft);
-                return (
-                  <MarketPlaceCard
-                    key={index}
-                    id={nft.id}
-                    marketplace={nft.marketplace}
-                    name={nft.name}
-                    userName={nft.userName}
-                    currentBid={nft.currentBid}
-                    inDollars={nft.inDollars}
-                  />
-                );
-              })
+            {filterData && filterData.length > 0 ? (
+              filterData.map((item, i) => <CollectionCard key={i} {...item} />)
             ) : (
               <div className="flex justify-center items-center mx-auto text-white">
-                <h1>No Data Found</h1>
+                <h1 className=" text-center  text-3xl font-semibold">
+                  No Data Found
+                </h1>
               </div>
-            )} */}
-
-            {/* cards */}
-
-            {AllCollections.map((item, i) => {
-              return <CollectionCard key={i} {...item} />;
-            })}
+            )}
           </div>
         </div>
         {/* RIGHT SIDE */}

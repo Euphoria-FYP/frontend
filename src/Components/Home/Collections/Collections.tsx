@@ -42,8 +42,10 @@ const Collections = () => {
   >([]);
 
   useEffect(() => {
-    setFeaturedCollection(AllCollections.filter((item) => item.featured));
+    const data = AllCollections.filter((item) => item.featured === true);
+    setFeaturedCollection(data);
   }, []);
+
   const settings1 = {
     dots: false,
     infinite: true,

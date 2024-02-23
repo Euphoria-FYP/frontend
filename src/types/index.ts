@@ -77,7 +77,7 @@ type History = {
   bidPrice: number;
 };
 
-type Listings = {
+export type Listings = {
   id: number;
   marketplace: string;
   name: string;
