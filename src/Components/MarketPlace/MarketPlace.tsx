@@ -40,37 +40,21 @@ const MarketPlace = ({ setBgImg }: any) => {
       setFilterData(categoryfilter);
       setCategory(tag);
       setOpenDropDown([!openDropDown[0], ...openDropDown.slice(1)]);
+    } else if (filtertype === "sort") {
+      console.log("sorting");
+      if (type === "ltoh") {
+        const sortfilter: CollectionsData[] = filterData.sort(
+          (a, b) => a.floorPrice - b.floorPrice
+        );
+        setFilterData(sortfilter);
+      } else if (type === "htol") {
+        const sortfilter: CollectionsData[] = filterData.sort(
+          (a, b) => b.floorPrice - a.floorPrice
+        );
+        setFilterData(sortfilter);
+      }
+      setOpenDropDown([!openDropDown[1], ...openDropDown.slice(0)]);
     }
-    // else if (filtertype === "sort") {
-    //   if (type === "tags") {
-    //     if (tag === "ltoh") {
-    //       const sortfilter: NFT[] = filterData
-    //         .flatMap((item: any) => item.nft)
-    //         .sort((a, b) => a.inDollars - b.inDollars);
-    //       setFilterData(sortfilter);
-    //     } else if (tag === "htol") {
-    //       const sortfilter: NFT[] = filterData
-    //         .flatMap((item: any) => item.nft)
-    //         .sort((a, b) => b.inDollars - a.inDollars);
-    //       setFilterData(sortfilter);
-    //     }
-    //   }
-
-    //   else if (type === "category" || type === "sort") {
-    //     if (tag === "ltoh") {
-    //       const sortfilter = filterData.sort(
-    //         (a: any, b: any) => a.inDollars - b.inDollars
-    //       );
-    //       setFilterData(sortfilter);
-    //     } else if (tag === "htol") {
-    //       const sortfilter = filterData.sort(
-    //         (a: any, b: any) => b.inDollars - a.inDollars
-    //       );
-    //       setFilterData(sortfilter);
-    //     }
-    //   }
-    //   setOpenDropDown([!openDropDown[1], ...openDropDown.slice(0)]);
-    // }
   };
 
   const handleDropDownClick = (index: number) => {
@@ -80,6 +64,10 @@ const MarketPlace = ({ setBgImg }: any) => {
     });
     setOpenDropDown(newOpenDropDown);
   };
+
+  useEffect(() => {
+    console.log(filterData);
+  }, [filterData]);
 
   const uniqueMarketplaceNames: string[] = marketPlaceData
     .flatMap((item) => item.nft.map((nft) => nft.marketplace))
@@ -104,8 +92,8 @@ const MarketPlace = ({ setBgImg }: any) => {
         >
           {/* DROPDOWNS */}
           <div
-            className={` flex text-[#cfcfcf] ${
-              isSidebarOpen ? "pl-0 gap-8" : "gap-6 pl-2"
+            className={` flex text-[#cfcfcf] px-5 ${
+              isSidebarOpen ? "pl-[10px] gap-8" : "gap-6 pl-2"
             }`}
           >
             <div className="relative flex flex-col gap-2 w-[270px] ">
@@ -162,7 +150,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                   className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
                   onClick={() => {
                     tagsFilter("ltoh", "sort");
-                    setSort("Price: low to high");
+                    setSort("Price: Low to High");
                     setType("sort");
                   }}
                 >
@@ -172,7 +160,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                   className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"
                   onClick={() => {
                     tagsFilter("htol", "sort");
-                    setSort("Price: high to low");
+                    setSort("Price: High to Low");
                     setType("sort");
                   }}
                 >
@@ -186,7 +174,7 @@ const MarketPlace = ({ setBgImg }: any) => {
           <div
             className={`  flex flex-wrap justify-start ${
               isSidebarOpen ? "gap-8" : " gap-6"
-            } pb-12 pt-3 px-3 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
+            } pb-12 pt-3 px-2 overflow-y-auto whitespace-nowrap scrollbarHide transition-all duration-300`}
           >
             {filterData && filterData.length > 0 ? (
               filterData.map((item, i) => <CollectionCard key={i} {...item} />)
@@ -199,6 +187,7 @@ const MarketPlace = ({ setBgImg }: any) => {
             )}
           </div>
         </div>
+
         {/* RIGHT SIDE */}
         {isSidebarOpen && (
           <div

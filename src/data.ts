@@ -269,10 +269,6 @@ export const tags: tagsData[] = [
     class: "bgTabImgGame",
     tag: "Game",
   },
-  {
-    class: "null",
-    tag: "Painting",
-  },
 ];
 
 export const faqs: FAQsData[] = [
@@ -335,6 +331,7 @@ export const faqs: FAQsData[] = [
     ],
   },
 ];
+
 export const Steps: stepsData[] = [
   {
     img: Step1,
@@ -386,7 +383,7 @@ export const AllCollections: CollectionsData[] = [
     logo: collection2,
     coverImage: collection4,
     createdBy: "Ahsan Omerjee",
-    floorPrice: 0.48,
+    floorPrice: 0.55,
     Listings: [
       {
         id: 1,
@@ -437,7 +434,7 @@ export const AllCollections: CollectionsData[] = [
     logo: collection2,
     coverImage: collection4,
     createdBy: "Daniyal Saleem",
-    floorPrice: 0.48,
+    floorPrice: 1.65,
     Listings: [
       {
         id: 1,
@@ -488,7 +485,7 @@ export const AllCollections: CollectionsData[] = [
     logo: collection2,
     coverImage: collection4,
     createdBy: "Obaid Rehman",
-    floorPrice: 0.48,
+    floorPrice: 2.56,
     Listings: [
       {
         id: 1,
@@ -539,7 +536,7 @@ export const AllCollections: CollectionsData[] = [
     logo: collection2,
     coverImage: collection4,
     createdBy: "DanaSoft",
-    floorPrice: 0.48,
+    floorPrice: 0.99,
     Listings: [
       {
         id: 1,
@@ -623,7 +620,7 @@ export const AllCollections: CollectionsData[] = [
     ],
   },
   {
-    id: 4,
+    id: 6,
     userId: 19864521,
     img1: collection9,
     img2: collection10,
@@ -641,7 +638,7 @@ export const AllCollections: CollectionsData[] = [
     logo: collection2,
     coverImage: collection4,
     createdBy: "Ahsan Omerjee",
-    floorPrice: 0.48,
+    floorPrice: 0.22,
     Listings: [
       {
         id: 1,
@@ -674,7 +671,7 @@ export const AllCollections: CollectionsData[] = [
     ],
   },
   {
-    id: 5,
+    id: 7,
     userId: 19864521,
     img1: collection9,
     img2: collection10,
@@ -692,7 +689,7 @@ export const AllCollections: CollectionsData[] = [
     logo: collection2,
     coverImage: collection4,
     createdBy: "Huzaifa",
-    floorPrice: 0.48,
+    floorPrice: 0.69,
     Listings: [
       {
         id: 1,

@@ -11,7 +11,7 @@ interface CardProps {
 const MarketContrubutor: React.FC <CardProps> = ({name, ethAmount }) => {
     return (
         <>
-        <div className=" flex gap-2 justify-around items-center rounded-md text-white border-[2.2px] border-violet-800 py-1">
+        <div className=" flex gap-2 justify-between px-3 items-center rounded-md text-white border-[2.2px] border-violet-800 py-1">
     
           <div className="flex justify-center items-center gap-1">
             <img src={contrubutor} alt="" height={40} width={40} />
