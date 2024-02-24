@@ -13,7 +13,7 @@ import {
   IoIosArrowForward,
   IoIosArrowBack,
 } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const MarketPlace = ({ setBgImg }: any) => {
   const [filterData, setFilterData] =
@@ -29,6 +29,8 @@ const MarketPlace = ({ setBgImg }: any) => {
   ]);
   const [collectionNames, setCollectionNames] = useState<any>([]);
   const [Name, setName] = useState<string | null>(null);
+
+  const { state } = useLocation();
 
   const tagsFilter = (type: string, filtertype: string) => {
     // for tags
@@ -100,6 +102,11 @@ const MarketPlace = ({ setBgImg }: any) => {
     const collectionNames = filterData.map((item: any) => item.name);
     setCollectionNames(collectionNames);
   }, [filterData]);
+
+  useEffect(() => {
+    tagsFilter(state, "tags");
+    setTag(state);
+  }, []);
 
   const uniqueMarketplaceNames: string[] = marketPlaceData
     .flatMap((item) => item.nft.map((nft) => nft.marketplace))

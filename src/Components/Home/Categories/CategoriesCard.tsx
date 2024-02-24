@@ -1,10 +1,18 @@
 import React from "react";
 import { CategoriesCardProps } from "../../../types/index";
+import { useNavigate } from "react-router-dom";
 
 const CategoriesCard: React.FC<CategoriesCardProps> = ({
   title,
   cardimage,
 }) => {
+  const navigate = useNavigate();
+
+  const handletagChange = (title: string) => {
+    navigate("/marketplace", {
+      state: title,
+    });
+  };
   return (
     <>
       <div
@@ -16,7 +24,12 @@ const CategoriesCard: React.FC<CategoriesCardProps> = ({
         }}
       >
         <h2 className=" text-white font-bold text-xl text-center">{title}</h2>
-        <button className="absolute bottom-0 md:text-sm text-xs bg-white py-[11px] md:px-8 rounded-[10px] mb-5 font-semibold text-[#B900FF] md:w-40 w-[80%]">
+        <button
+          className="absolute bottom-0 md:text-sm text-xs bg-white py-[11px] md:px-8 rounded-[10px] mb-5 font-semibold text-[#B900FF] md:w-40 w-[80%]"
+          onClick={() => {
+            handletagChange(title);
+          }}
+        >
           See all {title}
         </button>
       </div>
