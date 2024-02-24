@@ -4,6 +4,8 @@ import { BiSearchAlt } from "react-icons/bi";
 import { MdWallet } from "react-icons/md";
 import { NavLink, useLocation, useParams } from "react-router-dom";
 import { CgMenuLeft } from "react-icons/cg";
+import { requestAccount } from "../../../helpers/ConnectWallet/connect";
+import { WalletType } from "../../../types";
 
 interface Props {
   openMobileSidebar: boolean;
@@ -38,6 +40,12 @@ const HeaderSection = (props: Props) => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
+
+  const [currentWallet, setCurrentWallet] = useState<WalletType | null>(null);
+  const handleEthAccount = async () => {
+    const walletData = await requestAccount();
+    setCurrentWallet(walletData);
+  };
   return (
     <>
       {location.pathname !== "/upload-nft" &&
@@ -93,14 +101,27 @@ const HeaderSection = (props: Props) => {
                 />
                 <div className="headerInputSearchSlash"> /</div>
               </div>
-              <button
-                className={`md:w-[190px] w-fit flex justify-center items-center text-center rounded-lg text-white md:px-0 px-[10px] md:py-3 py-[10px] font-semibold transition duration-300 ease-in-out headerConnectBtn hover:shadow-md hover:scale-105`}
-              >
-                <span className=" md:mr-2">
-                  <MdWallet className=" md:text-[22px] text-xl text-white" />
-                </span>
-                <span className="md:block hidden ">Connect Wallet</span>
-              </button>
+              {currentWallet ? (
+                <button
+                  className={`w-fit flex justify-center items-center text-center rounded-lg text-white md:px-3 px-[10px] md:py-3 py-[10px] font-semibold transition duration-300 ease-in-out headerConnectBtn hover:shadow-md hover:scale-105`}
+                  title={currentWallet.walletAddress}
+                >
+                  <span className=" pr-2 border-r border-white">
+                    <MdWallet className=" md:text-[22px] text-xl text-white" />
+                  </span>
+                  <span className=" pl-2">{currentWallet.walletBalance}</span>
+                </button>
+              ) : (
+                <button
+                  className={`md:w-[190px] w-fit flex justify-center items-center text-center rounded-lg text-white md:px-0 px-[10px] md:py-3 py-[10px] font-semibold transition duration-300 ease-in-out headerConnectBtn hover:shadow-md hover:scale-105`}
+                  onClick={handleEthAccount}
+                >
+                  <span className=" md:mr-2">
+                    <MdWallet className=" md:text-[22px] text-xl text-white" />
+                  </span>
+                  <span className="md:block hidden">Connect Wallet</span>
+                </button>
+              )}
             </section>
             <hr
               className={`${

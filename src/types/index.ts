@@ -124,3 +124,8 @@ export type BidModalType = {
   setOpen: (value: boolean) => void;
   cancelButtonRef: any;
 };
+
+export type WalletType = {
+  walletAddress: string;
+  walletBalance: string;
+};
