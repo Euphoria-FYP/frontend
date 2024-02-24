@@ -33,9 +33,7 @@ const CreateProfile = () => {
 
           <div className="flex flex-col h-full w-full max-w-[960px]  px-16 py-3 transition-all duration-300 overflow-y-scroll scrollbarHide text-white">
             <div
-              className={`${
-                option === "Celebrity" ? `hidden` : `flex`
-              } flex-col gap-10 h-screen w-full justify-center self-center`}
+              className={`${option === "Celebrity" || option === "Fan" ? 'hidden' : 'flex'} flex-col gap-10 h-screen w-full justify-center self-center`}
             >
               {/* create  */}
               <div className="flex items-center gap-3 text-white">
@@ -59,9 +57,7 @@ const CreateProfile = () => {
                   <div className=" flex flex-col items-start gap-4 text-white">
                     <div className=" flex items-center gap-3 text-white">
                       <IoPeopleSharp className=" text-3xl" />
-                      <h3 className=" text-lg font-semibold">
-                        As a Celebrity
-                      </h3>
+                      <h3 className=" text-lg font-semibold">As a Celebrity</h3>
                     </div>
 
                     <span>Make your Customized Fan Page</span>
@@ -70,7 +66,12 @@ const CreateProfile = () => {
                   <FaArrowRight className=" text-xl text-white" />
                 </button>
 
-                <button className=" py-6 px-6 max-w-[664px] flex items-center justify-between gap-8 border-none bg-gray-800 transform hover:translate-y-[-4px] hover:bg-gray-700 transition-all duration-300 rounded-xl cursor-pointer ">
+                <button
+                  className=" py-6 px-6 max-w-[664px] flex items-center justify-between gap-8 border-none bg-gray-800 transform hover:translate-y-[-4px] hover:bg-gray-700 transition-all duration-300 rounded-xl cursor-pointer "
+                  onClick={() => {
+                    setOption("Fan");
+                  }}
+                >
                   <div className=" flex flex-col items-start gap-4 text-white">
                     <div className=" flex items-center gap-3 text-white">
                       <FaPeopleGroup className=" text-3xl" />
@@ -85,9 +86,11 @@ const CreateProfile = () => {
               </div>
             </div>
 
-            <div className={` ${option === "Celebrity" ? `block` : `hidden`}`}>
+            <div
+             className={` ${option === "Celebrity" || option === "Fan" ? `hidden` : `flex`}`}
+            >
               <h3 className=" text-2xl md:text-4xl font-semibold mb-4">
-                Create your Customized Fan Page
+                Create your Customized Page
               </h3>
 
               <div>
@@ -104,7 +107,7 @@ const CreateProfile = () => {
                 label1={"Cover Pic (Optional)"}
                 label2={"Background Pic (Optional)"}
               />
-              <ProfileForm />
+              <ProfileForm type={option} />
             </div>
           </div>
         </div>
