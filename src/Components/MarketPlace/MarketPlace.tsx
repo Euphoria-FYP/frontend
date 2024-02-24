@@ -22,16 +22,37 @@ const MarketPlace = ({ setBgImg }: any) => {
   const [tag, setTag] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [sort, setSort] = useState<string>("");
-  const [openDropDown, setOpenDropDown] = useState<boolean[]>([false, false]);
+  const [openDropDown, setOpenDropDown] = useState<boolean[]>([
+    false,
+    false,
+    false,
+  ]);
+  const [collectionNames, setCollectionNames] = useState<any>([]);
+  const [Name, setName] = useState<string | null>(null);
 
   const tagsFilter = (type: string, filtertype: string) => {
+    // for tags
     if (filtertype === "tags") {
       const filteredItems: CollectionsData[] = AllCollections.filter(
         (item) => item.tag === type
       );
       setFilterData(filteredItems);
       setTag(tag);
-    } else if (filtertype === "category") {
+    }
+    // for collectionNames
+    else if (filtertype === "collectionName") {
+      const filteredItems: CollectionsData[] = AllCollections.filter(
+        (item) => item.name === type
+      );
+      setFilterData(filteredItems);
+      setOpenDropDown((prevState) => {
+        const newState = [...prevState];
+        newState[0] = !newState[0];
+        return newState;
+      });
+    }
+    // for category
+    else if (filtertype === "category") {
       console.log(filtertype);
       console.log(type);
       const categoryfilter: CollectionsData[] = AllCollections.filter(
@@ -39,8 +60,14 @@ const MarketPlace = ({ setBgImg }: any) => {
       );
       setFilterData(categoryfilter);
       setCategory(tag);
-      setOpenDropDown([!openDropDown[0], ...openDropDown.slice(1)]);
-    } else if (filtertype === "sort") {
+      setOpenDropDown((prevState) => {
+        const newState = [...prevState];
+        newState[1] = !newState[1];
+        return newState;
+      });
+    }
+    // for sort
+    else if (filtertype === "sort") {
       console.log("sorting");
       if (type === "ltoh") {
         const sortfilter: CollectionsData[] = filterData.sort(
@@ -53,7 +80,11 @@ const MarketPlace = ({ setBgImg }: any) => {
         );
         setFilterData(sortfilter);
       }
-      setOpenDropDown([!openDropDown[1], ...openDropDown.slice(0)]);
+      setOpenDropDown((prevState) => {
+        const newState = [...prevState];
+        newState[2] = !newState[2];
+        return newState;
+      });
     }
   };
 
@@ -66,8 +97,9 @@ const MarketPlace = ({ setBgImg }: any) => {
   };
 
   useEffect(() => {
-    console.log(filterData);
-  }, [filterData]);
+    const collectionNames = AllCollections.map((item: any) => item.name);
+    setCollectionNames(collectionNames);
+  }, []);
 
   const uniqueMarketplaceNames: string[] = marketPlaceData
     .flatMap((item) => item.nft.map((nft) => nft.marketplace))
@@ -102,7 +134,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                 onClick={() => handleDropDownClick(0)}
               >
                 <span className=" capitalize">
-                  {category ? category : "Categories"}
+                  {Name ? Name : "Collections"}
                 </span>
                 {openDropDown[0] ? (
                   <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
@@ -115,6 +147,40 @@ const MarketPlace = ({ setBgImg }: any) => {
                   openDropDown[0] ? "block" : "hidden"
                 }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
               >
+                {collectionNames.map((item: any) => (
+                  <p
+                    className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer "
+                    onClick={() => {
+                      tagsFilter(item, "collectionName");
+                      setName(item);
+                      setCategory("");
+                      setSort("");
+                    }}
+                  >
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="relative flex flex-col gap-2 w-[270px] ">
+              <button
+                className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
+                onClick={() => handleDropDownClick(1)}
+              >
+                <span className=" capitalize">
+                  {category ? category : "Categories"}
+                </span>
+                {openDropDown[1] ? (
+                  <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
+                ) : (
+                  <IoIosArrowDown className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
+                )}
+              </button>
+              <div
+                className={`${
+                  openDropDown[1] ? "block" : "hidden"
+                }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
+              >
                 {uniqueMarketplaceNames.map((item) => (
                   <p
                     className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer "
@@ -122,6 +188,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                       tagsFilter(item, "category");
                       setType("category");
                       setCategory(item);
+                      setName("");
                     }}
                   >
                     {item}
@@ -132,10 +199,10 @@ const MarketPlace = ({ setBgImg }: any) => {
             <div className="relative flex gap-2 w-[270px]">
               <button
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
-                onClick={() => handleDropDownClick(1)}
+                onClick={() => handleDropDownClick(2)}
               >
                 <span>{sort ? sort : "Sort by"}</span>
-                {openDropDown[1] ? (
+                {openDropDown[2] ? (
                   <IoIosArrowUp className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
                 ) : (
                   <IoIosArrowDown className=" absolute right-[14px] top-[15px] text-lg cursor-pointer" />
@@ -143,7 +210,7 @@ const MarketPlace = ({ setBgImg }: any) => {
               </button>
               <div
                 className={`${
-                  openDropDown[1] ? "block" : "hidden"
+                  openDropDown[2] ? "block" : "hidden"
                 }  top-14 rounded-lg z-50 absolute w-[270px] py-[6px] bg-[#1e1e23] `}
               >
                 <p
@@ -152,6 +219,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                     tagsFilter("ltoh", "sort");
                     setSort("Price: Low to High");
                     setType("sort");
+                    setName("");
                   }}
                 >
                   Price: low to high
