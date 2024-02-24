@@ -8,6 +8,7 @@ import {
   FAQsData,
   CollectionsData,
   NFTType,
+  UsersData,
 } from "./types";
 
 // IMAGES
@@ -256,18 +257,28 @@ export const tags: tagsData[] = [
   {
     class: "bgTabImgSports",
     tag: "Sports",
+    category: ["Cricket", "Football", "badminton", "Wrestling", "Boxing"],
   },
   {
     class: "bgTabImgMusic",
     tag: "Music",
+    category: ["Pop", "Rap", "Folk", "Jazz", "Rock"],
   },
   {
     class: "null",
     tag: "Art",
+    category: ["Painting", "Architectire", "Sketching", "Sculpture"],
   },
   {
     class: "bgTabImgGame",
-    tag: "Game",
+    tag: "Gaming",
+    category: [
+      "RPG Games",
+      "Racing Games",
+      "Action Adventure Games",
+      "Battle Royal Games",
+      "Simulation Games",
+    ],
   },
 ];
 
@@ -366,7 +377,7 @@ export const Steps: stepsData[] = [
 export const AllCollections: CollectionsData[] = [
   {
     id: 1,
-    userId: 19864521,
+    userId: 1,
     img1: collection1,
     img2: collection2,
     img3: collection3,
@@ -417,7 +428,7 @@ export const AllCollections: CollectionsData[] = [
   },
   {
     id: 2,
-    userId: 19864521,
+    userId: 2,
     img1: collection5,
     img2: collection6,
     img3: collection7,
@@ -506,7 +517,7 @@ export const AllCollections: CollectionsData[] = [
   },
   {
     id: 3,
-    userId: 19864521,
+    userId: 1,
     img1: collection5,
     img2: collection6,
     img3: collection7,
@@ -557,7 +568,7 @@ export const AllCollections: CollectionsData[] = [
   },
   {
     id: 4,
-    userId: 19864521,
+    userId: 2,
     img1: collection5,
     img2: collection6,
     img3: collection7,
@@ -608,7 +619,7 @@ export const AllCollections: CollectionsData[] = [
   },
   {
     id: 5,
-    userId: 19864521,
+    userId: 2,
     img1: collection9,
     img2: collection10,
     img3: collection11,
@@ -659,7 +670,7 @@ export const AllCollections: CollectionsData[] = [
   },
   {
     id: 6,
-    userId: 19864521,
+    userId: 1,
     img1: collection9,
     img2: collection10,
     img3: collection11,
@@ -710,7 +721,7 @@ export const AllCollections: CollectionsData[] = [
   },
   {
     id: 7,
-    userId: 19864521,
+    userId: 1,
     img1: collection9,
     img2: collection10,
     img3: collection11,
@@ -777,5 +788,28 @@ export const NftTypes: NFTType[] = [
   {
     id: 4,
     type: "Music",
+  },
+];
+
+export const Users: UsersData[] = [
+  {
+    id: 1,
+    walletId: "4F66VCF99D",
+    name: "Ahsan Omer",
+    userName: "ahsan2002",
+    profilePhoto: "",
+    coverPhoto: "",
+    Background: "",
+    type: "celebrity",
+  },
+  {
+    id: 2,
+    walletId: "4FNN32CFD5",
+    name: "Obaid Khan",
+    userName: "obbi2005",
+    profilePhoto: "",
+    coverPhoto: "",
+    Background: "",
+    type: "fan",
   },
 ];

@@ -47,6 +47,7 @@ export type CollectionsCardProps = {
 export type tagsData = {
   class: string;
   tag: string;
+  category?:string[]
 };
 
 export type FAQsData = {
@@ -124,3 +125,14 @@ export type BidModalType = {
   setOpen: (value: boolean) => void;
   cancelButtonRef: any;
 };
+
+export type UsersData={
+  id:number;
+  walletId:string;
+  name?:string;
+  userName:string;
+  profilePhoto?:string;
+  coverPhoto?:string;
+  Background?:string;
+  type?:"celebrity" | "fan";
+}
