@@ -25,11 +25,11 @@ const TabsCollection = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
   return (
     <>
       <div>
-        <div className=" flex gap-4  p-2 w-1/3 text-gray-400 px-10">
+        <div className=" flex gap-4  p-2 md:w-1/3 w-1/2 text-gray-400 px-5 md:px-8">
           {tabButtons.map((item) => (
             <button
               key={item.id}
-              className={`h-9 w-20 rounded-lg text-sm
+              className={`md:h-9 h-8 md:w-20 w-40 rounded-lg text-xs md:text-sm
                 transition-all duration-300 transform-gpu  ${
                   currentTab.id === item.id
                     ? "bg-[#212e48] text-stone-200"
@@ -42,7 +42,7 @@ const TabsCollection = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
           ))}
         </div>
 
-        <div className=" px-10 mt-3 mb-5">
+        <div className="px-5 md:px-8 mt-3 mb-5">
           <hr className="border-t border-gray-300" />
         </div>
 
@@ -94,7 +94,7 @@ const TabsCollection = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
         )}
 
         {currentTab.title === "History" && (
-          <div className={`w-full px-10`}>
+          <div className={`w-full md:px-8 px-5`}>
             <HistoryTab />
           </div>
         )}
