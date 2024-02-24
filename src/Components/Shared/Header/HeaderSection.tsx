@@ -15,6 +15,7 @@ interface Props {
 const HeaderSection = (props: Props) => {
   const { setOpenMobileSidebar } = props;
   const [isVisible, setVisible] = useState(false);
+  const [search, setSearch] = useState<string>();
   const location = useLocation();
   const { id, tag } = useParams();
 
@@ -46,6 +47,18 @@ const HeaderSection = (props: Props) => {
     const walletData = await requestAccount();
     setCurrentWallet(walletData);
   };
+
+  const suggestions = [
+    "Apple",
+    "Banana",
+    "Banana",
+    "Cherry",
+    "Cherry",
+    "Cherry",
+    "Date",
+    "Elderberry",
+  ];
+
   return (
     <>
       {location.pathname !== "/upload-nft" &&
@@ -93,14 +106,26 @@ const HeaderSection = (props: Props) => {
               <div className=" relative w-[40%] md:block hidden">
                 <BiSearchAlt className=" absolute text-2xl text-white z-50 top-3 left-4" />
                 <input
-                  type="text"
                   placeholder="Search"
-                  name="search"
-                  id="search"
+                  list="fruits"
+                  value={search}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                  }}
                   className=" headerInputSearch rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none"
                 />
                 <div className="headerInputSearchSlash"> /</div>
               </div>
+              {search && (
+                <datalist id="fruits">
+                  {suggestions.map((fruit, index) => (
+                    <option
+                      key={index}
+                      value={fruit}
+                    ></option>
+                  ))}
+                </datalist>
+              )}
               {currentWallet ? (
                 <button
                   className={`w-fit flex justify-center items-center text-center rounded-lg text-white md:px-3 px-[10px] md:py-3 py-[10px] font-semibold transition duration-300 ease-in-out headerConnectBtn hover:shadow-md hover:scale-105`}
