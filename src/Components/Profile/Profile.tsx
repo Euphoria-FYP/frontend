@@ -56,8 +56,8 @@ const Profile = () => {
           <div className="  h-[75%] bg-[url('https://html.ditsolution.net/nftpro/assets/images/resource/author-bg.png')] rounded-tl-xl rounded-tr-xl">
             <div className=" flex justify-start md:items-start items-center md:gap-5 gap-4 md:px-10 px-5 md:pt-24 pt-[100px]">
               <img
-                className=" relative rounded-[50%] border-4 border-white md:w-52 md:h-52 w-32 h-24 z-20"
-                src="https://html.ditsolution.net/nftpro/assets/images/resource/profile.jpg"
+                className=" relative rounded-[50%] border-4 border-white md:w-72 md:h-52 w-32 h-24 z-20"
+                src="https://avatars.githubusercontent.com/u/100442123?s=400&u=665ed5657bfd7787c7192cc7e50fb5d416604059&v=4"
                 alt=""
               />
               <div className=" w-full flex md:flex-col md:justify-start justify-between md:pt-8">

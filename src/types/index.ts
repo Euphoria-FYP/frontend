@@ -47,6 +47,7 @@ export type CollectionsCardProps = {
 export type tagsData = {
   class: string;
   tag: string;
+  category?:string[]
 };
 
 export type FAQsData = {
@@ -129,3 +130,13 @@ export type WalletType = {
   walletAddress: string;
   walletBalance: string;
 };
+export type UsersData={
+  id:number;
+  walletId:string;
+  name?:string;
+  userName:string;
+  profilePhoto?:string;
+  coverPhoto?:string;
+  Background?:string;
+  type?:"celebrity" | "fan";
+}
