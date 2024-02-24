@@ -97,9 +97,9 @@ const MarketPlace = ({ setBgImg }: any) => {
   };
 
   useEffect(() => {
-    const collectionNames = AllCollections.map((item: any) => item.name);
+    const collectionNames = filterData.map((item: any) => item.name);
     setCollectionNames(collectionNames);
-  }, []);
+  }, [filterData]);
 
   const uniqueMarketplaceNames: string[] = marketPlaceData
     .flatMap((item) => item.nft.map((nft) => nft.marketplace))
