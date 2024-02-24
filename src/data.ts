@@ -577,7 +577,7 @@ export const AllCollections: CollectionsData[] = [
     img4: collection12,
     tag: "Art",
     category: "Football",
-    featured: true,
+    featured: false,
     name: "Checks - VV Edition",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
@@ -628,7 +628,7 @@ export const AllCollections: CollectionsData[] = [
     img4: collection12,
     tag: "Sports",
     category: "Badminton",
-    featured: true,
+    featured: false,
     name: "Checks - VV Edition",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
@@ -679,7 +679,7 @@ export const AllCollections: CollectionsData[] = [
     img4: collection12,
     tag: "Sports",
     category: "Cricket",
-    featured: true,
+    featured: false,
     name: "Checks - VV Edition",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
