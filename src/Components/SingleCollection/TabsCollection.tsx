@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import MarketPlaceCard from "../Shared/MarketPlaceCard";
 import HistoryTab from "../SingleNFT/HistoryTab";
+import { Listings } from "@/types";
 
 interface TabButtonType {
   id: number;
@@ -19,8 +20,19 @@ const tabButtons = [
   },
 ];
 
-const TabsCollection = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
+const TabsCollection = ({
+  sidebarOpen,
+  NFTs,
+}: {
+  sidebarOpen: boolean;
+  NFTs: Listings[];
+}) => {
   const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[0]);
+
+  useEffect(() => {
+    const filteredHistory = NFTs.map((item) => item.history)
+    console.log("filtered",filteredHistory);
+  }, []);
 
   return (
     <>
@@ -54,48 +66,16 @@ const TabsCollection = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
               sidebarOpen ? `px-6` : `px-8`
             }`}
           >
-            <MarketPlaceCard
-              key={1}
-              id={1}
-              marketplace={"sports"}
-              name={"myy"}
-              userName={"ahsan"}
-              currentBid={5000}
-              inDollars={2500}
-            />
-            <MarketPlaceCard
-              key={1}
-              id={1}
-              marketplace={"sports"}
-              name={"myy"}
-              userName={"ahsan"}
-              currentBid={5000}
-              inDollars={2500}
-            />
-            <MarketPlaceCard
-              key={1}
-              id={1}
-              marketplace={"sports"}
-              name={"myy"}
-              userName={"ahsan"}
-              currentBid={5000}
-              inDollars={2500}
-            />
-            <MarketPlaceCard
-              key={1}
-              id={1}
-              marketplace={"sports"}
-              name={"myy"}
-              userName={"ahsan"}
-              currentBid={5000}
-              inDollars={2500}
-            />
+            {NFTs &&
+              NFTs.map((item, i) => {
+                return <MarketPlaceCard key={1} {...item} />;
+              })}
           </div>
         )}
 
         {currentTab.title === "History" && (
           <div className={`w-full md:px-8 px-5`}>
-            <HistoryTab />
+            <HistoryTab history={NFTs} />
           </div>
         )}
       </div>

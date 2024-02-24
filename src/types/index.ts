@@ -71,7 +71,7 @@ type Details = {
   creatorEarnings: number;
 };
 
-type History = {
+export type History = {
   name: string;
   userName: string;
   bidPrice: number;

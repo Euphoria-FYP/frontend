@@ -89,7 +89,9 @@ const SingleCollection = () => {
                 <h3 className="font-semibold md:text-lg text-sm md:leading-2 leading-6 tracking-wider text-white mt-4">
                   {singleCollectiondata && singleCollectiondata[0].name}
                 </h3>
-                <span className=" opacity-80 md:text-base text-xs">The Rocks</span>
+                <span className=" opacity-80 md:text-base text-xs">
+                  The Rocks
+                </span>
               </div>
 
               {/* second div */}
@@ -100,14 +102,18 @@ const SingleCollection = () => {
                       singleCollectiondata[0].creatorEarning}
                     %
                   </span>
-                  <span className="md:text-base text-xs opacity-80">Creator Earnings</span>
+                  <span className="md:text-base text-xs opacity-80">
+                    Creator Earnings
+                  </span>
                 </div>
 
                 <div className="flex flex-col justify-between gap-[5px]">
                   <span className=" font-bold md:text-lg text-sm">
                     {singleCollectiondata && singleCollectiondata[0].totalItems}
                   </span>
-                  <span className="md:text-base text-xs opacity-80">Total Items</span>
+                  <span className="md:text-base text-xs opacity-80">
+                    Total Items
+                  </span>
                 </div>
               </div>
             </div>
@@ -166,7 +172,10 @@ const SingleCollection = () => {
             </div>
           </div>
 
-          <TabsCollection sidebarOpen={isSidebarOpen} />
+          <TabsCollection
+            sidebarOpen={isSidebarOpen}
+            NFTs={singleCollectiondata && singleCollectiondata[0].Listings}
+          />
         </div>
 
         {/* RIGHT SIDE */}
