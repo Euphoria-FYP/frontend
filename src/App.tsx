@@ -59,6 +59,10 @@ function App() {
       element: <CreateProfile />,
     },
     {
+      path: "/create-profile/:type",
+      element: <CreateProfile />,
+    },
+    {
       path: "*",
       element: <PageNotFound />,
     },
