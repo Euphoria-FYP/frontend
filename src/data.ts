@@ -425,7 +425,7 @@ export const AllCollections: CollectionsData[] = [
     tag: "Music",
     category: "Cricket",
     featured: true,
-    name: "Checks - VV Edition",
+    name: "Azuki Elementals",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
     creatorEarning: 5,
@@ -476,7 +476,7 @@ export const AllCollections: CollectionsData[] = [
     tag: "Sports",
     category: "Cricket",
     featured: true,
-    name: "Checks - VV Edition",
+    name: "Moon Birds",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
     creatorEarning: 5,
@@ -527,7 +527,7 @@ export const AllCollections: CollectionsData[] = [
     tag: "Sports",
     category: "Cricket",
     featured: true,
-    name: "Checks - VV Edition",
+    name: "RG - Bytes",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
     creatorEarning: 5,
@@ -578,7 +578,7 @@ export const AllCollections: CollectionsData[] = [
     tag: "Art",
     category: "Football",
     featured: false,
-    name: "Checks - VV Edition",
+    name: "Tin Fun",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
     creatorEarning: 5,
@@ -629,7 +629,7 @@ export const AllCollections: CollectionsData[] = [
     tag: "Sports",
     category: "Badminton",
     featured: false,
-    name: "Checks - VV Edition",
+    name: "TenJIN",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
     creatorEarning: 5,
@@ -680,7 +680,7 @@ export const AllCollections: CollectionsData[] = [
     tag: "Sports",
     category: "Cricket",
     featured: false,
-    name: "Checks - VV Edition",
+    name: "De-GOD",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur temporibus nisi illo quam architecto dolor autem repellendus quod, deserunt perferendis, iusto laudantium ab sapiente eum quisquam reiciendis",
     creatorEarning: 5,
