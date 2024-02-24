@@ -14,72 +14,7 @@ import Game from "../../assets/images//game.jpg";
 import Music from "../../assets/images//music.jpg";
 import Sports from "../../assets/images//sports.jpg";
 import Collection from "../../assets/images/collection.png";
-
-const Links = [
-  {
-    id: 1,
-    button: <GoHome className=" text-white text-[24px]" />,
-    link: "/",
-    title: "Home",
-  },
-  {
-    id: 2,
-    button: <RxDashboard className=" text-white text-[24px] " />,
-    link: "/marketplace",
-    title: "MarketPlace",
-  },
-  {
-    id: 3,
-    button: <TbCategoryPlus className=" text-white text-[24px] " />,
-    link: "/",
-    title: "Categories",
-    dropdownitems: [
-      {
-        title: "Sports",
-        img: Sports,
-      },
-      {
-        title: "Game",
-        img: Game,
-      },
-      {
-        title: "Art",
-        img: Art,
-      },
-    ],
-  },
-  {
-    id: 4,
-    button: <BiCollection className=" text-white text-[24px] " />,
-    link: "/",
-    title: "Collections",
-    dropdownitems: [
-      {
-        title: "BabarSon",
-        username: "obaid2003",
-        img: Collection,
-      },
-      {
-        title: "RunMachine",
-        username: "dani123",
-        img: Collection,
-      },
-      {
-        title: "Ronaldo",
-        username: "ahsan2005",
-        img: Collection,
-      },
-    ],
-  },
-  {
-    id: 5,
-    button: (
-      <HiOutlineQuestionMarkCircle className=" text-white text-[24px] " />
-    ),
-    link: "/help",
-    title: "Help Center",
-  },
-];
+import { AllCollections } from "../../data";
 
 interface Props {
   openMobileSidebar: boolean;
@@ -91,6 +26,21 @@ const Sidebar = (props: Props) => {
   const location = useLocation();
   const [active, setActive] = useState<number>(1);
   const [dropDown, setDropDown] = useState<boolean[]>([false, true]);
+  const [collections, setCollections] = useState<
+    Array<{
+      id: number | null;
+      title: string;
+      logo: string;
+      tag: string;
+    }>
+  >([
+    {
+      id: null,
+      title: "",
+      logo: "",
+      tag: "",
+    },
+  ]);
 
   const handleDropdownClick = (index: number | null) => {
     if (index !== null) {
@@ -111,6 +61,67 @@ const Sidebar = (props: Props) => {
       setActive(matchingLink.id);
     }
   }, [location.pathname]);
+
+  useEffect(() => {
+    const updatedCollections = AllCollections.map((item) => ({
+      id: item.id,
+      title: item.name,
+      logo: item.logo,
+      tag: item.tag,
+    }));
+    setCollections(updatedCollections);
+  }, [AllCollections]);
+
+  const Links = [
+    {
+      id: 1,
+      button: <GoHome className=" text-white text-[24px]" />,
+      link: "/",
+      title: "Home",
+    },
+    {
+      id: 2,
+      button: <RxDashboard className=" text-white text-[24px] " />,
+      link: "/marketplace",
+      title: "MarketPlace",
+    },
+    {
+      id: 3,
+      button: <TbCategoryPlus className=" text-white text-[24px] " />,
+      link: "/",
+      title: "Categories",
+      categoriesdropdownitems: [
+        {
+          title: "Sports",
+          img: Sports,
+        },
+        {
+          title: "Game",
+          img: Game,
+        },
+        {
+          title: "Art",
+          img: Art,
+        },
+      ],
+    },
+    {
+      id: 4,
+      button: <BiCollection className=" text-white text-[24px] " />,
+      link: "/",
+      title: "Collections",
+      dropdownitems: collections,
+    },
+    {
+      id: 5,
+      button: (
+        <HiOutlineQuestionMarkCircle className=" text-white text-[24px] " />
+      ),
+      link: "/help",
+      title: "Help Center",
+    },
+  ];
+
   return (
     <div
       className={`${
@@ -199,7 +210,7 @@ const Sidebar = (props: Props) => {
                       openMobileSidebar && "block"
                     } flex-col md:justify-start justify-between items-start gap-3 py-[4px] pl-12 pr-2 rounded-e-[20px] w-full md:hidden md:group-hover:flex text-white `}
                   >
-                    {item.dropdownitems?.map((dropdown, i) => {
+                    {item.categoriesdropdownitems?.map((dropdown, i) => {
                       return (
                         <div className=" flex  justify-start items-center gap-3 py-[4px]">
                           <img
@@ -217,25 +228,25 @@ const Sidebar = (props: Props) => {
                   <div
                     className={`${
                       openMobileSidebar && "block"
-                    } flex-col md:justify-start justify-between items-start gap-3 py-[4px] pl-12 pr-2 rounded-e-[20px] w-full md:hidden md:group-hover:flex text-white `}
+                    } flex-col md:justify-start justify-between items-start gap-3 py-[4px] pl-12 pr-2 rounded-e-[20px] w-full md:hidden md:group-hover:flex text-white overflow-y-scroll h-40 scroll-marketplace-dropdown `}
                   >
                     {item.dropdownitems?.map((dropdown: any, i) => {
                       return (
-                        <div className=" flex  justify-start items-center gap-3 py-[4px]">
-                          <img
-                            src={dropdown.img}
-                            className="rounded-md w-8 h-8"
-                            alt=""
-                          />
-                          <div className=" flex flex-col">
-                            <a className=" text-base" href="">
+                        <NavLink
+                          className=" text-sm"
+                          to={`/collection/${dropdown.tag}/${dropdown.id}`}
+                        >
+                          <div className=" flex  justify-start items-center gap-3 py-[4px]">
+                            <img
+                              src={dropdown.logo}
+                              className="rounded-md w-8 h-8"
+                              alt=""
+                            />
+                            <div className=" flex flex-col">
                               {dropdown.title}
-                            </a>
-                            <span className=" text-sm text-[#B900FF]">
-                              @{dropdown.username}
-                            </span>
+                            </div>
                           </div>
-                        </div>
+                        </NavLink>
                       );
                     })}
                   </div>
