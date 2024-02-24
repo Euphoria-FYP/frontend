@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import MarketPlaceCard from "../Shared/MarketPlaceCard";
 import HistoryTab from "../SingleNFT/HistoryTab";
-import { Listings } from "@/types";
+import { Listings, History } from "../../types";
 
 interface TabButtonType {
   id: number;
@@ -28,11 +28,15 @@ const TabsCollection = ({
   NFTs: Listings[];
 }) => {
   const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[0]);
+  console.log(NFTs);
+
+  const [collectionHistory, setCollectionHistory] = useState<History[]>([]);
 
   useEffect(() => {
-    const filteredHistory = NFTs.map((item) => item.history)
-    console.log("filtered",filteredHistory);
-  }, []);
+    const filteredHistory = NFTs?.flatMap((item) => item.history);
+    setCollectionHistory(filteredHistory);
+    console.log("filtered", filteredHistory);
+  }, [NFTs]);
 
   return (
     <>
@@ -75,7 +79,7 @@ const TabsCollection = ({
 
         {currentTab.title === "History" && (
           <div className={`w-full md:px-8 px-5`}>
-            <HistoryTab history={NFTs} />
+            <HistoryTab history={collectionHistory} />
           </div>
         )}
       </div>
