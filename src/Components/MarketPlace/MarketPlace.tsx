@@ -91,7 +91,7 @@ const MarketPlace = ({ setBgImg }: any) => {
       });
     }
   };
-
+  // DropDown
   const handleDropDownClick = (index: number) => {
     let newOpenDropDown: boolean[] = [];
     newOpenDropDown = openDropDown.map((item, i) => {
@@ -100,6 +100,7 @@ const MarketPlace = ({ setBgImg }: any) => {
     setOpenDropDown(newOpenDropDown);
   };
 
+  // Collection DropDown Names
   useEffect(() => {
     const collectionNames = filterData.map((item: any) => item.name);
     setCollectionNames(collectionNames);
@@ -169,6 +170,11 @@ const MarketPlace = ({ setBgImg }: any) => {
     setBgImg(item.class);
   };
 
+  // LocalStoarge
+  window.localStorage.setItem("collection", JSON.stringify(AllCollections));
+  const data = window.localStorage.getItem("collection");
+  console.log(JSON.parse(data as any));
+
   return (
     <>
       <div className=" flex h-screen">
@@ -186,7 +192,7 @@ const MarketPlace = ({ setBgImg }: any) => {
               isSidebarOpen ? "pl-[10px] gap-8" : "gap-6 pl-2"
             }`}
           >
-            <div className="relative flex flex-col gap-2 w-[270px] ">
+            <div className="relative flex flex-col gap-2 w-64 ">
               <button
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
                 onClick={() => handleDropDownClick(0)}
@@ -203,7 +209,7 @@ const MarketPlace = ({ setBgImg }: any) => {
               <div
                 className={`${
                   openDropDown[0] ? "block" : "hidden"
-                }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
+                }  top-14 rounded-lg z-50 absolute w-64 h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
               >
                 {collectionNames.map((item: any) => (
                   <p
@@ -220,7 +226,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                 ))}
               </div>
             </div>
-            <div className="relative flex flex-col gap-2 w-[270px] ">
+            <div className="relative flex flex-col gap-2 w-64 ">
               <button
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
                 onClick={() => handleDropDownClick(1)}
@@ -237,7 +243,7 @@ const MarketPlace = ({ setBgImg }: any) => {
               <div
                 className={`${
                   openDropDown[1] ? "block" : "hidden"
-                }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
+                }  top-14 rounded-lg z-50 absolute w-64 h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
               >
                 {categoriesNames &&
                   categoriesNames.map((item: any) => (
@@ -254,7 +260,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                   ))}
               </div>
             </div>
-            <div className="relative flex gap-2 w-[270px]">
+            <div className="relative flex flex-col gap-2 w-64">
               <button
                 className=" flex justify-between text-left rounded-lg bg-[#1e1e23] text-sm font-medium py-[15px] px-4 w-full"
                 onClick={() => handleDropDownClick(2)}
@@ -269,7 +275,7 @@ const MarketPlace = ({ setBgImg }: any) => {
               <div
                 className={`${
                   openDropDown[2] ? "block" : "hidden"
-                }  top-14 rounded-lg z-50 absolute w-[270px] py-[6px] bg-[#1e1e23] `}
+                }  top-14 rounded-lg z-50 absolute w-64 py-[6px] bg-[#1e1e23] `}
               >
                 <p
                   className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer"

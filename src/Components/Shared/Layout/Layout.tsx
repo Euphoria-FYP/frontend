@@ -15,11 +15,11 @@ const Layout = ({
 }) => {
   // localStorage.setItem("bgImg", "marketPlaceBgImg");
 
-  const [openMobileSidebar, setOpenMobileSidebar] = useState(false)
+  const [openMobileSidebar, setOpenMobileSidebar] = useState(false);
 
   return (
-    <main className={`${bgImgClass}`}>
-      {/* <AnimatedCursor
+      <main className={`${bgImgClass}`}>
+        {/* <AnimatedCursor
         innerSize={6}
         outerSize={32}
         innerScale={1}
@@ -34,13 +34,19 @@ const Layout = ({
           border: "2px solid #fff",
         }}
       /> */}
-      <BottomToTop />
-      <Sidebar openMobileSidebar={openMobileSidebar} setOpenMobileSidebar={setOpenMobileSidebar}/>
-      <div className="md:ml-[70px]">
-        <HeaderSection openMobileSidebar={openMobileSidebar} setOpenMobileSidebar={setOpenMobileSidebar} />
-        {children}
-      </div>
-    </main>
+        <BottomToTop />
+        <Sidebar
+          openMobileSidebar={openMobileSidebar}
+          setOpenMobileSidebar={setOpenMobileSidebar}
+        />
+        <div className="md:ml-[70px]">
+          <HeaderSection
+            openMobileSidebar={openMobileSidebar}
+            setOpenMobileSidebar={setOpenMobileSidebar}
+          />
+          {children}
+        </div>
+      </main>
   );
 };
 

@@ -15,7 +15,6 @@ interface Props {
 const HeaderSection = (props: Props) => {
   const { setOpenMobileSidebar } = props;
   const [isVisible, setVisible] = useState(false);
-  const [search, setSearch] = useState<string>();
   const location = useLocation();
   const { id, tag } = useParams();
 
@@ -48,6 +47,7 @@ const HeaderSection = (props: Props) => {
     setCurrentWallet(walletData);
   };
 
+  const [search, setSearch] = useState<string>();
   const suggestions = [
     "Apple",
     "Banana",
@@ -115,17 +115,14 @@ const HeaderSection = (props: Props) => {
                   className=" headerInputSearch rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none"
                 />
                 <div className="headerInputSearchSlash"> /</div>
+                {search && (
+                  <datalist id="fruits">
+                    {suggestions.map((fruit, index) => (
+                      <option key={index} value={fruit}></option>
+                    ))}
+                  </datalist>
+                )}
               </div>
-              {search && (
-                <datalist id="fruits">
-                  {suggestions.map((fruit, index) => (
-                    <option
-                      key={index}
-                      value={fruit}
-                    ></option>
-                  ))}
-                </datalist>
-              )}
               {currentWallet ? (
                 <button
                   className={`w-fit flex justify-center items-center text-center rounded-lg text-white md:px-3 px-[10px] md:py-3 py-[10px] font-semibold transition duration-300 ease-in-out headerConnectBtn hover:shadow-md hover:scale-105`}
