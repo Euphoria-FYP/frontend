@@ -5,6 +5,7 @@ import * as Yup from "yup";
 // type createFanProfile = Yup.InferType<typeof CreateFanProfileSchema>;
 
 export const CreateCelebrityProfileSchema = Yup.object({
+  id: Yup.string(),
   profileLogo: Yup.string(),
   coverPic: Yup.string(),
   backgroundPic: Yup.string(),

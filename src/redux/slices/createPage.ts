@@ -13,7 +13,7 @@ const createPageSlice = createSlice({
       console.log(action.payload);
 
       console.log("state", current(state.users));
-      state.users.push({ id: nanoid(), ...action.payload });
+      state.users.push(action.payload);
       console.log("state after fill", current(state.users));
     },
   },

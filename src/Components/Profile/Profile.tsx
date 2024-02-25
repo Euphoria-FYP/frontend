@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import StyledButton from "../Shared/StyledButton";
 import { FaCopy } from "react-icons/fa";
 import { MarketPlaceItem } from "../../types/index";
@@ -19,6 +19,8 @@ import collection9 from "../../assets/images/collection/c9.jpg";
 import collection10 from "../../assets/images/collection/c10.png";
 import collection11 from "../../assets/images/collection/c11.jpg";
 import collection12 from "../../assets/images/collection/c12.png";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 interface TabButtonType {
   id: number;
@@ -46,24 +48,47 @@ const tabButtons = [
 
 const Profile = () => {
   const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[1]);
+  const [currentUser, setCurrentUser] = useState<any>();
   const [filterData, setFilterData] =
     useState<MarketPlaceItem[]>(marketPlaceData);
+  const { userid } = useParams();
+  const userData = useSelector((data: any) => data.createpage.users);
+  console.log("userrr", userData);
+  console.log(userid);
+  console.log(typeof userid);
+
+  useEffect(() => {
+    const filterUser = userData.filter((item: any) => item.id === userid);
+    console.log(filterUser);
+    setCurrentUser(filterUser[0]);
+  }, []);
+
   return (
     <>
       <section className=" w-[90%] h-full flex flex-col justify-center md:gap-8 gap-4 text-white mx-auto py-10">
         {/* HEADER */}
         <div className="w-full md:h-[350px] h-64 rounded-xl ">
-          <div className="  h-[75%] bg-[url('https://html.ditsolution.net/nftpro/assets/images/resource/author-bg.png')] rounded-tl-xl rounded-tr-xl">
+          <div
+            className={`h-[75%] rounded-tl-xl rounded-tr-xl`}
+            style={{
+              backgroundImage: `url(${currentUser && currentUser.coverPic})`,
+              opacity: 0.8,
+            }}
+          >
             <div className=" flex justify-start md:items-start items-center md:gap-5 gap-4 md:px-10 px-5 md:pt-24 pt-[100px]">
               <img
-                className=" relative rounded-[50%] border-4 border-white md:w-72 md:h-52 w-32 h-24 z-20"
-                src="https://avatars.githubusercontent.com/u/100442123?s=400&u=665ed5657bfd7787c7192cc7e50fb5d416604059&v=4"
+                className=" relative rounded-[50%] border-4 border-white md:w-56 md:h-52 w-32 h-24 z-20"
+                src={currentUser && currentUser.profileLogo}
                 alt=""
               />
               <div className=" w-full flex md:flex-col md:justify-start justify-between md:pt-8">
                 <div className=" flex flex-col">
-                  <h3 className=" md:text-xl text-sm font-bold">Davis Jhon</h3>
-                  <p className="md:text-base text-xs">@davis.jhon</p>
+                  <h3 className=" md:text-xl text-sm font-bold">
+                    {currentUser && currentUser.Name}
+                  </h3>
+                  <p className="md:text-base text-xs">
+                    @{currentUser && currentUser.userName}
+                  </p>
                 </div>
 
                 <div className=" flex gap-2 md:mt-4 mt-2">
@@ -72,7 +97,9 @@ const Profile = () => {
                     Follow
                   </button>
                   <button className=" group md:flex hidden justify-center items-center gap-2 rounded-[5px] pl-5 bg-[#444882]">
-                    <span className=" py-2">0x731F9FBF4163D </span>
+                    <span className=" py-2">
+                      {currentUser && currentUser.walletAddress}
+                    </span>
                     <div
                       className="profilePageBtn h-full flex items-center justify-center"
                       style={{

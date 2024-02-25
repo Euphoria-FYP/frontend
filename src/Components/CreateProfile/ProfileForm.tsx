@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoMdImage } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
 import Eth from "../../assets/images/eth_bc.png";
@@ -11,8 +11,10 @@ import { useDispatch } from "react-redux";
 import { addPage } from "../../redux/slices/createPage";
 import { convertToBase64 } from "../../helpers/convertToBase64";
 import { useNavigate } from "react-router-dom";
+import { nanoid } from "@reduxjs/toolkit";
 
 const initialCelebrityValues = {
+  id: "",
   profileLogo: "",
   coverPic: "",
   backgroundPic: "",
@@ -59,9 +61,10 @@ const ProfileForm = ({ type }: { type: string }) => {
     initialValues: initialCelebrityValues,
     validationSchema: CreateCelebrityProfileSchema,
     onSubmit: (values, action) => {
-      dispatch(addPage(values));
-      navigate("/profile");
-      // action.resetForm();
+      const id = nanoid();
+      console.log(values.id);
+      dispatch(addPage({ ...values, id }));
+      navigate(`/profile/${id}`);
     },
   });
 

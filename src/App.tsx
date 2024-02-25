@@ -27,7 +27,7 @@ function App() {
       element: <SingleNft />,
     },
     {
-      path: "/profile",
+      path: "/profile/:userid",
       element: <Profile />,
     },
     {
