@@ -22,6 +22,10 @@ const MarketPlace = ({ setBgImg }: any) => {
   const [categoriesNames, setCategoriesNames] = useState<any>();
   const [category, setCategory] = useState<string>("");
   const [sort, setSort] = useState<string>("");
+
+  const [minPrice, setMinPrice] = useState<string>();
+  const [maxPrice, setMaxPrice] = useState<string>();
+
   const [openDropDown, setOpenDropDown] = useState<boolean[]>([
     false,
     false,
@@ -55,8 +59,6 @@ const MarketPlace = ({ setBgImg }: any) => {
     }
     // for category
     else if (filtertype === "category") {
-      console.log(filtertype);
-      console.log(type);
       const categoryfilter: CollectionsData[] = AllCollections.filter(
         (item) => item.category == type
       );
@@ -103,6 +105,41 @@ const MarketPlace = ({ setBgImg }: any) => {
     setCollectionNames(collectionNames);
   }, [filterData]);
 
+  // For Max & Min
+  const handleMinChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const prices = AllCollections.map((item) => item.floorPrice);
+    let a = Math.min(...prices).toString;
+    const value = event.target.value;
+    setMinPrice(value === "" ? undefined : value);
+    handlePrice(value, maxPrice);
+  };
+
+  const handleMaxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const prices = AllCollections.map((item) => item.floorPrice);
+    let b = Math.max(...prices).toString();
+    const value = event.target.value;
+    setMaxPrice(value === "" ? undefined : value);
+    handlePrice(minPrice, value);
+  };
+
+  const handlePrice = (min: any, max: any) => {
+    const prices = AllCollections.map((item) => item.floorPrice);
+    let a = Math.min(...prices).toString();
+    let b = Math.max(...prices).toString();
+
+    const filteredCollections = AllCollections.filter((item) => {
+      const floorPrice = item.floorPrice;
+      return (
+        floorPrice >=
+          (min === "" || min === undefined ? parseFloat(a) : parseFloat(min)) &&
+        floorPrice <=
+          (max === "" || max === undefined ? parseFloat(b) : parseFloat(max))
+      );
+    });
+    console.log(filteredCollections);
+    setFilterData(filteredCollections);
+  };
+
   useEffect(() => {
     console.log(state);
 
@@ -116,22 +153,15 @@ const MarketPlace = ({ setBgImg }: any) => {
   useEffect(() => {
     if (tag) {
       const categoryFilter = tags.filter((item) => item.tag === tag);
-      console.log(categoryFilter);
       const categoriesNames = categoryFilter.flatMap(
         (item: any) => item.category
       );
-      console.log(categoriesNames);
       setCategoriesNames(categoriesNames);
     } else {
       const categoriesNames = tags.flatMap((item: any) => item.category);
-      console.log(categoriesNames);
       setCategoriesNames(categoriesNames);
     }
   }, [tag]);
-
-  // const uniqueMarketplaceNames: string[] = marketPlaceData
-  //   .flatMap((item) => item.nft.map((nft) => nft.marketplace))
-  //   .filter((value, index, self) => self.indexOf(value) === index);
 
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
 
@@ -215,7 +245,6 @@ const MarketPlace = ({ setBgImg }: any) => {
                       className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer "
                       onClick={() => {
                         tagsFilter(item, "category");
-                        // setType("category");
                         setCategory(item);
                         setName("");
                       }}
@@ -247,7 +276,6 @@ const MarketPlace = ({ setBgImg }: any) => {
                   onClick={() => {
                     tagsFilter("ltoh", "sort");
                     setSort("Price: Low to High");
-                    // setType("sort");
                     setName("");
                   }}
                 >
@@ -258,7 +286,6 @@ const MarketPlace = ({ setBgImg }: any) => {
                   onClick={() => {
                     tagsFilter("htol", "sort");
                     setSort("Price: High to Low");
-                    // setType("sort");
                   }}
                 >
                   Price: high to low
@@ -332,11 +359,15 @@ const MarketPlace = ({ setBgImg }: any) => {
                 <input
                   type="text"
                   placeholder="Min"
+                  value={minPrice}
+                  onChange={handleMinChange}
                   className=" rounded-lg text-center bg-[#1e1e23] text-sm font-medium py-2 px-4 w-[50%] focus:outline-none placeholder-[#cfcfcf]"
                 />
                 <input
                   type="text"
                   placeholder="Max"
+                  value={maxPrice}
+                  onChange={handleMaxChange}
                   className=" rounded-lg text-center bg-[#1e1e23] text-sm font-medium py-2 px-4 w-[50%] focus:outline-none placeholder-[#cfcfcf]"
                 />
               </div>
@@ -353,7 +384,6 @@ const MarketPlace = ({ setBgImg }: any) => {
                       } text-sm py-2 px-4 `}
                       onClick={() => {
                         tagsFilter(item.tag, "tags");
-                        // setType("tags");
                         setTag(item.tag);
                         setCategory("");
                         setSort("");
