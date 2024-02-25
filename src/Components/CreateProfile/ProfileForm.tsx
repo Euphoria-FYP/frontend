@@ -3,17 +3,34 @@ import { IoMdImage } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
 import Eth from "../../assets/images/eth_bc.png";
 import { useFormik } from "formik";
-import { CreateCollectionSchema } from "../../helpers/Validations/CreateCollectionSchema";
+import { CreateCelebrityProfileSchema } from "../../helpers/Validations/CreateProfileSchema";
 import ValidationError from "../Shared/Validation/ValidationError";
 import StyledButton from "../Shared/StyledButton";
 import ImageSection from "../CreateCollection/ImageSection";
+import { useDispatch } from "react-redux";
+import { addPage } from "../../redux/slices/createPage";
+import { convertToBase64 } from "../../helpers/convertToBase64";
+import { useNavigate } from "react-router-dom";
 
-const initialValues = {
-  collectionName: "",
-  description: "",
+const initialCelebrityValues = {
+  profileLogo: "",
+  coverPic: "",
+  backgroundPic: "",
+  Name: "",
+  userName: "",
+  walletAddress: "",
+  email: "",
+  password: "",
+  managerEmail: "",
+  managerNumber: "",
+  webUrl: "",
+  kycFile: "",
 };
 
 const ProfileForm = ({ type }: { type: string }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [openDropDown, setOpenDropDown] = useState<boolean[]>([false, false]);
 
   const handleDropDownClick = (index: number) => {
@@ -23,6 +40,12 @@ const ProfileForm = ({ type }: { type: string }) => {
     });
     setOpenDropDown(newOpenDropDown);
   };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const base64 = await convertToBase64(e.target.files && e.target.files[0]);
+    setFieldValue(e.target.name, base64);
+  };
+
   const {
     values,
     setValues,
@@ -30,18 +53,17 @@ const ProfileForm = ({ type }: { type: string }) => {
     touched,
     handleBlur,
     handleChange,
+    setFieldValue,
     handleSubmit,
   } = useFormik({
-    initialValues: initialValues,
-    validationSchema: CreateCollectionSchema,
-
+    initialValues: initialCelebrityValues,
+    validationSchema: CreateCelebrityProfileSchema,
     onSubmit: (values, action) => {
-      console.log("done", values);
-      action.resetForm();
+      dispatch(addPage(values));
+      navigate("/profile");
+      // action.resetForm();
     },
   });
-
-  console.log("hh", type);
 
   return (
     <>
@@ -54,7 +76,20 @@ const ProfileForm = ({ type }: { type: string }) => {
 
           <div>
             <label className="text-base font-medium">Profile Pic</label>
-            <div className="flex justify-center items-center gap-5 mt-3 mb-5 border border-gray-500 px-2 py-3 w-32 h-32 group transition-all hover:border-gray-200 cursor-pointer rounded-[50%]">
+            <div
+              className="flex justify-center items-center gap-5 mt-3 mb-5 border border-gray-500 px-2 py-3 w-32 h-32 group transition-all hover:border-gray-200 cursor-pointer rounded-[50%]"
+              onClick={() => {
+                document.getElementById("profileLogo")?.click();
+              }}
+            >
+              <input
+                type="file"
+                name="profileLogo"
+                id="profileLogo"
+                className=" hidden"
+                onChange={handleFileChange}
+                onBlur={handleBlur}
+              />
               <div className=" flex-1 flex justify-center items-center border border-dashed border-level-1 transition-all group-hover:border-solid w-28 h-28 rounded-[50%]">
                 <IoMdImage className="block group-hover:hidden text-2xl transition-all duration-300" />
                 <FiUpload className="hidden group-hover:block text-2xl transition-all duration-300" />
@@ -63,9 +98,13 @@ const ProfileForm = ({ type }: { type: string }) => {
           </div>
 
           <ImageSection
+            firstimg={values.backgroundPic}
+            secondimg={values.coverPic}
+            setFieldValue={setFieldValue}
             label1={"Cover Pic (Optional)"}
             label2={"Background Pic (Optional)"}
           />
+
           <div className={`flex gap-3`}>
             {/* first input */}
             <div className="flex-1">
@@ -73,8 +112,8 @@ const ProfileForm = ({ type }: { type: string }) => {
               <input
                 type="text"
                 placeholder="Enter your Name"
-                name="collectionName"
-                value={values.collectionName}
+                name="Name"
+                value={values.Name}
                 className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -82,7 +121,7 @@ const ProfileForm = ({ type }: { type: string }) => {
               <ValidationError
                 errors={errors}
                 touched={touched}
-                fieldName="collectionName"
+                fieldName="Name"
               />
             </div>
 
@@ -92,8 +131,8 @@ const ProfileForm = ({ type }: { type: string }) => {
               <input
                 type="text"
                 placeholder="Enter your username"
-                name="collectionName"
-                value={values.collectionName}
+                name="userName"
+                value={values.userName}
                 className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -101,7 +140,7 @@ const ProfileForm = ({ type }: { type: string }) => {
               <ValidationError
                 errors={errors}
                 touched={touched}
-                fieldName="collectionName"
+                fieldName="userName"
               />
             </div>
           </div>
@@ -112,8 +151,8 @@ const ProfileForm = ({ type }: { type: string }) => {
             <input
               type="text"
               placeholder="Enter your Metamask wallet address"
-              name="collectionName"
-              value={values.collectionName}
+              name="walletAddress"
+              value={values.walletAddress}
               className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
               onChange={handleChange}
               onBlur={handleBlur}
@@ -121,7 +160,7 @@ const ProfileForm = ({ type }: { type: string }) => {
             <ValidationError
               errors={errors}
               touched={touched}
-              fieldName="collectionName"
+              fieldName="walletAddress"
             />
           </div>
 
@@ -131,8 +170,8 @@ const ProfileForm = ({ type }: { type: string }) => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                name="collectionName"
-                value={values.collectionName}
+                name="email"
+                value={values.email}
                 className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -140,7 +179,7 @@ const ProfileForm = ({ type }: { type: string }) => {
               <ValidationError
                 errors={errors}
                 touched={touched}
-                fieldName="collectionName"
+                fieldName="email"
               />
             </div>
 
@@ -149,8 +188,8 @@ const ProfileForm = ({ type }: { type: string }) => {
               <input
                 type="password"
                 placeholder="Enter your password"
-                name="collectionName"
-                value={values.collectionName}
+                name="password"
+                value={values.password}
                 className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -158,7 +197,7 @@ const ProfileForm = ({ type }: { type: string }) => {
               <ValidationError
                 errors={errors}
                 touched={touched}
-                fieldName="collectionName"
+                fieldName="password"
               />
             </div>
           </div>
@@ -171,8 +210,8 @@ const ProfileForm = ({ type }: { type: string }) => {
                   <input
                     type="email"
                     placeholder="Enter your manager email"
-                    name="collectionName"
-                    value={values.collectionName}
+                    name="managerEmail"
+                    value={values.managerEmail}
                     className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -180,7 +219,7 @@ const ProfileForm = ({ type }: { type: string }) => {
                   <ValidationError
                     errors={errors}
                     touched={touched}
-                    fieldName="collectionName"
+                    fieldName="managerEmail"
                   />
                 </div>
 
@@ -191,8 +230,8 @@ const ProfileForm = ({ type }: { type: string }) => {
                   <input
                     type="number"
                     placeholder="Enter your manager number"
-                    name="collectionName"
-                    value={values.collectionName}
+                    name="managerNumber"
+                    value={values?.managerNumber}
                     className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -200,7 +239,7 @@ const ProfileForm = ({ type }: { type: string }) => {
                   <ValidationError
                     errors={errors}
                     touched={touched}
-                    fieldName="collectionName"
+                    fieldName="managerNumber"
                   />
                 </div>
               </div>
@@ -210,8 +249,8 @@ const ProfileForm = ({ type }: { type: string }) => {
                 <input
                   type="text"
                   placeholder="Enter your Website URL"
-                  name="collectionName"
-                  value={values.collectionName}
+                  name="webUrl"
+                  value={values?.webUrl}
                   className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -219,7 +258,7 @@ const ProfileForm = ({ type }: { type: string }) => {
                 <ValidationError
                   errors={errors}
                   touched={touched}
-                  fieldName="collectionName"
+                  fieldName="webUrl"
                 />
               </div>
 
@@ -230,16 +269,15 @@ const ProfileForm = ({ type }: { type: string }) => {
                 <input
                   type="file"
                   placeholder="Enter your Website URL"
-                  name="collectionName"
-                  value={values.collectionName}
+                  name="kycFile"
                   className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
-                  onChange={handleChange}
+                  onChange={handleFileChange}
                   onBlur={handleBlur}
                 />
                 <ValidationError
                   errors={errors}
                   touched={touched}
-                  fieldName="collectionName"
+                  fieldName="kycFile"
                 />
               </div>
             </>

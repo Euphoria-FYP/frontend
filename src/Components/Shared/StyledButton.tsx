@@ -12,6 +12,7 @@ const StyledButton = (props: props) => {
   return (
     <>
       <button
+       type="submit"
         className={`flex justify-center items-center text-center rounded-lg text-white py-3 font-semibold transition duration-300 ease-in-out ${
           props.hoverEffect && props.hoverEffect
         } hover:shadow-md hover:scale-105`}
