@@ -18,8 +18,8 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 const MarketPlace = ({ setBgImg }: any) => {
   const [filterData, setFilterData] =
     useState<CollectionsData[]>(AllCollections);
-  // const [type, setType] = useState<string>("tags");
   const [tag, setTag] = useState<string>("");
+  const [categoriesNames, setCategoriesNames] = useState<any>();
   const [category, setCategory] = useState<string>("");
   const [sort, setSort] = useState<string>("");
   const [openDropDown, setOpenDropDown] = useState<boolean[]>([
@@ -58,7 +58,7 @@ const MarketPlace = ({ setBgImg }: any) => {
       console.log(filtertype);
       console.log(type);
       const categoryfilter: CollectionsData[] = AllCollections.filter(
-        (item) => item.category.toLowerCase() === type
+        (item) => item.category == type
       );
       setFilterData(categoryfilter);
       setCategory(tag);
@@ -113,9 +113,25 @@ const MarketPlace = ({ setBgImg }: any) => {
     navigate(pathname, {});
   }, [state]);
 
-  const uniqueMarketplaceNames: string[] = marketPlaceData
-    .flatMap((item) => item.nft.map((nft) => nft.marketplace))
-    .filter((value, index, self) => self.indexOf(value) === index);
+  useEffect(() => {
+    if (tag) {
+      const categoryFilter = tags.filter((item) => item.tag === tag);
+      console.log(categoryFilter);
+      const categoriesNames = categoryFilter.flatMap(
+        (item: any) => item.category
+      );
+      console.log(categoriesNames);
+      setCategoriesNames(categoriesNames);
+    } else {
+      const categoriesNames = tags.flatMap((item: any) => item.category);
+      console.log(categoriesNames);
+      setCategoriesNames(categoriesNames);
+    }
+  }, [tag]);
+
+  // const uniqueMarketplaceNames: string[] = marketPlaceData
+  //   .flatMap((item) => item.nft.map((nft) => nft.marketplace))
+  //   .filter((value, index, self) => self.indexOf(value) === index);
 
   const [isSidebarOpen, setIsSideBarOpen] = useState(true);
 
@@ -193,19 +209,20 @@ const MarketPlace = ({ setBgImg }: any) => {
                   openDropDown[1] ? "block" : "hidden"
                 }  top-14 rounded-lg z-50 absolute w-[270px] h-[155px] py-[6px] bg-[#1e1e23] scroll-marketplace-dropdown `}
               >
-                {uniqueMarketplaceNames.map((item) => (
-                  <p
-                    className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer "
-                    onClick={() => {
-                      tagsFilter(item, "category");
-                      // setType("category");
-                      setCategory(item);
-                      setName("");
-                    }}
-                  >
-                    {item}
-                  </p>
-                ))}
+                {categoriesNames &&
+                  categoriesNames.map((item: any) => (
+                    <p
+                      className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer "
+                      onClick={() => {
+                        tagsFilter(item, "category");
+                        // setType("category");
+                        setCategory(item);
+                        setName("");
+                      }}
+                    >
+                      {item}
+                    </p>
+                  ))}
               </div>
             </div>
             <div className="relative flex gap-2 w-[270px]">
