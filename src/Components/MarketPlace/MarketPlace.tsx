@@ -13,12 +13,12 @@ import {
   IoIosArrowForward,
   IoIosArrowBack,
 } from "react-icons/io";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const MarketPlace = ({ setBgImg }: any) => {
   const [filterData, setFilterData] =
     useState<CollectionsData[]>(AllCollections);
-  const [type, setType] = useState<string>("tags");
+  // const [type, setType] = useState<string>("tags");
   const [tag, setTag] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [sort, setSort] = useState<string>("");
@@ -30,7 +30,8 @@ const MarketPlace = ({ setBgImg }: any) => {
   const [collectionNames, setCollectionNames] = useState<any>([]);
   const [Name, setName] = useState<string | null>(null);
 
-  const { state } = useLocation();
+  const { state, pathname } = useLocation();
+  const navigate = useNavigate();
 
   const tagsFilter = (type: string, filtertype: string) => {
     // for tags
@@ -39,7 +40,6 @@ const MarketPlace = ({ setBgImg }: any) => {
         (item) => item.tag === type
       );
       setFilterData(filteredItems);
-      setTag(tag);
     }
     // for collectionNames
     else if (filtertype === "collectionName") {
@@ -103,9 +103,14 @@ const MarketPlace = ({ setBgImg }: any) => {
   }, [filterData]);
 
   useEffect(() => {
-    tagsFilter(state, "tags");
-    setTag(state);
-  }, []);
+    console.log(state);
+
+    if (state) {
+      tagsFilter(state, "tags");
+      setTag(state);
+    }
+    navigate(pathname, {});
+  }, [state]);
 
   const uniqueMarketplaceNames: string[] = marketPlaceData
     .flatMap((item) => item.nft.map((nft) => nft.marketplace))
@@ -197,7 +202,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                     className=" py-2 px-3 capitalize font-medium text-[13px] hover:bg-[#141414] cursor-pointer "
                     onClick={() => {
                       tagsFilter(item, "category");
-                      setType("category");
+                      // setType("category");
                       setCategory(item);
                       setName("");
                     }}
@@ -229,7 +234,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                   onClick={() => {
                     tagsFilter("ltoh", "sort");
                     setSort("Price: Low to High");
-                    setType("sort");
+                    // setType("sort");
                     setName("");
                   }}
                 >
@@ -240,7 +245,7 @@ const MarketPlace = ({ setBgImg }: any) => {
                   onClick={() => {
                     tagsFilter("htol", "sort");
                     setSort("Price: High to Low");
-                    setType("sort");
+                    // setType("sort");
                   }}
                 >
                   Price: high to low
@@ -335,7 +340,8 @@ const MarketPlace = ({ setBgImg }: any) => {
                       } text-sm py-2 px-4 `}
                       onClick={() => {
                         tagsFilter(item.tag, "tags");
-                        setType("tags");
+                        // setType("tags");
+                        setTag(item.tag);
                         setCategory("");
                         setSort("");
                         handleBgImg(item);
