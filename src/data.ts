@@ -522,8 +522,8 @@ export const AllCollections: CollectionsData[] = [
     img2: collection6,
     img3: collection7,
     img4: collection8,
-    tag: "Sports",
-    category: "Cricket",
+    tag: "Gaming",
+    category: "Racing Games",
     featured: true,
     name: "Moon Birds",
     description:
