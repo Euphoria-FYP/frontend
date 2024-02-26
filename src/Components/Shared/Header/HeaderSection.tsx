@@ -52,7 +52,7 @@ const HeaderSection = (props: Props) => {
 
   const userId = parseInt(userData[userData.length - 1].id) + 1;
 
-  const [currentWallet, setCurrentWallet] = useState<WalletType>(
+  const [currentWallet, setCurrentWallet] = useState<WalletType | null>(
     JSON.parse((window as any).localStorage.getItem("walletId"))
   );
 
@@ -98,17 +98,25 @@ const HeaderSection = (props: Props) => {
     }
   };
 
+  window.onbeforeunload = function () {
+    window.localStorage.removeItem("walletId");
+    window.localStorage.removeItem("id");
+    setCurrentWallet(null);
+  };
+
+  useEffect(() => {}, []);
+
   const [search, setSearch] = useState<string>();
-  const suggestions = [
-    "Apple",
-    "Banana",
-    "Banana",
-    "Cherry",
-    "Cherry",
-    "Cherry",
-    "Date",
-    "Elderberry",
-  ];
+  // const suggestions = [
+  //   "Apple",
+  //   "Banana",
+  //   "Banana",
+  //   "Cherry",
+  //   "Cherry",
+  //   "Cherry",
+  //   "Date",
+  //   "Elderberry",
+  // ];
 
   return (
     <>
@@ -166,13 +174,13 @@ const HeaderSection = (props: Props) => {
                   className=" headerInputSearch rounded-lg w-full placeholder:text-white placeholder:text-base placeholder:font-light placeholder:tracking-wide focus:outline-none"
                 />
                 <div className="headerInputSearchSlash"> /</div>
-                {search && (
+                {/* {search && (
                   <datalist id="fruits">
                     {suggestions.map((fruit, index) => (
                       <option key={index} value={fruit}></option>
                     ))}
                   </datalist>
-                )}
+                )} */}
               </div>
               {currentWallet ? (
                 <button

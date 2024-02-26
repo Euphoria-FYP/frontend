@@ -14,6 +14,9 @@ import Game from "../../assets/images//game.jpg";
 import Music from "../../assets/images//music.jpg";
 import Sports from "../../assets/images//sports.jpg";
 import Collection from "../../assets/images/collection.png";
+import MessiLogo from "../../assets/images/messi.jpg";
+
+import UserLogo1 from "../../assets/images/user2.png";
 import { AllCollections } from "../../data";
 
 interface Props {
@@ -263,12 +266,12 @@ const Sidebar = (props: Props) => {
         </div>
       </div>
       {<>{console.log("bechma", userId)}</>}
-      <NavLink to={`/profile/${userId}`}>
+      <NavLink to={userId ? `/profile/${userId}` : `/profile/1`}>
         <div
           className={` flex justify-start items-center gap-4  bottom-0 mt-5 text-white`}
         >
           <img
-            src={profileImg}
+            src={UserLogo1}
             alt="profile"
             className=" ml-4 w-10 h-10 rounded-[50%] object-cover"
           />
@@ -277,8 +280,8 @@ const Sidebar = (props: Props) => {
               openMobileSidebar ? "block" : "hidden"
             } md:hidden md:group-hover:flex flex-col`}
           >
-            <h4 className="text-lg">Ahsan Omerjee</h4>
-            <span className=" text-base text-[#B900FF]">@ahsan2002</span>
+            <h4 className="text-lg">Lionel Messi</h4>
+            <span className=" text-base text-[#B900FF]">@messi10</span>
           </div>
         </div>
       </NavLink>
