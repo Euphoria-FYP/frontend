@@ -44,6 +44,7 @@ const HeaderSection = (props: Props) => {
   const [currentWallet, setCurrentWallet] = useState<WalletType | null>(null);
   const handleEthAccount = async () => {
     const walletData = await requestAccount();
+    window.localStorage.setItem("walletId", walletData.walletAddress);
     setCurrentWallet(walletData);
   };
 
@@ -87,7 +88,7 @@ const HeaderSection = (props: Props) => {
                   Drops
                 </button>
                 <NavLink
-                  to={"/create-collection"}
+                  to={currentWallet?"/create-collection":"/create-profile"}
                   className={
                     " text-white md:text-base text-xs font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
                   }
