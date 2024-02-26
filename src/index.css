@@ -21,14 +21,21 @@ body {
 /* ---------------------- HOMEPAGE BACKGROUND ---------------------- */
 .homeBgImg {
   /* background-image: url("./assets/images/BgHome–2-wecompress.png"); */
-  background-image: url("./assets/images/homebgfinal.jpg");
+  /* background-image: url("./assets/images/homebgfinal.jpg"); */
+  background-image: url("./assets/images/background-images/bg-final-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.homeBgGrid {
+  background-image: url("./assets/images/background-images/grid-herosection.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 /* ---------------------- MARKETPLACE BACKGROUND ---------------------- */
 .marketPlaceBgImg {
-  background-image: url("./assets/images/Home–2b.png");
+  /* background-image: url("./assets/images/Home–2b.png"); */
+  background-image: url("./assets/images/background-images/bg-final-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }

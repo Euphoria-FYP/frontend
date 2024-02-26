@@ -59,7 +59,7 @@ const Carousel = () => {
 
   return (
     <>
-      <section className="relative text-white md:h-screen w-full md:w-4/5 flex md:flex-row flex-col justify-center md:justify-between items-center md:gap-6 mx-auto md:px-0 px-5 pt-10 md:pt-0 pb-16 md:pb-0">
+      <section className="relative text-white md:h-screen w-full md:w-4/5 flex md:flex-row flex-col justify-center md:justify-between md:items-start items-center md:gap-6 mx-auto md:px-0 px-5 pt-10 md:pt-8 pb-16 md:pb-0">
         {/* LEFT SIDE */}
         <div className=" w-full md:w-[55%] flex flex-col md:gap-6 gap-1">
           {/* <h1 className=" text-[32px] font-bold">{carousel.title}</h1> */}
@@ -148,7 +148,7 @@ const Carousel = () => {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className=" w-[40%] mt-20 hidden md:flex justify-end items-center">
+        <div className=" w-[40%] h-3/4 md:mt-10 mt-20 hidden md:flex justify-end items-center">
           {carousel.id === 1 ? (
             <Lottie options={defaultOptions} width={400} height={500} />
           ) : (
