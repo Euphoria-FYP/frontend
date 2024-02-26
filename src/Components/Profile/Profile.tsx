@@ -24,6 +24,7 @@ import { useParams } from "react-router-dom";
 import UserSvg from "../../assets/images/user.svg";
 import UserLogo from "../../assets/images/user.png";
 import UserLogo1 from "../../assets/images/user2.png";
+import CollectionCard from "../Home/Collections/CollectionCard";
 
 interface TabButtonType {
   id: number;
@@ -52,6 +53,7 @@ const tabButtons = [
 const Profile = () => {
   const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[0]);
   const [currentUser, setCurrentUser] = useState<any>();
+  const [onSale, setOnSale] = useState<any>();
   const [filterData, setFilterData] =
     useState<MarketPlaceItem[]>(marketPlaceData);
   const { userid } = useParams();
@@ -64,6 +66,10 @@ const Profile = () => {
     const filterUser = userData.filter((item: any) => item.id === userid);
     console.log(filterUser);
     setCurrentUser(filterUser[0]);
+    const sale = filterUser[0].collections.filter(
+      (item: any) => item.onSale === true
+    );
+    setOnSale(sale);
   }, []);
 
   return (
@@ -170,23 +176,27 @@ const Profile = () => {
             </div>
             <div className="grid xl:grid-cols-3 grid-cols-2 gap-4">
               {currentTab.id === 1 &&
-                filterData.map((card: any, index: number) =>
-                  card.nft.map((nft: any) => {
-                    return (
-                      <MarketPlaceCard
-                        key={index}
-                        id={nft.id}
-                        marketplace={nft.marketplace}
-                        name={nft.name}
-                        userName={nft.userName}
-                        currentBid={nft.currentBid}
-                        inDollars={nft.inDollars}
-                      />
-                    );
-                  })
-                )}
-              {currentTab.id === 2 && <div>2</div>}
-              {currentTab.id === 3 && <div>3</div>}
+                currentUser &&
+                currentUser.collections.map((item: any, i: number) => {
+                  return <CollectionCard key={i} {...item} />;
+                })}
+              {currentTab.id === 2 &&
+                onSale &&
+                onSale.map((item: any, i: number) => {
+                  return <CollectionCard key={i} {...item} />;
+                })}
+              {currentTab.id === 3 &&
+                marketPlaceData[0].nft?.map((item: any, index: number) => (
+                  <MarketPlaceCard
+                    key={index}
+                    id={item.id}
+                    marketplace={item.marketplace}
+                    name={item.name}
+                    userName={item.userName}
+                    currentBid={item.currentBid}
+                    inDollars={item.inDollars}
+                  />
+                ))}
               {currentTab.id === 4 && <div>4</div>}
             </div>
           </div>

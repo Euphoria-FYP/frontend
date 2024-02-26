@@ -101,6 +101,7 @@ export type CollectionsData = {
   img3: string;
   img4: string;
   tag: string;
+  onSale: boolean;
   category: string;
   featured: boolean;
   name: string;
@@ -139,6 +140,5 @@ export type UsersData = {
   coverPic?: string;
   Background?: string;
   type?: "celebrity" | "fan";
-  collections:CollectionsData[];
-
+  collections: CollectionsData[];
 };
