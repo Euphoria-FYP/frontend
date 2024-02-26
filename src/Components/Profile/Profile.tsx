@@ -21,6 +21,9 @@ import collection11 from "../../assets/images/collection/c11.jpg";
 import collection12 from "../../assets/images/collection/c12.png";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import UserSvg from "../../assets/images/user.svg";
+import UserLogo from "../../assets/images/user.png";
+import UserLogo1 from "../../assets/images/user2.png";
 
 interface TabButtonType {
   id: number;
@@ -71,15 +74,24 @@ const Profile = () => {
           <div
             className={`h-[75%] rounded-tl-xl rounded-tr-xl`}
             style={{
-              backgroundImage: `url(${currentUser && currentUser.coverPic})`,
+              backgroundImage: `url(${
+                currentUser && currentUser.coverPic
+                  ? currentUser.coverPic
+                  : "https://html.ditsolution.net/nftpro/assets/images/resource/author-bg.png"
+              })`,
               opacity: 0.8,
             }}
           >
             <div className=" flex justify-start md:items-start items-center md:gap-5 gap-4 md:px-10 px-5 md:pt-24 pt-[100px]">
               <img
-                className=" relative rounded-[50%] border-4 border-white md:w-56 md:h-52 w-32 h-24 z-20"
-                src={currentUser && currentUser.profileLogo}
+                className=" relative rounded-[50%] md:w-56 md:h-52 w-32 h-24 z-20"
+                src={
+                  currentUser && currentUser.profileLogo
+                    ? currentUser.profileLogo
+                    : UserLogo1
+                }
                 alt=""
+                style={{ border: "4px solid white" }}
               />
               <div className=" w-full flex md:flex-col md:justify-start justify-between md:pt-8">
                 <div className=" flex flex-col">

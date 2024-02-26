@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { BiSearchAlt } from "react-icons/bi";
 import { MdWallet } from "react-icons/md";
-import { NavLink, useLocation, useParams } from "react-router-dom";
+import { NavLink, useLocation, useParams, useNavigate } from "react-router-dom";
 import { CgMenuLeft } from "react-icons/cg";
 import { requestAccount } from "../../../helpers/ConnectWallet/connect";
 import { WalletType } from "../../../types";
+import { useDispatch, useSelector } from "react-redux";
+import { addPage } from "../../../redux/slices/createPage";
+import { nanoid } from "@reduxjs/toolkit";
 
 interface Props {
   openMobileSidebar: boolean;
@@ -15,6 +18,7 @@ interface Props {
 const HeaderSection = (props: Props) => {
   const { setOpenMobileSidebar } = props;
   const [isVisible, setVisible] = useState(false);
+  const dispatch = useDispatch();
   const location = useLocation();
   const { id, tag } = useParams();
 
@@ -41,11 +45,29 @@ const HeaderSection = (props: Props) => {
     return () => window.removeEventListener("scroll", listenToScroll);
   }, []);
 
+  const navigate = useNavigate();
+
+  const userData = useSelector((data: any) => data.createpage.users);
+
+  const userId = parseInt(userData[userData.length - 1].id) + 1;
+  console.log(userId);
+
   const [currentWallet, setCurrentWallet] = useState<WalletType | null>(null);
   const handleEthAccount = async () => {
     const walletData = await requestAccount();
     window.localStorage.setItem("walletId", walletData.walletAddress);
     setCurrentWallet(walletData);
+    const values = {
+      id: nanoid(),
+      profileLogo: "",
+      coverPic: "",
+      backgroundPic: "",
+      Name: `Guest ${userId}`,
+      userName: `guest${userId}`,
+      walletAddress: walletData.walletAddress,
+    };
+    dispatch(addPage(values));
+    navigate(`/profile/${values.id}`);
   };
 
   const [search, setSearch] = useState<string>();
@@ -88,7 +110,7 @@ const HeaderSection = (props: Props) => {
                   Drops
                 </button>
                 <NavLink
-                  to={currentWallet?"/create-collection":"/create-profile"}
+                  to={currentWallet ? "/create-collection" : "/create-profile"}
                   className={
                     " text-white md:text-base text-xs font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
                   }
