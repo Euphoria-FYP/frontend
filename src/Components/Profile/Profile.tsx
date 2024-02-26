@@ -72,7 +72,7 @@ const Profile = () => {
         {/* HEADER */}
         <div className="w-full md:h-[350px] h-64 rounded-xl ">
           <div
-            className={`h-[75%] rounded-tl-xl rounded-tr-xl`}
+            className={`h-[75%] rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat`}
             style={{
               backgroundImage: `url(${
                 currentUser && currentUser.coverPic

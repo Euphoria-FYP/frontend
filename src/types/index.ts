@@ -139,4 +139,6 @@ export type UsersData = {
   coverPic?: string;
   Background?: string;
   type?: "celebrity" | "fan";
+  collections:CollectionsData[];
+
 };
