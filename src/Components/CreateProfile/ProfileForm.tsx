@@ -101,6 +101,8 @@ const ProfileForm = ({ type }: { type: string }) => {
           </div>
 
           <ImageSection
+            name1="coverPic"
+            name2="backgroundPic"
             firstimg={values.backgroundPic}
             secondimg={values.coverPic}
             setFieldValue={setFieldValue}

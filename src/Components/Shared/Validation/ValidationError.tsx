@@ -2,12 +2,12 @@ import React from "react";
 
 interface ValidationErrorProps {
   errors: {
-    [key: string]: string;
+    [key: string]: any;
   };
   touched: {
-    [key: string]: boolean;
+    [key: string]: any;
   };
-  fieldName: string;
+  fieldName: any;
 }
 
 const ValidationError: React.FC<ValidationErrorProps> = ({

@@ -6,12 +6,16 @@ import { convertToBase64 } from "../../helpers/convertToBase64";
 const ImageSection = ({
   label1,
   label2,
+  name1,
+  name2,
   firstimg,
   secondimg,
   setFieldValue,
 }: {
   label1: string;
   label2: string;
+  name1: string;
+  name2: string;
   firstimg: string;
   secondimg: string;
   setFieldValue: any;
@@ -24,12 +28,12 @@ const ImageSection = ({
 
   const handleLogoSelect = async (e: any) => {
     const base64 = await convertToBase64(e.target.files && e.target.files[0]);
-    setFieldValue("coverPic", base64);
+    setFieldValue(name1, base64);
   };
 
   const handleCoverSelect = async (e: any) => {
     const base64 = await convertToBase64(e.target.files && e.target.files[0]);
-    setFieldValue("backgroundPic", base64);
+    setFieldValue(name2, base64);
   };
 
   return (
@@ -45,7 +49,7 @@ const ImageSection = ({
           <label className="text-base font-semibold">{label1}</label>
           {/* upload */}
           <div
-            className={`flex justify-center items-center gap-5 mt-3 mb-5 border border-gray-500 px-2 py-3 rounded-lg group transition-all hover:border-gray-200 cursor-pointer`}
+            className={`flex justify-start  items-start  gap-5 mt-3 mb-5 border border-gray-500 px-2 py-3 rounded-lg group transition-all hover:border-gray-200 cursor-pointer`}
           >
             {/* icon */}
             <input
@@ -89,7 +93,7 @@ const ImageSection = ({
           <label className="text-base font-semibold">{label2}</label>
           {/* upload */}
           <div
-            className={`flex justify-center items-center gap-5 mt-3 mb-5 border border-gray-500 px-2 py-3 rounded-lg group transition-all hover:border-gray-200 cursor-pointer`}
+            className={`flex justify-start  items-start  gap-5 mt-3 mb-5 border border-gray-500 px-2 py-3 rounded-lg group transition-all hover:border-gray-200 cursor-pointer`}
           >
             {/* icon */}
             <input

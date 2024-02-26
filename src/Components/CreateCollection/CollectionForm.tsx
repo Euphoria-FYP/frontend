@@ -1,22 +1,40 @@
 import React, { useState } from "react";
-import {
-  IoIosArrowUp,
-  IoIosArrowDown,
-  IoIosArrowForward,
-  IoIosArrowBack,
-} from "react-icons/io";
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import Eth from "../../assets/images/eth_bc.png";
 import { useFormik } from "formik";
 import { CreateCollectionSchema } from "../../helpers/Validations/CreateCollectionSchema";
 import ValidationError from "../Shared/Validation/ValidationError";
 import StyledButton from "../Shared/StyledButton";
+import ImageSection from "./ImageSection";
+import { useDispatch } from "react-redux";
+import { createCollection } from "../../redux/slices/createCollection";
+import collection1 from "../../assets/images/collection/c1.jpeg";
+import collection2 from "../../assets/images/collection/c2.jpeg";
+import collection3 from "../../assets/images/collection/c3.jpeg";
+import collection4 from "../../assets/images/collection/c4.jpeg";
 
 const initialValues = {
-  collectionName: "",
+  userId: "",
+  logoImage: "",
+  coverImage: "",
+  createdAt: "",
+  createdBy: "Ahsan Omerjee",
+  creatorEarning: "",
+  totalItems: 2000,
+  Listings: [],
+  featured: false,
+  img1: collection1,
+  img2: collection2,
+  img3: collection3,
+  img4: collection4,
+  name: "",
   description: "",
+  tag: "",
+  category: "",
 };
 
 const CollectionForm = () => {
+  const dispatch = useDispatch();
   const [openDropDown, setOpenDropDown] = useState<boolean[]>([false, false]);
 
   const handleDropDownClick = (index: number) => {
@@ -26,6 +44,7 @@ const CollectionForm = () => {
     });
     setOpenDropDown(newOpenDropDown);
   };
+
   const {
     values,
     setValues,
@@ -33,6 +52,7 @@ const CollectionForm = () => {
     touched,
     handleBlur,
     handleChange,
+    setFieldValue,
     handleSubmit,
   } = useFormik({
     initialValues: initialValues,
@@ -40,7 +60,8 @@ const CollectionForm = () => {
 
     onSubmit: (values, action) => {
       console.log("done", values);
-      action.resetForm();
+      dispatch(createCollection({ ...values, id: "1" }));
+      // action.resetForm();
     },
   });
 
@@ -48,15 +69,27 @@ const CollectionForm = () => {
     <>
       {/* main div */}
       <form onSubmit={handleSubmit}>
-        <div className=" flex flex-col gap-6">
+        <div className=" flex flex-col gap-6 px-5 md:pl-28 pt-16 pb-16 md:pb-28">
+          <h3 className=" text-2xl md:text-4xl font-semibold">
+            Create your Collection
+          </h3>
+          <ImageSection
+            name1="logoImage"
+            name2="coverImage"
+            firstimg={values.logoImage}
+            secondimg={values.coverImage}
+            setFieldValue={setFieldValue}
+            label1={"Logo Image"}
+            label2={"Cover Image"}
+          />
           {/* first input */}
           <div>
             <label className="text-base font-medium">Contract name</label>
             <input
               type="text"
               placeholder="Collection Name"
-              name="collectionName"
-              value={values.collectionName}
+              name="name"
+              value={values.name}
               className=" collectionforminput rounded-lg w-full placeholder:text-white text-sm font-extralight placeholder:text-[13px] placeholder:font-extralight placeholder:tracking-wide focus:outline-none mt-3"
               onChange={handleChange}
               onBlur={handleBlur}
@@ -64,7 +97,7 @@ const CollectionForm = () => {
             <ValidationError
               errors={errors}
               touched={touched}
-              fieldName="collectionName"
+              fieldName="name"
             />
           </div>
 
@@ -78,7 +111,7 @@ const CollectionForm = () => {
                   className=" flex justify-between items-center rounded-lg text-[13px] font-extralight collectionforminput"
                   onClick={() => handleDropDownClick(0)}
                 >
-                  <span>Add Categories</span>
+                  <span>{values.tag ? values.tag : "Select Category"}</span>
                   {openDropDown[0] ? (
                     <IoIosArrowUp className="text-lg cursor-pointer" />
                   ) : (
@@ -90,11 +123,22 @@ const CollectionForm = () => {
                     openDropDown[0] ? "block" : "hidden"
                   }  rounded-lg  text-base  scroll-marketplace-dropdown collectiondropdown w-full`}
                 >
-                  <p className=" w-full capitalize font-normal text-sm py-2 px-5 cursor-pointer ">
+                  <p
+                    className=" w-full capitalize font-normal text-sm py-2 px-5 cursor-pointer "
+                    onClick={() => {
+                      setFieldValue("tag", "Sports");
+                      setOpenDropDown([false, false]);
+                    }}
+                  >
                     Sports
                   </p>
                 </div>
               </div>
+              <ValidationError
+                errors={errors}
+                touched={touched}
+                fieldName="category"
+              />
             </div>
 
             {/* second dropdown */}
@@ -105,7 +149,9 @@ const CollectionForm = () => {
                   className=" flex justify-between items-center rounded-lg text-[13px] font-extralight collectionforminput"
                   onClick={() => handleDropDownClick(1)}
                 >
-                  <span>Add Sub Categories</span>
+                  <span>
+                    {values.category ? values.category : "Select Sub Category"}
+                  </span>
                   {openDropDown[1] ? (
                     <IoIosArrowUp className="text-lg cursor-pointer" />
                   ) : (
@@ -117,11 +163,22 @@ const CollectionForm = () => {
                     openDropDown[1] ? "block" : "hidden"
                   }  rounded-lg  text-base  scroll-marketplace-dropdown collectiondropdown w-full`}
                 >
-                  <p className=" w-full capitalize font-normal text-sm py-2 px-5 cursor-pointer ">
+                  <p
+                    className=" w-full capitalize font-normal text-sm py-2 px-5 cursor-pointer "
+                    onClick={() => {
+                      setFieldValue("category", "Cricket");
+                      setOpenDropDown([false, false]);
+                    }}
+                  >
                     Sports
                   </p>
                 </div>
               </div>
+              <ValidationError
+                errors={errors}
+                touched={touched}
+                fieldName="subCategory"
+              />
             </div>
           </div>
 
@@ -173,6 +230,14 @@ const CollectionForm = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className=" md:absolute w-full px-4 py-[10px] bottom-0 bg-[#1f2045] flex justify-end items-center border-t-[1px] border-gray-400">
+          <StyledButton
+            heading="Continue"
+            bgColor="linear-gradient(103deg, #E2257A 0%, #563BDA 100%)"
+            width={120}
+          />
         </div>
       </form>
     </>
