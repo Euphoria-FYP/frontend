@@ -347,7 +347,7 @@ export const Steps: stepsData[] = [
   {
     img: Step1,
     step: "01",
-    title: "Set up your wallet",
+    title: "Set up your page",
     description: `Powerful features and inclusions, which makes Nuron standout,
     easily customizable and scalable.`,
   },
