@@ -46,25 +46,26 @@ const HeaderSection = (props: Props) => {
   }, []);
 
   const navigate = useNavigate();
+
   const userData = useSelector((data: any) => data.createpage.users);
-  console.log(userData);
+  console.log("userr", userData);
 
   const userId = parseInt(userData[userData.length - 1].id) + 1;
 
-  const [currentWallet, setCurrentWallet] = useState<WalletType | null>(null);
+  const [currentWallet, setCurrentWallet] = useState<WalletType>(
+    JSON.parse((window as any).localStorage.getItem("walletId"))
+  );
 
-  var nanoId: string;
   const handleEthAccount = async () => {
     const walletData = await requestAccount();
-    window.localStorage.setItem("walletId", walletData.walletAddress);
+    window.localStorage.setItem("walletId", JSON.stringify(walletData));
     setCurrentWallet(walletData);
 
     const existPage = userData.find(
       (item: any) => item.walletAddress === walletData.walletAddress
     );
     if (!existPage) {
-      nanoId = nanoid();
-      console.log(nanoId);
+      const nanoId = nanoid();
       window.localStorage.setItem("id", nanoId);
 
       const values = {
@@ -78,18 +79,22 @@ const HeaderSection = (props: Props) => {
         walletAddress: walletData.walletAddress,
       };
       dispatch(addPage(values));
-      navigate(`/create-profile`);
+      // navigate(`/create-profile`);
     }
   };
 
   const handleUserExistForCollection = () => {
     const walletId = window.localStorage.getItem("walletId");
+    console.log(JSON.parse(walletId as any));
+
     const myId = window.localStorage.getItem("id");
-    if (walletId) {
+    if (myId) {
       const user = userData.find((item: any) => item.id === myId);
-      user.type === ""
-        ? navigate("/create-profile")
-        : navigate("/create-collection");
+      if (user) {
+        user.type === ""
+          ? navigate("/create-profile")
+          : navigate("/create-collection");
+      }
     }
   };
 

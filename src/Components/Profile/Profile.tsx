@@ -57,8 +57,6 @@ const Profile = () => {
   const { userid } = useParams();
   const userData = useSelector((data: any) => data.createpage.users);
   console.log("userrr", userData);
-  console.log(userid);
-  console.log(typeof userid);
 
   useEffect(() => {
     const filterUser = userData.filter((item: any) => item.id === userid);

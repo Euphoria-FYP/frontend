@@ -121,6 +121,12 @@ const Sidebar = (props: Props) => {
       title: "Help Center",
     },
   ];
+  const [userId, setUserId] = useState<string>("");
+  useEffect(() => {
+    const id = window.localStorage.getItem("id");
+    setUserId(id as string);
+  }, [window.localStorage.getItem("id")]);
+  console.log("user id ", userId);
 
   return (
     <div
@@ -256,7 +262,8 @@ const Sidebar = (props: Props) => {
           })}
         </div>
       </div>
-      <NavLink to="/profile">
+      {<>{console.log("bechma", userId)}</>}
+      <NavLink to={`/profile/${userId}`}>
         <div
           className={` flex justify-start items-center gap-4  bottom-0 mt-5 text-white`}
         >
