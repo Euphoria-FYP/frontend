@@ -46,8 +46,6 @@ const HeaderSection = (props: Props) => {
   }, []);
 
   const navigate = useNavigate();
-  const [generatedId, setGeneratedId] = useState<string>("");
-
   const userData = useSelector((data: any) => data.createpage.users);
   console.log(userData);
 
@@ -55,7 +53,7 @@ const HeaderSection = (props: Props) => {
 
   const [currentWallet, setCurrentWallet] = useState<WalletType | null>(null);
 
-  var nanoId:string;
+  var nanoId: string;
   const handleEthAccount = async () => {
     const walletData = await requestAccount();
     window.localStorage.setItem("walletId", walletData.walletAddress);
@@ -67,7 +65,8 @@ const HeaderSection = (props: Props) => {
     if (!existPage) {
       nanoId = nanoid();
       console.log(nanoId);
-      
+      window.localStorage.setItem("id", nanoId);
+
       const values = {
         id: nanoId,
         profileLogo: "",
@@ -79,20 +78,18 @@ const HeaderSection = (props: Props) => {
         walletAddress: walletData.walletAddress,
       };
       dispatch(addPage(values));
-      setGeneratedId(nanoId);
       navigate(`/create-profile`);
     }
   };
 
   const handleUserExistForCollection = () => {
     const walletId = window.localStorage.getItem("walletId");
+    const myId = window.localStorage.getItem("id");
     if (walletId) {
-      console.log(nanoId);
-
-      const user = userData.find((item: any) => item.id === nanoId);
-      console.log(user);
-
-      // !user.type ? navigate("/create-profile") : navigate("/create-collection");
+      const user = userData.find((item: any) => item.id === myId);
+      user.type === ""
+        ? navigate("/create-profile")
+        : navigate("/create-collection");
     }
   };
 
