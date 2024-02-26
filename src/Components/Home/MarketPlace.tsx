@@ -95,7 +95,7 @@ const MarketPlace = () => {
   return (
     <section
       id="drop"
-      className="flex flex-col justify-center items-center  mx-auto"
+      className="flex flex-col justify-center items-center  mx-auto pt-16"
     >
       <div className="flex flex-col justify-center items-center gap-3">
         <h4 className="uppercase font-semibold text-lg md:text-xl text-[#B900FF]">

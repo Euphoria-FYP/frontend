@@ -50,13 +50,15 @@ const tabButtons = [
 ];
 
 const Profile = () => {
-  const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[1]);
+  const [currentTab, setCurrentTab] = useState<TabButtonType>(tabButtons[0]);
   const [currentUser, setCurrentUser] = useState<any>();
   const [filterData, setFilterData] =
     useState<MarketPlaceItem[]>(marketPlaceData);
   const { userid } = useParams();
   const userData = useSelector((data: any) => data.createpage.users);
   console.log("userrr", userData);
+  console.log(userid);
+  console.log(typeof userid);
 
   useEffect(() => {
     const filterUser = userData.filter((item: any) => item.id === userid);
@@ -167,23 +169,25 @@ const Profile = () => {
               ))}
             </div>
             <div className="grid xl:grid-cols-3 grid-cols-2 gap-4">
-              {filterData
-                ? filterData.map((card: any, index: number) =>
-                    card.nft.map((nft: any) => {
-                      return (
-                        <MarketPlaceCard
-                          key={index}
-                          id={nft.id}
-                          marketplace={nft.marketplace}
-                          name={nft.name}
-                          userName={nft.userName}
-                          currentBid={nft.currentBid}
-                          inDollars={nft.inDollars}
-                        />
-                      );
-                    })
-                  )
-                : null}
+              {currentTab.id === 1 &&
+                filterData.map((card: any, index: number) =>
+                  card.nft.map((nft: any) => {
+                    return (
+                      <MarketPlaceCard
+                        key={index}
+                        id={nft.id}
+                        marketplace={nft.marketplace}
+                        name={nft.name}
+                        userName={nft.userName}
+                        currentBid={nft.currentBid}
+                        inDollars={nft.inDollars}
+                      />
+                    );
+                  })
+                )}
+              {currentTab.id === 2 && <div>2</div>}
+              {currentTab.id === 3 && <div>3</div>}
+              {currentTab.id === 4 && <div>4</div>}
             </div>
           </div>
           <div className=" w-[25%] md:flex hidden flex-col gap-5">
