@@ -46,28 +46,54 @@ const HeaderSection = (props: Props) => {
   }, []);
 
   const navigate = useNavigate();
+  const [generatedId, setGeneratedId] = useState<string>("");
 
   const userData = useSelector((data: any) => data.createpage.users);
+  console.log(userData);
 
   const userId = parseInt(userData[userData.length - 1].id) + 1;
-  console.log(userId);
 
   const [currentWallet, setCurrentWallet] = useState<WalletType | null>(null);
+
+  var nanoId:string;
   const handleEthAccount = async () => {
     const walletData = await requestAccount();
     window.localStorage.setItem("walletId", walletData.walletAddress);
     setCurrentWallet(walletData);
-    const values = {
-      id: nanoid(),
-      profileLogo: "",
-      coverPic: "",
-      backgroundPic: "",
-      Name: `Guest ${userId}`,
-      userName: `guest${userId}`,
-      walletAddress: walletData.walletAddress,
-    };
-    dispatch(addPage(values));
-    navigate(`/profile/${values.id}`);
+
+    const existPage = userData.find(
+      (item: any) => item.walletAddress === walletData.walletAddress
+    );
+    if (!existPage) {
+      nanoId = nanoid();
+      console.log(nanoId);
+      
+      const values = {
+        id: nanoId,
+        profileLogo: "",
+        coverPic: "",
+        backgroundPic: "",
+        type: "",
+        Name: `Guest ${userId}`,
+        userName: `guset${userId}`,
+        walletAddress: walletData.walletAddress,
+      };
+      dispatch(addPage(values));
+      setGeneratedId(nanoId);
+      navigate(`/create-profile`);
+    }
+  };
+
+  const handleUserExistForCollection = () => {
+    const walletId = window.localStorage.getItem("walletId");
+    if (walletId) {
+      console.log(nanoId);
+
+      const user = userData.find((item: any) => item.id === nanoId);
+      console.log(user);
+
+      // !user.type ? navigate("/create-profile") : navigate("/create-collection");
+    }
   };
 
   const [search, setSearch] = useState<string>();
@@ -109,14 +135,14 @@ const HeaderSection = (props: Props) => {
                 >
                   Drops
                 </button>
-                <NavLink
-                  to={currentWallet ? "/create-collection" : "/create-profile"}
+                <div
+                  onClick={handleUserExistForCollection}
                   className={
-                    " text-white md:text-base text-xs font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
+                    " cursor-pointer text-white md:text-base text-xs font-semibold hover:text-[#ffffffcc] tracking-wide transition-all duration-200 ease-in-out transform-gpu"
                   }
                 >
                   Create NFT
-                </NavLink>
+                </div>
                 <NavLink
                   to={"/top-collections"}
                   className={
